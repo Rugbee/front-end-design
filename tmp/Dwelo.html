@@ -1,0 +1,837 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0017)http://dwelo.com/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" debug="true"><div id="FirebugChannel" style="display: none; "></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	Dwelo
+</title><link rel="icon" href="http://dwelo.com/images/favicon.ico" type="image/x-icon">
+    <style type="text/css">
+        @import '/css/bootstrap.min.css';
+        @import '/css/app.css?v=2.0';
+        @import '/css/jquery.gritter.css';   
+    </style>
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+    <!-- javascripts -->
+    <script type="text/javascript" async="" src="./Dwelo_files/zjXu1DTIqAS6moUD6rQ.js"></script><script type="text/javascript" async="" src="./Dwelo_files/ga.js"></script><script type="text/javascript" src="./Dwelo_files/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="./Dwelo_files/jquery.json-2.3.min.js"></script>
+    <script type="text/javascript" src="./Dwelo_files/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./Dwelo_files/bootstrap-modal.js"></script>
+    <script type="text/javascript" src="./Dwelo_files/bootstrap-tabs.js"></script>
+    <script type="text/javascript" src="./Dwelo_files/bootstrap-buttons.js"></script>
+    <script type="text/javascript" src="./Dwelo_files/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="./Dwelo_files/bootstrap-twipsy.js"></script>
+    <script type="text/javascript" src="./Dwelo_files/script.library.js"></script>
+    <script type="text/javascript" src="./Dwelo_files/charCount.js"></script>
+    <script type="text/javascript" src="./Dwelo_files/jquery.gritter.js"></script>
+    <script type="text/javascript" src="./Dwelo_files/jquery.backstretch.min.js"></script>
+    <script type="text/javascript" src="./Dwelo_files/jquery.watermarkinput.js"></script>
+    <script type="text/javascript" src="./Dwelo_files/session.manager.library.js"></script>
+    
+    <script language="javascript" type="text/javascript">
+        var postid;
+        var commenttype;
+        var message;
+
+        function submitComment() {
+            postid = document.getElementById('ContentPlaceHolder1_RandomPostControl1_hdnPostID').value;
+            commenttype = document.getElementById('ContentPlaceHolder1_RandomPostControl1_chkAgree').checked;
+            message = document.getElementById('ContentPlaceHolder1_CommentBoxControl1_txtComment').value;
+
+            PageMethods.CommentBoxControl1Clicked(postid, message, commenttype, onSucceeded);
+        }
+
+        function onSucceeded(val) {
+            if (val) {
+                //window.location = '/debate/parameter'.replace('parameter', postid);
+            }
+        } 
+    </script>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-29060409-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        $(document).ready(function () {
+            $('#announcement-bar').click(function () {
+                $('#announcement-box').toggle('slow', function () {
+                    $('#announcement-box').css({ 'filter': 'alpha(opacity=100)' });
+                });
+            });
+
+            $('#announcement-close').click(function () {
+                $('#announcement-box').css({ 'display': 'none' });
+            });
+        });
+
+    </script>
+<meta property="og:url" content="http://dwelo.com/default.aspx"><meta property="og:title" content="Dwelo"><meta property="og:description" content="Ask questions, share opinions &amp; make friends today! Signup at www.dwelo.com for more fun debates :)"><meta property="og:image" content="http://www.dwelo.com/images/dwelo-square-logo.jpg"><style type="text/css" media="print">#uvTab {display:none !important;}</style></head>
+<body><div id="uvTab" style="background-image: url(http://widget.uservoice.com/images/clients/widget2/tab-horizontal-dark.png); border-top-width: 1px; border-right-width: 1px; border-left-width: 1px; border-style: solid solid none; border-top-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-left-color: rgb(255, 255, 255); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; -webkit-box-shadow: rgba(255, 255, 255, 0.246094) 1px 1px 1px inset, rgba(0, 0, 0, 0.496094) 0px 1px 2px; box-shadow: rgba(255, 255, 255, 0.246094) 1px 1px 1px inset, rgba(0, 0, 0, 0.496094) 0px 1px 2px; font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: bold; line-height: 1em; position: fixed; right: 10px; bottom: 0px; z-index: 9999; background-color: rgb(91, 143, 10); display: block; margin-bottom: 0px; background-position: 0px 50%; background-repeat: no-repeat no-repeat; "><a id="uvTabLabel" style="background-color: transparent; display: block;padding: 6px 10px 2px 42px;text-decoration: none;" href="javascript:return false;"><img src="./Dwelo_files/feedback-tab.png" alt="Send Feedback" style="border:0; background-color: transparent; padding:0; margin:0;"></a></div>
+    <form method="post" action="" onsubmit="javascript:return WebForm_OnSubmit();" id="form1" enctype="multipart/form-data" novalidate="novalidate">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJODUxMTg3ODU0D2QWAmYPZBYEAgEPZBYCAgIPFREWL2Nzcy9ib290c3RyYXAubWluLmNzcxIvY3NzL2FwcC5jc3M/dj0yLjAXL2Nzcy9qcXVlcnkuZ3JpdHRlci5jc3MXL2pzL2pxdWVyeS0xLjcuMS5taW4uanMaL2pzL2pxdWVyeS5qc29uLTIuMy5taW4uanMaL2pzL2pxdWVyeS52YWxpZGF0ZS5taW4uanMWL2pzL2Jvb3RzdHJhcC1tb2RhbC5qcxUvanMvYm9vdHN0cmFwLXRhYnMuanMYL2pzL2Jvb3RzdHJhcC1idXR0b25zLmpzGS9qcy9ib290c3RyYXAtZHJvcGRvd24uanMXL2pzL2Jvb3RzdHJhcC10d2lwc3kuanMbL2pzL3NjcmlwdC5saWJyYXJ5LmpzP3Y9MS4wEC9qcy9jaGFyQ291bnQuanMVL2pzL2pxdWVyeS5ncml0dGVyLmpzHS9qcy9qcXVlcnkuYmFja3N0cmV0Y2gubWluLmpzHC9qcy9qcXVlcnkud2F0ZXJtYXJraW5wdXQuanMeL2pzL3Nlc3Npb24ubWFuYWdlci5saWJyYXJ5LmpzZAIDDxYCHgdlbmN0eXBlBRNtdWx0aXBhcnQvZm9ybS1kYXRhFgQCBg9kFhACBQ9kFgoCAg8WAh4EaHJlZgUtL21pZ3VlbDUvMGY3Mzg0YjgtYTY4Yi00MDA4LWE5ZDAtOGQxMTYzYmIyZDA3FgICAQ8PFgIeCEltYWdlVXJsBS5+L2ltYWdlcy9hdmF0YXJzL2NhY2hlL21lZGl1bV8xMjEwMTQwNzEwMjEuanBnZGQCAw8WAh8BBS0vbWlndWVsNS8wZjczODRiOC1hNjhiLTQwMDgtYTlkMC04ZDExNjNiYjJkMDcWAmYPDxYCHgRUZXh0BQdtaWd1ZWw1ZGQCBA8WBB8BBV8vZGViYXRlL3BpY3R1cmUtb2YtYS1naXJsLXBvc2luZy1vbi1hLXdvb2Rlbi1jcm9zcy1va2F5LW9yL2JlZjdlYmE4LTIzOTUtNDc4ZC1hZDEyLTM3ZGE1OWI5M2ZkMB4FdGl0bGUFPVBpY3R1cmUgb2YgYSBnaXJsIHBvc2luZyBvbiBhIHdvb2RlbiBjcm9zcy4gb2theSBvciBub3Qgb2theT8WAgIBDw8WAh8DBT1QaWN0dXJlIG9mIGEgZ2lybCBwb3Npbmcgb24gYSB3b29kZW4gY3Jvc3MuIG9rYXkgb3Igbm90IG9rYXk/ZGQCBQ8PFgIfAwUEb2theWRkAgYPDxYCHwMFCG5vdCBva2F5ZGQCBw8WAh4LXyFJdGVtQ291bnQCBRYKZg9kFhJmDxUBLS9Sb2JvY29wLzhjYTM5NGJkLTEwOWYtNDAwYy04NDJlLTgxMjYwNTFiMzhmNGQCAQ8PFgIfAgUufi9pbWFnZXMvYXZhdGFycy9jYWNoZS9tZWRpdW1fMTIzNzEzMDEzNzAwLmpwZ2RkAgIPFQEtL1JvYm9jb3AvOGNhMzk0YmQtMTA5Zi00MDBjLTg0MmUtODEyNjA1MWIzOGY0ZAIDDw8WAh8DBQdSb2JvY29wZGQCBA8VAkVCYWtiYWthbiBzYSBOQUlBLi4uIFNpbm8gYW5nIG5hZ3Nhc2FiaSBuZyB0b3RvbywgVHVsZm8gdnMgU2FudGlhZ28uLi5fL2RlYmF0ZS9iYWtiYWthbi1zYS1uYWlhLXNpbm8tYW5nLW5hZ3Nhc2FiaS1uZy10b3Rvby10dWxmby81NDA0MGJkYi1kYjFiLTRjZDQtYTk0Yy02MjBhMTI2MTRhZTFkAgUPDxYCHwMFRUJha2Jha2FuIHNhIE5BSUEuLi4gU2lubyBhbmcgbmFnc2FzYWJpIG5nIHRvdG9vLCBUdWxmbyB2cyBTYW50aWFnby4uLmRkAgcPDxYCHwMFCjUgZGF5cyBhZ29kZAIJDw8WAh8DBQEwZGQCCw8PFgIfAwUBMWRkAgEPZBYSZg8VATUvaWFtdmluY2VudHJhbW9zLzg2YzliYTJlLTA2NWMtNDdiNy04ZDFmLTJlMWFhN2VjZmEzNmQCAQ8PFgIfAgUpfi9pbWFnZXMvYXZhdGFycy9jYWNoZS9tZWRpdW1fZGVmYXVsdC5naWZkZAICDxUBNS9pYW12aW5jZW50cmFtb3MvODZjOWJhMmUtMDY1Yy00N2I3LThkMWYtMmUxYWE3ZWNmYTM2ZAIDDw8WAh8DBQ9pYW12aW5jZW50cmFtb3NkZAIEDxUCSVRyYW5zZ2VuZGVycyBtdXN0IGJlIGFsbG93ZWQgaW4gTWlzcyBVbml2ZXJzZSBQYWdlYW50LiBBZ3JlZSBvciBEaXNhZ3JlZT9fL2RlYmF0ZS90cmFuc2dlbmRlcnMtbXVzdC1iZS1hbGxvd2VkLWluLW1pc3MtdW5pdmVyc2UtcGFnZS85NGY0ZjQ0OC1iMmM5LTQ1MDMtYTA4Mi1mNzJiZGJlMjFkY2ZkAgUPDxYCHwMFSVRyYW5zZ2VuZGVycyBtdXN0IGJlIGFsbG93ZWQgaW4gTWlzcyBVbml2ZXJzZSBQYWdlYW50LiBBZ3JlZSBvciBEaXNhZ3JlZT9kZAIHDw8WAh8DBQsxOSBkYXlzIGFnb2RkAgkPDxYCHwMFATBkZAILDw8WAh8DBQEwZGQCAg9kFhJmDxUBKy9hYmFtYS8zMDI0NGUyNS03YWQxLTQ2MTktYTYzNC1iM2NmNDNjNTIwZmNkAgEPDxYCHwIFKX4vaW1hZ2VzL2F2YXRhcnMvY2FjaGUvbWVkaXVtX2RlZmF1bHQuZ2lmZGQCAg8VASsvYWJhbWEvMzAyNDRlMjUtN2FkMS00NjE5LWE2MzQtYjNjZjQzYzUyMGZjZAIDDw8WAh8DBQVhYmFtYWRkAgQPFQJHSSB0aGluayBpdCBpcyBpbXBvcnNpYmxlIHRvIGZpbmUgYSBiZWF0aWZ1bCBnaXJsIHRvIG1hcnJ5IGZyb20gdGhlIHdlYi5fL2RlYmF0ZS9pLXRoaW5rLWl0LWlzLWltcG9yc2libGUtdG8tZmluZS1hLWJlYXRpZnVsLWdpcmwtdC8yYjliYWIxNC0zZjQzLTQ4Y2YtYmVlNS1hZGM3ZTZhMDhiOGNkAgUPDxYCHwMFR0kgdGhpbmsgaXQgaXMgaW1wb3JzaWJsZSB0byBmaW5lIGEgYmVhdGlmdWwgZ2lybCB0byBtYXJyeSBmcm9tIHRoZSB3ZWIuZGQCBw8PFgIfAwULMjcgZGF5cyBhZ29kZAIJDw8WAh8DBQEwZGQCCw8PFgIfAwUBMGRkAgMPZBYSZg8VASkvUGF1LzI2OTE0MzVlLWRiNTAtNDA5Yy1hNzQwLWY1YTQ5ODk0Mzc1NWQCAQ8PFgIfAgUufi9pbWFnZXMvYXZhdGFycy9jYWNoZS9tZWRpdW1fMTIzNzI2MDgzNzMyLmpwZ2RkAgIPFQEpL1BhdS8yNjkxNDM1ZS1kYjUwLTQwOWMtYTc0MC1mNWE0OTg5NDM3NTVkAgMPDxYCHwMFA1BhdWRkAgQPFQInU3VydmV5IGxhbmcsIEpvc2UgTWFuYWxvIHZzIFZpY2UgR2FuZGE/Ui9kZWJhdGUvc3VydmV5LWxhbmctam9zZS1tYW5hbG8tdnMtdmljZS1nYW5kYS9lNmZiZGI3ZC0wMWVmLTRjYTMtOTU0Mi03MjJkNDQwNWIxNGVkAgUPDxYCHwMFJ1N1cnZleSBsYW5nLCBKb3NlIE1hbmFsbyB2cyBWaWNlIEdhbmRhP2RkAgcPDxYCHwMFCzI4IGRheXMgYWdvZGQCCQ8PFgIfAwUBMGRkAgsPDxYCHwMFATFkZAIED2QWEmYPFQErL0pldHJvL2RhYjY0M2I5LWY3YzItNDRjNy1iZTMwLTJjODcwMGM4ZWMxNWQCAQ8PFgIfAgUufi9pbWFnZXMvYXZhdGFycy9jYWNoZS9tZWRpdW1fMTIyNTEzMDYyNTMxLmpwZ2RkAgIPFQErL0pldHJvL2RhYjY0M2I5LWY3YzItNDRjNy1iZTMwLTJjODcwMGM4ZWMxNWQCAw8PFgIfAwUFSmV0cm9kZAIEDxUCLktvbnRyYS1EVVJBIGlzYXNhYmF0YXMuLi4gT0sgYmEgdG8gbyBoaW5kaSBPSz9XL2RlYmF0ZS9rb250cmEtZHVyYS1pc2FzYWJhdGFzLW9rLWJhLXRvLW8taGluZGktb2svMmU4ZTI1NmMtNTQ1Zi00YTExLThmMmUtNDQ0YWZlZGRjOTVlZAIFDw8WAh8DBS5Lb250cmEtRFVSQSBpc2FzYWJhdGFzLi4uIE9LIGJhIHRvIG8gaGluZGkgT0s/ZGQCBw8PFgIfAwULMzIgZGF5cyBhZ29kZAIJDw8WAh8DBQEwZGQCCw8PFgIfAwUBMmRkAgkPFgIfBQIFFgpmD2QWAmYPFQNFQmFrYmFrYW4gc2EgTkFJQS4uLiBTaW5vIGFuZyBuYWdzYXNhYmkgbmcgdG90b28sIFR1bGZvIHZzIFNhbnRpYWdvLi4uXy9kZWJhdGUvYmFrYmFrYW4tc2EtbmFpYS1zaW5vLWFuZy1uYWdzYXNhYmktbmctdG90b28tdHVsZm8vNTQwNDBiZGItZGIxYi00Y2Q0LWE5NGMtNjIwYTEyNjE0YWUxPkJha2Jha2FuIHNhIE5BSUEuLi4gU2lubyBhbmcgbmFnc2FzYWJpIG5nIHRvdG9vLCBUdWxmbyB2cyBTYS4uZAIBD2QWAmYPFQMsSXQmIzM5O3MgbW9yZSBmdW4gaW4gdGhlIFBoaWxpcHBpbmVzISBBZ3JlZT9SL2RlYmF0ZS9pdHMtbW9yZS1mdW4taW4tdGhlLXBoaWxpcHBpbmVzLWFncmVlLzNlMWI1MDVkLWNlNmItNDQ1OC1iZTNjLTQwODE1ODEyNDlmYyhJdCdzIG1vcmUgZnVuIGluIHRoZSBQaGlsaXBwaW5lcyEgQWdyZWU/ZAICD2QWAmYPFQMuS29udHJhLURVUkEgaXNhc2FiYXRhcy4uLiBPSyBiYSB0byBvIGhpbmRpIE9LP1cvZGViYXRlL2tvbnRyYS1kdXJhLWlzYXNhYmF0YXMtb2stYmEtdG8tby1oaW5kaS1vay8yZThlMjU2Yy01NDVmLTRhMTEtOGYyZS00NDRhZmVkZGM5NWUuS29udHJhLURVUkEgaXNhc2FiYXRhcy4uLiBPSyBiYSB0byBvIGhpbmRpIE9LP2QCAw9kFgJmDxUDKG1hcyBtYWdhbmRhIGFuZyBPTkUgUElFQ0Uga2VzYSBOQVJVVE8uLi5SL2RlYmF0ZS9tYXMtbWFnYW5kYS1hbmctb25lLXBpZWNlLWtlc2EtbmFydXRvLzU3ZTQ1ZmM5LWRjMDYtNGZhYi1hMDMzLWNlOWRiYjk4ODQzYihtYXMgbWFnYW5kYSBhbmcgT05FIFBJRUNFIGtlc2EgTkFSVVRPLi4uZAIED2QWAmYPFQNhRGFwYXQgYmEgdGF5b25nIHl1bXVrb2QgbyBtYW5hbGFuZ2luIHNhIG1nYSBpbWFoZW4sIG1nYSBsYXJhd2FuLCBvIG1nYSBzYWdpc2FnIHNhIGF0aW5nIHBhZ3NhbWJhP18vZGViYXRlL2RhcGF0LWJhLXRheW9uZy15dW11a29kLW8tbWFuYWxhbmdpbi1zYS1tZ2EtaW1haGVuLzVkODUyNjY1LTBhN2QtNDg1My04MGFkLWE3NzU2NDlhMDNiYj5EYXBhdCBiYSB0YXlvbmcgeXVtdWtvZCBvIG1hbmFsYW5naW4gc2EgbWdhIGltYWhlbiwgbWdhIGxhcmEuLmQCCw9kFgICAQ8WAh8BBRYvcmVzdWx0cy9hY3RpdmVkZWJhdGVzZAINDxYCHwUCBRYKZg9kFgJmDxUDXy9kZWJhdGUvbmFrYWthLXNpcmEtbmctdHJhYmFoby1hbmctZmFjZWJvb2stYWdyZWUtby1kaXNhZ3IvY2NjZjA5ZTctMTU1Mi00ZjgxLTk2YzItMTI3ZmM1Y2I2OTlkN05ha2FrYS1zaXJhIG5nIHRyYWJhaG8gYW5nIGZhY2Vib29rLiBBZ3JlZSBvIERpc2FncmVlPz83TmFrYWthLXNpcmEgbmcgdHJhYmFobyBhbmcgZmFjZWJvb2suIEFncmVlIG8gRGlzYWdyZWU/P2QCAQ9kFgJmDxUDTi9kZWJhdGUvbmFrYWthc2lyYS1uZy1iYXJrYWRhLWFuZy10cmFiYWhvLzUzOTdhM2RlLTU2OWMtNGJhNi04YmQ1LTIxNDcyYWJmNWNjZiNOYWtha2FzaXJhIG5nIEJhcmthZGEgYW5nIHRyYWJhaG8uLiNOYWtha2FzaXJhIG5nIEJhcmthZGEgYW5nIHRyYWJhaG8uLmQCAg9kFgJmDxUDUi9kZWJhdGUvbWFzLW1hZ2FuZGEtYW5nLW9uZS1waWVjZS1rZXNhLW5hcnV0by81N2U0NWZjOS1kYzA2LTRmYWItYTAzMy1jZTlkYmI5ODg0M2IobWFzIG1hZ2FuZGEgYW5nIE9ORSBQSUVDRSBrZXNhIE5BUlVUTy4uLihtYXMgbWFnYW5kYSBhbmcgT05FIFBJRUNFIGtlc2EgTkFSVVRPLi4uZAIDD2QWAmYPFQNfL2RlYmF0ZS9ub3lub3ktcGluYWthd2FsYW5nLWt3ZW50YW5nLXByZXNpZGVudGUtbmctcGlsaXBpbi9hNzI4YjBkNC0xNGJjLTQ0ZGItOWFhMi03NDBiZTQ5OWUwNmY1Tm95bm95IHBpbmFrYXdhbGFuZyBrd2VudGFuZyBwcmVzaWRlbnRlIG5nIFBpbGlwaW5hcyE1Tm95bm95IHBpbmFrYXdhbGFuZyBrd2VudGFuZyBwcmVzaWRlbnRlIG5nIFBpbGlwaW5hcyFkAgQPZBYCZg8VA18vZGViYXRlL21hcy1tYXJhbWluZy1jb3JydXB0LWFuZy1vcGlzeWFsLW5nLWdvYnllcm5vLW5hdGluLzJmODQ2NGEyLTZhOTMtNDdkMC1hZjQ1LTBjYzIyZjZlNzQxNTZNYXMgbWFyYW1pbmcgY29ycnVwdCBhbmcgb3Bpc3lhbCBuZyBnb2J5ZXJubyBuYXRpbi4uLi42TWFzIG1hcmFtaW5nIGNvcnJ1cHQgYW5nIG9waXN5YWwgbmcgZ29ieWVybm8gbmF0aW4uLi4uZAIPD2QWAgIBDxYCHwEFEy9yZXN1bHRzL25ld2RlYmF0ZXNkAhEPZBYCAgEPPCsACQEADxYEHghEYXRhS2V5cxYAHwUCFGQWKGYPZBYEZg8VAg1wYXVsZGhtYXlvcmdhMy9wYXVsZGhtYXlvcmdhLzgzZTJiZWFlLTU3NWEtNDk3ZS05N2ZhLTBjOWFiNjI3OGY1N2QCAQ8PFgIfAgUufi9pbWFnZXMvYXZhdGFycy9jYWNoZS9tZWRpdW1fMTIyODE0MDYyODA2LmpwZ2RkAgEPZBYEZg8VAgxFdmVudGhvcml6b24yL0V2ZW50aG9yaXpvbi85MTgwMDQyMi0yNmQ5LTQyZjItOTU2Mi1hNGM3MWQ2MDY2MThkAgEPDxYCHwIFLn4vaW1hZ2VzL2F2YXRhcnMvY2FjaGUvbWVkaXVtXzEyMjIxMzA4MjIwOS5qcGdkZAICD2QWBGYPFQIOZ2VvcmdlcWJvd25pbmc0L2dlb3JnZXFib3duaW5nL2JhZTg5NzUxLTQ2YzctNDc4ZC1hN2M5LTQ3OGEyOTVmYWQ3ZGQCAQ8PFgIfAgUufi9pbWFnZXMvYXZhdGFycy9jYWNoZS9tZWRpdW1fMTIzMTExMDYzMTQwLmdpZmRkAgMPZBYEZg8VAhNhbWFyYW50aGluZS5kcmVhbWVyOS9hbWFyYW50aGluZS5kcmVhbWVyLzcxMjQxNTA2LTk3ZjctNGE2NS05MGY4LTc5YjYxMjdmNzYyOGQCAQ8PFgIfAgUufi9pbWFnZXMvYXZhdGFycy9jYWNoZS9tZWRpdW1fMTIzMzEwMTIzMzQzLnBuZ2RkAgQPZBYEZg8VAgZ4bWlVeGIsL3htaVV4Yi84ZDE1YzQ5NC00NThkLTQyNWEtYjlhMi1lZGRkYTI3Y2I1YzJkAgEPDxYCHwIFKX4vaW1hZ2VzL2F2YXRhcnMvY2FjaGUvbWVkaXVtX2RlZmF1bHQuZ2lmZGQCBQ9kFgRmDxUCBTU4MnBDKy81ODJwQy82MmU5NDM3My1mNWM4LTQxYzEtYWFmMi1mZDNjZTdmZjRiYjNkAgEPDxYCHwIFKX4vaW1hZ2VzL2F2YXRhcnMvY2FjaGUvbWVkaXVtX2RlZmF1bHQuZ2lmZGQCBg9kFgRmDxUCBnJvbmFsZCwvcm9uYWxkL2E0ZmU1ZjM5LWQxYTMtNDQxYS1hOGRiLTljNzNhNTM5YzI1ZWQCAQ8PFgIfAgUufi9pbWFnZXMvYXZhdGFycy9jYWNoZS9tZWRpdW1fMTIxMTA0MTIxMTIzLmpwZ2RkAgcPZBYEZg8VAgtzb2NpYWxtZWRpYTEvc29jaWFsbWVkaWEvNzdiZDMyOTMtZGFiMi00ZjU4LWI3M2MtNDk3YTU3NTdjYmU0ZAIBDw8WAh8CBSl+L2ltYWdlcy9hdmF0YXJzL2NhY2hlL21lZGl1bV9kZWZhdWx0LmdpZmRkAggPZBYEZg8VAg9pYW12aW5jZW50cmFtb3M1L2lhbXZpbmNlbnRyYW1vcy84NmM5YmEyZS0wNjVjLTQ3YjctOGQxZi0yZTFhYTdlY2ZhMzZkAgEPDxYCHwIFKX4vaW1hZ2VzL2F2YXRhcnMvY2FjaGUvbWVkaXVtX2RlZmF1bHQuZ2lmZGQCCQ9kFgRmDxUCEWFsZWFkcmlhbmEubXVzaWNhNy9hbGVhZHJpYW5hLm11c2ljYS81NTUzZTI4ZS0xNjg3LTRlNjgtOGVhMC02ZTU2YzQ2ZGRjOTFkAgEPDxYCHwIFLn4vaW1hZ2VzL2F2YXRhcnMvY2FjaGUvbWVkaXVtXzEyNDcyNDA1NDc0Ni5qcGdkZAIKD2QWBGYPFQIQU2hlbGx5SGFycmlzMTk3ODYvU2hlbGx5SGFycmlzMTk3OC8zYjMyZmNlOS1mZjEyLTQ0ZTktYTg5YS0zNDhlZmUyNTI3MjRkAgEPDxYCHwIFLn4vaW1hZ2VzL2F2YXRhcnMvY2FjaGUvbWVkaXVtXzEyMTMyMDA5MTM1Mi5qcGdkZAILD2QWBGYPFQIMTWlzdGVyTmV3R3V5Mi9NaXN0ZXJOZXdHdXkvYjZlOGUxOTgtZjViOC00MjdkLTgxZTAtMDQwZWZjZjIyZDZiZAIBDw8WAh8CBS5+L2ltYWdlcy9hdmF0YXJzL2NhY2hlL21lZGl1bV8xMjIzMTgwNTIzNTUuanBnZGQCDA9kFgRmDxUCBWFiYW1hKy9hYmFtYS8zMDI0NGUyNS03YWQxLTQ2MTktYTYzNC1iM2NmNDNjNTIwZmNkAgEPDxYCHwIFKX4vaW1hZ2VzL2F2YXRhcnMvY2FjaGUvbWVkaXVtX2RlZmF1bHQuZ2lmZGQCDQ9kFgRmDxUCB3R6d2N2dnMtL3R6d2N2dnMvMzNiNzMxYjMtN2VlMC00NDllLWIzOTktZDFjYTAyYThiM2I3ZAIBDw8WAh8CBSl+L2ltYWdlcy9hdmF0YXJzL2NhY2hlL21lZGl1bV9kZWZhdWx0LmdpZmRkAg4PZBYEZg8VAg5zdWt1bWFyYW4udHNibDQvc3VrdW1hcmFuLnRzYmwvZjczOWZkYTUtY2M2ZS00ODQwLTk2NTctZTdhMjI3YTJmYjVmZAIBDw8WAh8CBS5+L2ltYWdlcy9hdmF0YXJzL2NhY2hlL21lZGl1bV8xMjQxMTMwOTQxMDAuanBnZGQCDw9kFgRmDxUCBVJoZW5nKy9SaGVuZy80M2ZjYzIxNi0wM2U3LTQyZmYtOTc1ZS0xOThkMGQ4M2NmMWZkAgEPDxYCHwIFLn4vaW1hZ2VzL2F2YXRhcnMvY2FjaGUvbWVkaXVtXzEyMTQxMDExMTQ1Ni5qcGdkZAIQD2QWBGYPFQIKc3BpbmF5MTk5MzAvc3BpbmF5MTk5My9kYmZiMmM0OS1lMWM4LTQ5M2YtODk4ZC1lYTkxMTkxYTZjZmRkAgEPDxYCHwIFLn4vaW1hZ2VzL2F2YXRhcnMvY2FjaGUvbWVkaXVtXzEyMTQxMDExMTQ0MC5qcGdkZAIRD2QWBGYPFQIPY2h1YmJ5Y2hlZWtzMzc0NS9jaHViYnljaGVla3MzNzQvZGFlYzJiZmYtNWRhOC00MDExLWJkMmUtZjNiM2E3ODJhNmQ5ZAIBDw8WAh8CBS5+L2ltYWdlcy9hdmF0YXJzL2NhY2hlL21lZGl1bV8xMjUwMTAwNTUwNDAuanBnZGQCEg9kFgRmDxUCBXd1Zm9vKy93dWZvby9lYWFiZWUxMC01Mjk0LTQwMjctOWNkZS0wOGI4MjVhMmQ2YzdkAgEPDxYCHwIFKX4vaW1hZ2VzL2F2YXRhcnMvY2FjaGUvbWVkaXVtX2RlZmF1bHQuZ2lmZGQCEw9kFgRmDxUCDmlFYXRDcmF5b25zNDEyNC9pRWF0Q3JheW9uczQxMi8wZjBiMGVmYy1lN2YwLTQ3ODUtOTA1Ny0zMmNlZDVhMDQ1OTJkAgEPDxYCHwIFLn4vaW1hZ2VzL2F2YXRhcnMvY2FjaGUvbWVkaXVtXzEyNDAwMjAyNDA0OS5qcGdkZAITD2QWBgICDw8WAh4HRW5hYmxlZGhkZAIDDw8WAh4HVmlzaWJsZWdkZAIEDw8WAh8IaGRkAg4PFgIfAwWOBTxkaXYgc3R5bGU9J3dpZHRoOjEwMCU7IHRleHQtYWxpZ246bGVmdDsgbWFyZ2luLWJvdHRvbToxMHB4OyBmb250LXdlaWdodDpib2xkJz4yMS1GZWItMjAxMiAyOjAwUE08L2Rpdj4NCjxkaXYgc3R5bGU9J3dpZHRoOjEwMCU7IHRleHQtYWxpZ246bGVmdCc+VGVhbSBEd2VsbyB3aWxsIGJlIGdpdmluZyBhIER3ZWxvIFQtc2hpcnQsIHdobyBnZXRzIHRoZSBmaXJzdCAyMCBsaWtlcyBpbiBjb21tZW50LjwvZGl2Pg0KPGRpdiBzdHlsZT0nd2lkdGg6MTAwJTsgYm9yZGVyLWJvdHRvbTogZGFzaGVkIDFweCBncmF5OyBtYXJnaW46MTBweCAwcHggMTBweCAwcHgnPjwvZGl2Pg0KPGRpdiBzdHlsZT0nd2lkdGg6MTAwJTsgdGV4dC1hbGlnbjpsZWZ0OyBtYXJnaW4tYm90dG9tOjEwcHg7IGZvbnQtd2VpZ2h0OmJvbGQnPjIyLUZlYi0yMDEyIDM6MDBBTTwvZGl2Pg0KPGRpdiBzdHlsZT0nd2lkdGg6MTAwJTsgdGV4dC1hbGlnbjpsZWZ0Jz5Ed2VsbyB3aWxsIHNvb24gcmVsZWFzaW5nIHRoZSBuZXh0IHVwZGF0ZXMuIFRoYW5rcyB0byBhbGwgYW5kIEtlZXAgb24gc3VwcG9ydGluZyB1cy48L2Rpdj4NCjxkaXYgc3R5bGU9J3dpZHRoOjEwMCU7IGJvcmRlci1ib3R0b206IGRhc2hlZCAxcHggZ3JheTsgbWFyZ2luOjEwcHggMHB4IDEwcHggMHB4Jz48L2Rpdj4NCmQYAgUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFNWN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkUmFuZG9tUG9zdENvbnRyb2wxJGNoa0FncmVlBSVjdGwwMCRQcm9maWxlTmF2Q29udHJvbDEkbXZOYXZBY2NvdW50Dw9kZmR07Wp3TaOKLqfa8zW8/SbyovSaEV8VpDkf8TaEDYHRlQ==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./Dwelo_files/WebResource.axd" type="text/javascript"></script>
+
+
+<script src="./Dwelo_files/ScriptResource.axd" type="text/javascript"></script>
+<script src="./Dwelo_files/ScriptResource(1).axd" type="text/javascript"></script>
+<script src="./Dwelo_files/ScriptResource(2).axd" type="text/javascript"></script>
+<script src="./Dwelo_files/ScriptResource(3).axd" type="text/javascript"></script>
+<script src="./Dwelo_files/ScriptResource(4).axd" type="text/javascript"></script>
+<script src="./Dwelo_files/ScriptResource(5).axd" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+var PageMethods = function() {
+PageMethods.initializeBase(this);
+this._timeout = 0;
+this._userContext = null;
+this._succeeded = null;
+this._failed = null;
+}
+PageMethods.prototype = {
+_get_path:function() {
+ var p = this.get_path();
+ if (p) return p;
+ else return PageMethods._staticInstance.get_path();},
+CommentBoxControl1Clicked:function(postid,message,commenttype,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'CommentBoxControl1Clicked',false,{postid:postid,message:message,commenttype:commenttype},succeededCallback,failedCallback,userContext); }}
+PageMethods.registerClass('PageMethods',Sys.Net.WebServiceProxy);
+PageMethods._staticInstance = new PageMethods();
+PageMethods.set_path = function(value) { PageMethods._staticInstance.set_path(value); }
+PageMethods.get_path = function() { return PageMethods._staticInstance.get_path(); }
+PageMethods.set_timeout = function(value) { PageMethods._staticInstance.set_timeout(value); }
+PageMethods.get_timeout = function() { return PageMethods._staticInstance.get_timeout(); }
+PageMethods.set_defaultUserContext = function(value) { PageMethods._staticInstance.set_defaultUserContext(value); }
+PageMethods.get_defaultUserContext = function() { return PageMethods._staticInstance.get_defaultUserContext(); }
+PageMethods.set_defaultSucceededCallback = function(value) { PageMethods._staticInstance.set_defaultSucceededCallback(value); }
+PageMethods.get_defaultSucceededCallback = function() { return PageMethods._staticInstance.get_defaultSucceededCallback(); }
+PageMethods.set_defaultFailedCallback = function(value) { PageMethods._staticInstance.set_defaultFailedCallback(value); }
+PageMethods.get_defaultFailedCallback = function() { return PageMethods._staticInstance.get_defaultFailedCallback(); }
+PageMethods.set_enableJsonp = function(value) { PageMethods._staticInstance.set_enableJsonp(value); }
+PageMethods.get_enableJsonp = function() { return PageMethods._staticInstance.get_enableJsonp(); }
+PageMethods.set_jsonpCallbackParameter = function(value) { PageMethods._staticInstance.set_jsonpCallbackParameter(value); }
+PageMethods.get_jsonpCallbackParameter = function() { return PageMethods._staticInstance.get_jsonpCallbackParameter(); }
+PageMethods.set_path("default.aspx");
+PageMethods.CommentBoxControl1Clicked= function(postid,message,commenttype,onSuccess,onFailed,userContext) {PageMethods._staticInstance.CommentBoxControl1Clicked(postid,message,commenttype,onSuccess,onFailed,userContext); }
+function WebForm_OnSubmit() {
+null;if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWDwL6jNmTAwLE5ML0AgLlivnWDwLorf7SBwLG1IXgCALdkKjHBAKZvKLXCQLG9dqkBAK1tLjTCAKxzZW3AgKNoerwDwK9nMaGDAKR48XZAgKFt7ygBgLp7OOQDlXFbHolcvJPYMxI1mU7f3ZSyC/ENoMQM/A8PbZO4RVP">
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'form1', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            checkNotification();
+            // other method
+            //(function poll() {
+            //    $.ajax({ url: 'http://localhost:999/dwelo/Components/NotificationWebservice.aspx', success: '', dataType: 'json', complete: callComplete, timeout: 30000
+            //    });
+            //})();
+        });
+
+        function checkNotification() {
+            var webserviceurl = '/Components/NotificationWebservice.aspx';
+            setTimeout(function () {
+                $.post(webserviceurl, {}, callComplete, 'json');
+            }, 5000);
+        }
+
+        function callComplete(response) {
+            if (response != null) {
+                for (i = 0; i < response.length; i++) {
+                    if (response[i] != null) {
+                        var filename = response[i].ImageUrl.replace('~/', '');
+                        var imageurl = '/param'.replace('param', filename);
+                        var message = response[i].Message;
+                        if (message != '') {
+                            $(document).ready(function () {
+                                $.gritter.add({
+                                    title: 'Notification',
+                                    text: message,
+                                    image: imageurl,
+                                    sticky: false,
+                                    time: ''
+                                });
+                            });
+                        }
+
+                        //$().toastmessage('showDweloNotification', response[i].Username + ' agreed in your topic', url);
+                    }
+                }
+            }
+
+            checkNotification();
+        }
+
+    </script>
+    <div class="topbar" data-dropdown="dropdown">
+        <div class="fill">
+            <div class="container">
+                <a id="lnkLogo" class="brand" href="./Dwelo_files/Dwelo.html"><img src="./Dwelo_files/logo.png" alt=""></a>
+                <div class="pull-left" style="margin-top: 5px">
+                    <input name="ctl00$txtSearch" type="text" id="txtSearch" class="watermark">
+                    <input type="hidden" name="ctl00$tweSearch_ClientState" id="tweSearch_ClientState">
+                </div>
+                <div class="pull-right">
+                    
+        <ul>
+            <li><a href="http://dwelo.com/login" id="ProfileNavControl1_lnkLogin">Sign in</a></li>
+            <li><a href="http://dwelo.com/signup" id="ProfileNavControl1_lnkSignUp">Sign up</a> </li>
+            <li><a href="http://dwelo.com/find-friends" id="ProfileNavControl1_lnkFindFriends">Find Friends</a></li>
+            <li><a href="./Dwelo_files/Dwelo.html" id="ProfileNavControl1_lnkHome">Home</a></li>
+        </ul>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /topbar -->
+    <div class="container">
+        <div class="content">
+            
+            
+    <div id="ContentPlaceHolder1_SignupBarControl1_divSignupBar" class="alert-message block-message warning signup-bar">
+    <ul>
+        <li>Ask questions, share opinions &amp; make friends today!&nbsp;</li>
+        <li>
+            <a id="ContentPlaceHolder1_SignupBarControl1_lnkbtnFBLogin" class="facebook-signup" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ContentPlaceHolder1$SignupBarControl1$lnkbtnFBLogin", "", true, "", "", false, true))">Sign up with Facebook</a>&nbsp; </li>
+        <li>
+            <a id="ContentPlaceHolder1_SignupBarControl1_lnkbtnTwitterLogin" class="twitter-signup" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ContentPlaceHolder1$SignupBarControl1$lnkbtnTwitterLogin", "", true, "", "", false, true))">Sign up with Twitter</a></li>
+        <li>or <a href="http://dwelo.com/signup" id="ContentPlaceHolder1_SignupBarControl1_A1">join manually</a> </li>
+    </ul>
+</div>
+
+    <div class="row">
+        <div class="span7 mini-layout">
+            
+<script type="text/javascript" language="javascript">
+        function pageLoad(sender, args) {
+            BindEvents();
+        }
+
+        function BindEvents() {
+            $(document).ready(function () {
+                $("#ContentPlaceHolder1_OpinionBoxControl1_txtOpinion").charCount({
+                    id: 'opinion-counter',
+                    allowed: 400,
+                    warning: 100
+                });
+
+                var limit = 400; 
+                $("#ContentPlaceHolder1_OpinionBoxControl1_txtOpinion").keyup(function() {
+                    var len = $(this).val().length;
+                    if (len > limit) {
+                        this.value = this.value.substring(0, limit);
+                    }
+                });
+
+                $.validator.addMethod('notEqual', function (value, element, param) {
+                 return value != param;  
+                }, 'Please enter your message in opinion box!'); 
+
+                $("#form1").validate({
+                    rules: {
+                        ctl00$ContentPlaceHolder1$OpinionBoxControl1$txtOpinion: {
+                            required: true,
+                            notEqual: "Hi share an opinion...",
+                            equalTo: $("#ContentPlaceHolder1_OpinionBoxControl1_txtOpinion")
+                        }
+                    },
+                    messages: {
+                        ctl00$ContentPlaceHolder1$OpinionBoxControl1$txtOpinion: {
+                            required: "Please enter you message in opinion box!"
+                        }
+                    },
+                    errorElement: "li",
+                    submitHandler: function(form) {
+                        form.submit();
+                    }
+                });
+
+                $("#ContentPlaceHolder1_OpinionBoxControl1_txtOpinion").Watermark("Hi share an opinion...");
+                $("#ContentPlaceHolder1_OpinionBoxControl1_txtLeftOption").Watermark("Agree");
+                $("#ContentPlaceHolder1_OpinionBoxControl1_txtRightOption").Watermark("Disagree");
+
+                });
+        }
+
+    function showImageUploader() {        
+        $("#fileupload").css({ 'display': 'block' });
+        $("#ContentPlaceHolder1_OpinionBoxControl1_lnkAddAnImage").css({ 'display': 'none' });
+    }
+
+    $.ClearFileUpload = function (fileUploadControlId) {
+        try {
+            document.getElementById(fileUploadControlId).innerHTML = document.getElementById(fileUploadControlId).innerHTML;
+            $(fileUploadControlId).focus();
+        } catch (e) {
+            //alert(e.Description);
+        }
+    }
+
+</script>
+<div class="counterBox">
+    <textarea name="ctl00$ContentPlaceHolder1$OpinionBoxControl1$txtOpinion" rows="2" cols="20" id="ContentPlaceHolder1_OpinionBoxControl1_txtOpinion" style="height: 75px; width: 352px; color: rgb(170, 170, 170); "></textarea>
+    <div style="padding-top:2px;display:inline-block;float:none;width:auto;margin-left:0;">
+        <input name="ctl00$ContentPlaceHolder1$OpinionBoxControl1$txtLeftOption" type="text" maxlength="20" id="ContentPlaceHolder1_OpinionBoxControl1_txtLeftOption" style="width: 158px; text-align: center; color: rgb(170, 170, 170); ">
+        <b>vs.</b>
+        <input name="ctl00$ContentPlaceHolder1$OpinionBoxControl1$txtRightOption" type="text" maxlength="20" id="ContentPlaceHolder1_OpinionBoxControl1_txtRightOption" style="width: 158px; text-align: center; color: rgb(170, 170, 170); ">       
+    </div>
+    <div style="padding-top: 10px">
+        <a id="ContentPlaceHolder1_OpinionBoxControl1_lnkAddAnImage" onclick="showImageUploader();">Add an image</a>
+        <p id="fileupload" style="display: none; margin-bottom:20px; border-bottom:1px dashed gray">          
+            <span id="ContentPlaceHolder1_OpinionBoxControl1_Lbl">Select an image file on your computer:</span>
+            <input type="file" name="ctl00$ContentPlaceHolder1$OpinionBoxControl1$FileUploadImage" id="ContentPlaceHolder1_OpinionBoxControl1_FileUploadImage" style="width:280px;">
+            <a href="http://dwelo.com/#" id="btnFileClear" onclick="javascript:$.ClearFileUpload(&#39;fileupload&#39;);">clear</a>
+            <span id="ContentPlaceHolder1_OpinionBoxControl1_RegularExpressionValidator1" class="error" style="font-weight:bold;visibility:hidden;">Please upload a JPG, GIF, or a PNG. format</span>
+            <span id="ContentPlaceHolder1_OpinionBoxControl1_LblMsg" style="color:Red;"></span>
+        </p>                
+        <div class="pull-right">
+            <span id="opinion-counter" class="counter">400</span>
+            <input type="submit" name="ctl00$ContentPlaceHolder1$OpinionBoxControl1$btnSubmitOpinion" value="Post" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$OpinionBoxControl1$btnSubmitOpinion&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ContentPlaceHolder1_OpinionBoxControl1_btnSubmitOpinion" class="btn primary" style="width:68px;">
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div class="span7 mini-layout">
+            
+<script language="javascript" type="text/javascript">
+    function setType(val) {
+        document.getElementById('ContentPlaceHolder1_RandomPostControl1_chkAgree').checked = val;
+    }
+</script>
+<div style="position:relative; height:168px">
+    <div style="display:none">
+    <input id="ContentPlaceHolder1_RandomPostControl1_chkAgree" type="checkbox" name="ctl00$ContentPlaceHolder1$RandomPostControl1$chkAgree">
+    </div>
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$RandomPostControl1$hdnPostID" id="ContentPlaceHolder1_RandomPostControl1_hdnPostID" value="bef7eba8-2395-478d-ad12-37da59b93fd0">
+    <div class="media-grid pull-left">
+        <a href="http://dwelo.com/miguel5/0f7384b8-a68b-4008-a9d0-8d1163bb2d07" id="ContentPlaceHolder1_RandomPostControl1_lnkUserImage" style="margin-right: 10px;">
+            <img id="ContentPlaceHolder1_RandomPostControl1_imgUserImage" src="./Dwelo_files/medium_121014071021.jpg">
+        </a>
+    </div>
+    <div>
+        <p>
+            <b><a href="http://dwelo.com/miguel5/0f7384b8-a68b-4008-a9d0-8d1163bb2d07" id="ContentPlaceHolder1_RandomPostControl1_lnkUser"><span id="ContentPlaceHolder1_RandomPostControl1_lblUser">miguel5</span></a> thinks...</b></p>
+        <p>
+            <a href="http://dwelo.com/debate/picture-of-a-girl-posing-on-a-wooden-cross-okay-or/bef7eba8-2395-478d-ad12-37da59b93fd0" id="ContentPlaceHolder1_RandomPostControl1_lnkMessage" rel="twipsy" style="color:#404040" title="Picture of a girl posing on a wooden cross. okay or not okay?">
+                <span id="ContentPlaceHolder1_RandomPostControl1_lblMessage">Picture of a girl posing on a wooden cross. okay or not okay?</span>
+            </a>
+        </p>
+    </div>
+    <div style="position: absolute; bottom: 0; right: 0">
+        <input type="submit" name="ctl00$ContentPlaceHolder1$RandomPostControl1$btnAgree" value="okay" onclick="setType(true);WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$RandomPostControl1$btnAgree&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ContentPlaceHolder1_RandomPostControl1_btnAgree" class="btn success" data-controls-modal="modal-from-dom-comment" data-backdrop="true" data-keyboard="true">
+        <input type="submit" name="ctl00$ContentPlaceHolder1$RandomPostControl1$btnDisagree" value="not okay" onclick="setType(false);WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ContentPlaceHolder1$RandomPostControl1$btnDisagree&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ContentPlaceHolder1_RandomPostControl1_btnDisagree" class="btn danger" data-controls-modal="modal-from-dom-comment" data-backdrop="true" data-keyboard="true">
+    </div>
+</div>
+        </div>
+    </div>
+    <div class="page-header-list">
+        <h4>
+            New Debates</h4>
+    </div>
+    <div class="row clearfix">
+        
+                <div class="span14 light-border clickable">
+                    <div class="media-grid pull-left">
+                        <a id="lnkUserImage" href="http://dwelo.com/Robocop/8ca394bd-109f-400c-842e-8126051b38f4" rel="profile">
+                            <img id="ContentPlaceHolder1_RepeaterRecordList_imgUserImage_0" class="thumbnail" alt="" src="./Dwelo_files/medium_123713013700.jpg"></a>
+                    </div>
+                    <div class="pull-left" style="margin-left: 14px; width: 600px">
+                        <p>
+                            <a id="lnkUser" href="http://dwelo.com/Robocop/8ca394bd-109f-400c-842e-8126051b38f4" rel="profile">
+                                <span id="ContentPlaceHolder1_RepeaterRecordList_lblUser_0">Robocop</span></a>
+                        </p>
+                        <p>
+                            <a id="lnkMessage" rel="twipsy" href="http://dwelo.com/debate/bakbakan-sa-naia-sino-ang-nagsasabi-ng-totoo-tulfo/54040bdb-db1b-4cd4-a94c-620a12614ae1" style="color: #404040" data-original-title="Bakbakan sa NAIA... Sino ang nagsasabi ng totoo, Tulfo vs Santiago...">
+                                <span id="ContentPlaceHolder1_RepeaterRecordList_lblMessage_0">Bakbakan sa NAIA... Sino ang nagsasabi ng totoo, Tulfo vs Santiago...</span></a>
+                            <small>
+                                <span id="ContentPlaceHolder1_RepeaterRecordList_lblDays_0">5 days ago</span></small></p>
+                    </div>
+                    <div class="alert-message block-message error pull-right" style="width: 20px">
+                        <span id="ContentPlaceHolder1_RepeaterRecordList_lblDisAgree_0">0</span>
+                    </div>
+                    <div class="alert-message block-message success pull-right" style="width: 20px; margin-right: 10px">
+                        <span id="ContentPlaceHolder1_RepeaterRecordList_lblAgree_0">1</span>
+                    </div>
+                </div>
+            
+                <div class="span14 light-border clickable">
+                    <div class="media-grid pull-left">
+                        <a id="lnkUserImage" href="http://dwelo.com/iamvincentramos/86c9ba2e-065c-47b7-8d1f-2e1aa7ecfa36" rel="profile">
+                            <img id="ContentPlaceHolder1_RepeaterRecordList_imgUserImage_1" class="thumbnail" alt="" src="./Dwelo_files/medium_default.gif"></a>
+                    </div>
+                    <div class="pull-left" style="margin-left: 14px; width: 600px">
+                        <p>
+                            <a id="lnkUser" href="http://dwelo.com/iamvincentramos/86c9ba2e-065c-47b7-8d1f-2e1aa7ecfa36" rel="profile">
+                                <span id="ContentPlaceHolder1_RepeaterRecordList_lblUser_1">iamvincentramos</span></a>
+                        </p>
+                        <p>
+                            <a id="lnkMessage" rel="twipsy" href="http://dwelo.com/debate/transgenders-must-be-allowed-in-miss-universe-page/94f4f448-b2c9-4503-a082-f72bdbe21dcf" style="color: #404040" data-original-title="Transgenders must be allowed in Miss Universe Pageant. Agree or Disagree?">
+                                <span id="ContentPlaceHolder1_RepeaterRecordList_lblMessage_1">Transgenders must be allowed in Miss Universe Pageant. Agree or Disagree?</span></a>
+                            <small>
+                                <span id="ContentPlaceHolder1_RepeaterRecordList_lblDays_1">19 days ago</span></small></p>
+                    </div>
+                    <div class="alert-message block-message error pull-right" style="width: 20px">
+                        <span id="ContentPlaceHolder1_RepeaterRecordList_lblDisAgree_1">0</span>
+                    </div>
+                    <div class="alert-message block-message success pull-right" style="width: 20px; margin-right: 10px">
+                        <span id="ContentPlaceHolder1_RepeaterRecordList_lblAgree_1">0</span>
+                    </div>
+                </div>
+            
+                <div class="span14 light-border clickable">
+                    <div class="media-grid pull-left">
+                        <a id="lnkUserImage" href="http://dwelo.com/abama/30244e25-7ad1-4619-a634-b3cf43c520fc" rel="profile">
+                            <img id="ContentPlaceHolder1_RepeaterRecordList_imgUserImage_2" class="thumbnail" alt="" src="./Dwelo_files/medium_default.gif"></a>
+                    </div>
+                    <div class="pull-left" style="margin-left: 14px; width: 600px">
+                        <p>
+                            <a id="lnkUser" href="http://dwelo.com/abama/30244e25-7ad1-4619-a634-b3cf43c520fc" rel="profile">
+                                <span id="ContentPlaceHolder1_RepeaterRecordList_lblUser_2">abama</span></a>
+                        </p>
+                        <p>
+                            <a id="lnkMessage" rel="twipsy" title="I think it is imporsible to fine a beatiful girl to marry from the web." href="http://dwelo.com/debate/i-think-it-is-imporsible-to-fine-a-beatiful-girl-t/2b9bab14-3f43-48cf-bee5-adc7e6a08b8c" style="color: #404040">
+                                <span id="ContentPlaceHolder1_RepeaterRecordList_lblMessage_2">I think it is imporsible to fine a beatiful girl to marry from the web.</span></a>
+                            <small>
+                                <span id="ContentPlaceHolder1_RepeaterRecordList_lblDays_2">27 days ago</span></small></p>
+                    </div>
+                    <div class="alert-message block-message error pull-right" style="width: 20px">
+                        <span id="ContentPlaceHolder1_RepeaterRecordList_lblDisAgree_2">0</span>
+                    </div>
+                    <div class="alert-message block-message success pull-right" style="width: 20px; margin-right: 10px">
+                        <span id="ContentPlaceHolder1_RepeaterRecordList_lblAgree_2">0</span>
+                    </div>
+                </div>
+            
+                <div class="span14 light-border clickable">
+                    <div class="media-grid pull-left">
+                        <a id="lnkUserImage" href="http://dwelo.com/Pau/2691435e-db50-409c-a740-f5a498943755" rel="profile">
+                            <img id="ContentPlaceHolder1_RepeaterRecordList_imgUserImage_3" class="thumbnail" alt="" src="./Dwelo_files/medium_123726083732.jpg"></a>
+                    </div>
+                    <div class="pull-left" style="margin-left: 14px; width: 600px">
+                        <p>
+                            <a id="lnkUser" href="http://dwelo.com/Pau/2691435e-db50-409c-a740-f5a498943755" rel="profile">
+                                <span id="ContentPlaceHolder1_RepeaterRecordList_lblUser_3">Pau</span></a>
+                        </p>
+                        <p>
+                            <a id="lnkMessage" rel="twipsy" title="Survey lang, Jose Manalo vs Vice Ganda?" href="http://dwelo.com/debate/survey-lang-jose-manalo-vs-vice-ganda/e6fbdb7d-01ef-4ca3-9542-722d4405b14e" style="color: #404040">
+                                <span id="ContentPlaceHolder1_RepeaterRecordList_lblMessage_3">Survey lang, Jose Manalo vs Vice Ganda?</span></a>
+                            <small>
+                                <span id="ContentPlaceHolder1_RepeaterRecordList_lblDays_3">28 days ago</span></small></p>
+                    </div>
+                    <div class="alert-message block-message error pull-right" style="width: 20px">
+                        <span id="ContentPlaceHolder1_RepeaterRecordList_lblDisAgree_3">0</span>
+                    </div>
+                    <div class="alert-message block-message success pull-right" style="width: 20px; margin-right: 10px">
+                        <span id="ContentPlaceHolder1_RepeaterRecordList_lblAgree_3">1</span>
+                    </div>
+                </div>
+            
+                <div class="span14 light-border clickable">
+                    <div class="media-grid pull-left">
+                        <a id="lnkUserImage" href="http://dwelo.com/Jetro/dab643b9-f7c2-44c7-be30-2c8700c8ec15" rel="profile">
+                            <img id="ContentPlaceHolder1_RepeaterRecordList_imgUserImage_4" class="thumbnail" alt="" src="./Dwelo_files/medium_122513062531.jpg"></a>
+                    </div>
+                    <div class="pull-left" style="margin-left: 14px; width: 600px">
+                        <p>
+                            <a id="lnkUser" href="http://dwelo.com/Jetro/dab643b9-f7c2-44c7-be30-2c8700c8ec15" rel="profile">
+                                <span id="ContentPlaceHolder1_RepeaterRecordList_lblUser_4">Jetro</span></a>
+                        </p>
+                        <p>
+                            <a id="lnkMessage" rel="twipsy" title="Kontra-DURA isasabatas... OK ba to o hindi OK?" href="http://dwelo.com/debate/kontra-dura-isasabatas-ok-ba-to-o-hindi-ok/2e8e256c-545f-4a11-8f2e-444afeddc95e" style="color: #404040">
+                                <span id="ContentPlaceHolder1_RepeaterRecordList_lblMessage_4">Kontra-DURA isasabatas... OK ba to o hindi OK?</span></a>
+                            <small>
+                                <span id="ContentPlaceHolder1_RepeaterRecordList_lblDays_4">32 days ago</span></small></p>
+                    </div>
+                    <div class="alert-message block-message error pull-right" style="width: 20px">
+                        <span id="ContentPlaceHolder1_RepeaterRecordList_lblDisAgree_4">0</span>
+                    </div>
+                    <div class="alert-message block-message success pull-right" style="width: 20px; margin-right: 10px">
+                        <span id="ContentPlaceHolder1_RepeaterRecordList_lblAgree_4">2</span>
+                    </div>
+                </div>
+            
+    </div>
+    <div class="row">
+        <div class="span7">
+            <div class="page-header-list">
+                <h4>
+                    Active Debates</h4>
+            </div>
+            <div>
+                
+                        <div class="span7 light-border clickable">
+                            <p style="white-space: nowrap">
+                                <a id="lnkMessage" rel="twipsy" title="Bakbakan sa NAIA... Sino ang nagsasabi ng totoo, Tulfo vs Santiago..." href="http://dwelo.com/debate/bakbakan-sa-naia-sino-ang-nagsasabi-ng-totoo-tulfo/54040bdb-db1b-4cd4-a94c-620a12614ae1" style="color: #404040;">
+                                    Bakbakan sa NAIA... Sino ang nagsasabi ng totoo, Tulfo vs Sa..</a></p>
+                        </div>
+                    
+                        <div class="span7 light-border clickable">
+                            <p style="white-space: nowrap">
+                                <a id="lnkMessage" rel="twipsy" title="It&#39;s more fun in the Philippines! Agree?" href="http://dwelo.com/debate/its-more-fun-in-the-philippines-agree/3e1b505d-ce6b-4458-be3c-4081581249fc" style="color: #404040;">
+                                    It's more fun in the Philippines! Agree?</a></p>
+                        </div>
+                    
+                        <div class="span7 light-border clickable">
+                            <p style="white-space: nowrap">
+                                <a id="lnkMessage" rel="twipsy" title="Kontra-DURA isasabatas... OK ba to o hindi OK?" href="http://dwelo.com/debate/kontra-dura-isasabatas-ok-ba-to-o-hindi-ok/2e8e256c-545f-4a11-8f2e-444afeddc95e" style="color: #404040;">
+                                    Kontra-DURA isasabatas... OK ba to o hindi OK?</a></p>
+                        </div>
+                    
+                        <div class="span7 light-border clickable">
+                            <p style="white-space: nowrap">
+                                <a id="lnkMessage" rel="twipsy" title="mas maganda ang ONE PIECE kesa NARUTO..." href="http://dwelo.com/debate/mas-maganda-ang-one-piece-kesa-naruto/57e45fc9-dc06-4fab-a033-ce9dbb98843b" style="color: #404040;">
+                                    mas maganda ang ONE PIECE kesa NARUTO...</a></p>
+                        </div>
+                    
+                        <div class="span7 light-border clickable">
+                            <p style="white-space: nowrap">
+                                <a id="lnkMessage" rel="twipsy" title="Dapat ba tayong yumukod o manalangin sa mga imahen, mga larawan, o mga sagisag sa ating pagsamba?" href="http://dwelo.com/debate/dapat-ba-tayong-yumukod-o-manalangin-sa-mga-imahen/5d852665-0a7d-4853-80ad-a775649a03bb" style="color: #404040;">
+                                    Dapat ba tayong yumukod o manalangin sa mga imahen, mga lara..</a></p>
+                        </div>
+                    
+            </div>
+            <div id="ContentPlaceHolder1_divMoreActiveDebates" class="pull-right" style="margin-top: 10px">
+                <p>
+                    <a href="http://dwelo.com/results/activedebates" id="ContentPlaceHolder1_lnkActiveDebates">More active debates...</a></p>
+            </div>
+        </div>
+        <div class="span7">
+            <div class="page-header-list">
+                <h4>
+                    Popular Debates</h4>
+            </div>
+            <div>
+                
+                        <div class="span7 light-border clickable">
+                            <p style="white-space: nowrap">
+                                <a id="lnkMessage" href="http://dwelo.com/debate/nakaka-sira-ng-trabaho-ang-facebook-agree-o-disagr/cccf09e7-1552-4f81-96c2-127fc5cb699d" rel="twipsy" title="Nakaka-sira ng trabaho ang facebook. Agree o Disagree??" style="color: #404040">
+                                    Nakaka-sira ng trabaho ang facebook. Agree o Disagree??</a></p>
+                        </div>
+                    
+                        <div class="span7 light-border clickable">
+                            <p style="white-space: nowrap">
+                                <a id="lnkMessage" href="http://dwelo.com/debate/nakakasira-ng-barkada-ang-trabaho/5397a3de-569c-4ba6-8bd5-21472abf5ccf" rel="twipsy" title="Nakakasira ng Barkada ang trabaho.." style="color: #404040">
+                                    Nakakasira ng Barkada ang trabaho..</a></p>
+                        </div>
+                    
+                        <div class="span7 light-border clickable">
+                            <p style="white-space: nowrap">
+                                <a id="lnkMessage" href="http://dwelo.com/debate/mas-maganda-ang-one-piece-kesa-naruto/57e45fc9-dc06-4fab-a033-ce9dbb98843b" rel="twipsy" title="mas maganda ang ONE PIECE kesa NARUTO..." style="color: #404040">
+                                    mas maganda ang ONE PIECE kesa NARUTO...</a></p>
+                        </div>
+                    
+                        <div class="span7 light-border clickable">
+                            <p style="white-space: nowrap">
+                                <a id="lnkMessage" href="http://dwelo.com/debate/noynoy-pinakawalang-kwentang-presidente-ng-pilipin/a728b0d4-14bc-44db-9aa2-740be499e06f" rel="twipsy" title="Noynoy pinakawalang kwentang presidente ng Pilipinas!" style="color: #404040">
+                                    Noynoy pinakawalang kwentang presidente ng Pilipinas!</a></p>
+                        </div>
+                    
+                        <div class="span7 light-border clickable">
+                            <p style="white-space: nowrap">
+                                <a id="lnkMessage" href="http://dwelo.com/debate/mas-maraming-corrupt-ang-opisyal-ng-gobyerno-natin/2f8464a2-6a93-47d0-af45-0cc22f6e7415" rel="twipsy" title="Mas maraming corrupt ang opisyal ng gobyerno natin...." style="color: #404040">
+                                    Mas maraming corrupt ang opisyal ng gobyerno natin....</a></p>
+                        </div>
+                    
+            </div>
+            <div id="ContentPlaceHolder1_divMoreNewDebates" class="pull-right" style="margin-top: 10px">
+                <p>
+                    <a href="http://dwelo.com/results/newdebates" id="ContentPlaceHolder1_lnkNewDebates">More new debates...</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="page-header">
+        <h4>
+            Active Members</h4>
+    </div>
+    <div class="row">
+        <div class="span14">
+            
+<ul id="active-members" class="media-grid">
+    <span id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts"><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="pauldhmayorga" href="http://dwelo.com/pauldhmayorga/83e2beae-575a-497e-97fa-0c9ab6278f57">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_0" class="thumbnail" src="./Dwelo_files/medium_122814062806.jpg"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="Eventhorizon" href="http://dwelo.com/Eventhorizon/91800422-26d9-42f2-9562-a4c71d606618">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_1" class="thumbnail" src="./Dwelo_files/medium_122213082209.jpg"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="georgeqbowning" href="http://dwelo.com/georgeqbowning/bae89751-46c7-478d-a7c9-478a295fad7d">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_2" class="thumbnail" src="./Dwelo_files/medium_123111063140.gif"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="amaranthine.dreamer" href="http://dwelo.com/amaranthine.dreamer/71241506-97f7-4a65-90f8-79b6127f7628">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_3" class="thumbnail" src="./Dwelo_files/medium_123310123343.png"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="xmiUxb" href="http://dwelo.com/xmiUxb/8d15c494-458d-425a-b9a2-eddda27cb5c2">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_4" class="thumbnail" src="./Dwelo_files/medium_default.gif"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="582pC" href="http://dwelo.com/582pC/62e94373-f5c8-41c1-aaf2-fd3ce7ff4bb3">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_5" class="thumbnail" src="./Dwelo_files/medium_default.gif"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="ronald" href="http://dwelo.com/ronald/a4fe5f39-d1a3-441a-a8db-9c73a539c25e">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_6" class="thumbnail" src="./Dwelo_files/medium_121104121123.jpg"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="socialmedia" href="http://dwelo.com/socialmedia/77bd3293-dab2-4f58-b73c-497a5757cbe4">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_7" class="thumbnail" src="./Dwelo_files/medium_default.gif"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="iamvincentramos" href="http://dwelo.com/iamvincentramos/86c9ba2e-065c-47b7-8d1f-2e1aa7ecfa36">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_8" class="thumbnail" src="./Dwelo_files/medium_default.gif"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="aleadriana.musica" href="http://dwelo.com/aleadriana.musica/5553e28e-1687-4e68-8ea0-6e56c46ddc91">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_9" class="thumbnail" src="./Dwelo_files/medium_124724054746.jpg"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="ShellyHarris1978" href="http://dwelo.com/ShellyHarris1978/3b32fce9-ff12-44e9-a89a-348efe252724">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_10" class="thumbnail" src="./Dwelo_files/medium_121320091352.jpg"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="MisterNewGuy" href="http://dwelo.com/MisterNewGuy/b6e8e198-f5b8-427d-81e0-040efcf22d6b">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_11" class="thumbnail" src="./Dwelo_files/medium_122318052355.jpg"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="abama" href="http://dwelo.com/abama/30244e25-7ad1-4619-a634-b3cf43c520fc">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_12" class="thumbnail" src="./Dwelo_files/medium_default.gif"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="tzwcvvs" href="http://dwelo.com/tzwcvvs/33b731b3-7ee0-449e-b399-d1ca02a8b3b7">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_13" class="thumbnail" src="./Dwelo_files/medium_default.gif"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="sukumaran.tsbl" href="http://dwelo.com/sukumaran.tsbl/f739fda5-cc6e-4840-9657-e7a227a2fb5f">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_14" class="thumbnail" src="./Dwelo_files/medium_124113094100.jpg"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="Rheng" href="http://dwelo.com/Rheng/43fcc216-03e7-42ff-975e-198d0d83cf1f">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_15" class="thumbnail" src="./Dwelo_files/medium_121410111456.jpg"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="spinay1993" href="http://dwelo.com/spinay1993/dbfb2c49-e1c8-493f-898d-ea91191a6cfd">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_16" class="thumbnail" src="./Dwelo_files/medium_121410111440.jpg"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="chubbycheeks374" href="http://dwelo.com/chubbycheeks374/daec2bff-5da8-4011-bd2e-f3b3a782a6d9">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_17" class="thumbnail" src="./Dwelo_files/medium_125010055040.jpg"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="wufoo" href="http://dwelo.com/wufoo/eaabee10-5294-4027-9cde-08b825a2d6c7">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_18" class="thumbnail" src="./Dwelo_files/medium_default.gif"></a>
+            </li>
+        </span><span>
+            <li><a id="lnkUserImage" rel="twipsy" title="iEatCrayons412" href="http://dwelo.com/iEatCrayons412/0f0b0efc-e7f0-4785-9057-32ced5a04592">
+                <img id="ContentPlaceHolder1_ActiveMembersControl1_DataListAccounts_imgUser_19" class="thumbnail" src="./Dwelo_files/medium_124002024049.jpg"></a>
+            </li>
+        </span></span>
+</ul>
+
+        </div>
+    </div>
+    
+<script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+        $("#ContentPlaceHolder1_CommentBoxControl1_txtComment").charCount({
+            id: 'comment-counter',
+            allowed: 200,
+            warning: 100,
+            counterText: 'Characters left: '
+        });
+    });
+</script>
+<input type="hidden" name="ctl00$ContentPlaceHolder1$CommentBoxControl1$HdnId" id="ContentPlaceHolder1_CommentBoxControl1_HdnId">
+<div id="modal-from-dom-comment" class="modal hide fade">
+    <div class="modal-header">
+        <a href="http://dwelo.com/#" class="close">×</a>
+    </div>
+    <div class="modal-body">        
+        <h4><span id="ContentPlaceHolder1_CommentBoxControl1_lblTitle">What can you say?</span></h4>
+        <textarea name="ctl00$ContentPlaceHolder1$CommentBoxControl1$txtComment" rows="2" cols="20" id="ContentPlaceHolder1_CommentBoxControl1_txtComment" disabled="disabled" class="aspNetDisabled" style="height:80px;width:520px;"></textarea>
+        <p style="height:20px"></p>
+        <br>
+        <div id="ContentPlaceHolder1_CommentBoxControl1_pnlRequireSignIn">
+	
+        <a href="http://dwelo.com/login">Sign in</a> to post a comment, or <a href="http://dwelo.com/signup">Sign up</a> for a free account.
+</div>
+    </div>
+    <div class="modal-footer">
+        <div class="counterBox">            
+            <div class="pull-right">                                                        
+                
+            </div>       
+            <div class="pull-right"><span id="comment-counter" class="counter">200</span></div>
+        </div>
+    </div>
+</div>
+
+            <hr>
+            <div class="row" id="footer">
+                <div class="span2">
+                    <img src="./Dwelo_files/dwelo-logo.png" id="Img1" width="120">
+                </div>
+                <div class="span3">
+                    <ul class="footer-column social_links">
+                        <li class="footer-social header">Follow us on:</li>
+                        <li class="footer-items"><a target="blank" rel="nofollow" class="facebook" href="http://www.facebook.com/pages/Dwelo/231000433635370">
+                            Facebook</a></li>
+                        <li class="footer-items"><a target="blank" rel="nofollow" class="twitter" href="https://twitter.com/#!/dweloteam">
+                            Twitter</a></li>
+                        <li class="footer-items"><a target="blank" rel="nofollow" class="google-plus" href="https://plus.google.com/109529451275429083059">
+                            Google+</a></li>
+                        <li class="footer-items"><a target="blank" rel="nofollow" class="youtube" href="http://www.youtube.com/user/cjitsystems">
+                            YouTube</a></li>
+                    </ul>
+                </div>
+                <div class="span4" style="border-right: 1px solid #DDDDDD">
+                    <ul class="footer-column">
+                        <li class="footer-general header">Site:</li>
+                        <li class="footer-items"><a href="http://dwelo.com/about" id="A2">About</a> </li>
+                        <li class="footer-items"><a href="http://dwelo.com/contact" id="A3">Contact Us</a></li>
+                        <li class="footer-items"><a href="./Dwelo_files/Dwelo.html" id="A4">Blog</a></li>
+                        <li class="footer-items"><a href="http://dwelo.com/api" id="A5">Developers</a> </li>
+                        <li class="footer-items"><a href="http://dwelo.com/terms" id="A6">Terms of Service</a></li>
+                        <li class="footer-items"><a href="http://dwelo.com/privacy" id="A7">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="span5">
+                    <div style="float: right">
+                        <p>
+                            Dwelo is a social networking site where people can hold conversations in the form
+                            of debating.
+                        </p>
+                        <p>
+                            Copyright © 2012 Dwelo. All rights reserved.<br>
+                            <a href="http://www.cjitsystems.com/" target="_blank">Site by CJIT Systems</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="announcement-box" class="announcement-box-container announcement-box-bottom-right">
+        <div class="announcement-box-title">
+            <img style="float: left; padding-left: 5px" src="./Dwelo_files/announcement-dwelo-logo.gif" width="20px" height="20px">
+            <img id="announcement-close" style="float: right; padding-right: 2px; cursor: pointer" src="./Dwelo_files/announcement-close.gif" width="10px" height="10px">
+            <p>
+                &nbsp;Bulletin Board</p>
+        </div>
+        <div class="announcement-box-item">
+            <div style="width:100%; text-align:left; margin-bottom:10px; font-weight:bold">21-Feb-2012 2:00PM</div>
+<div style="width:100%; text-align:left">Team Dwelo will be giving a Dwelo T-shirt, who gets the first 20 likes in comment.</div>
+<div style="width:100%; border-bottom: dashed 1px gray; margin:10px 0px 10px 0px"></div>
+<div style="width:100%; text-align:left; margin-bottom:10px; font-weight:bold">22-Feb-2012 3:00AM</div>
+<div style="width:100%; text-align:left">Dwelo will soon releasing the next updates. Thanks to all and Keep on supporting us.</div>
+<div style="width:100%; border-bottom: dashed 1px gray; margin:10px 0px 10px 0px"></div>
+
+        </div>
+    </div>
+    <div id="announcement-bar" class="announcement-bar-container announcement-bar-bottom-right">
+        <div class="announcement-bar">
+            <img class="announcement-bar-image" src="./Dwelo_files/announcement-dwelo-logo.gif" width="20px" height="20px">
+            <p>
+                Announcement</p>
+        </div>
+    </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ContentPlaceHolder1_OpinionBoxControl1_RegularExpressionValidator1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ContentPlaceHolder1_OpinionBoxControl1_RegularExpressionValidator1 = document.all ? document.all["ContentPlaceHolder1_OpinionBoxControl1_RegularExpressionValidator1"] : document.getElementById("ContentPlaceHolder1_OpinionBoxControl1_RegularExpressionValidator1");
+ContentPlaceHolder1_OpinionBoxControl1_RegularExpressionValidator1.controltovalidate = "ContentPlaceHolder1_OpinionBoxControl1_FileUploadImage";
+ContentPlaceHolder1_OpinionBoxControl1_RegularExpressionValidator1.errormessage = "Please upload a JPG, GIF, or a PNG. format";
+ContentPlaceHolder1_OpinionBoxControl1_RegularExpressionValidator1.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+ContentPlaceHolder1_OpinionBoxControl1_RegularExpressionValidator1.validationexpression = ".*(\\.[Jj][Pp][Gg]|\\.[Gg][Ii][Ff]|\\.[Jj][Pp][Ee][Gg]|\\.[Pp][Nn][Gg])";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.TextBoxWatermarkBehavior, {"ClientStateFieldID":"tweSearch_ClientState","WatermarkCssClass":"watermark","WatermarkText":"Search","id":"tweSearch"}, null, null, $get("txtSearch"));
+});
+
+document.getElementById('ContentPlaceHolder1_OpinionBoxControl1_RegularExpressionValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ContentPlaceHolder1_OpinionBoxControl1_RegularExpressionValidator1'));
+}
+//]]>
+</script>
+</form>
+    <script type="text/javascript">
+        var uvOptions = {};
+        (function () {
+            var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+            uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/zjXu1DTIqAS6moUD6rQ.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+        })();
+    </script>
+    <!-- /uservoice -->
+
+
+
+<iframe src="./Dwelo_files/Dwelo.html" frameborder="0" style="border: 0px; z-index: 2147483647; position: fixed; width: 100%; left: 0px; bottom: 0px; height: 300px; visibility: visible; display: none; " id="FirebugUI"></iframe></body><script src="chrome-extension://bmagokdooijbeehmkpknfglimnifench/firebug-lite.js" id="FirebugLite" firebugignore="true" extension="Chrome"></script><script src="chrome-extension://bmagokdooijbeehmkpknfglimnifench/googleChrome.js"></script></html>

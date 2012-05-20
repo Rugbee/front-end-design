@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>John Smith - Rugbee</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- TODO - description, keyword, author -->
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Le styles -->
+<link href="../../css/bootstrap.css" rel="stylesheet">
+<style>
+body {
+	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+	background-color:#FFF;
+}
+</style>
+<link href="../../css/bootstrap-responsive.css" rel="stylesheet">
+<style>
+.gray-border {
+	border: 1px #CCCCCC solid;
+}
+.show-grid [class*="span"] {
+	background-color: #EEEEEE;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	line-height: 30px;
+	min-height: 30px;
+	text-align: center;
+}
+
+
+.footer {
+	border-top-color: #E5E5E5;
+	border-top-style: solid;
+	border-top-width: 1px;
+	margin-top: 45px;
+	padding: 35px 0 36px;
+	margin: 20px 40px 0 40px;
+}
+h2 {
+	margin-bottom: .5em;
+}
+
+
+ul.inline-list li {
+	display: inline;
+	list-style: none;
+}
+
+ul.thumb-list {
+   list-style-type: none; 
+}
+
+ul.thumb-list li {
+   position: relative;
+/*   margin: 5px; 
+   padding: 5px;*/
+   min-height: 80px;
+
+   /* min-height fix for IE6.  Ideally this would be in an IE6 only stylesheet */
+   height: auto !important;
+   height: 80px;
+}
+
+ul.thumb-list li img {
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 70px;
+   height: 44px;        
+}
+
+ul.thumb-list li div {       
+   padding: 0 0 0 80px; /* Makes room for the image so it doesn't overlap text */
+}
+
+
+/* 
+RUGBEE THEME 
+__________________________________________ */
+
+/* navbar */
+.navbar, .navbar-inner {
+	background-color: #fff; 
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
+}
+.navbar-inner .container,
+.navbar-inner .container a,
+.navbar-inner .container a.brand {
+	background-color: #FFF;
+	 background-image:none;
+	color:#999;
+}
+.navbar {
+  color:#FFF;
+}
+
+.navbar .nav > li > a {
+  text-shadow:none;
+}
+.navbar .nav > li > a:hover {
+  color:#000;
+}
+
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover {
+  color:#000;
+  text-decoration: none;
+}
+
+</style>
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Le fav and touch icons -->
+<!-- TODO - add touch and favicons 
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="#">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="#">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="#">
+    <link rel="apple-touch-icon-precomposed" href="#"> -->
+
+<script>
+$(function() {
+ 
+});
+</script>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#">Rugbee</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li><a href="#">Activity</a></li>
+          <li class="active dropdown"><a href="#" class="dropdown-toggle"
+          data-toggle="dropdown">Projects <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">BigHawk Landing Page</a></li>
+              <li><a href="#">BigHawk Signup</a></li>
+              <li><a href="#">NiteRider Demo</a></li>
+              <li><a href="#">NiteRider Checkout</a></li>
+              <li><a href="#">Another Project</a></li>
+              <li><a href="#">Another Project</a></li>
+              <li class="divider"></li>
+              <li><a href="#">New Project...</a></li>
+            </ul>
+          </li>
+          <li><a href="#about">Teams</a></li>
+        </ul>
+        
+        <!-- user-account -->
+        <ul class="nav pull-right" id="user-account">
+          <li class="dropdown"> <a href="#"
+          class="dropdown-toggle"
+          data-toggle="dropdown"><i class="icon-user"></i> John Smith <b class="caret"></b> </a>
+            <ul class="dropdown-menu">
+              <li> <a href="#">Profile</a> </li>
+              <li> <a href="#">Sign Out</a> </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- /user-account --> 
+      </div>
+      <!--/.nav-collapse --> 
+    </div>
+  </div>
+</div>
+<!-- /HEADER -->
+
+<div class="container">
+  <div class="row">
+    <div id="page-header" class="page-header span12">
+      <div id="page-actions" class="btn-group pull-right">
+        <button class="btn">Share</button>
+        <button class="btn">Contribute</button>
+        <button class="btn">Edit</button>
+      </div>
+      <!-- /page-actions-->
+      <h1>Bighawk - Signup flow</h1>
+  
+    </div>
+    <!-- /page-header--> 
+  </div>
+  <!-- /row-->
+  <div id="content" class="row">
+    <div id="main-content" class="span8">
+      <ul id="project-views"class="nav nav-tabs">
+        <li class="active"><a href="#feed" data-toggle="tab">Feed</a></li>
+        <li><a href="#images" data-toggle="tab">Images</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="feed">
+          <ul class="unstyled thumb-list">
+            <li> <img src="http://placehold.it/80x60" alt="update image">
+              <div><a href="#">@all</a> I've replaced the glyph icon with a lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada porta lacinia. Fusce quis odio sed neque vehicula vestibulum vitae at ante.</div>
+            </li>
+            <li> <img src="http://placehold.it/80x60" alt="update image">
+              <div><a href="#">@all</a> I've replaced the glyph icon with a lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada porta lacinia. Fusce quis odio sed neque vehicula vestibulum vitae at ante.</div>
+            </li>
+            <li> <img src="http://placehold.it/80x60" alt="update image">
+              <div><a href="#">@all</a> I've replaced the glyph icon with a lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada porta lacinia. Fusce quis odio sed neque vehicula vestibulum vitae at ante.</div>
+            </li>
+            <li> <img src="http://placehold.it/80x60" alt="update image">
+              <div><a href="#">@all</a> I've replaced the glyph icon with a lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada porta lacinia. Fusce quis odio sed neque vehicula vestibulum vitae at ante.</div>
+            </li>
+          </ul>
+        </div>
+        <!-- /feed-->
+        <div class="tab-pane" id="images">
+         <ul class="thumbnails">
+                <li class="span2"> <a href="#" class="thumbnail"> <img src="http://placehold.it/260x180" alt=""> </a> </li>
+        <li class="span2"> <a href="#" class="thumbnail"> <img src="http://placehold.it/260x180" alt=""> </a> </li>
+        <li class="span2"> <a href="#" class="thumbnail"> <img src="http://placehold.it/260x180" alt=""> </a> </li>
+        <li class="span2"> <a href="#" class="thumbnail"> <img src="http://placehold.it/260x180" alt=""> </a> </li>
+        <li class="span2"> <a href="#" class="thumbnail"> <img src="http://placehold.it/260x180" alt=""> </a> </li>
+        <li class="span2"> <a href="#" class="thumbnail"> <img src="http://placehold.it/260x180" alt=""> </a> </li>
+        <li class="span2"> <a href="#" class="thumbnail"> <img src="http://placehold.it/260x180" alt=""> </a> </li>
+        <li class="span2"> <a href="#" class="thumbnail"> <img src="http://placehold.it/260x180" alt=""> </a> </li>
+        <li class="span2"> <a href="#" class="thumbnail"> <img src="http://placehold.it/260x180" alt=""> </a> </li>
+        <li class="span2"> <a href="#" class="thumbnail"> <img src="http://placehold.it/260x180" alt=""> </a> </li>
+        <li class="span2"> <a href="#" class="thumbnail"> <img src="http://placehold.it/260x180" alt=""> </a> </li>
+        <li class="span2"> <a href="#" class="thumbnail"> <img src="http://placehold.it/260x180" alt=""> </a> </li>
+        <li class="span2"> <a href="#" class="thumbnail"> <img src="http://placehold.it/260x180" alt=""> </a> </li>
+        <li class="span2"> <a href="#" class="thumbnail"> <img src="http://placehold.it/260x180" alt=""> </a> </li>
+      </ul>
+        
+        </div>
+        <!-- /images--> 
+      </div>
+      <!-- /tab-content--> 
+      
+    </div>
+    <!-- /main-content -->
+    
+    <div id="related-content" class="span4">
+           <ul>
+                <li>[Caption]</li>
+                 <li>[Notes]</li>
+                  <li>[Filename]</li>
+                   <li>[History]</li>
+                    <li>[Tags]</li>
+                    <li>[Team]</li>
+      
+      </ul>
+   
+    </div>
+    <!-- /related-content --> 
+    
+  </div>
+  <!-- /content --> 
+  
+</div>
+<!-- /container --> 
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p class="pull-right"> <a href="#">Back to top</a> </p>
+  <p> &copy; 2012 SnapShare, Inc. </p>
+</footer>
+<!-- /FOOTER --> 
+
+<!-- Le javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="../../js/jquery.js"></script> 
+<script src="../../js/bootstrap-transition.js"></script> 
+<script src="../../js/bootstrap-alert.js"></script> 
+<script src="../../js/bootstrap-modal.js"></script> 
+<script src="../../js/bootstrap-dropdown.js"></script> 
+<script src="../../js/bootstrap-scrollspy.js"></script> 
+<script src="../../js/bootstrap-tab.js"></script> 
+<script src="../../js/bootstrap-tooltip.js"></script> 
+<script src="../../js/bootstrap-popover.js"></script> 
+<script src="../../js/bootstrap-button.js"></script> 
+<script src="../../js/bootstrap-collapse.js"></script> 
+<script src="../../js/bootstrap-carousel.js"></script> 
+<script src="../../js/bootstrap-typeahead.js"></script>
+</body>
+</html>
