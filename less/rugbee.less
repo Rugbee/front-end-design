@@ -1,0 +1,230 @@
+@charset "UTF-8";
+/* ************************************
+
+RUGBEE THEME
+
+************************************ */
+
+/* IMPORT TWITTER BOOSTRAP
+____________________________________________ */
+@import "bootstrap/bootstrap.less";
+
+/* VARIABLES
+____________________________________________ */
+@navbarBackground:#fff;
+@navbarText:#000;
+@navbarLinkColor:#000;
+@fadedGray:#E6E6E6;
+
+
+/* MIXINS
+____________________________________________ */
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+
+/* GLOBAL
+____________________________________________ */
+body {
+	padding-top: 60px; 
+	background-color: #FFF;
+}
+
+/* CONTENT BLOCKS
+____________________________________________ */
+.navbar {
+	background-color: #fff;
+	background-image: none;
+	background-repeat: no-repeat;
+	filter: none;
+}
+.navbar-inner {
+	background-color: #fff;
+	background-image: none;
+	background-repeat: no-repeat;
+	filter: none;
+	
+	.container, .container a,.container a.brand {
+		background-color: #FFF;
+		background-image: none;
+		color: #999;
+	}
+}
+
+.navbar {
+	color: #FFF;
+	
+	.nav > li > a {
+		text-shadow: none;
+	}
+	.nav > li > a:hover {
+		color: #000;
+	}
+	
+	.nav .active > a, .navbar .nav .active > a:hover {
+		color: #000;
+		text-decoration: none;
+	}
+}
+.footer {
+	border-top-color: #E5E5E5;
+	border-top-style: solid;
+	border-top-width: 1px;
+	margin-top: 45px;
+	padding: 35px 0 36px;
+	margin: 20px 40px 0 40px;
+}
+
+/* HEADINGS
+____________________________________________ */
+h1 {
+	font-size:2em;
+}
+h2 {
+	margin-bottom: .5em;
+}
+
+/* BUTTONS
+____________________________________________ */
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover {
+  color:#000;
+  background-color:#E6E6E6;
+}
+
+/* LISTS
+____________________________________________ */
+ul.inline-list li, ol.inline-list li {
+	display: inline;
+	list-style: none;
+}
+
+
+/* optimized for 80px wide thumbnails */
+ol.thumb-list {
+	/*list-style-type: none;*/
+
+	li {
+		position: relative;
+		min-height: 70px;
+		border-bottom:#CCC solid 1px;
+		padding-bottom:10px;
+		margin-bottom:10px;
+		
+			img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width:auto;
+			height:auto;
+			}
+			
+			p {
+			padding: 0 0 0 70px;
+			}
+			
+		}
+  
+}
+
+
+/* DISCUSSION
+____________________________________________ */
+.speech-bubble {
+	background:@fadedGray;
+.rounded-corners;
+padding: 5px;
+
+	.callout-left {
+		border-color:transparent @fadedGray transparent transparent;
+		border-style:solid;
+		border-width:20px;
+		width:0;
+		height:0;
+	}
+}
+
+
+/* MISC.
+____________________________________________ */
+.divider-top {
+	border-top:1px solid #CCC;
+	padding-top:5px;
+	margin-top:5px;
+}
+
+
+/* ARCHIVE
+____________________________________________ */
+/*.meta-info {
+	color:#999;
+	
+	a {
+	color:#A8CCE8;
+	}
+
+}
+
+.gray-border {
+	border: 1px #CCCCCC solid;
+}
+.show-grid [class*="span"] {
+	background-color: #EEEEEE;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	line-height: 30px;
+	min-height: 30px;
+	text-align: center;
+	
+	ol.button-list, ul.button-list {
+	list-style: none;
+
+	li {
+		
+		button {
+			width:100%;
+			position: relative;
+			min-height:80px;
+		
+		img {
+			position: absolute;
+			left: 0;
+			top: 0;	
+		}
+		p {
+		
+			padding: 0 0 0 80px;
+			
+		}
+		
+		
+		}
+		position: relative;
+		min-height: 80px;
+		border-bottom:#CCC solid 1px;
+		padding-bottom:10px;
+		margin-bottom:10px;
+		
+			.thumb-list-thumb {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width:auto;
+			height:auto;
+			}
+			
+			.thumb-list-content {
+			padding: 0 0 0 80px;
+			}
+			
+		}
+  
+}
+
+
+}*/
