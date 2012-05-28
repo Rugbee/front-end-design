@@ -133,20 +133,123 @@ ol.thumb-list {
 
 /* DISCUSSION
 ____________________________________________ */
-.speech-bubble {
+
+ol.discussion-thread {
+	list-style:none;
+	margin-left:0;
+	/*width:100%;*/
+
+  & > li {
+	  position:relative;
+	  min-height:100px;
+	  
+	.comment-info {
+		position:absolute;
+		  left:0;
+		  top:0;	 
+	
+	} //.comment-info
+
+
+	blockquote {
+		position: relative;
+	margin: 0 0 0 80px;
+		padding: 5px 15px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-left:none;
+		background-color:#E6E6E6;
+	word-wrap: break-word;
+	min-height:30px;
+	
+	   p.comment-content {
+		  margin: 0;
+		  font-size:14px;
+		  font-weight:normal;
+		  color:#000;
+	  }
+	
+	  &:after {
+		  content: "\00a0"; 
+		  display: block;
+		  position: absolute;
+		  top: 10px;
+		  left: -15px; 
+		  width: 0;
+		  height: 0;
+		  border-width: 10px 20px 10px 0;
+		  border-style: solid;
+		  border-color: transparent #E6E6E6 transparent transparent;
+	  }
+	
+	} // blockquote
+	
+	
+	
+	  } // li
+} //.discussion-thread
+
+/*.ie8 .comment-meta img {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.9961946980917455, M12=0.08715574274765817, M21=-0.08715574274765817, M22=0.9961946980917455)";
+	position: relative;
+	top: -5px;
+	left: -5px;
+}*/
+/*h4 {
+	margin: 0;
+	font-size: 100%;
+	font-weight: normal;
+	line-height: 1;
+}*/
+
+
+
+/*ul.discussion-thread, ol.discussion-thread {
+	
+	.speech-bubble {
 	background:@fadedGray;
 .rounded-corners;
 padding: 5px;
-
-	.callout-left {
+}
+	.speaker{
+		
+	}
+	
+	.bubble-callout-left {
 		border-color:transparent @fadedGray transparent transparent;
 		border-style:solid;
 		border-width:20px;
 		width:0;
 		height:0;
 	}
+}*/
+
+.hashtag {
+	border-bottom:dashed 1px #09F;
+	
+	&:hover {
+		text-decoration:none;
+	border-bottom:dashed 1px #000;
+	}
+	
+	&:before {
+	content:"#\"";
+	color:09F;
+	}
+	&:after {
+	content:"\"";
+	color:#09F;
+	}
+	
 }
 
+
+/* IMAGES
+____________________________________________ */
+.image-title {
+	display:inline-block;
+	margin:10px 0;
+}
 
 /* MISC.
 ____________________________________________ */
