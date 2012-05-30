@@ -16,6 +16,10 @@ ____________________________________________ */
 @navbarLinkColor:#000;
 @fadedGray:#E6E6E6;
 
+.full-width {
+	width:100%;
+}
+
 
 /* MIXINS
 ____________________________________________ */
@@ -134,33 +138,40 @@ ol.thumb-list {
 /* DISCUSSION
 ____________________________________________ */
 
-ol.discussion-thread {
+ol.discussion-thread, ul.discussion-thread {
 	list-style:none;
 	margin-left:0;
-	/*width:100%;*/
 
   & > li {
 	  position:relative;
-	  min-height:100px;
+	  min-height:60px;
 	  
 	.comment-info {
 		position:absolute;
 		  left:0;
-		  top:0;	 
+		  top:0;	
+		  
+		  .commenter-name {
+			  font-size:10px;
+		  }
 	
 	} //.comment-info
 
 
 	blockquote {
 		position: relative;
-	margin: 0 0 0 80px;
+	margin: 0 0 0 65px;
 		padding: 5px 15px;
 		-moz-border-radius: 10px;
 		-webkit-border-radius: 10px;
 		border-left:none;
-		background-color:#E6E6E6;
+		background-color:#EDEDED;
 	word-wrap: break-word;
 	min-height:30px;
+	
+	.alternate {
+		background-color:#E3F9B1;
+	}
 	
 	   p.comment-content {
 		  margin: 0;
@@ -177,9 +188,9 @@ ol.discussion-thread {
 		  left: -15px; 
 		  width: 0;
 		  height: 0;
-		  border-width: 10px 20px 10px 0;
+		  border-width: 8px 16px 8px 0;
 		  border-style: solid;
-		  border-color: transparent #E6E6E6 transparent transparent;
+		  border-color: transparent #EDEDED transparent transparent;
 	  }
 	
 	} // blockquote
@@ -188,6 +199,43 @@ ol.discussion-thread {
 	
 	  } // li
 } //.discussion-thread
+
+form.discussion-contribute {
+	.speech-bubble {
+	position: relative;
+	margin: 0 0 0 65px;
+		padding: 5px 15px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		background-color:#EDEDED;
+	word-wrap: break-word;
+	min-height:30px;
+	
+	
+	textarea {
+		width:89%;
+	}
+	.add-images {
+		width:9%;
+		float:right;
+	}
+	
+	 &:after {
+		  content: "\00a0"; 
+		  display: block;
+		  position: absolute;
+		  top: 10px;
+		  left: -15px; 
+		  width: 0;
+		  height: 0;
+		  border-width: 8px 16px 8px 0;
+		  border-style: solid;
+		  border-color: transparent #EDEDED transparent transparent;
+	  }
+	
+	} //speech-bubble
+	
+}
 
 /*.ie8 .comment-meta img {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.9961946980917455, M12=0.08715574274765817, M21=-0.08715574274765817, M22=0.9961946980917455)";
