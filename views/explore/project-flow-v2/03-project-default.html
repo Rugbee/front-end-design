@@ -11,6 +11,8 @@
 <link rel="stylesheet/less" href="../../../less/rugbee/global.less" type="text/css" />
 <link rel="stylesheet/less" href="../../../less/rugbee/discussion.less" type="text/css" />
 <script src="../../../less/less.js" type="text/javascript"></script>
+<!--<script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>-->
+
 </head>
 
 <body>
@@ -56,21 +58,31 @@
   
   <div class="row">
     <div class="span12">
-      <ol class="discussion-thread">
-        <li><div class="comment-info">  <img src="../../../img/Glyphish/Pro/GlyphishPro/icons/icons-gray/253-person@2x.png" alt="" width="40">
+    <ol class="discussion-thread">
+             <li>
+    <div class="post-home is-view">
+    <img class="member-photo photo" src="../../../img/Glyphish/Pro/GlyphishPro/icons/icons-gray/253-person@2x.png" alt="" width="50">
             <p class="commenter-name">John S.</p>
-          </div><form class="discussion-contribute" action="04-initial-post.html"><div class="speech-bubble">
-  <textarea class="input-xlarge" id="textarea" rows="3" placeholder="Contribute..."></textarea> <button type="submit" class="btn add-images"><i class="icon-camera"></i> Add Images</button>
-   <!--<button type="submit" class="btn">Post</button><button type="button" class="btn">Cancel</button>-->
-  </div><!-- /.speech-bubble -->
-</form>
+            <div id="post-module" class="post-module">
+              <div class="post-module-in">
+                <form action="04-initial-post.html" id="share-form" class="post">
+                   <span class="error" id="postText-postModuleForm-error"></span>
+                  <textarea rows="2" cols="40" class="post-message" placeholder="Contribute to this project...
+"></textarea><div class="post-actions">
+                    <div id="attach"> <a href="#">Add files...</a> </div>
+                    <div class="submit">
+                      <input type="submit" name="" value="Share" class="btn-primary" id="share-submit">
+                    </div>
+                  </div>
+       
+                </form>
+              </div>
+            </div>
+          </div>
         </li>
-        
       </ol>
       <!-- /.discussion-thread -->
-      
-      
-    </div>
+   </div>
     <!-- /.span --> 
   </div>
   <!-- /.row --> 
