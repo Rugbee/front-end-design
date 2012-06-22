@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(1168)http://cdn.lmodules.com/opensocial/ifr?url=http%3A%2F%2Fevents%2Elinkedin%2Ecom%2Fgadget%2Exml&mid=30&appId=2000&view=home&lang=en&ownerinapp=1289809&country=US&viewerAccess=true&baseLeoNonSecureURL=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2F&ownerProfileUrl=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fprofile%2Fview%3Fid%3D1&st=linkedin%3AdPlcyR0ZtfUAODzldXv_BEEPuynsP6Pa5xGgLy7i2NWk6_D-5QZkeQRHIve6mLKg5E7Nvgijr76khTwEgNztN8FRqkA8zFbSn5hl6nZELTIG5U5rTV5fPHd9AxBpmaLqBiOVSTkY7RtUylSn2exW6XzQs39FOOY_IHy_n_dP2A88A0p_FqShaypN9qbbzhmryL65no1BvmWwt3yXzf-vN6zOxcFl9kyNh2vlnaoFUa5zMHV6eytznjnHK3opWn_xgzO_R32YUpcAkyq4fRNwMi8Xp-MZ7dnO1iqHS6BjyDyY8Hnx&container=default&libs=dynamic-height%3Asettitle%3Aviews%3Aopensocial-0%2E9&parent=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2F&urlToCanvasView=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fosview%2Fcanvas%3F_ch_page_id%3D1%26_ch_panel_id%3D1%26_ch_app_id%3D30%26_applicationId%3D2000&signedUrlToCanvasView=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fosview%2Fcanvas%3F_ch_page_id%3D1%26_ch_panel_id%3D1%26_ch_app_id%3D30%26_applicationId%3D2000%26_ownerId%3D1289809%26osUrlHash%3D8vPk&v=build-2000_1_19859-prod#rpctoken=1542299183&rpcname=panel-01-slot-30-remote -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="dynamic-height-opensocial-0.9-settitle-views.js"></script><script>opensocial.DataRequest.prototype.newUpdatePersonAppDataRequest_09=opensocial.DataRequest.prototype.newUpdatePersonAppDataRequest;
+opensocial.DataRequest.prototype.newUpdatePersonAppDataRequest=function(C,A,B){if(C!==opensocial.IdSpec.PersonId.VIEWER){throw Error("Cannot update app data for person "+C)
+}return this.newUpdatePersonAppDataRequest_09(A,B)
+};
+opensocial.DataRequest.prototype.newRemovePersonAppDataRequest_09=opensocial.DataRequest.prototype.newRemovePersonAppDataRequest;
+opensocial.DataRequest.prototype.newRemovePersonAppDataRequest=function(B,A){if(B!==opensocial.IdSpec.PersonId.VIEWER){throw Error("Cannot remove app data for person "+B)
+}return this.newRemovePersonAppDataRequest_09(A)
+};;
+var shindig=shindig||{};
+shindig.Auth=function(){var authToken=null;
+var trusted=null;
+function addParamsToToken(urlParams){var args=authToken.split("&");
+for(var i=0;
+i<args.length;
+i++){var nameAndValue=args[i].split("=");
+if(nameAndValue.length===2){var name=nameAndValue[0];
+var value=nameAndValue[1];
+if(value==="$"){value=encodeURIComponent(urlParams[name]);
+args[i]=name+"="+value
+}}}authToken=args.join("&")
+}function init(configuration){var urlParams=gadgets.util.getUrlParameters();
+var config=configuration["shindig.auth"]||{};
+if(config.authToken){authToken=config.authToken
+}else{if(urlParams.st){authToken=urlParams.st
+}}if(authToken!==null){addParamsToToken(urlParams)
+}if(config.trustedJson){trusted=eval("("+config.trustedJson+")")
+}}gadgets.config.register("shindig.auth",null,init);
+return{getSecurityToken:function(){return authToken
+},updateSecurityToken:function(newToken){authToken=newToken
+},getTrustedData:function(){return trusted
+}}
+};;
+var shindig=shindig||{};
+shindig.auth=new shindig.Auth();;
+var JSON=window.JSON||gadgets.json;
+var _IG_Prefs=(function(){var A=null;
+var B=function(){if(!A){A=new gadgets.Prefs();
+A.setDontEscape_()
+}return A
+};
+B._parseURL=gadgets.Prefs.parseUrl;
+return B
+})();
+function _IG_Fetch_wrapper(B,A){B(A.data?A.data:"")
+}function _IG_FetchContent(B,G,C){var F=C||{};
+if(F.refreshInterval){F.REFRESH_INTERVAL=F.refreshInterval
+}else{F.REFRESH_INTERVAL=3600
+}for(var E in F){var D=F[E];
+delete F[E];
+F[E.toUpperCase()]=D
+}var A=gadgets.util.makeClosure(null,_IG_Fetch_wrapper,G);
+gadgets.io.makeRequest(B,A,F)
+}function _IG_FetchXmlContent(B,E,C){var D=C||{};
+if(D.refreshInterval){D.REFRESH_INTERVAL=D.refreshInterval
+}else{D.REFRESH_INTERVAL=3600
+}D.CONTENT_TYPE="DOM";
+var A=gadgets.util.makeClosure(null,_IG_Fetch_wrapper,E);
+gadgets.io.makeRequest(B,A,D)
+}function _IG_FetchFeedAsJSON(B,F,C,A,D){var E=D||{};
+E.CONTENT_TYPE="FEED";
+E.NUM_ENTRIES=C;
+E.GET_SUMMARIES=A;
+gadgets.io.makeRequest(B,function(J){J.data=J.data||{};
+if(J.errors&&J.errors.length>0){J.data.ErrorMsg=J.errors[0]
+}if(J.data.link){J.data.URL=B
+}if(J.data.title){J.data.Title=J.data.title
+}if(J.data.description){J.data.Description=J.data.description
+}if(J.data.link){J.data.Link=J.data.link
+}if(J.data.items&&J.data.items.length>0){J.data.Entry=J.data.items;
+for(var H=0;
+H<J.data.Entry.length;
+++H){var I=J.data.Entry[H];
+I.Title=I.title;
+I.Link=I.link;
+I.Summary=I.summary||I.description;
+I.Date=I.pubDate
+}}for(var G=0;
+G<J.data.Entry.length;
+++G){var I=J.data.Entry[G];
+I.Date=(I.Date/1000)
+}F(J.data)
+},E)
+}function _IG_GetCachedUrl(A,B){var C=B||{};
+C.REFRESH_INTERVAL=3600;
+if(C.refreshInterval){C.REFRESH_INTERVAL=C.refreshInterval
+}return gadgets.io.getProxyUrl(A,C)
+}function _IG_GetImageUrl(A,B){return _IG_GetCachedUrl(A,B)
+}function _IG_GetImage(B){var A=document.createElement("img");
+A.src=_IG_GetCachedUrl(B);
+return A
+}function _IG_RegisterOnloadHandler(A){gadgets.util.registerOnLoadHandler(A)
+}function _IG_Callback(B,C){var A=arguments;
+return function(){var D=Array.prototype.slice.call(arguments);
+B.apply(null,D.concat(Array.prototype.slice.call(A,1)))
+}
+}var _args=gadgets.util.getUrlParameters;
+function _gel(A){return document.getElementById?document.getElementById(A):null
+}function _gelstn(A){if(A==="*"&&document.all){return document.all
+}return document.getElementsByTagName?document.getElementsByTagName(A):[]
+}function _gelsbyregex(D,F){var C=_gelstn(D);
+var E=[];
+for(var B=0,A=C.length;
+B<A;
+++B){if(F.test(C[B].id)){E.push(C[B])
+}}return E
+}function _esc(A){return window.encodeURIComponent?encodeURIComponent(A):escape(A)
+}function _unesc(A){return window.decodeURIComponent?decodeURIComponent(A):unescape(A)
+}function _hesc(A){return gadgets.util.escapeString(A)
+}function _striptags(A){return A.replace(/<\/?[^>]+>/g,"")
+}function _trim(A){return A.replace(/^\s+|\s+$/g,"")
+}function _toggle(A){A=(typeof A==="string")?_gel(A):A;
+if(A!==null){if(A.style.display.length===0||A.style.display==="block"){A.style.display="none"
+}else{if(A.style.display==="none"){A.style.display="block"
+}}}}var _global_legacy_uidCounter=0;
+function _uid(){return _global_legacy_uidCounter++
+}function _min(B,A){return(B<A?B:A)
+}function _max(B,A){return(B>A?B:A)
+}function _exportSymbols(A,C){var I=window;
+var F=A.split(".");
+for(var H=0,G=F.length;
+H<G;
+H++){var B=F[H];
+I[B]=I[B]||{};
+I=I[B]
+}for(var E=0,D=C.length;
+E<D;
+E+=2){I[C[E]]=C[E+1]
+}};;
+var linkedin={};
+linkedin.Person={};
+linkedin.IdSpec={};
+linkedin.IdSpec.PersonId={IMPLICIT:"0"};
+linkedin.Person.Field={NETWORK_DISTANCE:"personNetworkDistance",NUM_CONNECTIONS:"personNumConnections",TETHERED_ACCOUNTS:"accounts"};;
+var opensocial=opensocial||{};
+opensocial.data=opensocial.data||{};
+opensocial.data.DataContext=function(){var E=[];
+var B={};
+var A=function(I,K,J){if(typeof K==="undefined"||K===null){return 
+}B[I]=K;
+if(!(J===false)){C(I)
+}};
+var G=function(K,O,M,N){var I=!!M;
+var L={keys:{},callback:O,oneTime:I};
+if(typeof K==="string"){L.keys[K]=true;
+if(K!="*"){K=[K]
+}}else{for(var J=0;
+J<K.length;
+J++){L.keys[K[J]]=true
+}}E.push(L);
+if(N&&K!=="*"&&H(L.keys)){window.setTimeout(function(){F(L,K)
+},1)
+}};
+var H=function(J){if(J["*"]){return true
+}for(var I in J){if(typeof B[I]==="undefined"){return false
+}}return true
+};
+var F=function(J,I){if(H(J.keys)){J.callback(I);
+if(J.oneTime){D(J)
+}}};
+var D=function(J){for(var I=0;
+I<E.length;
+++I){if(E[I]==J){E.splice(I,1);
+return 
+}}};
+var C=function(L){if(typeof (L)=="string"){L=[L]
+}for(var K=0;
+K<E.length;
+++K){var M=E[K];
+for(var I=0;
+I<L.length;
+I++){var J=L[I];
+if(M.keys[J]||M.keys["*"]){F(M,L);
+break
+}}}};
+return{getData:function(){var J={};
+for(var I in B){if(B.hasOwnProperty(I)){J[I]=B[I]
+}}return J
+},registerListener:function(I,J){G(I,J,false,true)
+},registerOneTimeListener_:function(I,J){G(I,J,true,true)
+},registerDeferredListener_:function(I,J){G(I,J,false,false)
+},getDataSet:function(I){return B[I]
+},putDataSet:function(I,J){A(I,J,true)
+},putDataSets:function(I){var K=[];
+for(var J in I){K.push(J);
+A(J,I[J],false)
+}C(K)
+}}
+}();
+opensocial.data.getDataContext=function(){return opensocial.data.DataContext
+};;
+gadgets.config.init({"shindig.auth":{},"osapi.services":{"gadgets.rpc":["container.listMethods"],"http://%host%/opensocial/social/rpc":["activities.delete","activities.update","activities.supportedFields","activities.get","messages.delete","appdata.update","messages.modify","appdata.get","messages.get","activities.create","system.listMethods","people.supportedFields","appdata.delete","messages.create","appdata.create","people.get"],"http://%host%/opensocial/gadgets/api/rpc":["http.head","http.delete","http.put","http.post","system.listMethods","cache.invalidate","http.get"]},"opensocial-0.9":{"path":"http://%host%/opensocial/social/rpc","domain":"linkedin","invalidatePath":"http://%host%/opensocial/gadgets/api/rpc","supportedFields":{"message":["title","body"],"person":["id","name","thumbnailUrl","profileUrl","personNetworkDistance","personNumConnections","currentLocation","aboutMe","jobs","schools","urls","status","emails","accounts"],"organization":["type","title","description","name","field","startDate","endDate"],"address":["country","postalCode"],"sortOrder":["name"],"name":["familyName","givenName","formatted"],"account":["userId","domain","username","bindingStatus","isPrimary"],"filterType":["all","hasApp"],"url":["value","linkedText","type"],"activity":["id","title"]},"enableCaja":false},"rpc":{"parentRelayUrl":"/js/opensocial/rpc_relay.html","useLegacyProtocol":false},"views":{"canvas":{"aliases":["FULL_PAGE"],"isOnlyVisible":true},"home":{"aliases":["HOME"],"isOnlyVisible":false},"profile":{"aliases":["DASHBOARD","default"],"isOnlyVisible":false}},"core.util":{"linkedin-ext":{},"dynamic-height":{},"core":{},"opensocial-data":{},"opensocial-0.8":{}},"core.io":{"proxyUrl":"http://%host%/opensocial/proxy?refresh=%refresh%&url=%url%","jsonProxyUrl":"http://%host%/opensocial/makeRequest"}});
+</script><script>gadgets.Prefs.setMessages_({});gadgets.Prefs.setDefaultPrefs_({});gadgets.io.preloaded_=[];</script><script type="text/javascript">opensocial.data.DataContext.putDataSet("viewer",{"photos":[{"value":"http://media.linkedin.com/mpr/mpr/shrink_80_80/p/2/000/0a4/0f1/190c0f2.jpg","type":"thumbnail"}],"id":"2z1Fu1B6pO","accounts":[{"isPrimary":true,"bindingStatus":"authenticated","username":"andersramsay","userId":"2083821","domain":"TWITTER"}],"profileUrl":"http://www.linkedin.com/profile?viewProfile=&key=1289809&authToken=S54u&authType=name&trk=api*p1154*","isViewer":true,"organizations":[{"field":"Internet","startDate":"2011-03-01T16:08:22.549Z","title":"Experience Designer and Agile UX Coach","description":".","name":"Independent","endDate":"0001-01-30T16:08:22.549Z","type":"job"},{"field":"Information Technology and Services","startDate":"2009-11-01T16:08:22.549Z","title":"Lead User Experience Designer and Strategist","description":"Leading teams in visioning, design, and integration of UX and Agile practices, in an organization with a deep Agile tradition.","name":"ThoughtWorks","endDate":"2011-04-01T16:08:22.549Z","type":"job"},{"field":"Internet","startDate":"2008-10-01T16:08:22.549Z","title":"Consultant, Strategist","description":"Consulting clients on product strategy and design.  Coaching organizations on empowering design teams with Agile methods.","name":"Self - Employed","endDate":"2009-06-01T16:08:22.549Z","type":"job"},{"field":"Internet","startDate":"2007-11-01T16:08:22.549Z","title":"Director, User Experience","description":"Designed and prototyped a data auditing application, in which operators validate thousands of daily sales records. Working with the Lead Developer, we won this job by building a fully functioning skeleton version of the application in two weeks.\nDesigned and prototyped a Sales Tracking application and a Programming Optimization application, both of which were part of an integrated suite of applications.","name":"MediaMorph","endDate":"2008-10-01T16:08:22.549Z","type":"job"},{"field":"Animation","startDate":"2006-05-01T16:08:22.549Z","title":"Senior Interaction Designer","description":"Designed an interface allowing for posting comments directly on a video in real time.\nDesigned a module-based site template for local affiliates of a major television network.\nDesigned a search concept that was so well received by the client that they modified their overall strategic direction to incorporate ideas presented in the concept.","name":"Funny Garbage","endDate":"2007-10-01T16:08:22.549Z","type":"job"},{"field":"Internet","startDate":"2005-12-01T16:08:22.549Z","title":"Sr. Information Architect","description":"Led workshops which used storytelling and game-like activities to uncover product requirements.\nPerformed rapid production of wireframes and concept explorations.","name":"Schematic","endDate":"2006-02-01T16:08:22.549Z","type":"job"},{"field":"Publishing","startDate":"2002-08-01T16:08:22.549Z","title":"Lead Information Architect","description":"Designed a broker-dealer licensing training tool that emulated the archaic user interface of the actual licensing exam.\nPrototyped new product concepts, including a securities compliance alerts aggregator.\nParticipated in bringing the organization in compliance with CMM Level 2.\nEliminated a resource shortage by creating a summer internship program.","name":"Wolters Kluwer","endDate":"2005-12-01T16:08:22.549Z","type":"job"},{"field":"Internet","startDate":"2000-01-01T16:08:22.549Z","title":"Information Architect","description":"Gathered and managed business and user requirements\nCo-write creative briefs\nLed focus groups\nDesigned User Interfaces\nProduced and maintained functional specifications","name":"Media Farm","endDate":"2002-02-01T16:08:22.549Z","type":"job"},{"field":"Internet","startDate":"2000-02-01T16:08:22.549Z","title":"Information Architect","name":"Media Farm, NY, NY","endDate":"2002-02-01T16:08:22.549Z","type":"job"},{"field":"Media Production","startDate":"1996-08-01T16:08:22.549Z","title":"Production Manager","description":"Designed and built the company web site, allowing customers to submit imaging jobs online.\nManaged production workflow, and consulted customers on imaging production.","name":"Fullserv, Inc.","endDate":"2000-01-01T16:08:22.549Z","type":"job"}],"urls":[{"value":"http://www.linkedin.com/profile?viewProfile=&key=1289809&authToken=S54u&authType=name&trk=api*p1154*","type":"profile"}],"name":{"formatted":"Anders Ramsay","familyName":"Ramsay","unstructured":"Anders Ramsay","givenName":"Anders"},"thumbnailUrl":"http://media.linkedin.com/mpr/mpr/shrink_80_80/p/2/000/0a4/0f1/190c0f2.jpg","isOwner":true,"displayName":"Anders Ramsay","aboutMe":"Designer, Maker, Entrepreneur"});</script></head><body dir="ltr">
+<script type="text/javascript">
+var eventsBaseUrl = "http://events.linkedin.com";
+var eventsAssetUrl = "http://events.licdn.com";
+
+
+</script>
+<link href="common.css" media="screen" rel="stylesheet" type="text/css">
+<script src="common.js" type="text/javascript"></script>
+<script src="templates.js" type="text/javascript"></script>
+<script src="application.js" type="text/javascript"></script>
+<script type="text/javascript">
+gadgets.util.registerOnLoadHandler(startApp);
+</script>
+
+  <script>gadgets.util.runOnLoadHandlers();</script><div id="opensocial-container" class="main-opensocial-container" style="display: none; ">
+  <div id="brd-crumb"></div>
+  <div id="banner"><div id="banner-content">
+  <div id="info">
+   <p></p> 
+   <span class="dismiss" id="global-error-dismiss"></span>
+   </div>
+  <div id="error">
+    <p></p> 
+    <span class="dismiss" id="global-error-dismiss"></span>
+  </div>
+  <div id="message">
+    <p></p> 
+    <span class="dismiss" id="global-error-dismiss"></span>
+  </div>
+</div></div>
+  <div id="page-content"></div>
+  <div id="wrapper"></div>
+  <div id="app-spinner"></div>
+  <div id="static-error" style="display:none;"></div>
+</div>
+<div class="temp" style="display: none; ">&nbsp;</div>
+<div id="tracker"></div><div id="static-linkedin-home"><div class="empty">
+  <div class="header-banner">
+    <p>Search professional events</p>
+  </div>
+  <div class="search-holder">
+    <div id="placeholder">
+      <input type="text" id="query">
+    </div>
+    <div class="submit"><input type="button" id="nav-to-search" value="Search" class="btn-primary"></div>
+  </div>
+  <div class="helper">e.g. "Design" or "San Francisco conference"</div>
+  <div class="eyml-entry"><a href="http://cdn.lmodules.com/opensocial/ifr?url=http%3A%2F%2Fevents%2Elinkedin%2Ecom%2Fgadget%2Exml&mid=30&appId=2000&view=home&lang=en&ownerinapp=1289809&country=US&viewerAccess=true&baseLeoNonSecureURL=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2F&ownerProfileUrl=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fprofile%2Fview%3Fid%3D1&st=linkedin%3AdPlcyR0ZtfUAODzldXv_BEEPuynsP6Pa5xGgLy7i2NWk6_D-5QZkeQRHIve6mLKg5E7Nvgijr76khTwEgNztN8FRqkA8zFbSn5hl6nZELTIG5U5rTV5fPHd9AxBpmaLqBiOVSTkY7RtUylSn2exW6XzQs39FOOY_IHy_n_dP2A88A0p_FqShaypN9qbbzhmryL65no1BvmWwt3yXzf-vN6zOxcFl9kyNh2vlnaoFUa5zMHV6eytznjnHK3opWn_xgzO_R32YUpcAkyq4fRNwMi8Xp-MZ7dnO1iqHS6BjyDyY8Hnx&container=default&libs=dynamic-height%3Asettitle%3Aviews%3Aopensocial-0%2E9&parent=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2F&urlToCanvasView=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fosview%2Fcanvas%3F_ch_page_id%3D1%26_ch_panel_id%3D1%26_ch_app_id%3D30%26_applicationId%3D2000&signedUrlToCanvasView=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fosview%2Fcanvas%3F_ch_page_id%3D1%26_ch_panel_id%3D1%26_ch_app_id%3D30%26_applicationId%3D2000%26_ownerId%3D1289809%26osUrlHash%3D8vPk&v=build-2000_1_19859-prod#" id="nav-to-home">Browse events you may be interested in</a></div><a href="http://cdn.lmodules.com/opensocial/ifr?url=http%3A%2F%2Fevents%2Elinkedin%2Ecom%2Fgadget%2Exml&mid=30&appId=2000&view=home&lang=en&ownerinapp=1289809&country=US&viewerAccess=true&baseLeoNonSecureURL=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2F&ownerProfileUrl=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fprofile%2Fview%3Fid%3D1&st=linkedin%3AdPlcyR0ZtfUAODzldXv_BEEPuynsP6Pa5xGgLy7i2NWk6_D-5QZkeQRHIve6mLKg5E7Nvgijr76khTwEgNztN8FRqkA8zFbSn5hl6nZELTIG5U5rTV5fPHd9AxBpmaLqBiOVSTkY7RtUylSn2exW6XzQs39FOOY_IHy_n_dP2A88A0p_FqShaypN9qbbzhmryL65no1BvmWwt3yXzf-vN6zOxcFl9kyNh2vlnaoFUa5zMHV6eytznjnHK3opWn_xgzO_R32YUpcAkyq4fRNwMi8Xp-MZ7dnO1iqHS6BjyDyY8Hnx&container=default&libs=dynamic-height%3Asettitle%3Aviews%3Aopensocial-0%2E9&parent=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2F&urlToCanvasView=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fosview%2Fcanvas%3F_ch_page_id%3D1%26_ch_panel_id%3D1%26_ch_app_id%3D30%26_applicationId%3D2000&signedUrlToCanvasView=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fosview%2Fcanvas%3F_ch_page_id%3D1%26_ch_panel_id%3D1%26_ch_app_id%3D30%26_applicationId%3D2000%26_ownerId%3D1289809%26osUrlHash%3D8vPk&v=build-2000_1_19859-prod#" id="nav-to-home">
+</a></div></div></body></html>

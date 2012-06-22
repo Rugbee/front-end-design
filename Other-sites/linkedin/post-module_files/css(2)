@@ -1,0 +1,5 @@
+
+
+/* scss/base/base.css */
+
+html{overflow-y:scroll;margin:0;padding:0;border:0;outline:0}body{font:62.5%/1.2 Arial,Helvetica,"Nimbus Sans L",sans-serif;color:#000;margin:0;padding:0;border:0;outline:0}body.ko{font-family:"Malgun Gothic"}body.ja{font-family:"MS PGothic", Osaka, arial, helvetica, sans-serif}hr{display:none}strong{font-weight:bold}abbr,acronym{border:none}img{border:none}a{text-decoration:none;color:#069;outline:none}a:hover{text-decoration:underline}a:visited,#footer a:visited{color:#069}#body .more a:visited,#body .action a:visited,#body .actions a:visited,#body .cancel:visited,#body .more:visited,.nav-link:visited,.nav-links a:visited{color:#069}p.intro{font-size:13px;margin-bottom:1em}input,select,textarea,button{font-family:Arial, Helvetica, "Nimbus Sans L", sans-serif}.ko input,.ko select,.ko textarea,.ko button{font-family:"Malgun Gothic"}

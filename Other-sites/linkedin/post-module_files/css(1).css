@@ -1,0 +1,8195 @@
+/* scss/modules/forms.css */
+
+.standard-form ul {
+	margin: 0;
+	padding-top: 10px;
+	list-style-type: none
+}
+.standard-form ul ul, .standard-form .fieldgroup {
+	margin: 0 0 0 195px;
+	_margin-left: 198px;
+	padding: 0
+}
+.standard-form fieldset.details ul {
+	margin: 0
+}
+.standard-form li, .standard-form fieldset.details li {
+	margin-bottom: 10px
+}
+.standard-form li:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+.standard-form li li, .standard-form fieldset.details li li {
+	margin-bottom: 0
+}
+.standard-form fieldset.details li input, .standard-form fieldset.details li select {
+	margin-left: 20px
+}
+#main .standard-form .last {
+	margin-bottom: 0;
+	background-image: none
+}
+.standard-form {
+	margin: 20px 40px
+}
+.standard-form fieldset {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') 0 0 repeat-x;
+*background-position:0 1em
+}
+.standard-form li fieldset {
+	background: none;
+	border: none;
+	margin: 0;
+	padding: 0
+}
+.standard-form fieldset.details {
+	background: #ebebeb;
+	padding: 10px 10px 1px 10px;
+	margin: 10px 0 0 195px;
+	_margin-left: 198px
+}
+.standard-form fieldset fieldset.details, .standard-form .fieldgroup fieldset.details {
+	margin-left: 0
+}
+.standard-form fieldset.details fieldset {
+	margin: 0;
+	padding: 0
+}
+.standard-form legend {
+	font-size: 180%;
+	color: #333;
+	background-color: #fff;
+	padding-right: 10px;
+*margin-left:-10px;
+	_margin-left: -7px
+}
+.standard-form label, .standard-form li fieldset legend span, .standard-form li fieldset.details fieldset legend {
+	font-size: 13px;
+	color: #333;
+	background-color: transparent;
+	font-weight: bold;
+	display: block;
+	float: left;
+	text-align: right;
+	width: 185px;
+	margin-right: 10px
+}
+.standard-form li fieldset legend {
+	position: relative;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0
+}
+.standard-form li fieldset legend span {
+	font-size: 13px;
+	position: absolute;
+*left:-7px;
+	white-space: normal
+}
+.standard-form .optional label em, .standard-form .optional legend em {
+	font-weight: normal;
+	display: block
+}
+.standard-form .required label em, .standard-form .required legend em {
+	color: #900
+}
+.standard-form li fieldset.details legend {
+	display: none
+}
+.standard-form li fieldset.details fieldset legend {
+	float: none;
+	text-align: left;
+*margin-left:-10px;
+	_margin-left: -7px
+}
+.standard-form .fieldgroup.checkbox input {
+	float: left
+}
+.standard-form .fieldgroup.checkbox p {
+	padding-left: 23px;
+	_margin-top: .5em
+}
+.standard-form .fieldgroup.checkbox .details {
+	margin-left: 23px
+}
+.standard-form .fieldgroup.checkbox label, .standard-form label.checkbox {
+	font-weight: normal;
+	padding: 0;
+	width: auto;
+	display: inline;
+	float: none;
+	line-height: 1;
+	vertical-align: 2px;
+	text-align: left
+}
+.standard-form .fieldgroup.checkbox label {
+	display: block;
+	padding: 4px 0 0 23px;
+*padding-top:0;
+	_padding-left: 20px;
+*padding-bottom:3px
+}
+.standard-form li fieldset label, .standard-form li fieldset.details fieldset label {
+	font-weight: normal;
+	float: none;
+	text-align: left;
+	line-height: 1;
+	width: auto;
+	margin-bottom: 0
+}
+.standard-form li fieldset.details label, .standard-form li fieldset.details label, .standard-form li .checkbox fieldset.details label {
+	font-weight: bold;
+	margin-bottom: 5px;
+	padding: 0
+}
+.standard-form li fieldset.details li.checkbox {
+	display: block;
+	padding: 0
+}
+.standard-form li fieldset.details li.checkbox input {
+	margin-left: 0
+}
+.standard-form li fieldset.details li.checkbox label {
+	margin-left: 0;
+	padding: 4px 0 0 20px;
+	font-weight: normal
+}
+.standard-form li fieldset.details li.checkbox .subchoice {
+	padding: 9px 0 0 34px;
+	margin: -8px 0 -3px
+}
+.standard-form li fieldset.details li .info {
+	font-size: 13px;
+	padding: 0 0 1px 20px;
+	background: url('http://static01.linkedin.com/scds/common/u/img/icon/icon_info_yellow_16x16.png') no-repeat
+}
+.standard-form input, .standard-form select, .standard-form textarea {
+	font-size: 13px
+}
+.standard-form p {
+	margin-left: 195px;
+	_margin-left: 200px;
+	margin-top: .25em;
+	color: #333
+}
+.standard-form p.instructions {
+	font-size: 13px;
+	margin-bottom: 5px
+}
+.standard-form p.attention {
+	font-size: 13px;
+	background: #fff5cc url('http://static02.linkedin.com/scds/common/u/img/icon/icon_status_info_16x16_v2.png') no-repeat 8px 6px;
+	padding: 6px 6px 6px 30px
+}
+.standard-form p.example, .standard-form p.tip, .standard-form p.note {
+	font-size: 11px;
+	color: #666
+}
+.standard-form p.actions {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') 0 0 repeat-x;
+	padding-top: 20px;
+	margin-top: 20px;
+	font-size: 13px
+}
+.standard-form p.actions input {
+	font-size: inherit;
+*font-size:100%;
+	vertical-align: middle
+}
+.standard-form p.actions .alternate {
+	line-height: 2
+}
+.standard-form p.key {
+	font-size: 11px;
+	color: #666;
+	margin-top: 15px
+}
+.standard-form p.key strong {
+	vertical-align: top;
+	color: #900;
+	font-size: 13px
+}
+.standard-form .error {
+	font-size: 12px;
+	color: #900;
+	font-weight: bold
+}
+.standard-form.sided {
+	margin: 20px 10px
+}
+.standard-form.sided ul ul, .standard-form.sided .fieldgroup {
+	margin-left: 120px;
+	_margin-left: 117px
+}
+.standard-form.sided .fieldgroup {
+	_margin-left: 123px
+}
+.standard-form.sided p {
+	margin-left: 120px
+}
+.standard-form.sided fieldset.details {
+	margin-left: 120px
+}
+.standard-form.sided fieldset.details ul label {
+	width: auto
+}
+.standard-form.sided label, .standard-form.sided li fieldset legend span, .standard-form.sided li fieldset.details fieldset legend {
+	width: 110px
+}
+.standard-form.sided fieldset.details, .standard-form.sided fieldset.details ul {
+	margin-left: 0
+}
+.standard-form.simple {
+	margin-top: 0
+}
+.standard-form.simple .checkbox label {
+	display: inline;
+	padding: 0;
+	vertical-align: middle
+}
+.standard-form.simple .checkbox label input {
+	float: none;
+	display: inline
+}
+.standard-form.stacked {
+	margin: 0 10px
+}
+.standard-form.stacked label, .standard-form.stacked li fieldset legend span {
+	float: none;
+	text-align: left;
+	line-height: 1.5
+}
+.standard-form.stacked li.required {
+	_padding-left: 10px;
+	_margin-left: -10px
+}
+.standard-form.stacked li.required label, .standard-form.stacked li.required fieldset legend span {
+	margin-left: -10px
+}
+.standard-form.stacked li.required fieldset label {
+	margin-left: inherit;
+*margin-left:0
+}
+.standard-form.stacked li fieldset legend span {
+	position: static;
+*position:relative;
+*left:-7px
+}
+.standard-form.stacked li.required input {
+	_margin-left: 0
+}
+.standard-form.stacked li fieldset input {
+*margin-left:0
+}
+.standard-form.stacked ul ul, .standard-form.stacked .fieldgroup, .standard-form.stacked fieldset.details, .standard-form.stacked p, .standard-form .fieldgroup p, .standard-form fieldset.details p {
+	margin-left: 0
+}
+.standard-form .screen, .ajax-form .screen {
+	position: relative;
+	display: block;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	z-index: 2;
+	zoom: 1;
+	_margin-left: -20px
+}
+.standard-form .progress-indicator, .ajax-form .progress-indicator {
+	display: none
+}
+.standard-form.form-submit-processing .hidden, .ajax-form.form-submit-processing .hidden {
+	width: 1px;
+	visibility: hidden;
+	overflow: hidden
+}
+.standard-form.form-submit-processing .progress-indicator, .ajax-form.form-submit-processing .progress-indicator {
+	display: inline;
+	padding-left: 21px;
+	background: url('http://static01.linkedin.com/scds/common/u/img/anim/anim_loading_16x16.gif') no-repeat 5px center;
+	zoom: 1
+}
+/* scss/modules/miniprofile.css */
+
+#lui-panel-body {
+	background-color: transparent !important;
+	border: 0 !important;
+	overflow: visible;
+	width: 386px
+}
+#lui-panel-body .minipanel {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_miniprofile_386x683.png') no-repeat transparent;
+	_background-image: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_miniprofile_plain_386x683.gif');
+	padding: 10px 20px 0 20px;
+	border: 0;
+	zoom: 1;
+	overflow: hidden;
+	width: 386px
+}
+#lui-panel-body .minipanel-content {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_miniprofile_386x683.png') 0 100% no-repeat;
+	_background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_miniprofile_plain_386x683.gif') 0 100% no-repeat;
+	padding: 0 20px 20px 20px;
+	margin: 0
+}
+#lui-panel-body a:hover {
+	text-decoration: underline
+}
+#lui-panel-body.panel-left .minipanel {
+	background-image: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_miniprofile_left_386x683.png');
+	_background-image: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_miniprofile_plain_left_386x683.gif');
+	_background-position: 10px 0
+}
+#lui-panel-body.panel-left .minipanel-content {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_miniprofile_left_386x683.png') 0 100% no-repeat;
+	_background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_miniprofile_plain_left_386x683.gif') 10px 100% no-repeat
+}
+.minipanel-insert {
+	display: none
+}
+.yui-panel-container {
+	border: 0;
+	background: transparent
+}
+#miniprofile-close, .miniprofile-close {
+	float: right;
+	display: block;
+	margin: 0 40px 10px 10px;
+	_margin-right: 18px;
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') right -1300px no-repeat;
+	width: 17px;
+	height: 15px;
+	padding: 0;
+	text-indent: -12345px;
+	cursor: pointer
+}
+#lui-panel-body.super-panel {
+	width: 603px
+}
+#lui-panel-body.super-panel .minipanel {
+	background-image: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_miniprofile_603x391.png');
+	padding: 20px 15px 0 15px;
+	width: 603px
+}
+#lui-panel-body.super-panel .minipanel-content {
+	background-image: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_miniprofile_603x391.png');
+	margin-top: -10px;
+	padding: 10px 15px 15px
+}
+.miniprofile-container a:hover {
+	text-decoration: none;
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') repeat-x 0 100%
+}
+.miniprofile .photo {
+	display: block;
+	float: left;
+	margin-right: 10px
+}
+.miniprofile h2 {
+	font-size: 180%;
+	border: 0;
+	margin: 0 0 2px 0;
+	padding: 0;
+	font-weight: bold
+}
+.miniprofile h2 img {
+	vertical-align: middle
+}
+.miniprofile .summary {
+	float: left;
+	width: 260px
+}
+.miniprofile .summary.nophoto {
+	float: left;
+	width: 310px
+}
+.miniprofile .headline {
+	color: #333;
+	font-size: 130%;
+	margin: 0;
+	padding-right: 20px
+}
+.miniprofile .location {
+	margin: 0;
+	padding: 0 0 8px 0;
+	color: #666;
+	font-size: 120%
+}
+.miniprofile .position {
+	color: #333;
+	padding: 0 0 8px 0;
+	margin: 0;
+	font-size: 130%;
+	clear: both
+}
+.miniprofile .action-list {
+	padding: 8px 0 0 0;
+	margin: 0 !important;
+	border-top: 1px dotted #ccc;
+	_border-top: 2px dotted #ccc;
+	clear: both
+}
+.miniprofile .action-list.plain {
+	border-top: 0;
+	padding: 0;
+	margin: 0
+}
+.miniprofile .action-list li {
+	display: inline;
+	list-style: none;
+	border-left: 1px solid #ccc;
+	padding: 0 4px 0 6px;
+	font-weight: normal;
+	margin: 0;
+	font-size: 110%
+}
+.miniprofile .action-list li.first {
+	border: 0;
+	padding-left: 0
+}
+.miniprofile .action-form {
+	background: #e6e6e6;
+	margin: 5px 0 0 0;
+	padding: 6px 8px 4px 8px
+}
+.miniprofile .action-form ul {
+	margin: 0 0 5px 0
+}
+.miniprofile .action-form li {
+	font-size: 120%;
+	font-weight: bold;
+	color: #666;
+	padding-bottom: 3px
+}
+.miniprofile .action-form p.description {
+	color: #333
+}
+.miniprofile .action-form p {
+	font-size: 120%;
+	margin: 0 0 7px 0
+}
+.miniprofile .action-form input {
+	vertical-align: middle;
+	font-size: 100%
+}
+.miniprofile .action-form span {
+	font-size: 120%
+}
+.miniprofile .action-form a:hover.btn-primary {
+	text-decoration: none
+}
+.miniprofile h3 {
+	color: #666;
+	font-size: 120%;
+	margin: 0;
+	padding: 0 0 3px 0;
+	font-weight: bold
+}
+.miniprofile .entry-list {
+	list-style: none;
+	margin: 0 0 7px 0;
+	padding: 0 0 7px 0;
+	border-bottom: 1px dotted #ccc
+}
+.miniprofile .entry-list li {
+	font-size: 120%;
+	margin: 0;
+	padding: 0 0 0 10px
+}
+.miniprofile .collapsed {
+	display: none
+}
+.miniprofile-tm {
+	display: inline-block;
+	overflow: hidden
+}
+.miniprofile-tm:after {
+	clear: both;
+	content: '.';
+	display: block;
+	height: 0;
+	visibility: hidden
+}
+* html .miniprofile-tm {
+	height: 1%
+}
+.miniprofile-tm {
+	display: block
+}
+.miniprofile-tm h2 {
+	font-size: 140%
+}
+.miniprofile-tm h3 {
+	color: #000;
+	clear: left;
+	float: left;
+	text-align: right;
+	width: 75px
+}
+.miniprofile-tm .entry-list {
+	border-bottom: none;
+	float: left;
+	list-style: outside disc;
+	margin-bottom: 0;
+	margin-left: 25px;
+	width: 240px
+}
+.miniprofile-tm .entry-list li {
+	padding-left: 5px
+}
+.miniprofile-tm h3.last, .miniprofile-tm .entry-list.last {
+	padding-top: 0
+}
+.article-popup a:hover {
+	text-decoration: none;
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') repeat-x 0 100%
+}
+.newspanel h2 {
+	font-size: 180%;
+	margin: 0;
+	padding: 0;
+	font-weight: bold
+}
+.newspanel h3 {
+	margin: 0;
+	padding: 0;
+	font-size: 110%;
+	color: #666
+}
+.newspanel .abstract {
+	font-size: 120%;
+	padding: 14px 0 12px 0;
+	margin: 0;
+	color: #333
+}
+.newspanel .action-hdr {
+	font-size: 130%;
+	margin: 3px 0 2px 0;
+	color: #333
+}
+.newspanel .action-list {
+	margin: 8px 0 0 0;
+	padding: 8px 0 0 0;
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') repeat-x
+}
+.newspanel .action-list.plain {
+	background: none;
+	margin: 0;
+	padding: 0
+}
+.newspanel .action-list li {
+	display: inline;
+	list-style: none;
+	border-left: 1px solid #ccc;
+	padding: 0 4px 0 6px
+}
+.newspanel .action-list li.first {
+	border: 0;
+	padding-left: 0
+}
+.newspanel .action-list.plain li a {
+	font-size: 120%;
+	background: #fff
+}
+.newspanel .action-list li .flag-article-link {
+	background: url('http://static02.linkedin.com/scds/common/u/img/icon/icon_report_17x46.png') no-repeat;
+	padding: 2px 0 2px 20px;
+	font-size: 110%
+}
+.newspanel .action-list li a:hover.flag-article-link {
+	background-position: 0 -31px
+}
+.newspanel .action-list li .share-article {
+	background: url('http://static01.linkedin.com/scds/common/u/img/icon/icon_forward_rollover_26x42.png') no-repeat;
+	padding: 2px 0 2px 30px;
+	font-size: 110%
+}
+.newspanel .action-list li a:hover.share-article {
+	background-position: 0 -26px
+}
+.newspanel .action-form {
+	background: #e6e6e6;
+	margin: 5px 0 0 0;
+	padding: 6px 8px 4px 8px
+}
+.newspanel .action-form ul {
+	margin: 0 0 5px 0
+}
+.newspanel .action-form li {
+	font-size: 120%;
+	font-weight: bold;
+	color: #666;
+	padding-bottom: 3px
+}
+.newspanel .action-form p.description {
+	color: #333
+}
+.newspanel .action-form p {
+	font-size: 120%;
+	margin: 0 0 7px 0
+}
+.newspanel .action-form input {
+	vertical-align: middle;
+	font-size: 100%
+}
+.newspanel .action-form span {
+	font-size: 120%
+}
+.newspanel .action-form a:hover.btn-primary {
+	text-decoration: none
+}
+.newspanel .collapsed {
+	display: none
+}
+.newspanel .submitter {
+	overflow: hidden;
+	width: 100%;
+	font-size: 120%;
+	color: #666;
+	margin-bottom: 10px
+}
+.newspanel .submitter img {
+	float: left;
+	margin-right: 10px
+}
+.miniprofile-container a.co-miniprof-lnk, .miniprofile-container a.co-miniprof-lnk:hover, .miniprofile-container a.company-profile:hover {
+	background: transparent url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_profile_v9.png') no-repeat 130% -806px;
+	padding: 0 16px 0 0;
+	font-weight: normal
+}
+.company-miniprofile a.company-profile:hover span, .company-miniprofile a.co-miniprof-lnk:hover span, .miniprofile-container a:hover span {
+	text-decoration: none;
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') repeat-x 0 100%
+}
+.miniprofile-container a.company-profile, .miniprofile-container a.company-profile:hover {
+	background-position: 100% -806px;
+	padding-right: 31px
+}
+.miniprofile-container a.company-profile, .miniprofile-container a.company-profile:hover span {
+	font-weight: bold
+}
+.company-miniprofile {
+	font-size: 10px
+}
+#lui-panel-body .company-miniprofile {
+	padding-bottom: 0
+}
+.company-miniprofile h2 {
+	font-size: 200%
+}
+.company-miniprofile .summary {
+	float: none;
+	padding-bottom: 6px;
+	width: 319px
+}
+.company-miniprofile .description {
+	color: #333;
+	font-size: 120%;
+	padding-bottom: 8px
+}
+.company-miniprofile .description a {
+	font-size: 92%;
+	white-space: nowrap
+}
+.company-miniprofile .network-at-company {
+	padding-bottom: 8px
+}
+.company-miniprofile .network-at-company h3 {
+	font-size: 120%;
+	font-weight: normal;
+	margin: 0;
+	padding-bottom: 3px
+}
+.company-miniprofile .network-at-company li {
+	color: #333;
+	font-size: 120%;
+	font-weight: bold;
+	padding-bottom: 5px;
+	clear: left
+}
+.company-miniprofile .network-at-company li img {
+	float: left
+}
+.company-miniprofile .network-at-company li .info {
+	float: left;
+	margin-left: 5px
+}
+.company-miniprofile .network-at-company li .title {
+	font-weight: normal
+}
+.company-miniprofile .network-at-company p.see-more {
+	font-size: 110%;
+	text-align: right;
+	clear: left
+}
+.company-miniprofile .details {
+	background: #fff;
+	border: 1px dotted #999;
+	border-width: 1px 0;
+	margin: 0;
+	overflow: hidden;
+	padding: 5px 0
+}
+.company-miniprofile .details #logo-large-img {
+	_display: inline;
+	float: right;
+	margin-right: 1px;
+	margin-top: 2px
+}
+.company-miniprofile .details p {
+	font-size: 120%;
+	margin: 0 0 3px;
+	width: 230px
+}
+.company-miniprofile .details p img {
+	padding-right: 2px;
+	padding-top: 2px
+}
+.company-miniprofile .details table {
+	font-size: 100%;
+	width: 230px
+}
+.company-miniprofile .details th {
+	color: #666;
+	font-size: 120%;
+	padding-right: 2px;
+	text-align: left;
+	white-space: nowrap
+}
+.company-miniprofile .details td {
+	font-size: 120%;
+	padding-left: 2px
+}
+.company-miniprofile .details td a {
+	text-decoration: none
+}
+.company-miniprofile .miniprofile-ft {
+	clear: both;
+	min-height: 28px;
+	_height: 28px;
+	padding: 6px 0 2px
+}
+.company-miniprofile .miniprofile-ft .edit-profile {
+	float: left;
+	font-size: 110%;
+	width: 245px
+}
+.company-miniprofile .miniprofile-ft .research {
+	float: right;
+	font-size: 100%;
+	line-height: 1;
+	width: 90px;
+	text-align: right
+}
+.company-miniprofile .miniprofile-ft .research img {
+	vertical-align: middle
+}
+.company-miniprofile .miniprofile-ft .research a:hover {
+	text-decoration: none !important
+}
+.company-miniprofile .following-container {
+	background: none;
+	float: left;
+	font-size: 110%;
+	padding: 0;
+	width: 250px
+}
+.company-miniprofile .following strong {
+	font-weight: normal
+}
+.company-miniprofile .stop-following a {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_cmpfollow_v1.png') no-repeat;
+	color: #007C00 !important;
+	padding: 2px 0 2px 22px;
+*padding-top:0
+}
+.company-miniprofile .stop-following a:hover {
+	text-decoration: none
+}
+.company-miniprofile .stop-following strong {
+	background: #fff url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_cmpfollow_v1.png') 100% -146px no-repeat;
+	padding-right: 20px
+}
+.company-miniprofile .stop-following a:hover strong {
+	text-decoration: underline
+}
+.company-miniprofile .following.droplist {
+	position: relative
+}
+.company-miniprofile .following.droplist ul {
+	background: #fff;
+	border: 2px solid #ccc;
+	border-width: 2px 2px 1px;
+	display: none;
+	left: 20px;
+	top: 0;
+	width: 150px
+}
+.de .company-miniprofile .following.droplist ul {
+	width: 180px
+}
+.company-miniprofile .following.droplist.open ul {
+	display: block;
+	z-index: 1888;
+	position: absolute
+}
+.company-miniprofile .following.droplist ul li {
+	border: 0;
+	margin: 0;
+	padding: 0
+}
+.company-miniprofile .following.droplist ul li a {
+	background: none;
+	border-bottom: 1px solid #ccc;
+	color: #069 !important;
+	display: block;
+	font-size: 11px;
+	font-weight: normal;
+	padding: 4px 7px
+}
+.company-miniprofile .following.droplist ul li a:hover {
+	background: #dbeffb;
+	text-decoration: none
+}
+.follow-trial h1 {
+	color: #333;
+	font-size: 160%;
+	font-weight: bold;
+	margin-bottom: 15px;
+	text-align: center
+}
+.follow-get-more {
+	background: url('http://static02.linkedin.com/scds/common/u/img/pic/pic_followtrial_208x184.jpg') no-repeat;
+	border-bottom: 1px solid #ccc;
+	min-height: 190px;
+	padding-left: 250px;
+	padding-top: 10px;
+	_height: 190px
+}
+.follow-get-more h2 {
+	color: #333;
+	font-size: 160%;
+	font-weight: normal;
+	margin-bottom: 10px
+}
+.follow-get-more p {
+	color: #666;
+	font-size: 130%
+}
+.follow-get-more .actions {
+	margin: 25px 0;
+	overflow: hidden
+}
+.follow-get-more .or {
+	position: relative;
+	top: 3px
+}
+.follow-trial .fine-print {
+	color: #666;
+	font-size: 110%;
+	padding-top: 5px
+}
+.company-entice .miniprofile-close {
+	display: none
+}
+.company-entice .entice-actions {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') 0 100% repeat-x;
+	font-size: 110%;
+	margin: 0 40px 10px 0;
+	padding-bottom: 10px
+}
+.company-entice h2 {
+	font-size: 180%;
+	font-weight: normal;
+	margin-bottom: 10px
+}
+.company-entice-content .content {
+	overflow: hidden;
+	zoom: 1
+}
+.company-entice-content h3 {
+	color: #666;
+	font-size: 130%;
+	font-weight: bold;
+	margin-bottom: 5px
+}
+.entice-followers {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_v-line_1x3.png') 100% 0 repeat-y;
+	float: left;
+	margin-right: 10px;
+	padding-right: 10px;
+	width: 37%;
+	_width: 40%
+}
+.entice-updates {
+	float: left;
+	width: 58%;
+	_width: 55%
+}
+.entice-followers .be-first li {
+	font-size: 130%;
+	list-style: disc;
+	margin-top: 5px;
+	margin-left: 1.5em
+}
+.entice-followers .action {
+	font-size: 130%;
+	margin-top: 15px
+}
+.entice-followers .photos {
+	overflow: hidden
+}
+.entice-followers .photos li {
+	float: left;
+	margin: 0 0 10px 15px;
+	text-align: center;
+	width: 40px
+}
+.entice-followers .photos .first {
+	margin-left: 0
+}
+.entice-followers .more {
+	font-size: 110%;
+	margin-top: 5px;
+	text-align: right
+}
+.entice-updates p, .entice-updates li {
+	font-size: 130%;
+	margin-bottom: 10px
+}
+.entice-updates .nus-timestamp {
+	color: #666;
+	font-size: 11px;
+	white-space: nowrap
+}
+.company-entice-content .notify-me {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') repeat-x;
+	font-size: 110%;
+	margin-top: 10px;
+	padding-top: 10px
+}
+.skill-miniprofile .summary {
+	padding-left: 5px;
+	width: 300px !important
+}
+.skill-miniprofile .title {
+	color: #333;
+	font-size: 21px;
+	font-family: "Times New Roman";
+	font-weight: normal
+}
+.skill-miniprofile .growth-rate {
+	color: #666
+}
+.skill-miniprofile .stock-ticker {
+	font-size: 13px;
+	margin-left: 7px;
+	white-space: nowrap
+}
+.skill-miniprofile .stock-ticker .increasing {
+	color: #47A318
+}
+.skill-miniprofile .stock-ticker .decreasing {
+	color: #DD4621
+}
+.skill-miniprofile .stock-ticker .period {
+	color: #CCC;
+	font-weight: normal
+}
+.skill-miniprofile .stock-ticker .indicator {
+	font-size: 0;
+	line-height: 0;
+	width: 0;
+	display: inline-block;
+	border-style: none;
+	border-color: transparent;
+	border-width: 0px 5px;
+	margin-right: 2px;
+	_border-color: #FFF
+}
+.skill-miniprofile .stock-ticker .increasing .indicator {
+	border-bottom: 10px solid #47A318;
+	border-style: solid
+}
+.skill-miniprofile .stock-ticker .decreasing .indicator {
+	border-top: 10px solid #DD4621;
+	border-style: solid
+}
+.skill-miniprofile .industry {
+	font-size: 13px;
+	color: #666;
+	clear: both;
+	padding-bottom: 5px
+}
+.skill-miniprofile-content {
+	padding: 0 5px;
+	overflow: hidden
+}
+.skill-miniprofile-content a.more-wiki {
+	font-size: 11px
+}
+.skill-miniprofile-content .description {
+	font-size: 13px;
+	color: #333;
+	margin-bottom: 3px
+}
+.skill-miniprofile-content .proficiency {
+	font-size: 13px;
+	color: #666;
+	padding-top: 5px;
+	margin-top: 5px;
+	border-top: 1px dotted #CCC
+}
+/* scss/modules/send_message_dialog.css */
+
+.send-message-dialog {
+	font-size: 13px;
+*zoom:1
+}
+.send-message-dialog p {
+	margin-bottom: 4px
+}
+.send-message-dialog a:visited {
+	color: #039
+}
+.send-message-dialog .actions {
+	font-size: 11px
+}
+.send-message-dialog ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+*zoom:1
+}
+.send-message-dialog li {
+	margin-bottom: 6px;
+	overflow: hidden;
+	width: 98%;
+	padding: 2px
+}
+.send-message-dialog li label {
+	color: #333;
+	width: 75px;
+	float: left;
+	text-align: right;
+	font-weight: bold
+}
+.send-message-dialog li .elem {
+	padding-left: 83px
+}
+.send-message-dialog li .elem input {
+	vertical-align: middle;
+	width: 358px;
+	_width: 356px;
+	vertical-align: middle;
+	font-size: 13px
+}
+.send-message-dialog li.subject label {
+	margin-top: 3px
+}
+.send-message-dialog textarea {
+	height: 100px;
+	padding: 2px;
+	width: 442px;
+	font-size: 13px
+}
+.send-message-dialog .actions {
+	padding-top: 10px;
+	font-size: 13px
+}
+.send-message-dialog .btn-primary {
+	font-size: 13px;
+	vertical-align: middle
+}
+.send-message-dialog .btn-hidden {
+	display: none
+}
+.dialog-body-loading .send-message-dialog {
+	display: none
+}
+/* scss/apps/home/nmp.css */
+
+.textad {
+	text-align: center;
+	margin-bottom: 15px
+}
+.textad iframe {
+	height: 17px;
+	width: 960px
+}
+.home-member-new p {
+	font-size: 130%;
+	margin: 0 0 5px
+}
+.home-member-new legend strong {
+	position: absolute;
+	left: -12345px
+}
+.home-member-new label {
+	font-size: 130%
+}
+.home-member-new .note {
+	margin: 5px 0;
+	font-size: 110%;
+	color: #666
+}
+.home-member-new .more {
+	font-size: 11px;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+	text-align: right
+}
+.home-member-new .more span {
+	color: #666;
+	font-weight: bold
+}
+.home-member-new form .actions {
+	font-size: 100%;
+	margin: 0
+}
+.home-member-new form .primary {
+	vertical-align: middle
+}
+.home-member-new form .alternate {
+	font-size: 130%;
+	padding-left: 3px;
+	vertical-align: middle
+}
+.home-member-new .people li {
+	margin: 0 0 5px;
+*zoom:1
+}
+.home-member-new .people li:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden
+}
+.home-member-new .people h4 {
+	font-size: 130%;
+	font-weight: bold;
+	margin-top: 2px
+}
+.home-member-new .people h4, .home-member-new .people p, .home-member-new ul.people ul {
+	padding: 0 0 0 55px
+}
+.home-member-new .people .photo {
+	float: left;
+	margin: 0
+}
+.home-member-new .people li li {
+	font-size: 110%;
+	float: left;
+	margin: 0 5px 5px 0;
+	padding: 0 5px 0 0;
+	width: auto;
+	min-height: 0
+}
+#confirm-email p {
+	margin-top: 0
+}
+.guided-setup {
+	background: url('http://static01.linkedin.com/scds/common/u/img/bg/bg_module_info_featured_1x113.gif') repeat-x top left;
+	color: #333;
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid #9ACCE6;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px
+}
+.guided-setup .header {
+	position: relative;
+	margin-bottom: 10px
+}
+.guided-setup.completed .content {
+	padding: 0 15px 15px 65px
+}
+.guided-setup.completed .content ul li, .guided-setup.completed .content p {
+	font-size: 130%;
+	line-height: 1.5
+}
+.guided-setup .content .content {
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none
+}
+.guided-setup.leo-module .header h1 {
+	padding-left: 15px
+}
+.guided-setup.leo-module.completed .header h1 {
+	padding-left: 65px
+}
+#content .guided-setup .header h1.title {
+	font-size: 180%;
+	font-weight: bold
+}
+#dismiss-guided-setup {
+	cursor: pointer;
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	text-indent: -12345px;
+	height: 14px;
+	width: 18px;
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') no-repeat right -1300px
+}
+.guided-setup ol {
+	margin: 0 0 0 50px
+}
+.guided-setup ol.one-step {
+	margin: 0
+}
+.guided-setup ol li {
+	margin: 15px 0 0 0
+}
+.guided-setup ol > li:first-child {
+	margin-top: 0
+}
+#content .guided-setup .step {
+	width: 30px;
+	height: 30px;
+	padding: 2px 2px 0;
+	text-align: center;
+	background: #0076a8 url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_nmp_v2.png') repeat-x 0 -157px;
+	color: #fff;
+	font-size: 240%;
+	font-weight: bold;
+	border: 1px solid #069;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+	position: relative;
+	left: -50px;
+	overflow: hidden;
+	white-space: nowrap
+}
+#content .guided-setup .step.tip {
+	top: -9px;
+	padding-left: 4px
+}
+.guided-setup .step em {
+	position: absolute;
+	left: -12345px;
+	top: 0
+}
+#content .guided-setup.completed h1.step, #content .guided-setup .done h2.step {
+	background: #d7d7d7 url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_nmp_v2.png') repeat-x 3px -222px !important;
+	border-color: #c4c6c7;
+	text-indent: -12345px
+}
+#content .guided-setup.completed h1.step {
+	position: absolute;
+	left: 15px;
+	top: 10px
+}
+.guided-setup h2.title {
+	font-size: 180%;
+	font-weight: bold;
+	color: #069;
+	margin-top: -35px
+}
+.guided-setup .one-step h2.title {
+	margin-top: 0
+}
+.guided-setup .done h2.title {
+	font-weight: normal
+}
+#content .guided-setup ol li:hover h2.step {
+	background-image: none
+}
+.guided-setup h3 {
+	color: #333;
+	margin: 10px 0 0;
+	font-size: 130%;
+	font-weight: bold
+}
+#resolve-btn {
+	font-size: 13px
+}
+.js .guided-setup ol li.closed .content {
+	display: none
+}
+.step ul li {
+	color: #333;
+	margin: 0
+}
+#address-book-import-form {
+	margin: 0
+}
+#address-book-import-form fieldset {
+	background: none
+}
+#address-book-import-form {
+	margin: 0
+}
+#address-book-import-form fieldset {
+	background: none
+}
+.upload-address-book fieldset {
+	clear: both;
+	overflow: hidden
+}
+.login-hotmail {
+	display: block
+}
+.upload-address-book fieldset {
+	margin-top: 10px
+}
+.upload-address-book ul li {
+	margin: 0 0 10px;
+*min-height:1px;
+	_height: 1px
+}
+.upload-address-book ul label {
+	width: 125px;
+	line-height: 1.6
+}
+.en .upload-address-book ul label {
+	width: 115px
+}
+.ro .upload-address-book ul label {
+	width: 135px
+}
+.fr .upload-address-book ul label {
+	width: 205px
+}
+.ru .upload-address-book ul label, .es .upload-address-book ul label {
+	width: 215px
+}
+.ja .upload-address-book ul label {
+	width: 140px
+}
+.upload-address-book .contacts-upload ul label {
+	width: 90px
+}
+.upload-address-book .contacts-upload .note, .upload-address-book .contacts-upload .actions {
+	padding: 0 0 0 95px
+}
+.upload-address-book .note strong {
+	display: block
+}
+.upload-address-book .actions {
+	overflow: hidden;
+*zoom:1;
+	margin-top: -5px
+}
+.upload-address-book .action {
+	font-size: 130%
+}
+.anti-pattern li input {
+*width:100px
+}
+div.service-providers {
+	overflow: hidden;
+	margin: 0 0 10px
+}
+div.service-providers p.more {
+	text-align: left;
+	line-height: 20px
+}
+div.service-providers ul {
+	float: left
+}
+div.service-providers li {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_nmp_v1.png') no-repeat;
+	float: left;
+	text-indent: -12345px;
+	width: auto;
+	height: 20px;
+	margin: 0 15px 0 0;
+	padding: 0
+}
+div.service-providers .aol {
+	background-position: 0 0;
+	width: 54px
+}
+div.service-providers .gmail {
+	background-position: 0 -41px;
+	width: 40px
+}
+.de div.service-providers .gmail {
+	background-position: 0 -283px;
+	width: 47px
+}
+div.service-providers .hotmail {
+	background-position: 0 -78px;
+	width: 109px
+}
+div.service-providers .yahoo {
+	background-position: 0 -116px;
+	width: 69px
+}
+.import-msg, #upload_msg, .upload-address-book div.alert {
+	background: none;
+*display:inline;
+	padding: 0;
+	margin: 0
+}
+.upload-address-book div.alert p {
+	color: #990000;
+	margin: 0 0 5px
+}
+.webmail-upload .import, .webmail-upload .add-connections {
+	width: 110px;
+	margin: 5px 0 0 120px
+}
+.en .webmail-upload .import, .ro .webmail-upload .add-connections {
+	margin-left: 120px
+}
+.ro .webmail-upload .import, .ro .webmail-upload .add-connections, .fr .webmail-upload .import {
+	margin-left: 145px
+}
+.fr .webmail-upload .import {
+	margin-left: 215px
+}
+.ru .webmail-upload .import, .ru .webmail-upload .add-connections, .es .webmail-upload .import {
+	margin-left: 225px
+}
+.in .webmail-upload .import, .in .webmail-upload .add-connections .ja .webmail-upload .import, .ja .webmail-upload .add-connections, .ja .webmail-upload .note {
+	margin-left: 150px
+}
+.webmail-upload .email-address input {
+	margin-right: 5px
+}
+.webmail-upload #email-check-progress-indicator img {
+	margin-bottom: -4px
+}
+.contacts-upload {
+	display: none
+}
+.upload-contacts .contacts-upload, .upload-contacts.closed p.intro {
+	display: block
+}
+.upload-contacts .webmail-upload, .upload-contacts p.intro {
+	display: none
+}
+.wmi-list {
+	overflow: hidden;
+	padding: 0;
+	width: 100%
+}
+.wmi-list p {
+	color: #333;
+	font-size: 13px;
+	margin: 0 0 1em
+}
+.wmi-list ul {
+	float: left;
+	color: #333;
+	font-size: 13px;
+	width: 48%
+}
+.section h2 {
+	font-size: 180%;
+	font-weight: bold;
+	padding: 0 0 5px;
+	border-bottom: 1px solid #ccc
+}
+.section h2 a {
+	color: #000 !important
+}
+.section h3 {
+	font-size: 130%;
+	font-weight: bold;
+	margin: 0 0 15px;
+	color: #333
+}
+.section p {
+	font-size: 130%
+}
+.section p.actions {
+	margin: 10px 0 0;
+	padding: 0 0 0 15px
+}
+.section .content {
+	padding: 15px 15px 10px;
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') repeat-x 0 100%
+}
+.section .people {
+*zoom:1
+}
+.section .people:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden
+}
+.section .people li {
+	float: left;
+	width: 45%;
+	margin: 0 10px 15px 0;
+	min-height: 60px
+}
+.section {
+	margin-bottom: 10px
+}
+.section .popular-profiles {
+	padding-bottom: 0;
+*padding-bottom:10px
+}
+.section .popular-profiles li {
+	min-height: 55px;
+	_height: 55px
+}
+.section .popular-profiles p {
+	margin-bottom: 0
+}
+.section .recent-promotions {
+	background: none
+}
+.section .recent-promotions h4 {
+	font-weight: normal
+}
+.section .recent-promotions a {
+	font-weight: bold
+}
+.section .recent-promotions li {
+	margin: 0 0 5px;
+	float: none;
+	width: auto
+}
+.section .recent-promotions p {
+	font-size: 110%
+}
+.section .recent-promotions em {
+	color: #666
+}
+.section .colleague-reconnect {
+	background: none
+}
+.section .colleague-reconnect p {
+	color: #666;
+	font-size: 110%;
+	margin: 0
+}
+.section.reconnect h3 {
+	color: #666;
+	font-size: 130%;
+	font-weight: bold;
+	line-height: 1.4;
+	margin: 10px 0 0;
+	padding: 3px 0
+}
+.section.reconnect li {
+	font-size: 130%;
+	line-height: 1.4
+}
+#pagekey-member-home .post-status .form p {
+	width: 320px
+}
+.mod-util {
+	margin-bottom: 20px
+}
+.mod-util .header * {
+	color: #666 !important
+}
+.mod-util .content {
+	color: #333;
+	padding: 10px
+}
+.mod-util .footer {
+	clear: both;
+	padding: 15px 0 0;
+	margin: 0 0 10px;
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') repeat-x 0 0
+}
+.mod-util .header .icon-beta {
+	color: #C60 !important
+}
+.inbox .header span {
+	font-weight: normal;
+	font-size: 13px
+}
+.inbox .content {
+	background: none;
+	padding: 0
+}
+.inbox table {
+	width: 100%;
+	margin-bottom: 10px
+}
+.inbox th, .inbox td {
+	font-size: 130%;
+	text-align: left;
+	padding: 5px 0;
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') repeat-x scroll 0 100%
+}
+.inbox thead {
+	display: none
+}
+.inbox .from strong {
+	font-weight: normal
+}
+.inbox .subject {
+	font-weight: bold
+}
+.inbox .date {
+	font-size: 110%;
+	color: #666;
+	white-space: nowrap
+}
+.inbox p {
+	margin: 0;
+	font-size: 11px;
+	text-align: right;
+	padding-right: 16px
+}
+.en .inbox .action p {
+	text-transform: lowercase
+}
+.inbox .action h5, .inbox .action .drop-switch {
+	font-size: 11px;
+	font-weight: normal;
+	text-transform: lowercase;
+	white-space: nowrap;
+	color: #069;
+	text-align: right;
+	cursor: pointer;
+	padding: 0 16px 0;
+	background: transparent url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') no-repeat 100% -2076px
+}
+.inbox .open {
+	position: relative
+}
+.inbox .drop {
+	top: 12px !important;
+*overflow:visible
+}
+.improve-profile .standard-form {
+	margin: 0
+}
+.improve-profile .standard-form ul {
+	margin: 0;
+	padding-top: 2px
+}
+.improve-profile .standard-form ul ul {
+	margin: 0
+}
+.improve-profile .standard-form li {
+	margin: 0 0 5px
+}
+.improve-profile .org input, .improve-profile .title input {
+	width: 80%
+}
+.improve-profile .standard-form li.date {
+	overflow: hidden;
+	margin: 0
+}
+.improve-profile .standard-form .date fieldset legend span, .improve-profile .industry {
+	position: absolute;
+	left: -12345px;
+	top: 0
+}
+.improve-profile .date .date-start {
+	float: left
+}
+.improve-profile .date label {
+	display: inline;
+	font-weight: normal
+}
+.improve-profile .date label.month {
+	position: absolute;
+	left: -12345px;
+	top: 0
+}
+.improve-profile .year {
+	width: 3em
+}
+.improve-profile .current-position {
+	margin: 0 0 5px
+}
+.improve-profile .btn-primary {
+	font-size: 12px
+}
+.improve-profile .to {
+	font-size: 130%;
+	padding: 0 0 0 5px;
+	line-height: 1.8
+}
+.improve-profile .present {
+	font-size: 130%;
+	display: none
+}
+.improve-profile p {
+	margin: 0
+}
+.improve-profile .current .date-end * {
+	display: none
+}
+.improve-profile .current .date-end span {
+	display: inline
+}
+#extra .join-groups .content {
+*padding-top:10px
+}
+#extra .join-groups ul {
+	background: none;
+	margin-bottom: 0
+}
+#extra .join-groups li {
+	height: auto;
+	width: auto;
+	float: none;
+	margin: 0 0 5px
+}
+#extra .join-groups h4 {
+	margin: 0
+}
+.pymk .people {
+	margin: 10px 0 5px
+}
+.pymk .people ul {
+	margin: 0 0 5px
+}
+.pymk .people p {
+	font-size: 110%;
+	margin: 0
+}
+.pymk .people li {
+	overflow: visible;
+*zoom:1
+}
+.pymk .people li:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden
+}
+.pymk .people ul ul {
+	padding: 0
+}
+.pymk .people .actions {
+	float: right
+}
+.pymk .people .connect {
+	border-right: 1px solid #999
+}
+.pymk .people .remove {
+	line-height: 1.2
+}
+.pymk .people .remove a {
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') no-repeat 100% -1497px;
+	float: left;
+	height: 1.2em;
+	width: 15px;
+	text-indent: -12345px
+}
+#main .pymk .people .open {
+	position: relative
+}
+#main .pymk .people .drop {
+	top: 12px;
+	right: -10px;
+	_right: inherit;
+*left:-160px;
+	_left: auto
+}
+.pymk .people .drop a {
+	text-indent: 0;
+	background-image: none
+}
+.snapshot .people {
+	overflow: hidden;
+	margin-bottom: 10px;
+	width: 100%;
+	overflow: hidden
+}
+.snapshot .people p {
+	margin-bottom: 0
+}
+.snapshot .wvmp {
+	margin-bottom: 0
+}
+#content .snapshot .wvmp {
+	display: none
+}
+.inmail-notifier {
+	border: 1px solid #ddd;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+	margin-bottom: 20px;
+	padding: 8px 8px 8px 56px
+}
+.inmail-notifier.envelope-white {
+	background: url('http://static01.linkedin.com/scds/common/u/img/icon/icon_inmail_envelope_34x34.png') no-repeat 11px 8px
+}
+.inmail-notifier.envelope-yellow {
+	background: url('http://static02.linkedin.com/scds/common/u/img/icon/icon_inmail_envelope_yellow_34x34.png') no-repeat 11px 8px
+}
+.inmail-notifier .remove {
+	visibility: hidden;
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') no-repeat 100% -1497px;
+	float: right;
+	display: block;
+	width: 15px;
+	height: 15px;
+	text-indent: -9999em;
+	margin-left: 15px
+}
+.js .inmail-notifier .remove {
+	visibility: visible
+}
+.inmail-notifier h3 {
+	font-size: 13px;
+	font-weight: bold;
+	color: #666;
+	cursor: default;
+	margin-bottom: 4px
+}
+.inmail-notifier a {
+	font-size: 13px;
+	clear: both
+}
+#callout-overlay #inmail-notifier-callout-content {
+	font-size: 13px;
+	color: #333;
+	font-family: Arial;
+	cursor: default
+}
+.stats p {
+	padding: 0 10px 0 0
+}
+.stats strong {
+	color: #555
+}
+.stats strong a {
+	color: #069;
+	text-decoration: none
+}
+.stats .stat {
+*zoom:1
+}
+.stats .count {
+	font-size: 240%;
+	padding-right: 10px;
+	text-align: right;
+*float:left;
+*clear:left;
+*line-height:1;
+*text-align:center
+}
+.stats .stat .count, .stats .stat em {
+	display: table-cell;
+	vertical-align: middle;
+	padding-bottom: 10px
+}
+.stats .stat em {
+	font-style: normal;
+*display:inline-block
+}
+.stats .progress {
+	line-height: 1.1;
+	margin: 0 0 10px
+}
+.stats .progress-meter {
+	float: left;
+	width: 35%;
+	margin: 0 10px 0 0
+}
+.stats .progress-meter a {
+	display: block;
+	width: 100%
+}
+.wvmp-stats {
+	background: transparent url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_wvmp_hp_1.png') no-repeat -55px -310px;
+	margin-left: -10px;
+	position: relative;
+	height: 165px;
+	overflow: hidden
+}
+.wvmp-stats a {
+	font-size: 12px;
+	font-weight: bold
+}
+.wvmp-stats a:hover {
+	text-decoration: underline;
+	cursor: pointer
+}
+.wvmp-stats.nvisit-0 {
+	background-position: -55px -80px
+}
+.wvmp-stats a, .wvmp-stats p, .wvmp-stats span {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	top: -14px
+}
+.wvmp-stats .connections {
+	top: 2px;
+	left: 70px;
+	position: absolute
+}
+.wvmp-stats .profile-visitors {
+	left: 140px;
+	top: 18px;
+	color: #333;
+	font-size: 11px;
+	color: #666
+}
+.wvmp-stats .profile-visitors a {
+	position: static;
+	color: #069
+}
+.wvmp-stats a.connections {
+	color: black
+}
+.wvmp-stats.nvisit-0 .profile-visitors {
+	top: 36px
+}
+.wvmp-stats .profile-visitors-desc {
+	left: 140px;
+	top: 33px
+}
+.wvmp-stats .new-visitors {
+	left: 198px;
+	top: 50px;
+	font-size: 11px;
+	color: #f90
+}
+.wvmp-stats .new-visitors a {
+	position: static;
+	color: #ff9900
+}
+.wvmp-stats .circle {
+	font-family: Arial
+}
+.wvmp-stats .connections-circle {
+	color: #B8B8B8;
+	display: inline-block;
+	font-size: 245px;
+	left: -12px;
+	margin: 0;
+	padding: 0;
+	top: -72px
+}
+.wvmp-stats .profile-visitors-circle {
+	color: #447FB4;
+	display: inline-block;
+	font-size: 200px;
+	margin: 0;
+	padding: 0;
+	left: 73px;
+	top: -12px
+}
+.wvmp-stats .new-visitors-circle {
+	color: #f90;
+	display: inline-block;
+	font-size: 200px;
+	left: 130px;
+	margin: 0;
+	padding: 0;
+	top: -12px
+}
+.wvmp-stats.nvisit-100-plus .new-visitors-circle {
+	top: -13px
+}
+.wvmp-stats .eclipse-curve {
+	display: inline-block;
+	height: 30px;
+	left: -33px;
+	top: 106px;
+	width: 135px;
+	background: transparent url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_wvmp_hp_1.png') no-repeat -100px -535px
+}
+.wvmp-stats .wvmp-stats-counter {
+	color: white;
+	font-weight: normal;
+	font-family: Georgia, times New Roman;
+	font-size: 200%;
+	display: -moz-inline-box;
+	-moz-box-orient: vertical;
+	display: inline-block;
+	vertical-align: middle;
+*vertical-align:auto;
+	vertical-align: middle;
+	text-align: center;
+*zoom:1;
+	width: 100px
+}
+.wvmp-stats .wvmp-stats-counter {
+*display:inline
+}
+.wvmp-stats .wvmp-stats-counter:hover {
+	text-shadow: 0px 1px 1px #000;
+	text-decoration: none
+}
+.wvmp-stats .connections-count {
+	top: 76px;
+	left: 13px
+}
+.wvmp-stats.cn-100-499 .connections-circle {
+	font-size: 200px;
+	left: 4px;
+	top: -43px
+}
+.wvmp-stats.cn-1-4 .connections-count {
+*left:12px
+}
+.wvmp-stats.cn-50-99 .connections-circle, .wvmp-stats.cn-25-49 .connections-circle, .wvmp-stats.pvisit-50-99 .profile-visitors-circle, .wvmp-stats.pvisit-25-49 .profile-visitors-circle, .wvmp-stats.nvisit-50-99 .new-visitors-circle, .wvmp-stats.nvisit-25-49 .new-visitors-circle {
+	font-size: 190px;
+	left: 6px;
+	top: -35px
+}
+.wvmp-stats.pvisit-50-99 .profile-visitors-circle, .wvmp-stats.pvisit-25-49 .profile-visitors-circle {
+	left: 76px;
+	top: -4px
+}
+.ie.lte9 .wvmp-stats.pvisit-50-99 .profile-visitors-circle, .ie.lte9 .wvmp-stats.pvisit-25-49 .profile-visitors-circle {
+	left: 75px
+}
+.wvmp-stats.nvisit-50-99 .new-visitors-circle, .wvmp-stats.nvisit-25-49 .new-visitors-circle {
+	left: 134px;
+	top: -7px
+}
+.ie.lte9 .wvmp-stats.nvisit-50-99 .new-visitors-circle, .ie.lte9 .wvmp-stats.nvisit-25-49 .new-visitors-circle {
+	left: 133px
+}
+.wvmp-stats.cn-20-24 .connections-circle, .wvmp-stats.pvisit-20-24 .profile-visitors-circle, .wvmp-stats.nvisit-20-24 .new-visitors-circle {
+	font-size: 160px;
+	left: 16px;
+	top: -16px
+}
+.ie.lte9 .wvmp-stats.cn-20-24 .connections-circle, .ie.lte9 .wvmp-stats.pvisit-20-24 .profile-visitors-circle, .ie.lte9 .wvmp-stats.nvisit-20-24 .new-visitors-circle {
+	left: 15px
+}
+.wvmp-stats.pvisit-20-24 .profile-visitors-circle {
+	left: 84px;
+	top: 17px
+}
+.wvmp-stats.nvisit-20-24 .new-visitors-circle {
+	left: 143px;
+	top: 13px
+}
+.wvmp-stats.cn-15-19 .connections-circle, .wvmp-stats.pvisit-15-19 .profile-visitors-circle, .wvmp-stats.nvisit-15-19 .new-visitors-circle {
+	font-size: 135px;
+	left: 23px;
+	top: 1px
+}
+.wvmp-stats.pvisit-15-19 .profile-visitors-circle {
+	left: 92px;
+	top: 32px
+}
+.wvmp-stats.nvisit-15-19 .new-visitors-circle {
+	left: 150px;
+	top: 28px
+}
+.wvmp-stats.cn-10-14 .connections-circle, .wvmp-stats.pvisit-10-14 .profile-visitors-circle, .wvmp-stats.nvisit-10-14 .new-visitors-circle {
+	font-size: 110px;
+	left: 30px;
+	top: 17px
+}
+.wvmp-stats.pvisit-10-14 .profile-visitors-circle {
+	left: 99px;
+	top: 48px
+}
+.ie.lte9 .wvmp-stats.pvisit-10-14 .profile-visitors-circle {
+	top: 49px
+}
+.wvmp-stats.nvisit-10-14 .new-visitors-circle {
+	left: 159px;
+	top: 46px
+}
+.wvmp-stats.cn-5-9 .connections-circle, .wvmp-stats.pvisit-5-9 .profile-visitors-circle, .wvmp-stats.nvisit-5-9 .new-visitors-circle {
+	font-size: 75px;
+	left: 40px;
+	top: 41px
+}
+.wvmp-stats.pvisit-5-9 .profile-visitors-circle {
+	left: 110px;
+	top: 73px;
+*left:109px;
+*top:71px
+}
+.wvmp-stats.nvisit-5-9 .new-visitors-circle {
+	left: 169px;
+	top: 68px
+}
+.ie.lte9 .wvmp-stats.nvisit-5-9 .new-visitors-circle {
+	left: 167px
+}
+.wvmp-stats.cn-1-4 .connections-circle, .wvmp-stats.pvisit-1-4 .profile-visitors-circle, .wvmp-stats.nvisit-1-4 .new-visitors-circle {
+	font-size: 55px;
+	left: 47px;
+	top: 54px;
+*left:45px;
+*top:53px
+}
+.wvmp-stats.pvisit-1-4 .profile-visitors-circle {
+	left: 116px;
+	top: 86px;
+*left:115px
+}
+.wvmp-stats.nvisit-1-4 .new-visitors-circle {
+	left: 175px;
+	top: 83px;
+*left:174px
+}
+.wvmp-stats.cn-0 .connections-circle, .wvmp-stats.pvisit-0 .profile-visitors-circle {
+	font-size: 45px;
+	left: 50px;
+	top: 62px
+}
+.ie.lte9 .wvmp-stats.cn-0 .connections-circle, .ie.lte9 .wvmp-stats.pvisit-0 .profile-visitors-circle {
+	left: 49px
+}
+.wvmp-stats.pvisit-0 .profile-visitors-circle {
+	left: 119px;
+	top: 92px
+}
+.ie.lte9 .wvmp-stats.pvisit-0 .profile-visitors-circle {
+	left: 118px
+}
+.wvmp-stats.cn-0 .connections-count {
+	top: 79px;
+	font-size: 185%
+}
+.ie.lte9 .wvmp-stats.cn-0 .connections-count {
+	left: 12px
+}
+.ie.lte9 .wvmp-stats.cn-0 .connections-count {
+	top: 78px
+}
+.wvmp-stats.pvisit-100-plus .profile-visits-count {
+	left: 80px
+}
+.wvmp-stats.nvisit-0 .connections {
+	top: 18px
+}
+.wvmp-stats .profile-visits-count {
+	top: 108px;
+	left: 78px;
+	width: 108px
+}
+.wvmp-stats.pvisit-1-4 .profile-visits-count {
+*left:77px
+}
+.wvmp-stats .new-visits-count {
+	top: 104px;
+	left: 151px;
+	width: 80px
+}
+.wvmp-stats.nvisit-1-4 .new-visits-count {
+*left:150px;
+*top:105px
+}
+.wvmp-stats .new-visits-count.hundred {
+	left: 153px;
+	top: 105px
+}
+.wvmp-stats.nvisit-100-plus .new-visits-count.plus {
+	text-align: right;
+	left: 145px;
+	top: 106px
+}
+.wvmp-stats.nvisit-0 {
+	margin-top: -10px
+}
+.wvmp-stats.nvisit-0 .new-visitors, .wvmp-stats.nvisit-0 .new-visitors-desc, .wvmp-stats.nvisit-0 .new-visits-count, .wvmp-stats.nvisit-0 .new-visitors-circle {
+	display: none
+}
+.wvmp-stats.pvisit-0 .wvmp-stats-counter {
+	font-size: 185%
+}
+.wvmp-stats.pvisit-0 .profile-visits-count {
+	top: 109px
+}
+.ie.lte9 .wvmp-stats.pvisit-0 .profile-visits-count {
+	left: 77px
+}
+.ie.lte9 .wvmp-stats.pvisit-0 .profile-visits-count {
+	top: 108px
+}
+.wvmp-stats .nil-prompt {
+	position: absolute;
+	display: block;
+	bottom: 15px;
+	padding-left: 42px;
+	width: 240px;
+	font-size: 120%
+}
+.wvmp-stats .nil-prompt span {
+	display: block;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	background: transparent url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_wvmp_hp.png') no-repeat -9px -535px;
+	left: -23px;
+	top: -30px
+}
+.wvmp-stats .nil-prompt a {
+	position: static;
+	font-weight: normal;
+	font-size: 11px
+}
+.wvmp-stats .nil-prompt p {
+	font-weight: normal;
+	font-size: 11px;
+	width: 245px
+}
+.wvmp-stats.pvisit-0.cn-0.nvisit-0 {
+	height: 180px
+}
+.wvmp-stats .wvmp-see-more {
+	bottom: 0;
+	right: 0;
+	color: #069;
+	top: auto;
+	font-size: 11px;
+	font-weight: normal
+}
+.wvmp-stats.profile-links {
+	height: 200px
+}
+.stats.network .add-connections {
+	width: 15em;
+	padding: 0 1px 1px 0
+}
+.en .stats.network .add-connections {
+	width: 10em
+}
+.fr .stats.network .add-connections {
+	width: 16em
+}
+.static .content {
+	padding-right: 20px
+}
+.offerings li h4 {
+	font-size: 150%;
+	line-height: 24px;
+	padding-left: 35px
+}
+.offerings li p {
+	padding-left: 37px;
+	font-size: 110%
+}
+.offerings li.company-pages h4 {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_personalnav_v1.png') no-repeat 9px -178px
+}
+.offerings li.contacts h4 {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_personalnav_v1.png') no-repeat 9px -68px
+}
+.offerings li.applications h4 {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_personalnav_v1.png') no-repeat 9px -217px
+}
+.rc .rc-match-item h4 {
+	font-size: 100%
+}
+.wp h5 {
+	margin-bottom: 0;
+	line-height: 1;
+	font-size: 13px
+}
+.whitepaper .content {
+	padding: 15px 10px 0
+}
+.whitepaper img {
+	float: left;
+	height: 56px;
+	width: 56px;
+	margin-right: 10px
+}
+.whitepaper .ad-footer {
+	clear: both;
+	padding-top: 20px;
+	overflow: hidden
+}
+.whitepaper .ad-footer .posted-by {
+	float: left;
+	color: #666;
+	font-size: 11px
+}
+.whitepaper .ad-footer .what {
+	float: right;
+	font-size: 11px
+}
+.whitepaper .ad-footer .what a, .whitepaper .ad-footer .what a:visited {
+	color: #666
+}
+.add-more {
+	padding: 6px;
+	border: 1px solid #ddd;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px
+}
+.add-more p {
+	font-size: 110%;
+	margin: 0
+}
+.add-more a {
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_nmp_v2.png') 0 -338px no-repeat;
+	padding-left: 20px
+}
+iframe.gadgets-gadget {
+	width: 100%
+}
+#body ul.drop li.installed-app {
+	display: none
+}
+.draggable .drag-handle, .draggable .drag-handle-hover {
+	cursor: move
+}
+.sortable .progress-indicator {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0
+}
+.sortable.drag-proxy {
+	background: #fff
+}
+.sortable.dragged {
+	visibility: hidden !important
+}
+.sortable.dragged iframe {
+	visibility: hidden;
+	width: 0;
+	overflow: hidden
+}
+.sortable.saving {
+	position: relative
+}
+.sortable.saving .progress-indicator {
+	display: block
+}
+#extra .ad-block {
+	margin: 0 0 20px
+}
+#ad-slot-1.content {
+	width: 100%
+}
+.js .panel {
+	display: block
+}
+.panel .actions {
+	margin: 5px 0;
+	padding-top: 10px;
+	clear: both;
+*position:relative
+}
+.panel .actions:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+.panel .actions div {
+	border: 1px solid #ccc;
+	padding: 5px;
+	text-align: center;
+	width: 15em;
+	white-space: nowrap;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px
+}
+.it .panel .actions div, .nl .panel .actions div, .ru .panel .actions div, .pt .panel .actions div {
+	width: 17em
+}
+.de .panel .actions div {
+	width: 19em
+}
+.panel .actions p {
+	font-size: 110%;
+	margin: 0
+}
+.panel .actions .add {
+	margin: 0 auto;
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_nmp_v2.png') 14px -334px no-repeat
+}
+.panel .actions .open {
+	position: relative
+}
+.panel .actions .add p a, .panel .actions .add p strong {
+	font-weight: normal;
+	cursor: pointer;
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') 100% -2076px no-repeat;
+	padding: 0 18px 0 16px;
+	color: #069 !important
+}
+.panel .actions .reset {
+	float: right
+}
+.panel .actions .reset a {
+	color: #999 !important
+}
+#module-menu {
+	z-index: 100
+}
+.home-member-new .feed .more span {
+	color: #069;
+	font-weight: normal
+}
+#nus-deferred-spinner {
+	background: url('http://static01.linkedin.com/scds/common/u/img/anim/anim_loading_16x16.gif') no-repeat bottom right;
+	height: 16px
+}
+.section.reconnect.v2 h3 {
+	text-transform: none;
+	color: black;
+	font-size: 13px;
+	border-bottom: 1px solid #ccc
+}
+.section.reconnect.v2 li {
+	clear: both;
+	padding: 10px 0 15px 0;
+	border-top: 1px solid #efefef
+}
+.section.reconnect.v2 li.first {
+	border: none
+}
+.section.reconnect.v2 li .avatar {
+	float: left;
+	height: 62px
+}
+.section.reconnect.v2 li .avatar img {
+	width: 60px;
+	height: 60px;
+	border: 1px solid #efefef;
+	padding: 2px;
+	display: inline-block
+}
+.section.reconnect.v2 li .avatar.default {
+	border: 1px solid #efefef;
+	height: 60px;
+	width: 60px
+}
+.section.reconnect.v2 li .avatar.default img {
+	width: 40px;
+	height: 40px;
+	padding: 10px;
+	border: none
+}
+.section.reconnect.v2 li .avatar.default.edu img {
+	width: 50px;
+	height: 50px;
+	padding: 5px;
+	border: none
+}
+.section.reconnect.v2 li .headline, .section.reconnect li .connections {
+	margin-left: 75px;
+	font-size: 13px;
+	margin-bottom: 0
+}
+.section.reconnect.v2 li .headline {
+	margin-bottom: 4px
+}
+.section.reconnect.v2 li .headline a.org {
+	font-weight: bold
+}
+.section.reconnect.v2 li .connections img {
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	overflow: hidden
+}
+.section.reconnect.v2 li .connections a:hover {
+	text-decoration: none
+}
+.section.reconnect.v2 li .clear {
+	clear: both
+}
+.section.reconnect.v2 li .see-all {
+	padding-left: 8px
+}
+.america {
+	background: url('http://static01.linkedin.com/scds/common/u/img/bg/bg_america_today_1889x924.jpg') 50% 0 repeat-x
+}
+.america .global-nav .logo {
+	margin: 3px 10px 0 20px;
+*margin-bottom:3px;
+	width: 64px
+}
+.america .global-nav .logo a {
+	background-image: url('http://static02.linkedin.com/scds/common/u/img/logos/logo_flag_64x30.jpg');
+	height: 30px
+}
+/* scss/modules/tabview.css */
+
+.mod-tabview {
+	border: 1px solid #ccc;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	margin-bottom: 20px
+}
+.mod-tabview .header {
+	background: #fdfdfd url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') repeat-x 0 -301px;
+	border-bottom: 1px solid #b6b6b6;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	float: left;
+	width: 100%
+}
+.mod-tabview-collapsed .header {
+	border-bottom: 0;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px
+}
+.mod-tabview .toggle {
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') no-repeat 12px -1598px;
+	border-right: 1px solid #ccc;
+	cursor: pointer;
+	float: left;
+	height: 24px;
+	width: 30px
+}
+.mod-tabview-collapsed .toggle {
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') no-repeat 13px -1549px
+}
+.mod-tabview-nav {
+	float: left;
+	font-size: 13px
+}
+.mod-tabview-nav li {
+	border-right: 1px solid #ccc;
+	float: left;
+	min-height: 24px;
+	_height: 24px
+}
+.mod-tabview-nav:first-child li:first-child {
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+	border-top-left-radius: 5px
+}
+.mod-tabview-nav li a {
+	display: inline-block;
+	padding: 5px 20px 3px
+}
+.mod-tabview-nav .selected {
+	background: #fff url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') repeat-x 0 -394px;
+	border: 1px solid #b6b6b6;
+	border-width: 1px 1px 0;
+	margin: -1px 0 -1px -1px;
+	padding: 0 0 1px;
+	_position: relative
+}
+.mod-tabview-nav .selected a {
+	color: #333
+}
+.mod-tabview .content {
+	clear: both
+}
+.mod-tabview .tab-content {
+	left: -12345px;
+	position: absolute;
+	top: 0;
+	_visibility: hidden
+}
+.mod-tabview .tab-content.selected {
+	left: 0;
+	position: static;
+	_visibility: visible
+}
+.mod-tabview-arrow {
+	border: none
+}
+.mod-tabview-arrow .header {
+	background: none;
+	border-bottom: 1px solid #999
+}
+.mod-tabview-arrow .mod-tabview-nav .selected {
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_wvmx.png') no-repeat scroll 50% -164px transparent;
+	border: none;
+	font-weight: bold;
+	padding-bottom: 8px
+}
+.mod-tabview-arrow .mod-tabview-nav li {
+	border-right: none
+}
+.mod-tabview-arrow .content {
+	border: none;
+	padding-top: 5px
+}
+.leo-module .content .mod-tabview-arrow {
+	border: none;
+	margin-bottom: 0
+}
+.leo-module .content .mod-tabview-arrow .header {
+	background: none;
+	border-color: #999;
+	border-width: 0 0 1px 0;
+	padding: 0
+}
+.leo-module .content .mod-tabview-arrow .content {
+	padding: 5px 0 0
+}
+/* scss/modules/network_updates.css */
+
+.reconnect h2 {
+	color: #000;
+	font-size: 18px;
+	font-weight: normal;
+	margin: 0 0 10px
+}
+.reconnect h3 {
+	font-size: 11px;
+	font-weight: bold;
+	color: #666;
+	margin: 0 0 5px
+}
+.reconnect h3 span {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 1px
+}
+.reconnect ul {
+	margin: 0 0 15px
+}
+.reconnect li a.org {
+	font-size: 13px;
+	font-weight: bold
+}
+.reconnect li span {
+	color: #666;
+	font-size: 11px
+}
+.reconnect li em {
+	font-weight: bold
+}
+.post-status {
+	padding-bottom: 10px;
+*padding-bottom:20px;
+	padding-top: 10px;
+	margin-top: -10px;
+	position: relative;
+	width: 100%
+}
+.post-status .member-photo {
+	left: 10px;
+	position: absolute;
+	width: 40px
+}
+.post-status form {
+	padding: 2px 0 0 65px;
+	min-height: 76px
+}
+.post-status textarea {
+	border: 1px solid #999;
+	font-size: 12px;
+	height: 39px;
+	margin: 0;
+	padding: 2px;
+	width: 487px
+}
+.post-status .check-textarea-message, .post-status .check-textarea-error {
+	margin-bottom: 0;
+	margin-left: 1px;
+	padding-bottom: 0;
+	width: 330px
+}
+.post-status .current {
+	color: #464646;
+	margin-left: 1px;
+	margin-top: 3px;
+	padding: 0;
+	width: 330px;
+	font-size: 12px
+}
+.post-status .current p {
+	font-size: 12px;
+	margin: 0;
+	padding-bottom: 3px
+}
+.post-status .timestamp {
+	color: #999;
+	font-size: 11px;
+	white-space: nowrap
+}
+.post-status .actions {
+	margin: 0;
+	position: absolute;
+	right: 2px;
+	top: 60px;
+	width: 160px
+}
+.de .post-status .actions {
+	width: 170px;
+*width:195px
+}
+.en .post-status .actions {
+	width: 135px
+}
+.nus-home .post-status .actions {
+	right: 66px
+}
+/*.post-status .submit {
+	float: right;
+	display: block;
+	font-size: 13px;
+	padding: 3px 8px 2px 8px;
+*padding:3px 2px 2px 2px;
+	line-height: 1.2
+}
+.post-status .check {
+	float: right;
+	display: block;
+	margin-top: 6px;
+*margin-top:3px
+}
+.post-status .check-nojs {
+	display: none
+}
+.post-status .status-twitlogo {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') 0 -69px no-repeat;
+	width: 21px;
+	height: 23px;
+	display: block;
+	float: right;
+	margin: 1px 9px 0 1px;
+	cursor: pointer
+}
+.post-status .status-twitlogo span, .js .post-status #twit-account-list, .js .post-status #twit-account-select {
+	display: none
+}
+.post-status .status-twitlogo li {
+	margin: 0 !important
+}
+.post-status .status-twitlogo.multi {
+	background-position: 0 -149px;
+	width: 30px
+}
+.post-status .open {
+	position: relative
+}
+.post-status .open #twit-account-list {
+	top: 23px;
+	right: 0;
+	display: block;
+	position: absolute;
+	border: 3px solid #ccc;
+	border-width-bottom: 2px;
+	z-index: 500
+}
+.post-status .open a {
+	display: block;
+	padding: 3px 15px 3px 6px;
+	background: #fff;
+	border-bottom: 1px solid #ccc;
+	font-size: 13px;
+	white-space: nowrap
+}
+.post-status .open .selected {
+	font-weight: bold;
+	background: #dbeffb url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') 101% -220px no-repeat;
+	color: #000 !important;
+	cursor: text
+}
+.post-status .open .selected:hover {
+	text-decoration: none
+}
+.post-status .status-twitlogo .plain, #body .post-status .status-twitlogo .plain:visited {
+	color: #000
+}
+.post-status .status-twitlogo .plain:hover {
+	text-decoration: none;
+	color: #000
+}
+.post-status .status-twitlogo.open a:hover {
+	background-color: #dbeffb
+}
+.post-status .clear {
+	background: none;
+	border: none;
+	color: #039;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+*padding-top:5px;
+	text-decoration: underline;
+	cursor: pointer
+}
+.feed .feed-item {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') repeat-x;
+	color: #000;
+	padding: 10px 3px
+}
+.feed .feed-item, .feed .feed-body {
+	overflow: hidden;
+*zoom:1;
+	_overflow: visible
+}
+.feed.feed-redesign .feed-item {
+	background: #fff;
+	border-top: 1px solid #eaeaea;
+	padding: 10px 0;
+*position:relative
+}
+.feed.feed-redesign .feed-item:first-child {
+	border-top: 0
+}
+.feed .feed-item-insert {
+	background: transparent;
+	border-top: 1px solid #999;
+	padding-top: 9px
+}
+.feed.feed-redesign .feed-item-insert {
+	padding-top: 10px
+}
+.feed .feed-photo {
+	background: #fff;
+	float: left;
+	margin: 2px 10px 0 7px
+}
+.feed.feed-redesign .feed-photo {
+	margin: 2px 10px 0 0
+}
+.feed.feed-redesign .photo {
+	border-color: #eaeaea
+}
+.feed.feed-redesign .photo:hover {
+	border-color: #bfbfbf
+}
+.feed .feed-photo img {
+	display: block
+}
+.feed .feed-content {
+	font-size: 13px;
+	margin: 4px 20px 0 0
+}
+.it .feed .feed-content {
+	margin-right: 50px
+}
+.de .feed .feed-content {
+	margin-right: 62px
+}
+.feed .feed-content p {
+	font-size: 100%
+}
+.feed .feed-content blockquote {
+	color: #666;
+	border-left: 1px solid #ddd;
+	margin: 5px 0 0;
+	padding: 1px 6px
+}
+.feed .feed-content blockquote a {
+	font-size: 11px
+}
+.feed .feed-item-meta {
+	margin-top: 6px;
+	overflow: hidden;
+*zoom:1
+}
+.feed .feed-actions li {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') no-repeat 0 -775px;
+	_display: inline;
+	float: left;
+	font-size: 11px;
+	margin-left: 5px;
+	padding-left: 10px
+}
+.feed .feed-actions .loading {
+	width: 16px
+}
+.feed.feed-redesign .feed-actions a, .feed.feed-redesign .feed-item:hover .chron .feed-actions a {
+	color: #888
+}
+.feed.feed-redesign .feed-item:hover .feed-actions a, .feed.feed-redesign .feed-item:hover .chron .feed-item:hover .feed-actions a {
+	color: #069
+}
+.feed .more {
+	color: #069;
+	font-size: 11px;
+	margin: 8px 0 0;
+	text-align: right;
+	white-space: nowrap
+}
+.feed .time {
+	color: #666;
+	display: block;
+	font-size: 11px;
+	white-space: nowrap
+}
+.feed .nus-timestamp {
+	color: #666;
+	font-size: 11px;
+	float: left;
+	white-space: nowrap
+}
+.feed.feed-redesign .nus-timestamp {
+	color: #888
+}
+.feed .nus-from {
+	color: #888;
+	font-size: 11px;
+	white-space: nowrap
+}
+.feed a.nus-from:hover {
+	color: #069
+}
+.feed .nus-from-twitter {
+	background: url('http://static01.linkedin.com/scds/common/u/img/icon/icon_twitter_16x12.png') no-repeat center right;
+	display: -moz-inline-box;
+	-moz-box-orient: vertical;
+	display: inline-block;
+	vertical-align: middle;
+*vertical-align:auto;
+	min-height: 12px;
+	height: auto !important;
+	height: 12px;
+	padding-right: 19px;
+*zoom:1
+}
+.feed .nus-from-twitter {
+*display:inline
+}
+.feed .from-twitter {
+	display: inline-block;
+	margin: 0 0 4px 3px;
+	vertical-align: middle
+}
+.feed .unavailable {
+	font-size: 13px
+}
+.feed .miniprofile-container a {
+	font-size: 13px
+}
+.feed .feed-actions .jobseekericon {
+	margin-left: 0
+}
+.feed .feed-actions .invite-dialog {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_global_v5.png') no-repeat 0 -1032px;
+	font-weight: bold;
+	margin-left: 0;
+	padding-left: 16px
+}
+.ie.lte9 .feed .feed-actions .invite-dialog {
+	background-position: 0 -1031px
+}
+.feed .cncttest .feed-actions li {
+	background-image: url('http://static02.linkedin.com/scds/common/u/img/icon/icon_bullet_grey2_4x4.png');
+	background-position: 100% 4px;
+	margin: 0 5px 0 0;
+	padding: 0 10px 0 0
+}
+.feed .nested-connection {
+	overflow: hidden
+}
+.feed .nested-connection p {
+	margin-left: 10px
+}
+.feed .nested-connection p a {
+	display: block
+}
+.feed .digest-link {
+	font-size: 100%;
+	text-align: right
+}
+.feed .digest-link .hide {
+	display: none
+}
+.feed .digest-link .show {
+	display: inline
+}
+.js .feed .digest-item {
+	position: absolute;
+	left: -9999px;
+	visibility: hidden
+}
+.js .feed .digest-show .digest-item {
+	position: static;
+	left: auto;
+	visibility: visible
+}
+.js .feed .digest-show .digest-link .hide {
+	display: inline
+}
+.js .feed .digest-show .digest-link .show {
+	display: none
+}
+.feed .loading {
+	background: url('http://static01.linkedin.com/scds/common/u/img/anim/anim_loading_16x16.gif') no-repeat center center !important;
+	display: block;
+	height: 16px !important;
+	padding: 0 !important;
+	text-indent: -12345px !important
+}
+.feed .loading * {
+	display: none
+}
+.feed .like, .feed .show-like .unlike, .feed .unlike .like-count {
+	display: none
+}
+.feed .show-like .like {
+	display: inline
+}
+.feed .comments {
+	margin: 7px 40px 7px 0;
+	padding: 10px 8px;
+*zoom:1;
+	background-color: #E9F5FA
+}
+.feed.feed-redesign .comments {
+	background-color: #ebf5fb;
+	font-size: 12px;
+	line-height: 1.4;
+	padding: 5px;
+	text-shadow: 0 1px 0 #fff
+}
+.feed.feed-redesign .comments .likers p, .feed.feed-redesign .comments .nus-trending-in p, .feed.feed-redesign .comments .likers .show-less, .feed.feed-redesign .comments ul p, .feed.feed-redesign .comments q, .feed.feed-redesign .comments li.seemore p, .feed.feed-redesign .comments li.deleted p, .feed.feed-redesign .commenter, .feed.feed-redesign .show-all-comments {
+	font-size: 100%
+}
+.feed .comments.hide {
+	display: none
+}
+.feed .comments .nus-trending-in-icon {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_pulse_v12.png') -379px -303px no-repeat;
+	padding-left: 18px
+}
+.feed .comments .likers p {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') -88px -630px no-repeat;
+	font-size: 13px;
+	padding-left: 20px
+}
+.feed.feed-redesign .comments .nus-trending-in p, .feed.feed-redesign .comments .likers p {
+	_height: 16px;
+	min-height: 16px
+}
+.feed .comments .likers .show-less {
+	font-size: 11px;
+	white-space: nowrap
+}
+.feed .comments li {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') 0 100% repeat-x;
+	_height: 1%;
+	min-height: 0;
+	padding: 0 3px 8px 3px;
+	margin: 0 0 8px 0;
+	position: relative;
+	overflow: hidden;
+*zoom:1
+}
+.feed.feed-redesign .comments li {
+	background: transparent;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #d6eaf4;
+	margin: 0;
+	padding: 5px 0
+}
+.feed.feed-redesign .comments li:first-child {
+	border-top: 0;
+	padding-top: 0
+}
+.feed .comments li.last {
+	background: 0;
+	margin: 0
+}
+.feed .comments li.injected {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') 0 0 repeat-x
+}
+.feed .comments ul p {
+	font-size: 13px;
+	padding-right: 14px;
+	margin: 0
+}
+.feed .comments q {
+	font-size: 13px
+}
+.feed .comments .feed-photo {
+	margin: 0 10px 0 0
+}
+.feed.feed-redesign .comments .photo:hover {
+	border-color: #eaeaea
+}
+.feed .comments li .delete {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') no-repeat 100% -375px;
+	display: none;
+	_display: block;
+	text-indent: -12345px;
+	position: absolute;
+	width: 9px;
+	right: 0;
+	top: 6px;
+*zoom:1
+}
+.feed .comments li:hover .delete {
+	display: block
+}
+.feed .comments li .delete:hover {
+	background-position: 100% -300px
+}
+.feed .comments li.seemore {
+	padding: 0 3px 8px 3px
+}
+.feed.feed-redesign .comments li.seemore {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') no-repeat 0 -920px;
+	padding: 5px 0 5px 21px
+}
+.feed.feed-redesign .comments li.seemore:first-child {
+	background-position: 0 -925px;
+	padding-top: 0
+}
+.feed .comments li.seemore p {
+	font-size: 100%
+}
+.feed .comments li.comments-loading p {
+	background: url('http://static01.linkedin.com/scds/common/u/img/anim/anim_loading_16x16.gif') no-repeat center center;
+	height: 16px;
+	text-indent: -12345px
+}
+.feed.feed-redesign .comments li.comments-loading {
+	background: url('http://static01.linkedin.com/scds/common/u/img/anim/anim_loading_16x16.gif') no-repeat left center
+}
+.feed.feed-redesign .comments li.comments-loading:first-child {
+	background-position: left center
+}
+.feed.feed-redesign .comments li.comments-loading p {
+	background: transparent;
+	height: auto;
+	text-indent: 0
+}
+.feed .comments li.deleted {
+	min-height: 0;
+	_height: 0;
+	display: block
+}
+.feed .comments li.deleted p {
+	color: #666;
+	font-size: 11px;
+	font-style: italic
+}
+.feed.feed-redesign .comments p {
+	overflow: hidden;
+*zoom:1
+}
+.feed .commenter {
+	font-size: 13px;
+	font-weight: bold
+}
+.feed.feed-redesign .comments .commenter {
+	font-weight: normal
+}
+.feed .comments .nus-timestamp {
+	float: none;
+	margin: 0
+}
+.feed.feed-redesign .comments .nus-timestamp {
+	display: block
+}
+.feed .comments .form {
+	background: transparent;
+	padding: 0 3px
+}
+.feed.feed-redesign .comments .form {
+	border-top: 1px solid #fff;
+	padding-top: 5px
+}
+.feed.feed-redesign .comments .form:first-child {
+	border: 0;
+	padding: 0
+}
+.feed .comments textarea {
+	height: 16px;
+	width: 95%;
+	padding: 3px;
+	font-size: 13px
+}
+.feed .comments .actions {
+	font-size: 12px;
+	padding-left: 0;
+	padding-top: 3px
+}
+.js .feed .comments .mini .actions {
+	display: none
+}
+.feed .comments .btn-primary {
+	font-size: 100%;
+	vertical-align: middle
+}
+.feed {
+	background: transparent;
+	margin: 0 0 20px;
+	padding: 0;
+	width: 100%
+}
+#feed-content {
+	overflow: hidden;
+	width: 100%
+}
+.feed .feed-marquee {
+	float: left;
+	font-size: 18px;
+	font-weight: normal;
+	overflow: hidden;
+*zoom:1
+}
+.feed .feed-marquee a {
+	color: #000
+}
+.feed .feed-marquee .feed-title {
+	display: block;
+	float: left
+}
+.feed .feed-marquee .feed-rss {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') no-repeat 0 0;
+	float: left;
+	height: 12px;
+	text-indent: -12345px;
+	width: 12px;
+	margin: 7px 0 0 7px
+}
+.feed .feed-marquee .feed-rss:hover {
+	background-position: 100% 0
+}
+#nus-filters.hide, #nus-relevance-filters.hide {
+	display: none
+}
+.feed-sort-filters {
+	font-size: 13px;
+	float: left;
+	margin: 5px 1px 0 0
+}
+.feed-sort-filters .selected a {
+	color: #000;
+	cursor: default;
+	font-weight: bold
+}
+.feed-sort-filters a:hover {
+	text-decoration: none
+}
+.feed .feed-showing-B {
+	float: left;
+	font-size: 13px;
+	margin-top: 5px
+}
+.feed-sort-filters li {
+	background: url('http://static02.linkedin.com/scds/common/u/img/icon/icon_bullet_grey2_4x4.png') no-repeat 100% 6px;
+	_display: inline;
+	float: left;
+	margin: 0 5px 0 0;
+	padding: 0 10px 0 0;
+	position: relative
+}
+.feed .feed-showing-B .feed-filters li {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') no-repeat 0 -775px;
+	_display: inline;
+	float: left;
+	margin-left: 5px;
+	padding-left: 10px
+}
+.feed .feed-showing-B .feed-filters li:first-child {
+	background: transparent;
+	margin: 0;
+	padding: 0
+}
+.feed .feed-showing-B .feed-filters .selected a {
+	color: #000;
+	font-weight: bold;
+	cursor: default
+}
+.feed .feed-showing-B .feed-filters .selected a:hover {
+	text-decoration: none
+}
+.feed .feed-showing-B .feed-filters .menu li {
+	background: transparent;
+	float: none;
+	margin: 0 5px;
+	padding: 0
+}
+.feed .feed-showing-B .feed-filters .menu li.separator {
+	margin-top: 4px;
+	padding-top: 4px
+}
+.feed .feed-showing-B .feed-filters .tab-droplist .trigger span {
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') no-repeat 100% -1761px;
+	display: -moz-inline-box;
+	-moz-box-orient: vertical;
+	display: inline-block;
+	vertical-align: middle;
+*vertical-align:auto;
+	padding-right: 10px;
+*zoom:1;
+	vertical-align: baseline
+}
+.feed .feed-showing-B .feed-filters .tab-droplist .trigger span {
+*display:inline
+}
+.feed .feed-settings {
+	float: right;
+	font-size: 11px;
+	margin: 8px 0 5px
+}
+.feed .feed-settings li {
+	border-left: 1px solid #666;
+	_display: inline;
+	float: left;
+	line-height: 1;
+	margin-left: 5px;
+	padding-left: 5px
+}
+.feed .feed-settings li:first-child {
+	border-left: 0
+}
+.feed .feed-settings a {
+	color: #666
+}
+.feed .feed-settings a:hover {
+	color: #069
+}
+.feed .feed-search {
+	float: right;
+	margin-bottom: 2px;
+	position: relative;
+	text-align: right;
+	width: 300px;
+	z-index: 5
+}
+.feed .feed-search.relevance-enabled {
+	float: left
+}
+.feed .feed-search .learn {
+	color: #007aaa;
+*cursor:pointer;
+	display: inline-block;
+	font-size: 11px;
+	height: 14px;
+	line-height: 14px;
+	margin-top: -1px;
+	text-align: center;
+	vertical-align: middle;
+	width: 14px
+}
+.feed .feed-search h3 {
+	display: none
+}
+.feed .feed-search-prompt h3 {
+	font-size: 12px;
+	margin: 0 4px;
+	padding: 0;
+	text-transform: none;
+	display: -moz-inline-box;
+	-moz-box-orient: vertical;
+	display: inline-block;
+	vertical-align: middle;
+*vertical-align:auto;
+	vertical-align: middle;
+*zoom:1
+}
+.feed .feed-search-prompt h3 {
+*display:inline
+}
+.feed .feed-search-prompt .keywords {
+	display: none
+}
+.feed .feed-search-prompt {
+	color: #069;
+	cursor: pointer;
+	text-align: right
+}
+.feed .saved-searches {
+	background: #fff;
+	border: 1px solid #ccc;
+	display: none;
+	font-size: 11px;
+	padding: 5px;
+	position: absolute;
+	right: 23px;
+	text-align: left;
+	top: 23px;
+	width: 144px;
+	z-index: 2
+}
+.feed .saved-searches h4 {
+	color: #999;
+	font-weight: bold
+}
+.feed .saved-searches li {
+	margin-top: 3px
+}
+.feed .saved-searches a {
+	color: #333
+}*/
+#signal-callout-trigger {
+	margin-right: 1px;
+	vertical-align: middle
+}
+#callout-overlay.instructional-callout.callout-top-right.signal-callout .callout-arrow {
+	right: 218px;
+	top: -1px
+}
+#callout-overlay.signal-callout {
+*padding-top:15px
+}
+/*.feed h3 {
+	color: #666;
+	font-size: 11px;
+	font-weight: normal;
+	line-height: 1.4;
+	margin: 0 0 5px;
+	padding: 3px 0;
+	text-transform: uppercase
+}
+.feed ul.helps {
+	background: #f4f4f4;
+	border: 1px solid #ccc;
+	border-width: 1px 0;
+	font-size: 11px;
+	padding: 5px 10px;
+	overflow: hidden;
+*zoom:1
+}
+.feed ul.helps li {
+	float: left;
+	margin-right: 10%;
+	padding: 0;
+	width: 45%
+}
+.feed ul.helps li.nus-hub, .feed ul.helps li.manage, .feed ul.helps li.pagination {
+	float: none;
+	margin: 0;
+	text-align: right;
+	width: auto
+}
+.feed-gus ul.helps li.nus-hub, .feed-nhome-gus ul.helps li.nus-hub {
+	float: none;
+	text-align: right;
+	width: 100%
+}
+.feed ul.helps .divider {
+	color: #666
+}
+.feed .feed-no-more {
+	background: #ddf0f8;
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	padding: 10px
+}
+.feed .feed-no-more .feed-unfilter {
+	font-size: 13px;
+*margin-left:5px
+}
+.feed .feed-show-more {
+	display: block !important;
+	font-size: 13px;
+	padding: 5px 10px 4px;
+*padding:4px 10px 3px;
+	text-align: center
+}
+.feed .feed-show-more-deferred {
+	display: none !important
+}
+.feed .feedgroup {
+	padding-bottom: 10px
+}
+.feed .chron {
+	margin: 0 0 10px
+}
+.feed .standard {
+	margin: 0 0 10px
+}
+.feed .standard h4 {
+	color: #666;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 1.4;
+	margin: 0;
+	padding: 0 0 3px;
+	text-transform: uppercase
+}
+.feed .standard h4 a {
+	color: #666
+}
+.feed .standard h4 a:hover {
+	text-decoration: underline
+}*/
+/*.variable {
+	margin: 0 0 10px
+}
+.variable .feedgroup {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') repeat-x top left;
+	min-height: 62px;
+	_height: 62px;
+	padding: 10px 0;
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+*zoom:1;
+	_overflow: visible
+}
+.variable .feedgroup .feed-photo {
+	float: none;
+	left: 0;
+	position: absolute;
+	top: 18px
+}
+.variable .feedgroup .comments .feed-photo {
+	float: left;
+	position: static
+}
+.variable .feedgroup-content {
+	padding-left: 63px
+}
+.variable ul .feed-item {
+	min-height: 0;
+*height:1%;
+	position: relative;
+*position:static
+}
+.variable ul .vfeed-first {
+	background: transparent
+}
+.variable ul .vfeed-first .miniprofile-container a {
+	font-weight: bold !important
+}
+.variable ul .feed-body {
+	padding-left: 0
+}
+.variable ul .feed-content {
+	padding-right: 0 !important
+}
+.variable ul .miniprofile-container a {
+	font-weight: normal !important
+}
+.feed .foot-connect {
+	border: none;
+	font-size: 11px;
+	margin: 10px 0 0 0;
+	overflow: hidden;
+	width: 100%
+}
+.feed .foot-connect a {
+	display: block;
+	float: left;
+	font-size: 100%;
+	width: 49%
+}
+.feed .foot-connect a.their-connections {
+	float: right;
+	padding-left: 5px;
+	text-align: right
+}
+.feed .recent-connect {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') repeat-x;
+	margin-top: 10px
+}
+.feed .recent-connect .feed-photo {
+	margin-left: 0
+}
+.feed .recent-connect h3 {
+	color: #333;
+	font-size: 13px;
+	padding-top: 10px;
+	text-transform: none
+}
+.feed .recent-connect h3 a {
+	float: right;
+	font-size: 11px;
+	font-weight: normal;
+	padding-top: 3px;
+	text-align: right;
+	width: 70px
+}
+.feed .recent-connect li {
+	min-height: 48px;
+	_height: 48px;
+	padding-bottom: 10px;
+*zoom:1
+}
+.feed .recent-connect li p {
+	font-size: 13px
+}
+.feed .recent-connect li img {
+	float: left;
+	margin-right: 10px
+}
+.feed .recent-connect li a.connect {
+	font-size: 13px;
+	margin-top: 15px;
+	float: right
+}
+.feed .connections {
+	font-size: 11px;
+	padding: 10px 0;
+	text-align: right
+}
+.feed .nus-now-showing {
+	background-color: #ddf0f8
+}
+.feed .nus-hidden {
+	background: #DDF0F8
+}
+.feed a.nus-hide-item {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') no-repeat 100% -375px;
+	display: none;
+	_display: block;
+	height: 12px;
+	width: 9px;
+	margin-right: 3px;
+	float: right;
+	text-indent: -12345px
+}
+.feed .feed-item:hover a.nus-hide-item {
+	display: block
+}
+.feed .feed-item.viral:hover a.nus-hide-item {
+	display: none
+}
+.feed.feed-redesign .feed-item:hover .chron a.nus-hide-item {
+	display: none
+}
+.feed.feed-redesign .feed-item:hover .chron .feed-item:hover a.nus-hide-item {
+	display: block
+}
+.feed a.nus-hide-item:hover {
+	background-position: 100% -300px
+}
+.feed .nus-action-links {
+	visibility: hidden;
+	_display: block;
+	font-size: 11px;
+	float: right;
+	width: auto;
+	text-align: right;
+	padding-right: 3px;
+	margin-left: 4px
+}
+.feed .feed-item:hover .nus-action-links {
+	visibility: visible
+}
+.feed .nus-action-links a {
+	color: #999
+}
+.feed.feed-redesign .nus-action-links a {
+	display: -moz-inline-box;
+	-moz-box-orient: vertical;
+	display: inline-block;
+	vertical-align: middle;
+*vertical-align:auto;
+*zoom:1;
+	padding: 3px
+}
+.feed.feed-redesign .nus-action-links a {
+*display:inline
+}
+.feed .nus-action-links a:hover {
+	color: #069;
+	text-decoration: underline
+}
+.feed.feed-redesign .nus-action-links a:hover {
+	background-color: #e1e1e1;
+*zoom:1;
+filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFE1E1E1', endColorstr='#FFF1F1F1');
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e1e1e1), color-stop(100%, #f1f1f1));
+	background-image: -webkit-linear-gradient(top, #e1e1e1 0%, #f1f1f1 100%);
+	background-image: -moz-linear-gradient(top, #e1e1e1 0%, #f1f1f1 100%);
+	background-image: -o-linear-gradient(top, #e1e1e1 0%, #f1f1f1 100%);
+	background-image: -ms-linear-gradient(top, #e1e1e1 0%, #f1f1f1 100%);
+	background-image: linear-gradient(top, #e1e1e1 0%, #f1f1f1 100%);
+	border: 1px solid #dadada;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+	color: #999;
+	padding: 2px;
+	text-decoration: none
+}
+.feed .chron li.nus-hidden-undo, .feed .standard li.nus-hidden-undo {
+	padding: 1px 0 0
+}
+.feed .nus-hidden {
+	display: none
+}
+.feed .nus-hidden-undo {
+	display: list-item;
+	min-height: 0;
+	_height: 1%
+}
+.feed .nus-hidden-undo .feed-body, .feed .nus-hidden-undo .feed-photo {
+	display: none
+}
+.feed .nus-undo {
+	background: #ececec;
+	position: relative;
+	width: 100%
+}
+.feed .nus-undo p {
+	font-size: 13px;
+	margin: 0;
+	padding: 10px 40px 10px 70px
+}
+.feed .nus-undo a.nus-undo-link {
+	color: #069;
+	cursor: pointer
+}
+.feed .nus-undo .dismiss {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') no-repeat 100% -300px;
+	cursor: pointer;
+	height: 10px;
+	overflow: hidden;
+	position: absolute;
+	right: 10px;
+	text-indent: -1000px;
+	top: 14px;
+	width: 10px
+}
+.feed ul.helps .hide, .feed #nus-hidden-count-master, .js .feed ul.helps a.nus-nojs {
+	display: none
+}
+.feed ul.helps .show, .js .feed ul.nus-showing a.nus-js-hide, .js .feed ul.nus-hiding a.nus-js-show {
+	display: inline
+}
+.feed-gus .feed-content {
+	padding-right: 0 !important
+}
+.feed-nhome h2 {
+	border-bottom: none;
+	font-size: 18px;
+	padding-bottom: 0
+}
+.feed-nhome .header {
+*zoom:1
+}
+.feed-nhome .content {
+	background: none;
+	clear: both;
+	padding: 0
+}
+.feed-nhome.feed-redesign .content {
+	border-top: 1px solid #ccc
+}
+.feed-nhome-gus {
+	padding-bottom: 5px
+}
+.feed-nhome-gus .feed-content {
+	padding-right: 0 !important
+}*/
+.nus-home .contain {
+	float: left;
+	width: 65%
+}
+.nus-home .sidebar {
+	float: right;
+	margin-top: 0;
+	padding-top: 0;
+	width: 33%
+}
+.nus-home .leo-module h3 {
+	font-size: 13px;
+	font-weight: bold
+}
+.nus-home .default-view {
+	font-size: 13px;
+	padding: 0 0 2em
+}
+.nus-home .default-view a, .nus-home .default-view a:visited {
+	color: #069
+}
+.nus-home .default-view em {
+	color: #007C00;
+	font-weight: bold;
+	text-decoration: none
+}
+.feed-hub .default p {
+	font-size: 13px
+}
+.feed-hub .default h2 {
+	font-size: 16px
+}
+.feed-hub .default ul {
+	margin-top: 20px;
+	overflow: hidden;
+	width: 100%
+}
+.feed-hub .default li {
+	border-left: 1px solid #ccc;
+	float: left;
+	font-size: 13px;
+	line-height: 1.15;
+	margin-right: 10px;
+	padding-left: 10px
+}
+.feed-hub .default li.noborder {
+	border-left: none;
+	padding-left: 0
+}
+.feed-hub .nus-rss {
+	font-size: 11px;
+	padding: 0 0 2em
+}
+.feed-my .feed-item {
+	background-position: bottom left
+}
+.feed-thread .contain {
+	float: left;
+	width: 65%
+}
+.feed-thread .feed-item {
+	background: transparent;
+	padding: 10px 0
+}
+.feed-thread .feed-content {
+	padding-right: 0 !important
+}
+.feed-thread .feed-body {
+	min-height: 48px;
+	_height: 48px
+}
+.feed-thread h3 {
+	font-size: 11px;
+	padding: 0;
+	text-transform: uppercase
+}
+.feed-thread textarea {
+	font-size: 13px;
+	height: 20px;
+	padding: 3px;
+	width: 450px
+}
+.feed-thread form .buttons {
+	padding-top: 5px
+}
+.feed-thread form .btn-primary {
+	font-size: 12px
+}
+.feed-thread .comments li.deleted {
+	min-height: auto;
+	_height: auto;
+	padding-bottom: 8px;
+	padding-top: 2px
+}
+.feed-mod {
+	margin-bottom: 0
+}
+.feed-mod .chron {
+	margin-bottom: 0
+}
+.feed-mod .chron .feed-item {
+	padding-right: 0
+}
+.feed-mod .standard {
+	margin-bottom: 0
+}
+.feed-mod .standard .feed-item {
+	padding: 10px 0
+}
+.feed-mod h4 {
+	font-size: 15px;
+	font-weight: bold
+}
+.feed-mod p.more {
+	margin-bottom: 10px
+}
+.feed-mod .feed-content {
+	margin-right: 0
+}
+.panel .feed-mod {
+	width: auto
+}
+.panel .feed-mod li.feed-item {
+	margin-bottom: 0;
+	padding: 7px 0
+}
+.panel .feed-mod .feed-item:first-child {
+	background: transparent
+}
+.panel .feed-mod .feed-item .feed-actions li {
+	font-size: 11px;
+	margin-bottom: 0
+}
+.panel .feed-mod .feed-item .more {
+	background-image: none;
+	font-size: 11px;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	white-space: nowrap
+}
+.panel .feed-mod .feed-item .nus-timestamp {
+	font-size: 11px
+}
+.panel .feed-mod a.nus-hide-item {
+	top: 0
+}
+.nus-home .feed-mod .feed-item:first-child {
+	background: transparent;
+	padding-top: 0
+}
+.nus-home .feed-mod .chron .feed-body, .panel .feed-mod .chron .feed-body {
+	padding-left: 0
+}
+.panel .module .content.feed-mod p.more {
+	margin-top: 0
+}
+.video-container {
+	margin-top: 10px;
+	display: none
+}
+.feedbox .video-container, .feed-anet .video-container {
+	clear: both
+}
+.video-container .video-head {
+	height: 20px;
+	background: #E8E8E8;
+*zoom:1;
+filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF9F9F9', endColorstr='#FFE8E8E8');
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f9f9f9), color-stop(48%, #e8e8e8));
+	background-image: -webkit-linear-gradient(top, #f9f9f9 0%, #e8e8e8 48%);
+	background-image: -moz-linear-gradient(top, #f9f9f9 0%, #e8e8e8 48%);
+	background-image: -o-linear-gradient(top, #f9f9f9 0%, #e8e8e8 48%);
+	background-image: -ms-linear-gradient(top, #f9f9f9 0%, #e8e8e8 48%);
+	background-image: linear-gradient(top, #f9f9f9 0%, #e8e8e8 48%);
+	border: 1px solid #DDD;
+	border-bottom-width: 0
+}
+.video-container .video-body {
+	overflow: hidden
+}
+.video-container .video-head .video-close {
+	float: right;
+	display: block;
+	width: 16px;
+	height: 16px;
+	margin: 2px;
+	text-indent: -9999em;
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') 0 -1349px repeat-x
+}
+.video-container .video-head .video-close:hover {
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') 0 -1299px repeat-x
+}
+.video-share .image, .feed-content .embed-image {
+	position: relative;
+	left: 0px;
+	top: 0px
+}
+.video-share .image .play-icon {
+	position: absolute;
+	display: block;
+	left: 24px;
+	top: 9px;
+	width: 42px;
+	height: 42px;
+	text-indent: -9999em;
+	cursor: pointer;
+	background: url('http://static01.linkedin.com/scds/common/u/img/icon/icon_nus_play_video_42x42.png') 0 0 no-repeat;
+	_background: none
+}
+.user-groups .video-share .image .play-icon {
+	display: none
+}
+.feed-content .image .embed-icon {
+	position: absolute;
+	display: block;
+	left: 37px;
+	top: 22px;
+	width: 16px;
+	height: 16px;
+	text-indent: -9999em;
+	cursor: pointer;
+	background: none;
+	_background: none
+}
+.feed-content .image .loading-icon {
+	background: url('http://static01.linkedin.com/scds/common/u/img/anim/anim_loading_16x16.gif') 0 0 no-repeat;
+	_background: none
+}
+.feed-profile {
+	width: 740px
+}
+.feed-profile .feed-photo {
+	display: none
+}
+.feed-profile .comments .feed-photo {
+	display: inline
+}
+.feed-profile h2 {
+	border-bottom: 1px solid #ddd;
+	font-size: 15px;
+	font-weight: normal;
+	margin: 5px 0 0;
+	padding: 0 0 5px;
+	position: static
+}
+.feed-profile .chron {
+	margin-bottom: 0
+}
+.feed-profile .feed-item {
+	background-position: bottom left;
+	min-height: 0;
+	_height: 1%;
+	padding: 10px
+}
+.feed-profile .feed-body {
+	padding-left: 0
+}
+.feed-profile .feed-content {
+	padding-right: 45px
+}
+.de .feed-profile .feed-content {
+	padding-right: 65px
+}
+.feed-profile ul.helps {
+	background: #fff;
+	border-width: 0
+}
+.feed-profile ul.helps li {
+	float: none;
+	width: 100%
+}
+.feed-profile ul.helps li.pagination {
+	float: none;
+	text-align: left
+}
+.feed-anet {
+	margin-bottom: 0
+}
+.feed-anet h2.stitle.rule {
+	margin-bottom: 0;
+	padding-bottom: 5px
+}
+.feed-anet .chron, .feed-anet .standard {
+	margin-bottom: 0
+}
+.feed-anet .chron .feed-item {
+	background-position: bottom left;
+	padding-right: 10px
+}
+.feed-anet .feed-content {
+	padding-right: 0 !important
+}
+.feed-anet p.more {
+	margin-bottom: 10px
+}
+.feed-anet .empty {
+	margin: 0 !important;
+	padding: 10px !important
+}
+.feed-anet ul.helps {
+	background: #fff;
+	border-width: 0
+}
+.feed-anet ul.helps li {
+	float: none;
+	width: 100%
+}
+.feed-anet ul.helps li.pagination {
+	float: none;
+	text-align: left
+}
+.feed .gallery {
+	clear: none;
+	width: 100%
+}
+.feed .variable .gallery img {
+	display: none
+}
+.feed .nus-disc-subject {
+	font-weight: bold
+}
+.feed.feed-redesign .nus-disc-subject {
+	font-weight: normal
+}
+.feed .nus-app-name {
+	font-weight: bold
+}
+.feed.feed-redesign .nus-app-name {
+	font-weight: normal
+}
+.feed .test.upsell {
+	background: url('http://static01.linkedin.com/scds/common/u/img/icon/icon_acct_15x15.png') right 100% no-repeat;
+	padding-right: 18px;
+	margin-right: 5px
+}
+.feed .share-object, .feed .member-position {
+	margin-top: 10px;
+	overflow: hidden;
+	width: auto
+}
+.feed .job-post {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	width: auto
+}
+.feed .share-object .image {
+	float: left;
+	width: 90px;
+	display: block;
+	text-align: center;
+	overflow: hidden;
+	margin: 0
+}
+.feed .share-object .image img {
+	border: 0 !important
+}
+.feed .share-object p, .feed .member-position p {
+	padding-left: 0;
+	margin-bottom: 0 !important;
+	color: #333
+}
+.feed .share-object.has-photo p {
+	padding-left: 100px
+}
+.feed .share-object .share-desc {
+	margin-top: 4px
+}
+.feed .share-meta, .feed .share-attribution, .feed .share-attribution:visited, .feed .share-attribution:link {
+	color: #666;
+	text-decoration: none;
+	font-size: 11px
+}
+.feed .share-attribution:hover {
+	color: #069
+}
+.feed .member-position.has-photo p {
+	padding-left: 80px
+}
+.aggregation-groups {
+	font-size: 12px;
+	display: none
+}
+.aggregation-groups.aggregation-open {
+	display: block
+}
+.aggregation-groups h4 {
+	color: #666;
+	font-weight: bold;
+	padding: 8px 0 5px 0
+}
+.aggregation-groups ul {
+	width: 100%;
+	overflow: hidden
+}
+.aggregation-groups li {
+	width: 47%;
+	float: left;
+	overflow: hidden;
+	margin-right: 2%;
+	white-space: nowrap
+}
+.nested-update .feed-body {
+	padding-left: 0
+}
+.nested-update .feed-content, .nested-update .feed-item-meta {
+	border-left: 1px solid #ccc;
+	padding-left: 10px
+}
+.nested-update .feed-content {
+	margin: 10px 0 0 0
+}
+.nested-update .feed-item-meta {
+	margin-top: 0;
+	padding-top: 6px
+}
+.nested-update .comments {
+	margin-right: 0
+}
+.feed-item .feed-multi-photo {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') 0 -840px no-repeat;
+	border: 0;
+	margin-left: 0;
+	padding: 3px 3px 9px 9px
+}
+.feed-redesign .feed-item .feed-multi-photo {
+	background: #fff;
+	border: 1px solid #eaeaea;
+	margin-right: 26px;
+	padding: 3px
+}
+.feed-redesign .feed-item .feed-multi-photo:hover {
+	border-color: #eaeaea
+}
+.feed.feed-redesign .feed-multi-photo .feed-photo {
+	margin: -4px;
+	position: relative;
+	top: 4px;
+	left: 4px
+}
+.feed-redesign .feed-item .feed-multi-photo img {
+	height: 42px;
+	width: 42px
+}
+.feed-item .aggregation {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') repeat-x;
+	clear: left;
+	display: none;
+	font-size: 130%;
+	margin: 10px -3px 0;
+*position:relative;
+	padding: 10px 3px 0 66px
+}
+.js .feed-item .aggregation {
+	display: block
+}
+.js .feed-item-expanded .aggregation {
+	display: none
+}
+.feed-redesign .feed-item .aggregation {
+	background: transparent;
+	border-top: 1px dotted #d1d1d1;
+	margin: 10px 0 0;
+	padding: 5px 0 0
+}
+.feed-item .aggregation a {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') 0 -680px no-repeat;
+	display: -moz-inline-box;
+	-moz-box-orient: vertical;
+	display: inline-block;
+	vertical-align: middle;
+*vertical-align:auto;
+	min-height: 16px;
+	height: auto !important;
+	height: 16px;
+*zoom:1;
+	padding-left: 22px
+}
+.feed-item .aggregation a {
+*display:inline
+}
+.feed-redesign .feed-item .aggregation a {
+	color: #888;
+	font-size: 11px
+}
+.feed-redesign .feed-item .aggregation a:hover {
+	color: #069
+}
+.feed-item .aggregation .collapse {
+	background-position: 0 -730px
+}
+.feed-redesign .feed-item .chron {
+	border-left: 1px solid #eaeaea;
+	margin: 10px 0 0;
+	overflow: hidden;
+	padding-left: 10px
+}
+.feed-redesign .feed-item .chron.hide {
+	display: none
+}
+.feed-redesign .feed-item .chron .feed-item:first-child {
+	border: 0;
+	padding-top: 0
+}
+.feed-redesign .feed-item:hover .chron .feed-item .nus-action-links {
+	visibility: hidden
+}
+.feed-redesign .feed-item:hover .chron .feed-item:hover .nus-action-links {
+	visibility: visible
+}
+.feed.feed-redesign .feed-item .nest-expand, .feed.feed-redesign .feed-item .nest-collapse {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') no-repeat 0 -977px;
+	padding-left: 13px
+}
+.feed.feed-redesign .feed-item .nest-expand:hover {
+	background-position: 0 -1027px
+}
+.feed.feed-redesign .feed-item .nest-expand-loading, .feed.feed-redesign .feed-item .nest-expand-loading:hover {
+	background: url('http://static01.linkedin.com/scds/common/u/img/anim/anim_loading_16x16.gif') no-repeat left center;
+	color: #888;
+	cursor: default;
+	display: -moz-inline-box;
+	-moz-box-orient: vertical;
+	display: inline-block;
+	vertical-align: middle;
+*vertical-align:auto;
+	min-height: 16px;
+	height: auto !important;
+	height: 16px;
+*zoom:1;
+	padding-left: 21px;
+	text-decoration: none
+}
+.feed.feed-redesign .feed-item .nest-expand-loading, .feed.feed-redesign .feed-item .nest-expand-loading:hover {
+*display:inline
+}
+.feed.feed-redesign .feed-item .nest-collapse {
+	background-position: 0 -1077px
+}
+.feed.feed-redesign .feed-item .nest-collapse:hover {
+	background-position: 0 -1127px
+}
+.backfill .feed-photo {
+	display: none
+}
+.feed-item .signal-only {
+	margin-left: 70px
+}
+.feed .feed-directads .has-photo p {
+	margin-left: 73px
+}
+.feed .feed-directads .text, .feed .feed-directads .text:hover {
+	color: #000;
+	text-decoration: none
+}
+.feed .feed-directads .targeting {
+	color: #666;
+	font-size: 11px
+}
+.feed .feed-directads .feed-photo {
+	float: left;
+	position: static
+}
+.feed .feed-directads .has-photo {
+	overflow: hidden
+}
+.feed .feed-jymbii .in-common {
+	color: #888;
+	font-size: 11px
+}
+.real-time-notification {
+	background: #e3f1fa;
+	color: #666;
+	cursor: pointer;
+	display: none;
+	font-size: 11px;
+	padding: 5px;
+	text-align: center
+}
+.tab-droplist .trigger {
+	display: -moz-inline-box;
+	-moz-box-orient: vertical;
+	display: inline-block;
+	vertical-align: middle;
+*vertical-align:auto;
+*zoom:1;
+	height: 20px
+}
+.tab-droplist .trigger {
+*display:inline
+}
+.tab-droplist .trigger:hover {
+	text-decoration: none
+}
+.tab-droplist .droplist:hover, .tab-droplist .open {
+	background: #fff !important;
+	border: 1px solid #016799;
+	-moz-box-shadow: 0 3px 10px #888;
+	-webkit-box-shadow: 0 3px 10px #888;
+	-o-box-shadow: 0 3px 10px #888;
+	box-shadow: 0 3px 10px #888;
+	margin: -6px 0 -1px -9px
+}
+.tab-droplist .droplist:hover .trigger, .tab-droplist .open .trigger {
+	padding: 5px 8px 0
+}
+.tab-droplist .open .trigger {
+	background-color: #fff;
+	position: relative;
+	z-index: 10
+}
+.tab-droplist .open .menu .trigger {
+	background-color: transparent;
+	position: static
+}
+.tab-droplist .open {
+	position: relative;
+	z-index: 9
+}
+.tab-droplist .open .menu {
+	display: block
+}
+.tab-droplist .menu {
+	display: none;
+	position: absolute;
+	top: 24px;
+	left: -1px;
+	z-index: 4;
+	background: #fff;
+	border: 1px solid #016799;
+	padding: 5px 0;
+	-moz-box-shadow: 0 6px 10px #888;
+	-webkit-box-shadow: 0 6px 10px #888;
+	-o-box-shadow: 0 6px 10px #888;
+	box-shadow: 0 6px 10px #888
+}
+.tab-droplist .menu li {
+	line-height: 1;
+	_width: 175px;
+	margin: 0 5px;
+	font-size: 13px
+}
+.tab-droplist .menu li a {
+	color: #069 !important;
+	white-space: nowrap;
+	display: block;
+	padding: 5px;
+	_width: 100%;
+	_overflow: hidden;
+	_text-overflow: ellipsis
+}
+.tab-droplist .menu li a:hover {
+	color: #fff !important;
+	background-color: #016799;
+	text-decoration: none
+}
+.tab-droplist .menu li a:hover sup {
+	color: #fff
+}
+.tab-droplist .menu li.separator {
+	margin-top: 4px;
+	padding-top: 4px;
+	border-top: 1px solid #ccc
+}
+.feed-redesign #my-feed-post {
+	margin: 0
+}
+.feed-redesign #my-feed-post .feed-item {
+	border-bottom: 1px solid #eaeaea
+}
+.feed .signal-hits {
+	margin-left: 100px;
+	padding-top: 70px
+}
+.feed .signal-hit {
+	float: left;
+	margin-left: 5px
+}
+.feed .signal-hit-content {
+	display: none
+}
+.signal-share-comment-container {
+	background-color: #fff;
+	border: 1px solid #999;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	padding: 5px;
+	position: absolute;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f7f7f7), color-stop(100%, #ffffff));
+	background-image: -webkit-linear-gradient(top, #f7f7f7 0%, #ffffff 100%);
+	background-image: -moz-linear-gradient(top, #f7f7f7 0%, #ffffff 100%);
+	background-image: -o-linear-gradient(top, #f7f7f7 0%, #ffffff 100%);
+	background-image: -ms-linear-gradient(top, #f7f7f7 0%, #ffffff 100%);
+	background-image: linear-gradient(top, #f7f7f7 0%, #ffffff 100%);
+	font-size: 11px;
+	margin: 10px 0 0 100px;
+*margin-left:0px
+}
+.signal-share-comment {
+	height: 37px;
+	overflow: hidden;
+	width: 350px;
+	word-wrap: break-word
+}
+.feed-signal .signal-share-comment {
+	width: 300px
+}
+.arrow-border, .arrow {
+	border-style: solid;
+	border-width: 10px;
+	height: 0;
+	position: absolute;
+	width: 0;
+	_display: none
+}
+.arrow {
+	border-color: #fff transparent transparent;
+	bottom: -9px;
+	left: -10px
+}
+.arrow-border {
+	border-color: #999 transparent transparent;
+	bottom: -21px;
+	left: 18px
+}
+.incompany-pill {
+	float: right;
+	position: relative
+}
+.incompany-pill .post-it {
+	position: absolute;
+	width: 600px;
+	top: 200px;
+	left: 50%;
+	margin-left: -300px;
+	z-index: 1
+}
+.incompany-visibility {
+	position: absolute;
+	background: url('http://static02.linkedin.com/scds/common/u/img/icon/icon_acorn_lock.png') no-repeat scroll 5px 2px #fff;
+	text-align: center;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 11px;
+	color: #333;
+	border: 1px solid #069;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-o-border-top-left-radius: 5px;
+	-ms-border-top-left-radius: 5px;
+	-khtml-border-top-left-radius: 5px;
+	border-top-left-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-o-border-top-right-radius: 5px;
+	-ms-border-top-right-radius: 5px;
+	-khtml-border-top-right-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom: 1px solid #FFF;
+	top: 0;
+	right: 29px;
+	height: 19px;
+	padding: 2px 5px 0 19px;
+	z-index: 9
+}
+.incompany-visibility.visibility-anyone {
+	background: url('http://static01.linkedin.com/scds/common/u/img/icon/icon_acorn_lock_open.png') no-repeat scroll 5px 2px #fff
+}
+.incompany-comment-container {
+	overflow: hidden;
+	padding-top: 0;
+	position: relative
+}
+.incompany-comment-container.grow {
+	padding-top: 23px
+}
+#incompany-home .incompany-comment-container textarea {
+	width: 600px
+}
+.processing-overlay {
+	background: #fff url('http://static01.linkedin.com/scds/common/u/img/anim/anim_loading_75x75.gif') no-repeat center center;
+filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+	opacity: 0.6;
+	position: absolute;
+	visibility: hidden;
+	z-index: 10001;
+*zoom:1
+}
+.processing-overlay-40 {
+	background-image: url('http://static01.linkedin.com/scds/common/u/img/anim/anim_loading_40x40.gif')
+}
+.processing-overlay-16 {
+	background-image: url('http://static01.linkedin.com/scds/common/u/img/anim/anim_loading_16x16.gif')
+}
+.keyword-search-form input {
+	vertical-align: middle
+}
+.keyword-search-form .keywords {
+	background: #fff;
+	border: 1px solid #7c7c7c;
+	border-color: #7c7c7c #c3c3c3 #ddd;
+	font-size: 12px;
+	height: 16px;
+	line-height: 12px;
+	padding: 4px 2px 0;
+	width: 150px
+}
+.keyword-search-form .search-go {
+	background: #0076a8 url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') -9px -1170px no-repeat;
+	border: 1px solid #06598B;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+	color: #0076A8;
+	cursor: pointer;
+*font-size:.01em;
+	height: 22px;
+	text-indent: -1234px;
+	width: 20px;
+*width:22px;
+	_width: 24px
+}
+.keyword-search-form .search-go:hover {
+	background-position: -9px -1200px
+}
+.feed .feed-tweet-body {
+	border-left: 1px solid #ddd;
+	margin-top: 5px;
+	padding-left: 10px
+}
+.feed .feed-twitter-handle, .feed .feed-item:hover .chron .feed-twitter-handle {
+	color: #333;
+	font-weight: bold
+}
+.feed .feed-item:hover .feed-twitter-handle, .feed .feed-item:hover .chron .feed-item:hover .feed-twitter-handle {
+	color: #069
+}
+.feed .feed-tweet .share-object {
+	border-left: 1px solid #ddd;
+	margin-top: 0;
+	padding: 10px 0 0 10px
+}
+.feed .feed-tweet .nus-timestamp {
+	display: inline-block;
+	padding-top: 2px
+}
+.feed .feed-tweet .feed-actions .feed-tweet-reply, .feed .feed-tweet .feed-actions .feed-tweet-retweet {
+	background: transparent;
+	padding-left: 2px
+}
+.feed .feed-tweet .cncttest .feed-actions .feed-tweet-favorite {
+	background: transparent
+}
+.feed .feed-tweet .cncttest .feed-actions .feed-tweet-favorite, .feed .feed-tweet .cncttest .feed-actions .feed-tweet-retweet {
+	padding-right: 0
+}
+.feed .feed-tweet .cncttest .feed-actions .feed-tweet-reply {
+	background: url('http://static02.linkedin.com/scds/common/u/img/icon/icon_bullet_grey2_4x4.png') no-repeat 100% 6px
+}
+.feed .feed-tweet .feed-actions a {
+	display: inline-block;
+	min-height: 13px;
+	padding-top: 2px
+}
+.feed .feed-tweet .feed-tweet-favorite a, .feed .feed-tweet .feed-tweet-reply a, .feed .feed-tweet .feed-tweet-retweet a {
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v9.png') no-repeat 0 -1177px
+}
+.feed .feed-tweet .feed-actions .feed-tweet-favorite a {
+	padding-left: 17px
+}
+.feed .feed-tweet .feed-actions .feed-tweet-favorite a:hover {
+	background-position: 0 -1227px
+}
+.feed .feed-tweet .feed-actions .feed-tweet-reply a {
+	background-position: 0 -1275px;
+	padding-left: 14px
+}
+.feed .feed-tweet .feed-actions .feed-tweet-reply a:hover {
+	background-position: 0 -1325px
+}
+.feed .feed-tweet .feed-actions .feed-tweet-retweet a {
+	background-position: 0 -1373px;
+	padding-left: 16px
+}
+.feed .feed-tweet .feed-actions .feed-tweet-retweet a:hover {
+	background-position: 0 -1423px
+}
+.feed .feed-tweet-B .feed-actions .show-like .unlike {
+	display: none
+}
+.feed .feed-tweet-C .feed-actions .like, .feed .feed-tweet-C .feed-actions .show-like .unlike, .feed .feed-tweet-C .feed-actions .unlike .like-count {
+	display: none
+}
+.feed .feed-tweet-C .feed-actions .show-like .like {
+	display: inline-block
+}
+.feed .feed-tweet-C .feed-tweet-actions .drop {
+	min-width: 0;
+	right: auto;
+	z-index: 2
+}
+.feed .feed-tweet-C .cncttest .feed-actions > li {
+	background-position: 100% center
+}
+.feed .feed-tweet-C .feed-actions .feed-tweet-actions .feed-tweet-retweet a {
+	padding-left: 19px
+}
+.feed .feed-tweet-C .feed-actions .feed-tweet-actions .drop li {
+	background: transparent;
+	float: none;
+	margin: 0;
+	padding: 0
+}
+.feed .feed-tweet-C .feed-actions .feed-tweet-actions .drop .separator {
+	padding-top: 4px
+}
+.feed .feed-tweet-C .feed-actions .feed-tweet-actions .drop a {
+	color: #069;
+	display: block;
+	font-size: 11px;
+	padding-left: 19px
+}
+.feed .feed-tweet-C .feed-actions .feed-tweet-reply a {
+	background-position: 2px -1275px
+}
+.feed .feed-tweet-C .feed-actions .feed-tweet-reply a:hover {
+	background-position: 2px -1325px
+}
+.feed .feed-tweet-C .feed-actions .feed-tweet-follow a {
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v9.png') no-repeat -85px -1472px
+}
+.feed .feed-tweet-C .feed-actions .feed-tweet-follow a:hover {
+	background-position: -85px -1520px
+}
+.feed .feed-tweet-D .feed-item-meta {
+	border-left: 1px solid #ddd;
+	margin-top: 0;
+	padding: 6px 0 0 10px
+}
+.feed .feed-tweet-D .feed-actions .like, .feed .feed-tweet-D .feed-actions .show-like .unlike, .feed .feed-tweet-D .feed-actions .unlike .like-count {
+	display: none
+}
+.feed .feed-tweet-D .feed-actions .show-like .like {
+	display: inline-block
+}
+.feed .feed-tweet-D .cncttest .feed-actions > li {
+	background-position: 100% center
+}
+.feed .feed-tweet-D .cncttest .feed-actions .feed-tweet-favorite, .feed .feed-tweet-D .cncttest .feed-actions .feed-tweet-retweet {
+	background: url('http://static02.linkedin.com/scds/common/u/img/icon/icon_bullet_grey2_4x4.png') no-repeat 100% 6px;
+	padding: 0 10px 0 0
+}
+.feed .feed-tweet-D .cncttest .feed-actions .feed-tweet-reply {
+	background: transparent;
+	border-right: 1px solid #ddd;
+	margin-right: 16px;
+	padding-right: 16px
+}
+.top-notifications-date {
+	display: none
+}
+.feed-sort-filters .arrow {
+	border-color: transparent transparent #E3F1FA;
+	border-width: 7px;
+	bottom: -5px;
+	display: none;
+	height: 0;
+	left: 10px;
+	position: absolute;
+	width: 0
+}
+.feed-sort-filters .arrow.show {
+	display: block
+}
+.feed .inside-li .gu-action, .feed .inside-li .aggregation, .feed .inside-li .gu-like-action, .feed .inside-li .send-message-link, .feed .inside-li .focus-comment-form {
+	display: none
+}
+.relevance-redesigned .feed-sort-filters {
+	margin-bottom: 5px
+}
+.relevance-redesigned .feed-sort-filters li {
+	background: none
+}
+.relevance-redesigned .feed-sort-filters li:first-child {
+	border-right: 1px solid #dedede;
+	margin-right: 10px
+}
+.header .relevance-redesigned .feed-sort-filters {
+	float: right
+}
+.header .relevance-redesigned .feed-sort-filters li:first-child {
+	background: url('http://static02.linkedin.com/scds/common/u/img/icon/icon_bullet_grey2_4x4.png') no-repeat 100% 6px;
+	border: 0;
+	margin-right: 6px;
+	padding-right: 10px
+}
+.header .relevance-redesigned .feed-sort-filters li:last-child {
+	margin-right: 0;
+	padding-right: 0
+}
+/* scss/modules/network_updates_redesign.css */
+
+.nus-left-rail {
+	overflow: hidden;
+	clear: both
+}
+.nus-left-rail .header {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
+	overflow: hidden;
+	padding-bottom: 2px
+}
+.nus-left-rail .header .selected {
+	color: #000
+}
+.nus-left-rail .header h2 {
+	color: #666;
+	float: left;
+	font-size: 11px;
+	font-weight: bold;
+	width: 138px
+}
+.nus-left-rail .feed-sort-filters {
+	color: #ccc;
+	float: left;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+	top: -2px
+}
+.nus-left-rail .header li {
+	background: none;
+	border-left: 1px solid #ccc;
+	float: left;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 0 8px
+}
+.nus-left-rail .header li:first-child {
+	border-left: none;
+	padding-left: 0
+}
+.feed-nhome .nus-left-rail .content {
+	border-left: 1px solid #ccc;
+	border-top: none;
+	clear: none;
+	float: left;
+	padding-left: 10px;
+	width: 500px
+}
+.nus-left-rail .sidebar {
+	float: left;
+	overflow: hidden;
+	width: 125px
+}
+.nus-left-rail .sidebar .collapsed, .nus-left-rail .sidebar .hide {
+	display: none
+}
+.nus-left-rail .feed-item:first-child {
+	padding-top: 0
+}
+#more-nus-filters ul {
+	margin-left: 0
+}
+.nus-left-rail #nus-filters .more {
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_chrome_v3.png') no-repeat 100% -1094px;
+	display: inline-block;
+*display:inline;
+	font-size: 13px;
+	margin-top: 0;
+	padding-right: 12px
+}
+.nus-left-rail #nus-filters .less {
+	background-position: 100% -1144px
+}
+.nus-left-rail .feed-filters {
+	font-size: 13px
+}
+.nus-left-rail .feed-filters .selected a {
+	color: #000;
+	font-weight: bold
+}
+.nus-left-rail .feed-filters .selected li a {
+	color: #069;
+	font-weight: normal
+}
+.nus-left-rail .feed-filters ul {
+	margin-left: 20px
+}
+.nus-left-rail .feed-filters li {
+	padding: 4px 0
+}
+/* scss/modules/sharing_en_US.css */
+
+/*.share-dialog li {
+	margin-bottom: 3px
+}
+.share-dialog .global-form {
+	margin: 0 -10px 10px
+}
+.share-dialog .primary {
+	font-size: 13px
+}
+.share-dialog .footer {
+	min-height: 25px;
+	position: relative
+}
+.share-dialog .meta {
+	font-size: 11px;
+	color: #666
+}
+.share-dialog .settings {
+	position: absolute;
+	width: 250px;
+	left: 80px;
+	font-size: 12px;
+	top: 8px
+}
+.share-dialog .settings p {
+	float: left;
+	margin-right: 5px;
+	color: #666
+}
+.share-dialog .settings ul {
+	position: relative
+}
+.share-dialog .settings ul li {
+	margin-bottom: 0
+}
+.share-dialog .twitter {
+	margin-top: 3px
+}
+.share-dialog .object {
+	background: #e7e6e6;
+	margin: -14px -19px 10px -19px;
+	_zoom: 1;
+	padding: 10px;
+	overflow: hidden
+}
+.share-dialog .object .share-image {
+	float: left;
+	width: 75px
+}
+.share-dialog .object .content {
+	margin-left: 85px;
+	padding: 0
+}
+.share-dialog .object .content.no-photo {
+	margin: 0
+}
+.share-dialog .object .title {
+	font-size: 12px;
+	font-weight: bold;
+	color: #333
+}
+.share-dialog .object .attribution {
+	font-size: 11px;
+	color: #666
+}
+.share-dialog .object .summary {
+	font-size: 12px;
+	color: #333
+}
+.share-dialog .object .edit-link {
+	font-size: 11px;
+	white-space: nowrap
+}
+.share-dialog .actions {
+	font-size: 13px;
+	margin: 10px 0 0 -5px
+}
+.share-dialog .actions a.btn-primary {
+	font-size: 12px;
+	vertical-align: middle;
+	line-height: 1.2
+}
+.share-dialog .actions input {
+	font-size: 12px;
+	vertical-align: middle
+}
+.share-dialog .edit {
+	margin: 0 0 0 5px;
+	display: none;
+	zoom: 1;
+	overflow: hidden
+}
+.share-dialog .edit li {
+	padding: 2px 0 0 0;
+	font-size: 12px
+}
+.share-dialog .edit .text {
+	font-size: 12px;
+	width: 97%;
+	font-size: 12px;
+	vertical-align: middle;
+	line-height: 1.2;
+	padding: 2px
+}
+.share-dialog .edit .check {
+	margin: 0;
+	padding: 0
+}
+.share-dialog .edit .actions {
+	font-size: 13px;
+	margin: 5px 0 0 0;
+	padding: 0 0 0 5px;
+*padding-left:0
+}
+.share-dialog .edit .actions .btn-primary {
+	font-size: 13px;
+	vertical-align: middle;
+	line-height: 1.2;
+	color: #fff !important
+}
+.share-dialog .edit .actions .btn-primary:visited {
+	color: #fff !important
+}
+.share-dialog .edit .actions .btn-primary:hover {
+	text-decoration: none
+}
+.mini-form {
+	margin: 0 0 0 22px;
+	padding: 8px 5px;
+	background: #E2F2FA;
+	display: none;
+*height:1%;
+	width: 445px;
+	_padding-bottom: 30px
+}
+.mini-form .callout {
+	background: #fff url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_marketing_bubble_v1.gif') 0 -14px repeat-x;
+	font-size: 12px;
+	line-height: 1;
+	margin: -8px -5px 10px;
+	padding: 8px 5px
+}
+.mini-form .new, .keyword-search-form .new {
+	background-color: #c60;
+	color: #fff;
+	display: inline-block;
+	font-size: 9px;
+	line-height: 1;
+	padding: 2px 3px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px
+}
+.mini-form li:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+.mini-form li {
+*height:1%;
+	margin-bottom: 3px
+}
+.mini-form .share-with-people_freeform-message {
+	position: absolute;
+	width: 339px;
+	color: #333;
+	font-size: 11px;
+	background: #fff;
+	border: 1px solid #baddee;
+	line-height: 11px;
+	padding: 6px;
+	margin-top: 1px;
+	display: none
+}
+.mini-form .show-recipients {
+	color: #666;
+	margin-left: 75px;
+	font-size: 11px
+}
+.mini-form .lbl {
+	width: 75px;
+	font-size: 12px;
+	float: left;
+	display: block;
+	padding: 4px 5px 0 0;
+	text-align: right
+}
+.mini-form .elem {
+	width: 345px;
+	float: left;
+	display: block
+}
+.mini-form .input {
+	width: 99.5%;
+	font-size: 12px;
+	border: 1px solid #999;
+	padding: 2px 4px
+}
+.mini-form textarea {
+	width: 99.5%;
+	height: 40px;
+	font-size: 12px;
+	border: 1px solid #999;
+	padding: 2px 4px
+}
+.mini-form .instructions {
+	font-size: 11px;
+	margin-top: 3px
+}
+.mini-form .instructions input {
+	margin: 0 auto 0 0;
+	padding: 0 auto 0 0
+}
+.mini-form .helps {
+	color: #666
+}
+.mini-form .post {
+	width: 98%;
+	margin-bottom: 0
+}
+.mini-form .error {
+	font-size: 13px
+}
+.mini-form #post-exists-warning {
+	display: none;
+	position: relative
+}
+.mini-form .post-warn-icon {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') 0 -578px;
+	display: block;
+	width: 16px;
+	height: 20px;
+	text-indent: -123456px;
+	position: absolute
+}
+.mini-form #post-exists-msg {
+	padding-left: 17px;
+	font-size: 12px;
+	color: #333;
+	margin-top: 2px;
+	display: block
+}
+.mini-form .footer {
+	zoom: 1
+}*/
+/*.share-dialog .show-view .view, .share-dialog .show-edit .edit {
+	display: block
+}
+.share-dialog .show-view .edit, .share-dialog .show-edit .view {
+	display: none
+}
+.sharing-popup #body {
+	padding: 0
+}
+.sharing-popup .share-dialog {
+	width: 560px
+}
+.sharing-popup .share-dialog .object {
+	margin: 0 0 12px 0
+}
+.sharing-popup .share-dialog-C .object {
+	margin-left: 10px;
+	margin-right: 10px
+}
+.sharing-popup .share-dialog .global-form {
+	margin: 0;
+	padding: 0 5px;
+	width: 550px
+}
+.sharing-popup .share-dialog .edit .actions {
+	margin: 10px 0 15px 0
+}
+.sharing-popup .share-dialog .actions {
+	margin: 10px 0 15px 5px
+}
+.sharing-popup .mini-form {
+	width: 85%;
+	zoom: 1
+}
+.sharing-popup .share-confirm {
+	padding: 15px
+}
+.sharing-popup .actions input {
+	line-height: 1.35
+}
+.share-in .share-dialog {
+	width: auto
+}
+.share-in .share-dialog .global-form {
+	margin: 10px;
+	padding: 0;
+	width: auto
+}
+.share-in .share-dialog .actions {
+	clear: both;
+	margin: 0;
+	padding: 10px;
+	width: auto
+}
+.share-in .share-dialog .toggles {
+	margin-bottom: 10px
+}
+.share-dialog-C .object {
+	margin-left: -9px;
+	margin-right: -9px
+}
+.share-dialog-toggle .global-form-item {
+	display: none;
+*zoom:1
+}
+.share-dialog-show-nus .global-form-item-nus, .share-dialog-show-group .global-form-item-group, .share-dialog-show-connection .global-form-item-connection {
+	display: block
+}
+.share-dialog-toggle .checkbox-primary {
+	display: none
+}
+.share-dialog-toggle .primary {
+	font-weight: bold
+}
+.share-dialog-toggle .mini-form {
+	display: block;
+	margin: 0;
+	background: transparent;
+	width: auto
+}
+.share-dialog-toggle .toggles {
+	_display: inline;
+	float: right;
+	font-size: 11px;
+	line-height: 1;
+	margin: 5px 10px 0 0
+}
+.share-dialog-toggle .toggles li {
+	border-left: 1px solid #a9a9a9;
+	_display: inline;
+	float: left;
+	margin-left: 10px;
+	padding-left: 10px
+}
+.share-dialog-toggle .toggles-duo li, .share-dialog-toggle .toggles li:first-child, .share-dialog-show-nus .toggles .group-toggle {
+	border: 0;
+	padding: 0;
+	margin: 0
+}
+.share-dialog-show-nus .toggles .nus-toggle, .share-dialog-show-group .toggles .group-toggle, .share-dialog-show-connection .toggles .connection-toggle {
+	display: none
+}
+.share-dialog-toggle .toggles label {
+	color: #069;
+	cursor: pointer
+}
+.share-dialog-toggle .toggles label:hover {
+	text-decoration: underline
+}
+.post {
+	margin: 0;
+	padding: 0;
+	zoom: 1
+}
+.post .btn-primary {
+	font-size: 12px;
+	vertical-align: top;
+	line-height: 1.4;
+*line-height:1.2
+}
+.post .post-message {
+	font-size: 12px;
+	padding: 4px 2px;
+	width: 98.5%;
+	height: 16px
+}
+.post .cancel-file-upload, .post .post-link-close, .post .share-close, .doc-sharing-file-upload-form .cancel-file-upload, .doc-sharing-file-upload-form .post-link-close, .doc-sharing-file-upload-form .share-close {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') 100% -300px no-repeat;
+	height: 10px;
+	margin: 3px 3px 10px 10px;
+	position: absolute;
+	right: 3px;
+	_right: 9px;
+	text-indent: -123456px;
+	top: 3px;
+	width: 10px
+}
+.post .share-loading {
+	background: url('http://static01.linkedin.com/scds/common/u/img/anim/anim_loading_16x16.gif') center 10px no-repeat #fff;
+	min-height: 15px;
+	_height: 15px;
+	padding: 10px 0 !important;
+	display: none
+}
+.post span.error {
+	font-size: 12px
+}
+.post .share-view {
+	display: none;
+*height:1%
+}
+.post .share-view:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+.post .share-content {
+	width: 344px;
+	display: table
+}
+.post .share-content h4 {
+	font-size: 13px;
+	font-weight: bold
+}
+.post .share-content .meta {
+	font-size: 11px;
+	color: #666
+}
+.post .share-content p {
+	font-size: 12px;
+	color: #333;
+	margin-bottom: 2px
+}
+.post .share-content a {
+	font-size: 11px
+}
+.post .share-edit {
+	display: none
+}
+.post .share-edit .form {
+	float: left;
+	font-size: 13px;
+	margin-top: 3px;
+	width: 80%
+}
+.post .share-edit .form li {
+	margin-bottom: 5px
+}
+.post .share-edit .text, .post .share-edit textarea {
+	font-size: 12px;
+	width: 95%
+}
+.post .share-edit textarea {
+	width: 96%
+}
+.post .share-edit .btn-primary {
+	vertical-align: middle
+}
+.post .share-edit label {
+	font-size: 100%
+}
+.post .share-attach {
+	display: none
+}
+.post .share-attach h4 {
+	font-size: 12px;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 2px
+}
+.post .share-attach .text {
+	width: 325px;
+	font-size: 12px
+}
+.post .twitter .open .twit-account-list {
+	left: auto;
+	right: 0
+}
+.post .share-mode {
+	background-color: #fff;
+	position: relative
+}
+.post .is-loading-mode .share-loading, .post .is-attach-mode .share-attach, .post .is-edit-mode .share-edit, .post .is-view-mode .share-view {
+	display: block;
+	padding: 4px;
+	margin: 10px 0;
+	overflow: hidden;
+	width: 100%;
+	_width: 97.5%
+}
+.post .post-actions {
+	margin: 3px 0 0 0;
+*height:1%;
+	position: relative;
+	font-size: 12px;
+	color: #666;
+	_float: left
+}
+.post .post-actions:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+.post .post-actions .settings {
+	position: absolute;
+	top: 6px;
+	display: none;
+	left: 125px
+}
+.post .post-actions .settings p {
+	float: left;
+	width: 70px;
+	text-align: right;
+	margin-right: 5px;
+	font-size: 12px
+}
+.nl .post .post-actions .settings p {
+	width: 100px
+}
+.post .twitter {
+	position: absolute;
+	top: 0;
+	_top: 2px;
+	right: 129px
+}
+.en .post .twitter {
+	right: 109px
+}
+.pt .post .twitter {
+	right: 149px;
+*right:164px
+}
+.ru .post .twitter {
+	right: 158px
+}
+.post .post-actions #attach {
+	position: absolute;
+	top: 6px;
+	left: 0
+}
+.post .post-actions #attach a {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') no-repeat 0 -528px;
+	display: block;
+	padding-left: 13px
+}
+.post .post-actions .btn-primary {
+	float: right
+}
+.post-home {
+	position: relative;
+	padding-top: 94px;
+	margin-bottom: 15px;
+*z-index:6
+}
+.post-home .post-message {
+	height: 35px;
+	overflow: auto
+}
+.post-home .member-photo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5
+}
+.post-home .post-module {
+	position: absolute;
+	top: 0;
+	left: 71px;
+	background: url('http://static01.linkedin.com/scds/common/u/img/bg/bg_sharepostmod_567x400.png') bottom left no-repeat;
+	width: 567px;
+	z-index: 6;
+	padding-bottom: 7px
+}
+.post-home .post-module-in {
+	background: url('http://static01.linkedin.com/scds/common/u/img/bg/bg_sharepostmod_567x400.png') 0 0 no-repeat;
+	padding: 7px 7px 0 22px;
+	_zoom: 1
+}
+.post-home .my-current {
+	margin: 3px 0 0 90px;
+	overflow: hidden;
+	color: #666
+}
+.post-home .my-current .feed-body {
+	padding: 0;
+	font-size: 12px
+}
+.post-home .my-current .feed-actions {
+	margin-top: 0
+}
+.post-home .my-current a {
+	white-space: nowrap
+}
+.post-home-neu {
+	position: relative;
+	width: 100%;
+*z-index:2;
+	clear: both;
+	margin-bottom: 12px;
+	height: auto;
+	float: left
+}
+.post-home-neu .post-module {
+	_overflow: hidden;
+	background-color: #F4F4F4;
+	border: 1px solid #F2F2F2;
+	border-right-color: #EAEAEA;
+	border-left: none;
+	border-bottom-color: #E4E4E4;
+	float: left;
+	width: 550px;
+	margin-bottom: 15px;
+	padding-top: 12px;
+*padding-top:0px;
+	min-height: 72px;
+*min-height:84px
+}
+.post-home-neu #post-module-neu.active .post-module {
+	_height: 173px !important;
+	font-weight: bold
+}
+.post-home-neu .post-actions {
+	display: none
+}
+.post-home-neu img.photo {
+	float: left;
+	border: 1px solid #E6E6E6;
+	border-bottom-color: #E4E4E4
+}
+.post-home-neu img.photo, .post-home-neu .post-module {
+	-webkit-box-shadow: 0px 2px 0px 0px #f7f7f7;
+	-moz-box-shadow: 0px 2px 0px 0px #f7f7f7;
+	box-shadow: 0px 2px 0px 0px #f7f7f7
+}
+.post-home-neu .post-message, .post-home-neu .post-link {
+	background: #fff;
+	-webkit-box-shadow: inset 1px 1px 6px 1px #e3e3e3;
+	-moz-box-shadow: inset 1px 1px 6px 1px #e3e3e3;
+	-o-box-shadow: inset 1px 1px 6px 1px #e3e3e3;
+	box-shadow: inset 1px 1px 6px 1px #e3e3e3;
+	border: 1px solid #b2b2b2;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+	border-radius: 2px;
+	font-size: 14px;
+	padding: 10px;
+	padding-right: 0px;
+	height: 16px;
+	resize: none;
+	overflow: hidden;
+	margin: 0
+}
+.post-home-neu .hint {
+	color: #888
+}
+#post-module-neu.inactive .post-message {
+*float:left;
+	height: 16px;
+	clear: left;
+	position: relative
+}
+#post-module-neu.inactive .post-link {
+*float:right;
+	height: 16px;
+	clear: right
+}
+.post-home-neu .active_message .post-message {
+	height: 65px;
+	overflow: hidden
+}
+.post-home-neu .post-message:focus, .post-home-neu .post-link:focus {
+	color: #111
+}
+.post-home-neu .post-module-in {
+	margin: 0 13px 12px 13px
+}
+.post-home-neu .my-current .feed-body {
+	font-size: 11px;
+	color: #666
+}
+.post-home-neu .my-current a {
+	white-space: nowrap
+}
+.post-home-neu .post-actions .settings {
+	display: block;
+	left: -18px;
+	position: absolute;
+	top: 6px
+}
+.post-home-neu:hover img.photo {
+	border: 1px solid #ECECEC;
+	border-bottom-color: #BBB
+}
+.post-home-neu:hover .post-module {
+	background-color: #F4F4F4;
+	border: 1px solid #ECECEC;
+	border-left: none;
+	border-right-color: #D3D3D3;
+	border-bottom-color: #BBB;
+	-webkit-box-shadow: 0px 2px 0px 0px #ECECEC;
+	-moz-box-shadow: 0px 2px 0px 0px #ECECEC;
+	box-shadow: 0px 2px 0px 0px #ECECEC
+}
+.post-home-neu:hover .member-photo, .post-home-neu:hover .post-module {
+	-webkit-box-shadow: 0px 1px 0px 0px #f7f7f7;
+	-moz-box-shadow: 0px 1px 0px 0px #f7f7f7;
+	box-shadow: 0px 1px 0px 0px #f7f7f7
+}
+.post-home-neu .post-message {
+	margin-right: 6px;
+	width: 323px
+}
+.post-home-neu .post-link {
+	width: 168px;
+	float: right;
+	clear: both
+}
+.post-home-neu:hover .post-message, .post-home-neu:hover .post-link {
+	background-color: #fefefe;
+	-webkit-box-shadow: inset 1px 1px 6px 1px #DBDBDB;
+	-moz-box-shadow: inset 1px 1px 6px 1px #e3e3e3;
+	-o-box-shadow: inset 1px 1px 6px 1px #e3e3e3;
+	box-shadow: inset 1px 1px 6px 1px #DBDBDB;
+	overflow: hidden
+}
+.post-home-neu .last-post {
+	width: 100%;
+	height: auto;
+	float: left
+}
+#post-module-neu.transition .post-message, #post-module-neu.transition .neu-loaded .share-preview {
+	-moz-transition: height .6s;
+	-webkit-transition: height .6s;
+	-o-transition: height .6s;
+	transition: height .6s
+}
+.post-home-neu .active_message .post-message {
+	overflow: hidden
+}
+.post-home-neu .active .post-message {
+	width: 512px
+}
+.post-home-neu .active .post-link {
+	visibility: visible;
+	margin-top: 8px;
+	width: 512px;
+	position: relative
+}
+.post-home-neu .twitter {
+	right: 185px
+}*/
+.en .post-home-neu .twitter {
+	right: 183px
+}
+.pt .post-home-neu .twitter {
+	right: 223px;
+*right:238px
+}
+.ru .post-home-neu .twitter {
+	right: 232px
+}
+.ro .post-home-neu .twitter {
+	right: 185px
+}
+.sv .post-home-neu .twitter {
+	right: 156px
+}
+.post-home-neu .active .post-actions {
+	display: block;
+	margin-top: 8px;
+	clear: both;
+	top: 8px;
+	height: 28px
+}
+.post-home-neu .active .my-current, .post-home-neu .active .last-post {
+	display: none
+}
+.post-home-neu .active .post-actions .settings p {
+	float: left;
+	text-align: right;
+	margin-right: 5px;
+	font-size: 12px
+}
+.post-home-neu .active .post-actions .settings p {
+	width: 112px
+}
+.en .post-home-neu .active .post-actions .settings p {
+	width: 70px
+}
+.ro .post-home-neu .active .post-actions .settings p {
+	width: 90px
+}
+.tr .post-home-neu .active .post-actions .settings p {
+	width: 112px
+}
+.post-home-neu .preview_loading .post-link {
+	background: url('http://static01.linkedin.com/scds/common/u/img/anim/anim_loading_16x16.gif') 500px 10px no-repeat #fff
+}
+#post-module-neu.inactive .check-textarea-message {
+	display: none !important
+}
+.post-home-neu .preview_loaded .share-preview {
+	display: block;
+	position: relative;
+	background-color: #fff;
+	margin-top: 8px;
+	height: 116px
+}
+.post-home-neu .share-preview {
+	height: 0;
+	overflow: hidden
+}
+.post-home-neu .preview_loaded #share-preview-in {
+	padding: 10px 10px 28px
+}
+.post-home-neu .preview_loaded .post-link {
+	visibility: hidden;
+	width: 0;
+	position: absolute;
+	top: -10000px
+}
+.post-home-neu .active .active-link {
+	display: block
+}
+#share-cancel {
+	display: none
+}
+.post-home-neu #share-cancel {
+	float: right;
+	margin-right: 8px
+}
+.post-home-neu #share-edit-link {
+	display: none
+}
+.post-home-neu .check-textarea-message strong {
+	font-weight: normal
+}
+.post-home-neu .check-textarea-message {
+	font-weight: normal
+}
+.post-profile {
+	margin: 10px 0 0 0;
+	padding: 8px 10px 10px 10px;
+	border: 1px solid #c8e4f1;
+	border-width: 0 1px 2px 0;
+	background-color: #fff;
+	clear: both;
+	position: relative;
+*zoom:1
+}
+.post-profile .feed {
+	margin: 0
+}
+.post-profile .feed-item {
+	margin: 0;
+	background: 0;
+	padding: 0;
+	min-height: 1px
+}
+.post-profile .my-current {
+	font-size: 12px;
+	overflow: hidden
+}
+.post-profile .my-current .feed-body {
+	padding: 0;
+	width: 100%;
+	overflow: hidden
+}
+.post-profile .my-current .title a {
+	color: #000
+}
+.post-profile .my-current .feed-content {
+	padding: 0 15px 3px 0;
+	font-size: 13px
+}
+.post-profile .my-current .feed-tweet-D .feed-item-meta {
+	margin-top: -3px
+}
+.post-profile .my-current .nus-timestamp {
+	color: #999;
+	font-size: 11px
+}
+.post-profile .my-current .more {
+	font-size: 11px
+}
+.post-profile .from-twitter {
+	display: inline-block;
+	margin: 0 0 4px 3px;
+	vertical-align: middle
+}
+.post-profile a.nus-hide-item {
+	display: block
+}
+.post-profile .postclose {
+	margin-top: 0;
+	position: absolute;
+	z-index: 5;
+	right: 12px;
+	top: 8px;
+	width: 65px;
+	font-size: 11px;
+	text-align: right;
+	white-space: nowrap
+}
+.post-profile h3 {
+	font-size: 13px;
+	margin-bottom: 3px
+}
+.post-profile .post-form, .profile-header .is-post-mode .my-current {
+	display: none
+}
+.post-profile .my-current, .profile-header .is-post-mode .post-form {
+	display: block
+}
+.post-profile .post-form {
+	zoom: 1
+}
+.post-profile .post .twitter {
+	right: 139px
+}
+.pt .post-profile .post .twitter {
+	right: 169px
+}
+.en .post-profile .post .twitter {
+	right: 114px
+}
+.post-profile .post .share-attach .text {
+	width: 400px
+}
+.share-end {
+	overflow: hidden;
+	width: 100%;
+	font-size: 13px
+}
+.share-end .options {
+	width: 48%;
+	float: left
+}
+.share-end h3 {
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 5px;
+	margin-left: 2px
+}
+.share-end li {
+	list-style: disc;
+	margin-left: 18px;
+	margin-bottom: 3px
+}
+.share-end li p {
+	font-size: 11px;
+	color: #666
+}
+.share-end .close {
+	margin-top: 15px;
+	font-size: 13px
+}
+.twitter, .facebook {
+	position: relative
+}
+.twitter .check, .facebook .check {
+	position: absolute;
+	display: block;
+	margin: 0;
+	padding: 0;
+	top: 5px;
+*top:2px;
+	left: 0
+}
+.twitter .check-nojs, .facebook .check-nojs {
+	display: none
+}
+.twitter .twitlogo {
+	position: absolute;
+	display: block;
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') 0 -70px no-repeat;
+	width: 21px;
+	height: 23px;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	top: 1px;
+	left: 17px;
+*left:21px
+}
+.facebook .fblogo {
+	position: absolute;
+	display: block;
+	background: url('http://static01.linkedin.com/scds/common/u/img/icon/icon_fblogo_30x21.png') 0 0 no-repeat;
+	width: 21px;
+	height: 23px;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	top: 1px;
+	left: 0
+}
+.twitter .twitlogo span, .twit-account-list, .fb-account-list, .js .twit-account-select {
+	display: none
+}
+.twitter .twitlogo.multi {
+	background-position: 0 -150px;
+	width: 30px
+}
+.twitter .open .twit-account-list {
+	top: 23px;
+	left: 0;
+	display: block;
+	position: absolute;
+	border: 3px solid #ccc;
+	border-width-bottom: 2px;
+	z-index: 500
+}
+.twitter .open .selected {
+	font-weight: bold;
+	background: #dbeffb url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') 101% -220px no-repeat;
+	color: #000 !important;
+	cursor: text
+}
+.twitter .open .selected:hover {
+	text-decoration: none
+}
+.facebook .fblogo.multi {
+	width: 30px
+}
+.facebook .open {
+	position: relative
+}
+.twitter .open .twit-account-list, .facebook .open .fb-account-list {
+	top: 23px;
+	left: 0;
+	display: block;
+	position: absolute;
+	background: #fff;
+	border: 1px solid #016799;
+	padding: 5px;
+	box-shadow: 0 6px 10px #888;
+	-moz-box-shadow: 0 6px 10px #888;
+	-webkit-box-shadow: 0 6px 10px #888;
+	z-index: 500
+}
+.twitter .open a, .facebook .open a, .facebook .fb-handle {
+	color: #069;
+	display: block;
+	padding: 5px 15px 5px 5px;
+	background: #fff;
+	font-size: 13px;
+	white-space: nowrap;
+	margin: 0
+}
+.facebook .fb-handle {
+	cursor: text
+}
+.twitter .open .selected, .facebook .open .selected {
+	font-weight: bold;
+	background: #fff url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') 101% -220px no-repeat !important;
+	color: #000 !important;
+	cursor: text
+}
+.facebook .open .selected {
+	padding-right: 25px
+}
+.twitter .open .selected:hover, .facebook .open .selected:hover {
+	text-decoration: none
+}
+.twitter .twitlogo .plain, .twitter .twitlogo .plain:visited {
+	color: #000
+}
+.twitter .twitlogo.open a:hover {
+	background-color: #016799;
+	color: #fff;
+	text-decoration: none
+}
+.twitter .twit-account-select {
+	display: none
+}
+.twitter .separator {
+	border-top: 1px solid #ccc;
+	margin: 4px 0 0 0;
+	padding: 4px 0 0 0
+}
+.facebook .hidden {
+	display: none
+}
+.menu-basic {
+	float: left;
+	min-width: 125px;
+*width:125px
+}
+.menu-basic span.label span {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') 100% -445px no-repeat;
+	color: #069;
+	cursor: pointer;
+	padding-right: 10px;
+	font-size: 12px
+}
+.menu-basic li.selected div {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') 101% -220px no-repeat !important;
+	padding-right: 15px
+}
+.sharing-carosel {
+	_display: inline;
+	width: 70px;
+	float: left;
+	margin: 4px 10px 0 4px
+}
+.sharing-carosel .sheen {
+	max-height: 70px;
+	min-height: 70px;
+	margin-bottom: 5px;
+	text-align: center;
+	vertical-align: middle;
+	overflow: hidden
+}
+.sharing-carosel img {
+	max-width: 70px
+}
+.sharing-carosel p {
+	text-align: center;
+	font-size: 11px;
+	margin: 0
+}
+.sharing-carosel .controls {
+	white-space: nowrap
+}
+.sharing-carosel a, .sharing-carosel a:visited, .sharing-carosel a:link {
+	font-size: 16px;
+	color: #000
+}
+.sharing-carosel a:hover {
+	text-decoration: none
+}
+.share-dialog .sharing-carosel, .popup .sharing-carosel {
+	width: 60px
+}
+.share-dialog .sharing-carosel .sheen, .popup .sharing-carosel .sheen {
+	max-height: 50px;
+	min-height: 50px
+}
+.share-dialog .sharing-carosel img, .popup .sharing-carosel img {
+	max-width: 60px;
+	max-height: 60px
+}
+.share-dialog-jobs .footer {
+	min-height: 20px
+}
+.share-dialog-jobs .facebook .footer {
+	min-height: 25px
+}
+.share-dialog-jobs .settings {
+	font-size: 11px;
+	left: 0
+}
+.share-dialog-jobs .facebook-settings {
+	left: 45px
+}
+.share-dialog-jobs .menu-basic span.label span {
+	font-size: 11px
+}
+.share-dialog-jobs .jobs-input {
+	background: #fff;
+	border: 1px solid #999;
+	font-size: 12px;
+	min-height: 16px;
+	padding: 5px;
+	width: 99%
+}
+.share-dialog-jobs .edit-post {
+	font-size: 11px;
+	padding-left: 5px
+}
+.share-dialog-jobs .editable {
+	font-size: 13px
+}
+.share-dialog-jobs .object .title {
+	font-size: 13px
+}
+.share-dialog-jobs .object .summary {
+	font-size: 13px
+}
+.share-dialog-jobs .toggled {
+	display: block
+}
+.share-dialog-jobs .twitter .twitlogo, .share-dialog-jobs .facebook .fblogo {
+	left: 0;
+	position: relative;
+	top: 5px
+}
+.share-dialog-jobs #warningoverrideTweetText-shareForm.check-textarea-message {
+	float: right;
+	padding: 2px 0 2px 40px !important
+}
+.share-dialog-jobs #warningoverrideTweetText-shareForm.check-textarea-message.error {
+	background: none;
+	color: #666666 !important
+}
+.share-dialog-jobs .hide {
+	display: none
+}
+.share-dialog-jobs .no-accts {
+	cursor: default
+}
+.group-share .mbox-typeahead span, .group-share .mbox-label span.status, .group-share .msg div {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_grps_v6.png') no-repeat -40px 0px
+}
+.group-share .mbox-typeahead span {
+	background-position: -40px -1577px;
+	padding: 0px 0px 2px 3px;
+*background-position:-40px -1576px
+}
+.group-share .mbox-typeahead span > strong {
+	padding-left: 14px
+}
+.group-share .mbox-label span.status {
+	background-position: -43px -1578px;
+*background-position:-43px -1577px;
+	padding: 0px 0px 2px 12px
+}
+.group-share .msg div {
+	background-position: -40px -1577px;
+	float: right;
+	font-size: 10px;
+	line-height: 120%;
+	margin: 0px 0px 10px 10px;
+	padding-left: 15px;
+	width: 352px
+}
+.group-share .mbox-typeahead span.public, .group-share .mbox-label span.public {
+	background: none;
+	padding: 0px
+}
+#callout-overlay.instructional-callout.callout-top-right .callout-arrow {
+	width: 30px;
+	height: 15px;
+	right: 224px;
+	top: 0
+}
+#callout-overlay.instructional-callout .callout-content {
+	margin-top: 7px
+}
+#callout-overlay.instructional-callout .instructional-callout-video-wrapper {
+	background: #FFF;
+	float: left;
+	margin: -6px -5px;
+	padding: 20px;
+	width: 425px
+}
+#callout-overlay.instructional-callout .instructional-callout-body {
+	color: #535353;
+	height: 255px;
+	font-size: 14px;
+	padding: 20px 20px 20px 15px;
+	margin-left: 465px
+}
+#callout-overlay.instructional-callout .instructional-callout-body h3 {
+	color: #333;
+	font-size: 18px;
+	margin-bottom: 15px
+}
+#callout-overlay.instructional-callout .instructional-callout-body .actions {
+	bottom: 31px;
+	position: absolute;
+	left: 493px
+}
+#callout-overlay.instructional-callout .instructional-callout-body .actions a, #callout-overlay.instructional-callout .instructional-callout-body .actions button {
+	margin: 3px
+}
+#callout-overlay.instructional-callout .callout-body .dismiss {
+	background: transparent url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') no-repeat scroll right -1300px;
+	cursor: pointer;
+	display: block;
+	height: 18px;
+	padding: 7px 0 2px;
+	position: absolute;
+	right: 17px;
+	text-indent: -12345px;
+	top: 25px;
+	width: 18px
+}
+#signal-callout {
+	display: none
+}
+#share-offsite .share-injection-link {
+	display: none
+}
+#share-offsite .nus-only .actions {
+	border: 0;
+	background: none;
+	text-align: right
+}
+#share-offsite .nus-only #share-dialog-edit-link {
+	display: none
+}
+#share-offsite .nus-only #postText-shareForm {
+	resize: vertical
+}
+#share-offsite .nus-only .global-form {
+	padding: 0px
+}
+#share-offsite .nus-only .mini-form {
+	padding: 8px;
+	display: block;
+	width: auto;
+	margin: 0
+}
+/* scss/modules/network_updates_doc_sharing.css */
+
+#feed-content .file-share .doc-share .close-document, #feed-content .file-share .image-share .close-document, .general-box .modules .feed .file-share .doc-share .close-document, .general-box .modules .feed .file-share .image-share .close-document, .feed-signal .file-share .doc-share .close-document, .feed-signal .file-share .image-share .close-document, .chron .file-share .doc-share .close-document, .chron .file-share .image-share .close-document {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') no-repeat 100% -375px;
+	display: none;
+	float: right;
+	height: 12px;
+	text-indent: -12345px;
+	width: 9px
+}
+#feed-content .file-share .doc-share .inline-share-link, #feed-content .file-share .doc-share .share-link, #feed-content .file-share .image-share .inline-share-link, #feed-content .file-share .image-share .share-link, .general-box .modules .feed .file-share .doc-share .inline-share-link, .general-box .modules .feed .file-share .doc-share .share-link, .general-box .modules .feed .file-share .image-share .inline-share-link, .general-box .modules .feed .file-share .image-share .share-link, .feed-signal .file-share .doc-share .inline-share-link, .feed-signal .file-share .doc-share .share-link, .feed-signal .file-share .image-share .inline-share-link, .feed-signal .file-share .image-share .share-link, .chron .file-share .doc-share .inline-share-link, .chron .file-share .doc-share .share-link, .chron .file-share .image-share .inline-share-link, .chron .file-share .image-share .share-link {
+	display: block;
+	position: relative
+}
+#feed-content .file-share .doc-share .inline-share-link:hover + p > a, #feed-content .file-share .doc-share .share-link:hover + p > a, #feed-content .file-share .image-share .inline-share-link:hover + p > a, #feed-content .file-share .image-share .share-link:hover + p > a, .general-box .modules .feed .file-share .doc-share .inline-share-link:hover + p > a, .general-box .modules .feed .file-share .doc-share .share-link:hover + p > a, .general-box .modules .feed .file-share .image-share .inline-share-link:hover + p > a, .general-box .modules .feed .file-share .image-share .share-link:hover + p > a, .feed-signal .file-share .doc-share .inline-share-link:hover + p > a, .feed-signal .file-share .doc-share .share-link:hover + p > a, .feed-signal .file-share .image-share .inline-share-link:hover + p > a, .feed-signal .file-share .image-share .share-link:hover + p > a, .chron .file-share .doc-share .inline-share-link:hover + p > a, .chron .file-share .doc-share .share-link:hover + p > a, .chron .file-share .image-share .inline-share-link:hover + p > a, .chron .file-share .image-share .share-link:hover + p > a {
+	text-decoration: underline
+}
+#feed-content .file-share .doc-share .inline-share-link .view-icon, #feed-content .file-share .doc-share .share-link .view-icon, #feed-content .file-share .image-share .inline-share-link .view-icon, #feed-content .file-share .image-share .share-link .view-icon, .general-box .modules .feed .file-share .doc-share .inline-share-link .view-icon, .general-box .modules .feed .file-share .doc-share .share-link .view-icon, .general-box .modules .feed .file-share .image-share .inline-share-link .view-icon, .general-box .modules .feed .file-share .image-share .share-link .view-icon, .feed-signal .file-share .doc-share .inline-share-link .view-icon, .feed-signal .file-share .doc-share .share-link .view-icon, .feed-signal .file-share .image-share .inline-share-link .view-icon, .feed-signal .file-share .image-share .share-link .view-icon, .chron .file-share .doc-share .inline-share-link .view-icon, .chron .file-share .doc-share .share-link .view-icon, .chron .file-share .image-share .inline-share-link .view-icon, .chron .file-share .image-share .share-link .view-icon {
+	border: 0;
+	height: 20px;
+	left: -12345px;
+	position: absolute;
+	top: 23px;
+	width: 20px
+}
+#feed-content .file-share .doc-share .inline-share-link .view-icon:hover, #feed-content .file-share .doc-share .share-link .view-icon:hover, #feed-content .file-share .image-share .inline-share-link .view-icon:hover, #feed-content .file-share .image-share .share-link .view-icon:hover, .general-box .modules .feed .file-share .doc-share .inline-share-link .view-icon:hover, .general-box .modules .feed .file-share .doc-share .share-link .view-icon:hover, .general-box .modules .feed .file-share .image-share .inline-share-link .view-icon:hover, .general-box .modules .feed .file-share .image-share .share-link .view-icon:hover, .feed-signal .file-share .doc-share .inline-share-link .view-icon:hover, .feed-signal .file-share .doc-share .share-link .view-icon:hover, .feed-signal .file-share .image-share .inline-share-link .view-icon:hover, .feed-signal .file-share .image-share .share-link .view-icon:hover, .chron .file-share .doc-share .inline-share-link .view-icon:hover, .chron .file-share .doc-share .share-link .view-icon:hover, .chron .file-share .image-share .inline-share-link .view-icon:hover, .chron .file-share .image-share .share-link .view-icon:hover {
+	left: 24px
+}
+#feed-content .file-share .doc-share .share-title, #feed-content .file-share .image-share .share-title, .general-box .modules .feed .file-share .doc-share .share-title, .general-box .modules .feed .file-share .image-share .share-title, .feed-signal .file-share .doc-share .share-title, .feed-signal .file-share .image-share .share-title, .chron .file-share .doc-share .share-title, .chron .file-share .image-share .share-title {
+	float: left
+}
+#feed-content .file-share .doc-share img.file-type-icon, #feed-content .file-share .image-share img.file-type-icon, .general-box .modules .feed .file-share .doc-share img.file-type-icon, .general-box .modules .feed .file-share .image-share img.file-type-icon, .feed-signal .file-share .doc-share img.file-type-icon, .feed-signal .file-share .image-share img.file-type-icon, .chron .file-share .doc-share img.file-type-icon, .chron .file-share .image-share img.file-type-icon {
+	border: 0;
+	float: left;
+	height: 48px;
+	margin-right: 10px;
+	width: 48px
+}
+#feed-content .file-share .doc-share img.file-type-icon:hover ~ .view-icon, #feed-content .file-share .image-share img.file-type-icon:hover ~ .view-icon, .general-box .modules .feed .file-share .doc-share img.file-type-icon:hover ~ .view-icon, .general-box .modules .feed .file-share .image-share img.file-type-icon:hover ~ .view-icon, .feed-signal .file-share .doc-share img.file-type-icon:hover ~ .view-icon, .feed-signal .file-share .image-share img.file-type-icon:hover ~ .view-icon, .chron .file-share .doc-share img.file-type-icon:hover ~ .view-icon, .chron .file-share .image-share img.file-type-icon:hover ~ .view-icon {
+	left: 24px
+}
+#feed-content .file-share .doc-share iframe, #feed-content .file-share .image-share iframe, .general-box .modules .feed .file-share .doc-share iframe, .general-box .modules .feed .file-share .image-share iframe, .feed-signal .file-share .doc-share iframe, .feed-signal .file-share .image-share iframe, .chron .file-share .doc-share iframe, .chron .file-share .image-share iframe {
+	border: 1px solid #ccc;
+	height: 0;
+	-moz-transition-property: all;
+	-webkit-transition-property: all;
+	-o-transition-property: all;
+	transition-property: all;
+	-moz-transition-duration: 0.25s;
+	-webkit-transition-duration: 0.25s;
+	-o-transition-duration: 0.25s;
+	transition-duration: 0.25s;
+	-moz-transition-timing-function: ease;
+	-webkit-transition-timing-function: ease;
+	-o-transition-timing-function: ease;
+	transition-timing-function: ease;
+	width: 0
+}
+#feed-content .file-share .image-share .share-title, .general-box .modules .feed .file-share .image-share .share-title, .feed-signal .file-share .image-share .share-title, .chron .file-share .image-share .share-title {
+	padding-left: 0
+}
+#feed-content .file-share .image-share.inline-view iframe, .general-box .modules .feed .file-share .image-share.inline-view iframe, .feed-signal .file-share .image-share.inline-view iframe, .chron .file-share .image-share.inline-view iframe {
+	height: auto;
+	width: auto
+}
+#feed-content .file-share .doc-share.inline-view .close-document, .general-box .modules .feed .file-share .doc-share.inline-view .close-document, .feed-signal .file-share .doc-share.inline-view .close-document, .chron .file-share .doc-share.inline-view .close-document {
+	display: block
+}
+#feed-content .file-share .doc-share.inline-view .share-title, #feed-content .file-share .doc-share.inline-view img, .general-box .modules .feed .file-share .doc-share.inline-view .share-title, .general-box .modules .feed .file-share .doc-share.inline-view img, .feed-signal .file-share .doc-share.inline-view .share-title, .feed-signal .file-share .doc-share.inline-view img, .chron .file-share .doc-share.inline-view .share-title, .chron .file-share .doc-share.inline-view img {
+	display: none
+}
+#feed-content .file-share .doc-share.inline-view iframe, .general-box .modules .feed .file-share .doc-share.inline-view iframe, .feed-signal .file-share .doc-share.inline-view iframe, .chron .file-share .doc-share.inline-view iframe {
+	height: 325px;
+	width: 540px
+}
+#feed-content .file-share .image-share .image, .general-box .modules .feed .file-share .image-share .image, .feed-signal .file-share .image-share .image, .chron .file-share .image-share .image {
+	height: auto;
+	width: auto
+}
+#feed-content .file-share .image-share .image img, .general-box .modules .feed .file-share .image-share .image img, .feed-signal .file-share .image-share .image img, .chron .file-share .image-share .image img {
+	border: 0
+}
+#feed-content .file-share .share-body, .general-box .modules .feed .file-share .share-body, .feed-signal .file-share .share-body, .chron .file-share .share-body {
+	display: block;
+	margin: 8px 0 15px
+}
+/* scss/modules/pymk_widget.css */
+
+#pymk .header h3 {
+	font-size: 130%;
+	font-weight: bold;
+	line-height: auto
+}
+#pymk-see-more {
+	font-size: 110%;
+	text-align: right
+}
+#pymk.pymk-old ul.control {
+	float: right;
+	width: 60px;
+	list-style-type: none;
+	cursor: default
+}
+.de #pymk.pymk-old ul.control {
+	width: 80px
+}
+.pt #pymk.pymk-old ul.control {
+	width: 80px
+}
+.fr #pymk.pymk-old ul.control, .es #pymk.pymk-old ul.control {
+	width: 65px
+}
+#pymk.pymk-old.pymk-C ul.control, #pymk.pymk-old .pymk-D ul.control {
+	width: auto
+}
+#pymk.pymk-old .remove a {
+	width: 14px;
+	height: 100%;
+	float: left;
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') 100% -1450px no-repeat;
+	cursor: pointer;
+	text-indent: -12345px
+}
+#pymk.pymk-old .invite a {
+	color: #fff !important;
+	border-right: 1px solid #fff;
+	padding-right: 7px;
+	margin-right: 7px
+}
+#pymk.pymk-old .invite, #pymk.pymk-old .remove {
+	float: left;
+	font-size: 110%;
+	line-height: 24px;
+	clear: none
+}
+#pymk.pymk-old .header h3 {
+	font-size: 130%;
+	font-weight: bold;
+	line-height: auto
+}
+#pymk.pymk-old .content {
+	display: block;
+	padding: 10px
+}
+#pymk.pymk-old li {
+	height: 1%;
+	margin-bottom: 8px;
+	font-size: 100%
+}
+#pymk.pymk-old li.detail {
+	position: relative
+}
+#pymk.pymk-old ul li:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+#pymk.pymk-old li h4 {
+	font-size: 130%;
+	font-weight: bold
+}
+#pymk.pymk-old li .headline {
+	font-size: 110%;
+	color: #666;
+	overflow: hidden
+}
+#pymk.pymk-old li .profile-summary {
+	float: left;
+	width: 60%
+}
+#pymk.pymk-old .detail .profile-detail {
+	display: block;
+	z-index: 1000;
+	background: url('http://static02.linkedin.com/scds/common/u/img/pic/pic_pointer_300x19.png') -200px -46px no-repeat;
+	width: 400px;
+	position: absolute;
+	left: -416px;
+	top: -20px;
+	padding-right: 20px
+}
+#pymk.pymk-old .profile-detail .main {
+	border: 1px solid #666;
+	border-width: 1px 0 1px 1px
+}
+#pymk.pymk-old .profile-detail .profile {
+	border: 2px solid #ccc;
+	border-width: 2px 0 2px 2px;
+	position: relative;
+	height: 1%;
+	background: none;
+	margin: 0;
+	padding: 10px
+}
+#pymk.pymk-old .profile-detail .close-detail {
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') -16px -1293px no-repeat;
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	height: 24px;
+	width: 24px;
+	text-indent: -12345px;
+	cursor: pointer
+}
+#pymk.pymk-old .profile-detail h4 {
+	font-size: 180%
+}
+#pymk.pymk-old .profile-detail .headline {
+	color: #000;
+	font-size: 130%;
+	margin: 4px 0
+}
+#pymk.pymk-old .profile-detail .locality {
+	color: #666;
+	font-size: 110%;
+	margin-bottom: 10px
+}
+#pymk.pymk-old .profile-detail a {
+	background: none
+}
+#pymk.pymk-old .profile-detail table {
+	width: 100%
+}
+#pymk.pymk-old .profile-detail th {
+	font-size: 130% !important;
+	padding: 8px;
+	vertical-align: top
+}
+#pymk.pymk-old .profile-detail td {
+	padding: 8px;
+	vertical-align: top;
+	color: #333
+}
+#pymk.pymk-old .profile-detail td p {
+	font-size: 130%
+}
+#pymk.pymk-old .profile-detail .more-info p {
+	margin: 0 0 8px
+}
+#pymk.pymk-old .profile-detail th {
+	border-bottom: 1px solid #fff;
+	width: 25%;
+	background-color: #eee;
+	color: #666;
+	font-weight: bold;
+	text-align: right
+}
+#pymk.pymk-old .detail .control {
+	position: relative
+}
+#pymk.pymk-old .open {
+	position: relative;
+	z-index: 3
+}
+#pymk.pymk-old .invite a {
+	color: #069 !important;
+	border-color: #999;
+	font-size: 110%
+}
+#pymk.pymk-old li.remove a {
+	background-position: -13px -258px
+}
+#pymk.pymk-old li.remove a:hover {
+	background-position: 100% -297px
+}
+#pymk.pymk-old li.remove.menu a, #pymk.pymk-old li.remove.menu a:hover {
+	background-position: 100% -237px
+}
+#pymk.pymk-old .drop {
+	left: -205px;
+	top: 2em;
+	width: 20em;
+	overflow: hidden
+}
+#body #pymk.pymk-old .drop li {
+	display: block
+}
+#pymk.pymk-old .drop a {
+	background-image: none;
+	float: none;
+	height: auto;
+	width: 100%;
+	text-indent: 0;
+	line-height: 1.3
+}
+#pymk.pymk-old .drop a:hover {
+	background: #ddf0f8
+}
+#pymk.pymk-old .content .more {
+	text-align: right;
+	font-size: 110%;
+	margin-top: 5px;
+	clear: both
+}
+#pymk.pymk-old #pymk.pymk-old-find-more {
+	font-size: 130%;
+	display: none
+}
+#pymk.pymk-old.empty {
+	display: none
+}
+#pymk.pymk-old.photos .vcard {
+	padding-left: 65px;
+	width: auto
+}
+#pymk.pymk-old .vcard.extra-row {
+	display: none
+}
+#pymk.pymk-old .vcard a.profile-photo {
+	display: block;
+	float: left;
+	font-size: 75%;
+	margin-right: 5px;
+	overflow: hidden
+}
+#pymk.pymk-old .photos li .profile-summary {
+	float: left;
+	width: 60%
+}
+#pymk.pymk-old.photos li .profile-summary-caseB {
+	float: left;
+	width: 60%
+}
+#pymk.pymk-old.photos li .headline {
+	color: #666666;
+	font-size: 110%;
+	text-overflow: ellipsis
+}
+#pymk.pymk-old .connection {
+	font-size: 110%
+}
+#pymk.pymk-old.pymk-C li h4 a {
+	background: none
+}
+#pymk.pymk-redesign .vcard {
+	position: relative;
+	padding-left: 55px;
+	margin: 1px 0;
+	min-height: 50px;
+	_height: 50px;
+	overflow: visible
+}
+#pymk.pymk-redesign .vcard a.profile-photo {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	color: #333
+}
+#pymk.pymk-redesign .vcard.extra-row {
+	display: none
+}
+#pymk.pymk-redesign .profile-summary h4 {
+	font-size: 13px
+}
+#pymk.pymk-redesign .profile-summary h4 a {
+	font-weight: bold
+}
+#pymk.pymk-redesign .profile-summary p.headline {
+	font-size: 11px
+}
+#pymk.pymk-redesign .actions {
+	position: absolute;
+	top: 0;
+	right: 0;
+	overflow: hidden
+}
+#pymk.pymk-redesign .actions li {
+	float: left
+}
+#pymk.pymk-redesign .actions li.remove a {
+	display: block;
+	height: 14px;
+	width: 14px;
+	text-indent: -12345px;
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') no-repeat 100% -1496px
+}
+#pymk.pymk .modal-connect {
+	display: none
+}
+#pymk.pymk-redesign .pymk-C .profile-summary {
+	padding-right: 30px;
+	height: 30px;
+	height: auto !important;
+	max-height: 30px;
+	overflow: hidden
+}
+#pymk.pymk-redesign .pymk-C .profile-summary h4 {
+	margin-top: 0
+}
+#pymk.pymk-redesign .pymk-C .profile-summary h4 a {
+	color: #333
+}
+#pymk.pymk-redesign .pymk-C .profile-summary h4 a:after {
+	content: ","
+}
+#pymk.pymk-redesign .pymk-C .profile-summary h4, #pymk.pymk-redesign .pymk-C .profile-summary p.headline {
+	display: inline
+}
+#pymk.pymk-redesign .pymk-C p.invite {
+	margin: 3px 0
+}
+#pymk.pymk-redesign .pymk-C p.invite a {
+	font-size: 11px;
+	font-weight: bold;
+	padding-left: 16px;
+	display: block;
+	line-height: 14px;
+	color: #069;
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') no-repeat 0 -1032px;
+	zoom: 1;
+	position: relative
+}
+#pymk.pymk-redesign .pymk-B .profile-summary {
+	padding-right: 12em
+}
+#pymk.pymk-redesign .pymk-B .actions li.invite {
+	font-size: 110%;
+	font-weight: bold;
+	padding-right: 6px;
+	margin-right: 6px;
+	border-right: #CCC 1px solid
+}
+#pymk.mod-custom ul li.invite, #pymk.mod-custom ul li.remove {
+	float: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	clear: inherit
+}
+#pymk.mod-custom .invite a {
+	border-right: inherit;
+	padding-right: inherit;
+	margin-right: inherit
+}
+.en #pymk.mod-custom .invite a {
+	text-transform: inherit
+}
+#pymk.pymk-redesign.pymk-new-design .content {
+	padding: 0
+}
+#pymk.pymk-redesign.pymk-new-design.hover .content li:hover {
+	background-color: #fdfdfd;
+	cursor: pointer
+}
+#pymk.pymk-redesign.pymk-new-design .pymk-C p.invite a {
+	display: -moz-inline-box;
+	-moz-box-orient: vertical;
+	display: inline-block;
+	vertical-align: middle;
+*vertical-align:auto
+}
+#pymk.pymk-redesign.pymk-new-design .pymk-C p.invite a {
+*display:inline
+}
+#pymk.pymk-redesign.pymk-new-design .vcard {
+	margin: 0;
+	padding-top: 5px;
+	padding-bottom: 2px;
+	padding-left: 75px;
+	background: transparent url('http://static01.linkedin.com/scds/common/u/img/bg/bg_nmp_pymk_hr.png') no-repeat left bottom;
+	min-height: 60px;
+	height: auto !important;
+	height: 60px;
+*margin-bottom:-3px
+}
+#pymk.pymk-redesign.pymk-new-design .vcard.first {
+	padding-top: 10px
+}
+#pymk.pymk-redesign.pymk-new-design .vcard a.profile-photo {
+	left: 10px;
+	top: 5px
+}
+#pymk.pymk-redesign.pymk-new-design .vcard.first a.profile-photo {
+	top: 10px
+}
+#pymk.pymk-redesign.pymk-new-design .actions {
+	top: 5px;
+	right: 10px
+}
+#pymk.pymk-redesign.pymk-new-design .pymk-C .profile-summary {
+	padding-right: 25px
+}
+#pymk.pymk-redesign.pymk-new-design .pymk-view-all {
+	padding: 10px 0 10px 10px;
+	margin: 0
+}
+#pymk.pymk-redesign.pymk-new-design .header {
+	cursor: pointer
+}
+#pymk.pymk-redesign.pymk-new-design .header h3 {
+	position: relative
+}
+#pymk.pymk-redesign.pymk-new-design .bt-refresh {
+*zoom:1;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: -20px;
+	background: transparent url('http://static02.linkedin.com/scds/common/u/img/icon/icon_pymk_nmp_refresh.png') no-repeat;
+	text-indent: -12345px
+}
+/* scss/modules/recjobs_widget.css */
+
+.recjobs-widget .job {
+	margin-bottom: 10px;
+	padding: 5px;
+*zoom:1
+}
+.recjobs-widget .job:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden
+}
+.recjobs-widget .job .remove-container {
+	float: right
+}
+.recjobs-widget .job .droplist .close {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_global_v7.png') 100% -1498px no-repeat;
+	float: left;
+	height: 1.5em;
+	text-indent: -12345px;
+	width: 20px
+}
+.recjobs-widget .job .droplist .remove-menu {
+	display: none;
+	font-size: 12px;
+	right: -3px;
+	_right: 20px;
+	top: 15px;
+	z-index: 3;
+*width:230px;
+*zoom:1
+}
+.recjobs-widget .job .droplist .remove-menu h5 {
+	color: #666;
+	font-weight: normal;
+	margin: 0;
+	padding: 5px;
+*zoom:1
+}
+.recjobs-widget .job .droplist.open .remove-menu {
+	display: block
+}
+.recjobs-widget .job .logo {
+	float: left;
+	padding: 0 10px 0 0
+}
+.recjobs-widget .job .logo .photo {
+	width: 55px
+}
+.recjobs-widget .job .job-data {
+	float: left;
+	width: 73%
+}
+.recjobs-widget .job .job-data h4 {
+	margin-top: 0;
+	font-size: 130%;
+	font-weight: bold;
+	word-wrap: break-word
+}
+.recjobs-widget .job .job-data p {
+	font-size: 110%;
+	overflow: hidden;
+	white-space: nowrap;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis
+}
+.recjobs-widget .job.extra {
+	display: none
+}
+.recjobs-widget .job.sponsored {
+	background-color: #FFFAE5
+}
+.recjobs-widget .job.sponsored .remove-container {
+	position: relative
+}
+.recjobs-widget .job.sponsored .close {
+	background: none;
+	text-indent: 0;
+	width: auto;
+	float: none;
+	position: absolute;
+	top: 0;
+	right: 0
+}
+.recjobs-widget .job.sponsored .job-data {
+	width: 73%
+}
+.recjobs-widget .job.sponsored .droplist {
+	color: #666
+}
+.recjobs-widget .job.sponsored .droplist .remove-menu {
+	top: 12px
+}
+.recjobs-widget .see-more {
+	clear: both;
+	float: right;
+	font-size: 110%;
+	padding: 5px 0 15px
+}
+.recjobs-widget .upsell {
+	border: 1px solid #DDD;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+	clear: both;
+	padding: 5px 0;
+	font-size: 11px;
+	line-height: 18px;
+	text-align: center
+}
+.recjobs-widget .upsell p {
+	font-size: 110%;
+	font-weight: bold;
+	line-height: 18px;
+	margin: 0;
+	padding: 5px;
+	text-align: center
+}
+.recjobs-widget .upsell .accounticon {
+	margin-left: 0;
+	margin-right: 5px;
+*vertical-align:middle
+}
+.recjobs-widget .no-jobs {
+	background-color: #F2F2F2;
+	padding: 15px 0;
+	text-align: center
+}
+.recjobs-widget .empty-message {
+	display: none;
+	margin-bottom: 15px
+}
+.en .recjobs-widget .job .droplist .remove-menu {
+	width: 200px
+}
+.grid-f .recjobs-widget .job .job-data {
+	width: 66%
+}
+.grid-f .recjobs-widget .job.sponsored .job-data {
+	width: 55%
+}
+.recjobs-widget-cta {
+	font-size: 11px;
+	text-align: right;
+	clear: both;
+	padding: 5px 0 15px
+}
+#recJobs.empty .empty-message {
+	display: block
+}
+/* scss/modules/recgroups_widget.css */
+
+.recgroups-widget #recGroups {
+	margin-top: 10px
+}
+.recgroups-widget .group {
+	clear: both;
+	margin-bottom: 10px
+}
+.recgroups-widget .group:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+.recgroups-widget .group .logo {
+	float: left;
+	padding: 0 10px 0 0
+}
+.recgroups-widget .group .logo img {
+	width: 55px;
+	border: 1px solid #E6E6E6;
+	padding: 2px;
+	display: block
+}
+.recgroups-widget .group .group-data {
+	float: left;
+	width: 73%;
+	overflow-x: hidden
+}
+.recgroups-widget .group .group-data h4 {
+	margin-top: 0;
+	margin-bottom: 5px;
+	font-size: 13px;
+	font-weight: bold
+}
+.recgroups-widget .group .group-data h4 .private {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_grps_v6.png') no-repeat scroll -44px -1576px transparent;
+	padding-left: 14px
+}
+.recgroups-widget .group .group-data p {
+	font-size: 110%;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+.recgroups-widget .see-more {
+	clear: both;
+	float: right;
+	font-size: 110%;
+	padding: 5px 0
+}
+.recgroups-widget .clear {
+	clear: both
+}
+.recgroups-widget .extra {
+	display: none
+}
+.recgroups-widget .group .join {
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') no-repeat scroll 0px -1032px transparent;
+	font-weight: bold;
+	margin-top: 5px;
+	padding-left: 16px
+}
+.recgroups-widget-cta {
+	font-size: 11px;
+	float: right;
+	clear: both;
+	padding: 0 0 5px
+}
+/* scss/modules/reccompanies_widget.css */
+
+.reccompanies-widget #recCompanies-content {
+	overflow: hidden
+}
+.reccompanies-widget .company {
+	float: left;
+	padding: 8px 6px;
+	width: 80px;
+	height: 48px;
+	text-align: center;
+	overflow: hidden
+}
+.reccompanies-widget .company a {
+	line-height: 48px
+}
+.reccompanies-widget .company img {
+	width: 100%;
+	vertical-align: middle
+}
+.reccompanies-widget .extra {
+	display: none
+}
+.reccompanies-widget-cta {
+	font-size: 11px;
+	float: right;
+	clear: both;
+	padding: 0 0 5px
+}
+.reccompanies-widget .clear {
+	clear: both
+}
+/* scss/modules/balloon_callout.css */
+
+a.callout-trigger, a.callout-trigger:visited, span.callout-trigger {
+	color: #000;
+	text-decoration: none
+}
+a.callout-trigger:hover, a.callout-trigger.hover, span.callout-trigger.hover {
+	color: #000;
+	text-decoration: none;
+	border-bottom: 1px dotted #000
+}
+a.callout-trigger.instructional-callout-trigger:hover, a.callout-trigger.instructional-callout-trigger.hover, span.callout-trigger.instructional-callout-trigger.hover {
+	border: none
+}
+.whatsthis, .whatisthis {
+	background: url('http://static02.linkedin.com/scds/common/u/img/icon/icon_help_trans_16x16.png') no-repeat;
+	display: block;
+	float: left;
+	width: 16px;
+	height: 16px;
+	text-indent: -12345px
+}
+.js .callout-container, #callout-overlay {
+	position: absolute;
+filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	opacity: 0;
+	-webkit-transition: opacity 0.5s ease;
+	-moz-transition: opacity 0.5s ease;
+	-o-transition: opacity 0.5s ease;
+	transition: opacity 0.5s ease;
+	overflow: hidden;
+	visibility: hidden;
+	zoom: 1
+}
+#callout-overlay.shown {
+filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1
+}
+#callout-overlay .callout-content {
+	background-color: #fff;
+	border: 2px solid #ccc;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	margin: 0;
+	padding: 5px
+}
+#callout-overlay .callout-arrow {
+	overflow: hidden;
+	zoom: 1;
+	background-color: transparent;
+	background-image: url('http://static01.linkedin.com/scds/common/u/img/bg/bg_callout_arrow_foursided_34x34.gif');
+	background-repeat: no-repeat;
+	position: absolute;
+	border: 0;
+	display: block
+}
+#callout-overlay.error-callout .callout-content {
+	background-color: #fff2f1
+}
+#callout-overlay.error-callout .callout-arrow {
+	background-image: url('http://static01.linkedin.com/scds/common/u/img/bg/bg_error_callout_arrow_foursided_34x34.png');
+	position: absolute
+}
+#callout-overlay.instructional-callout .callout-content {
+	background-color: #FFFCD8;
+	border: 1px solid #E5D387;
+	box-shadow: 0 4px 5px #AAA;
+	-moz-box-shadow: 0 4px 5px #AAA;
+	-webkit-box-shadow: 0 4px 5px #AAA;
+	margin: 6px
+}
+#callout-overlay.instructional-callout .callout-arrow {
+	background-image: url('http://static01.linkedin.com/scds/common/u/img/bg/bg_instructional_callout_arrow_foursided_yellow_34x34.png');
+	position: absolute
+}
+#callout-overlay.form-callout .callout-content {
+	background-color: #e3f3fa;
+	color: #666
+}
+#callout-overlay.form-callout .callout-arrow {
+	background-image: url('http://static01.linkedin.com/scds/common/u/img/bg/bg_form_callout_arrow_foursided_34x34.png')
+}
+#callout-overlay.overlay-callout .callout-content {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0
+}
+#callout-overlay.overlay-callout .callout-arrow {
+	display: none
+}
+#callout-overlay.widget-callout .callout-content .callout-body p {
+	font-size: 11px;
+	margin: 0
+}
+#callout-overlay.widget-callout .callout-body {
+	padding: 0
+}
+#callout-overlay.widget-callout .callout-content {
+	color: #fff;
+	padding: 0 5px;
+	background-color: #069;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	border: 0
+}
+#callout-overlay.widget-callout .callout-arrow {
+	background-image: url('http://static01.linkedin.com/scds/common/u/img/bg/bg_widget_callout_arrow_foursided_11x11.png')
+}
+#callout-overlay.tooltip-callout .callout-content {
+	background-color: #333;
+	border-color: #333;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-o-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	border-radius: 2px;
+	color: #fff;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 1px 5px
+}
+#callout-overlay.tooltip-callout .callout-content .callout-body {
+	padding: 0
+}
+#callout-overlay.tooltip-callout .callout-arrow {
+	background-image: none;
+	border-style: solid;
+	height: 0;
+	width: 0
+}
+#callout-overlay.tooltip-callout.callout-bottom-left .callout-arrow, #callout-overlay.tooltip-callout.callout-top-left .callout-arrow {
+	left: 4px
+}
+#callout-overlay.tooltip-callout.callout-bottom-right .callout-arrow, #callout-overlay.tooltip-callout.callout-top-right .callout-arrow {
+	right: 4px
+}
+#callout-overlay.tooltip-callout.callout-bottom-left .callout-arrow, #callout-overlay.tooltip-callout.callout-bottom-right .callout-arrow {
+	border-color: #333 transparent transparent transparent;
+	border-width: 7px 7px 0 7px
+}
+#callout-overlay.tooltip-callout.callout-left-bottom .callout-arrow, #callout-overlay.tooltip-callout.callout-right-bottom .callout-arrow {
+	bottom: 3px
+}
+#callout-overlay.tooltip-callout.callout-left-top .callout-arrow, #callout-overlay.tooltip-callout.callout-right-top .callout-arrow {
+	top: 3px
+}
+#callout-overlay.tooltip-callout.callout-left-bottom .callout-arrow, #callout-overlay.tooltip-callout.callout-left-top .callout-arrow {
+	border-color: transparent #333 transparent transparent;
+	border-width: 7px 7px 7px 0
+}
+#callout-overlay.tooltip-callout.callout-right-bottom .callout-arrow, #callout-overlay.tooltip-callout.callout-right-top .callout-arrow {
+	border-color: transparent transparent transparent #333;
+	border-width: 7px 0 7px 7px
+}
+#callout-overlay.tooltip-callout.callout-top-left .callout-arrow, #callout-overlay.tooltip-callout.callout-top-right .callout-arrow {
+	border-color: transparent transparent #333 transparent;
+	border-width: 0 7px 7px 7px
+}
+.callout-top-left, .callout-top-right {
+	padding: 7px 0 0 0
+}
+.callout-right-top, .callout-right-bottom {
+	padding: 0 7px 0 0
+}
+.callout-bottom-left, .callout-bottom-right {
+	padding: 0 0 7px 0
+}
+.callout-left-top, .callout-left-bottom {
+	padding: 0 0 0 7px
+}
+.callout-top-right .callout-arrow {
+	width: 34px;
+	height: 9px;
+	right: 0;
+	top: 0
+}
+.callout-top-left .callout-arrow {
+	width: 34px;
+	height: 9px;
+	left: 0;
+	top: 0
+}
+.callout-bottom-right .callout-arrow {
+	width: 34px;
+	height: 9px;
+	right: 0;
+	bottom: 0;
+	background-position: 0 -25px
+}
+.callout-bottom-left .callout-arrow {
+	width: 34px;
+	height: 9px;
+	left: 0;
+	bottom: 0;
+	background-position: 0 -25px
+}
+.callout-right-top .callout-arrow {
+	width: 9px;
+	height: 34px;
+	right: 0;
+	_right: -1px;
+	top: 0;
+	background-position: -25px 0
+}
+.callout-right-bottom .callout-arrow {
+	width: 9px;
+	height: 34px;
+	right: 0;
+	_right: -1px;
+	bottom: 0;
+	background-position: -25px 0
+}
+.callout-left-top .callout-arrow {
+	width: 9px;
+	height: 34px;
+	left: 0;
+	top: 0;
+	background-position: 0 0
+}
+.callout-left-bottom .callout-arrow {
+	width: 9px;
+	height: 34px;
+	left: 0;
+	bottom: 0;
+	background-position: 0 0
+}
+.instructional-callout.callout-top-right .callout-arrow {
+	width: 30px;
+	height: 15px;
+	right: 15px;
+	top: 0
+}
+.instructional-callout.callout-top-left .callout-arrow {
+	width: 30px;
+	height: 15px;
+	left: 15px;
+	top: 0
+}
+.instructional-callout.callout-bottom-right .callout-arrow {
+	width: 30px;
+	height: 15px;
+	right: 15px;
+	bottom: 0;
+	background-position: 0 -18px
+}
+.instructional-callout.callout-bottom-left .callout-arrow {
+	width: 30px;
+	height: 15px;
+	left: 15px;
+	bottom: 0;
+	background-position: 0 -18px
+}
+.instructional-callout.callout-right-top .callout-arrow {
+	width: 15px;
+	height: 30px;
+	right: 0;
+	_right: -1px;
+	top: 15px;
+	background-position: -18px 0
+}
+.instructional-callout.callout-right-bottom .callout-arrow {
+	width: 15px;
+	height: 30px;
+	right: 0;
+	_right: -1px;
+	bottom: 15px;
+	background-position: -18px 0
+}
+.instructional-callout.callout-left-top .callout-arrow {
+	width: 15px;
+	height: 30px;
+	left: 0;
+	top: 15px;
+	background-position: 0 0
+}
+.instructional-callout.callout-left-bottom .callout-arrow {
+	width: 15px;
+	height: 30px;
+	left: 0;
+	bottom: 15px;
+	background-position: 0 0
+}
+#callout-overlay .callout-content .callout-head {
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 3px
+}
+#callout-overlay .callout-content .callout-body {
+	font-size: 12px;
+	min-height: 14px;
+	_height: 14px;
+	padding-top: 2px;
+	padding-bottom: 2px
+}
+#callout-overlay .callout-content .callout-body p {
+	margin-bottom: 5px
+}
+#callout-overlay.error-callout .callout-content .callout-head {
+	font-weight: normal;
+	color: #f00;
+	padding-left: 18px;
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') no-repeat scroll 0 -968px
+}
+#callout-overlay.error-callout .callout-content .callout-body {
+	padding-left: 18px
+}
+.widget-callout.callout-bottom-left .callout-arrow {
+	width: 11px;
+	height: 11px;
+	left: 5px;
+	bottom: 0;
+	background-position: 0 -2px
+}
+/* scss/modules/site_promotion.css */
+
+.site-promo {
+	margin-bottom: 20px
+}
+.site-promo .promo {
+	position: relative
+}
+.site-promo-a {
+	margin-top: -10px;
+	margin-bottom: 15px;
+	padding-top: 9px;
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_up_caret_v1.png') no-repeat 136px 0
+}
+.site-promo-a .promo, .site-promo-b .promo {
+	color: #fff;
+	padding: 10px 25px;
+	background: #6CBAD9;
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6CBAD9', endColorstr='#4B99C1');
+	background: -moz-linear-gradient(top, #6cbad9, #4b99c1);
+	background: -webkit-gradient(linear, left top, left bottom, from(#6cbad9), to(#4b99c1));
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-o-border-radius: 6px;
+	border-radius: 6px
+}
+.site-promo-c {
+	background: url('http://static01.linkedin.com/scds/common/u/img/bg/bg_banner_curl_top_953x69_v1.png') no-repeat 0 0;
+	margin-top: -8px;
+	margin-bottom: 5px
+}
+.site-promo-c .promo {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_banner_curl_bot_991x66_v1.png') no-repeat -11px 45px;
+	padding: 22px 40px 32px
+}
+.ja .site-promo-c .promo {
+	padding-top: 18px
+}
+.site-promo-d {
+	background: url('http://static01.linkedin.com/scds/common/u/img/bg/bg_page_curl_top_638x305_v1.png') no-repeat 0 0;
+	text-align: center;
+	width: 638px;
+	margin: 0 auto
+}
+.site-promo-d .promo {
+	background: url('http://static01.linkedin.com/scds/common/u/img/bg/bg_page_curl_bot_638x149_v1.png') no-repeat 0 100%;
+	padding: 30px 40px 37px
+}
+.site-promo-e {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_page_curl_top_581x105_v1.png') no-repeat -5px 0;
+	text-align: center;
+	width: 570px;
+	margin: 0 auto
+}
+.site-promo-e .promo {
+	background: url('http://static01.linkedin.com/scds/common/u/img/bg/bg_page_curl_bot_581x157_v1.png') no-repeat -3px 100%;
+	padding: 30px 40px 27px
+}
+.site-promo .pin {
+	display: block;
+	_display: none;
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_pin_v1.png') no-repeat 0 0;
+	height: 31px;
+	width: 18px;
+	position: absolute;
+	top: -1px;
+	left: 10px
+}
+.site-promo-d .pin {
+	left: 10px;
+	top: -6px
+}
+.site-promo .close {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	_right: 20px;
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	text-indent: -12345px;
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') no-repeat 5px -1395px
+}
+.site-promo-c .close {
+	height: 24px;
+	width: 32px;
+	background-position: 3px -1491px
+}
+.site-promo-d .close {
+	background-position: 5px -1492px;
+	right: 22px
+}
+.site-promo-e .close {
+	background-position: 2px -1492px;
+	right: 16px
+}
+#main .site-promo h1 {
+	line-height: 28px;
+	font-size: 20px;
+	font-weight: bold
+}
+#main .site-promo-c h1 {
+	padding-right: .5em
+}
+#main .site-promo-d h1 {
+	font-size: 18px
+}
+#main .site-promo p {
+	line-height: 21px;
+	font-size: 12px
+}
+.site-promo-d p {
+	margin: 0 0 15px
+}
+#main .site-promo-c p, .site-promo-d p {
+	color: #666
+}
+.ja #main .site-promo-c p {
+	margin: 7px 0
+}
+#main .site-promo-d .add-connections {
+	margin-top: 12px
+}
+#main .site-promo-a p a, #main .site-promo-a p a:visited, #main .site-promo-b p a, #main .site-promo-b p a:visited {
+	color: #fff
+}
+.site-promo-a .actions {
+	position: relative;
+	top: 5px;
+	float: right
+}
+.site-promo-c .actions {
+	position: absolute;
+	top: 33%;
+	_top: 25px;
+	right: 100px
+}
+.ja .site-promo-c .actions {
+	top: 40%
+}
+.site-promo-b .actions {
+	margin-top: 12px;
+	overflow: hidden;
+	zoom: 1
+}
+.site-promo-c .actions {
+	_top: 35px
+}
+.site-promo-d .actions {
+	margin: 15px 0 20px
+}
+.site-promo-e .actions {
+	margin: 15px 0 20px
+}
+#main .site-promo .action {
+	line-height: 16px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #333
+}
+.site-promo-d .action {
+	width: 120px;
+	margin: 12px auto 0;
+	float: none
+}
+.site-promo-c .action {
+	top: 35%;
+	_top: 35px
+}
+.ja .site-promo-d .action {
+	width: 125px
+}
+.site-promo-e .action {
+	width: 120px;
+	margin: 12px auto 0;
+	float: none
+}
+.ja .site-promo-e .action {
+	width: auto;
+	max-width: 400px
+}
+.site-promo .cancel {
+	font-size: 11px;
+	margin-left: 5px
+}
+.site-promo-d .cancel {
+	margin: 0
+}
+.site-promo-e .cancel {
+	margin: 0
+}
+.site-promo .standard-form .email-address {
+	padding-left: 72px
+}
+.site-promo-d .standard-form .email-address {
+	padding-left: 0px
+}
+.site-promo .standard-form .email-address, .site-promo .standard-form .add-connections, .site-promo .standard-form #pswd-div {
+	float: left;
+	margin-bottom: 10px
+}
+#main .site-promo .standard-form .add-connections {
+	margin: 0px 0px 0px 5px
+}
+.site-promo .standard-form input {
+	width: 120px
+}
+.site-promo .standard-form input.btn-action {
+	width: auto;
+	margin-right: 5px
+}
+.site-promo .standard-form label {
+	padding-top: 4px;
+	width: auto
+}
+.site-promo .standard-form .note {
+	clear: both
+}
+.balloon-error p:before {
+	content: "";
+	display: block;
+	height: 12px;
+	width: 12px;
+	background-color: transparent;
+	position: absolute;
+	left: 0;
+	top: 20px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.4)
+}
+.site-promo-d .standard-form input {
+	width: 140px
+}
+.site-promo-d .email-address label {
+	width: 100px
+}
+.site-promo-d .email-address #pswd-div label {
+	clear: left;
+	color: #999;
+	font-size: 11px;
+	font-weight: normal;
+	padding-top: 0px;
+	width: auto
+}
+.site-promo-d #pswd-div input {
+	float: left
+}
+.site-promo-d .email-address .btn-action {
+	max-width: 140px
+}
+.site-promo-d .alert.error {
+	padding: 0 20px 0 9px;
+	background: #fff;
+	border-bottom: 1px solid rgba(255,0,0,0.3);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background: -moz-linear-gradient(top, #fff 0%, #ffe8f0 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #ffe8f0));
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffe8f0', GradientType=0 );
+	-moz-box-shadow: 0 0 4px rgba(0,0,0,0.25);
+	-webkit-box-shadow: 0 0 4px rgba(0,0,0,0.25)
+}
+.site-promo-d .alert.error p {
+	color: #666;
+	font-size: 11px;
+	line-height: 1.2;
+	background: url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_global_v6.png') 0 -959px;
+	padding: 7px 0 7px 20px;
+	margin: 0
+}
+/* scss/modules/share_ribbon.css */
+
+.share-ribbon {
+	bottom: 5px;
+	position: absolute;
+	right: -8px;
+	text-align: right
+}
+.share-ribbon a {
+	background: #069 url('http://static01.linkedin.com/scds/common/u/img/sprite/sprite_share_actions_v2.png') no-repeat 7px -152px;
+	background-color: rgba(0,102,153,0.9);
+*background-color:#069;
+	-moz-border-radius: 3px;
+	-moz-border-radius-bottomright: 0;
+	-webkit-border-radius: 3px;
+	-webkit-border-bottom-right-radius: 0;
+	border-radius: 3px;
+	border-bottom-right-radius: 0;
+	display: inline-block;
+*display:inline;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 2px 10px 2px 23px;
+*zoom:1
+}
+.share-ribbon a, .share-ribbon a:visited {
+	color: #fff
+}
+.share-ribbon a:hover {
+	background-color: #fff;
+	background-color: rgba(255,255,255,0.9);
+*background-color:#fff;
+	background-position: -268px -152px;
+	color: #069;
+	text-decoration: none
+}
+.share-ribbon a:hover em {
+	text-decoration: underline
+}
+.share-ribbon em {
+*font-style:normal
+}
+.share-ribbon .arrow {
+	border: 0 solid transparent;
+	border-top-color: #069;
+	border-top-color: rgba(0,102,153,0.9);
+*border-top-color:#069;
+	border-width: 6px 7px 0 0;
+	bottom: -6px;
+	_display: none;
+	height: 0;
+	position: absolute;
+	right: 0;
+	width: 0
+}
+/* scss/apps/home/nmp_today.css */
+
+#linkedin-today {
+	clear: both;
+	font-size: 13px;
+	margin-bottom: 20px;
+	position: relative
+}
+#linkedin-today .module-content {
+	position: relative
+}
+#linkedin-today .header {
+	margin-bottom: 5px;
+	height: 1em
+}
+#linkedin-today h2 {
+	display: inline-block;
+*display:inline;
+	font-weight: bold;
+	margin-right: 10px;
+*zoom:1;
+	float: left
+}
+#linkedin-today h2 a {
+	text-decoration: none
+}
+#linkedin-today .header .see-all {
+	float: right
+}
+#linkedin-today .header .see-all-new {
+	color: #069!important;
+	font: normal 13px Arial
+}
+#linkedin-today .header .see-all-new:hover {
+	text-decoration: underline
+}
+#linkedin-today .new {
+	background-color: #c60;
+	color: #fff;
+	display: inline-block;
+*display:inline;
+	font-size: 9px;
+	line-height: 1;
+	margin-left: 5px;
+	padding: 2px 3px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+*zoom:1
+}
+#linkedin-today .new:hover {
+	text-decoration: none
+}
+#linkedin-today .content {
+	border-bottom: 1px solid #eaeaea;
+	border-top: 1px solid #ccc;
+	overflow: hidden;
+*zoom:1
+}
+#linkedin-today li {
+	_display: inline;
+	float: left;
+	height: 142px;
+	margin-right: 27px;
+	padding: 10px 0;
+	position: relative;
+	width: 178px;
+	_clear: none
+}
+#linkedin-today li .article-link {
+	color: #333;
+	display: block;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	text-decoration: none;
+*zoom:1
+}
+#linkedin-today li .article-link * {
+*cursor:pointer
+}
+#linkedin-today li .text {
+	display: block;
+	height: 29px;
+	overflow: hidden;
+	padding: 1px
+}
+#linkedin-today li .overlay {
+	background-color: #fff;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+*filter:alpha(opacity=85);
+	height: 100%;
+	opacity: 0.85
+}
+#linkedin-today li .meta {
+	color: #666;
+	display: block;
+	font-size: 11px;
+	padding-top: 4px
+}
+#linkedin-today li .share-count {
+	display: block;
+	font-size: 11px
+}
+#linkedin-today li:hover .overlay, #linkedin-today li:hover .meta, #linkedin-today li:hover .share-ribbon {
+	visibility: visible
+}
+#linkedin-today li cite {
+	display: block;
+*font-style:normal
+}
+#linkedin-today .image, #linkedin-today .newspaper {
+	display: block;
+	width: 178px
+}
+#linkedin-today .article-link .image img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url('http://static01.linkedin.com/scds/common/u/img/bg/bg_newspaper_104x96.png') no-repeat 50% 50%
+}
+#linkedin-today .image .image-offset {
+	border: 3px solid #fff;
+	display: block;
+	height: 103px;
+	overflow: hidden;
+	position: relative
+}
+#linkedin-today .image {
+	border: 1px solid #dedede;
+	overflow: hidden;
+	position: absolute;
+	width: 176px;
+	height: 109px
+}
+#linkedin-today .article-link:hover .image, #linkedin-today li:hover .image {
+	border-color: #bfbfbf;
+	position: relative;
+	height: 65px;
+	transition: height 0.2s linear;
+	-moz-transition: height 0.2s height;
+	-webkit-transition: height 0.2s linear
+}
+#linkedin-today .article-link:hover .image img, #linkedin-today li:hover .image img {
+	position: absolute;
+	height: auto
+}
+#linkedin-today .article-link:hover .image-offset, #linkedin-today li:hover .image-offset {
+	height: 59px;
+	transition: height 0.2s linear;
+	-moz-transition: height 0.2s height;
+	-webkit-transition: height 0.2s linear
+}
+#linkedin-today .article-link:hover .text, #linkedin-today li:hover .text {
+	height: 73px;
+	transition: height 0.2s linear;
+	-moz-transition: all 0.2s height;
+	-webkit-transition: height 0.2s linear
+}
+#linkedin-today li .article-title {
+	color: #333;
+	display: block;
+	font-size: 12px;
+	max-height: 42px;
+	min-height: 24px;
+	_height: 42px;
+	overflow: hidden;
+	padding: 1px
+}
+#linkedin-today li:hover .article-title {
+	color: #069
+}
+#linkedin-today .newspaper {
+	background: #edf2f5 url('http://static02.linkedin.com/scds/common/u/img/bg/bg_newspaper_170x128.png') no-repeat center center
+}
+#linkedin-today li .share-ribbon {
+	bottom: 21px;
+	right: -7px;
+	_visibility: visible
+}
+#linkedin-today li .share-ribbon .arrow {
+	left: auto
+}
+#linkedin-today .more-headlines {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_nmp_today.png') no-repeat 0 0;
+	_display: inline;
+	float: left;
+	height: 80px;
+	margin-top: 66px;
+	text-indent: -12345px;
+	width: 17px
+}
+#linkedin-today .more-headlines:hover {
+	background-position: -17px 0
+}
+#linkedin-today .continue {
+	margin-right: 0;
+	width: auto
+}
+#linkedin-today .continue a {
+	color: #3385AD;
+	font-size: 40px;
+	line-height: 142px
+}
+#linkedin-today .continue a:hover {
+	color: #069;
+	text-decoration: none
+}
+#linkedin-today .module-content .dismiss {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_sharing_v8.png') no-repeat 100% -375px;
+	display: none;
+	_display: block;
+	height: 12px;
+	width: 9px;
+	margin-right: 3px;
+	float: right;
+	text-indent: -12345px;
+	position: absolute;
+	top: 33px;
+	right: 0;
+	z-index: 1
+}
+#linkedin-today .module-content:hover .dismiss {
+	display: block
+}
+#linkedin-today .module-content:hover .dismiss:hover {
+	background-position: 100% -300px
+}
+#linkedin-today-dismiss-dialog {
+	display: none
+}
+.dialog-content #linkedin-today-dismiss-dialog {
+	display: block
+}
+#linkedin-today h2 {
+	font-size: 13px
+}
+#linkedin-today h2 a {
+	color: #000 !important
+}
+#linkedin-today .share-ribbon a {
+	font-size: 11px;
+	background-image: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_pulse_v12.png');
+	background-position: -224px -849px
+}
+#linkedin-today .share-ribbon a:hover {
+	background-position: -378px -849px
+}
+#linkedin-today .share-ribbon a:hover em {
+	text-decoration: none
+}
+#feed-content #linkedin-today .header {
+	margin-bottom: 0;
+	padding-left: 1px
+}
+#feed-content #linkedin-today li {
+	padding-top: 5px
+}
+#feed-content #linkedin-today .header a {
+	color: #000;
+	font-weight: bold
+}
+#feed-content #linkedin-today .content {
+	border-top: none
+}
+#feed-content #linkedin-today {
+	margin-bottom: 0;
+	padding-top: 10px
+}
+#feed-content li #linkedin-today {
+	padding-top: 0
+}
+li #linkedin-today .content {
+	border-bottom: none
+}
+li #linkedin-today.alt {
+	margin-top: 0
+}
+#linkedin-today.alt .content ul {
+	overflow: auto
+}
+#feed-content #linkedin-today .module-content .dismiss {
+	top: 5px
+}
+#linkedin-today.alt .article-link:hover .image, #linkedin-today.alt li:hover .image {
+	position: absolute
+}
+#linkedin-today.alt .article-link:hover .text, #linkedin-today.alt li:hover .text, #linkedin-today.alt .article-link:hover .image, #linkedin-today.alt li:hover .image, #linkedin-today.alt .article-link:hover .image img, #linkedin-today.alt li:hover .image img, #linkedin-today.alt .image {
+	height: 50px
+}
+#linkedin-today.alt .image, #linkedin-today.alt .newspaper {
+	display: block;
+	width: 80px
+}
+#linkedin-today.alt li {
+	height: auto;
+	margin-right: 20px;
+	width: 187px
+}
+#linkedin-today.alt li .text {
+	float: right;
+	height: 50px;
+	overflow: hidden;
+	padding: 0;
+	width: 90px
+}
+#linkedin-today.alt li .share-ribbon {
+	bottom: 37px;
+	right: 99px
+}
+#linkedin-today.alt li .meta {
+	clear: both
+}
+li #linkedin-today li {
+	padding-bottom: 0
+}
+#linkedin-today.alt .more {
+	font-size: 30px;
+	margin-right: 0;
+	width: 5px
+}
+#linkedin-today.alt .more a {
+	color: #dedede
+}
+#linkedin-today.alt .more a:hover {
+	color: #069;
+	text-decoration: none
+}
+#linkedin-today.alt .share-ribbon a:hover {
+	border: 1px solid #069
+}
+#linkedin-today.alt li .article-title {
+	color: #069
+}
+#linkedin-today.alt li:hover .article-title {
+	text-decoration: underline
+}
+li #linkedin-today.alt li .share-ribbon {
+	bottom: 27px
+}
+.nus-breaking-news .newspaper {
+	display: block;
+	width: 80px;
+	height: 60px;
+	background: #edf2f5 url('http://static02.linkedin.com/scds/common/u/img/bg/bg_newspaper_170x128.png') no-repeat center center
+}
+.nus-breaking-news .breaking-news-hdr {
+	font: normal 13px Arial;
+	color: #463F3D
+}
+/* scss/modules/rc_widget.css */
+
+#rc-widget .content {
+	padding-top: 8px
+}
+#rc-widget .company-logo {
+	float: left;
+	width: 60px
+}
+#rc-widget .tagline {
+	color: #888;
+	float: left;
+	font-size: 11px;
+	padding-left: 8px;
+	width: 75%
+}
+#rc-widget #rc-matches {
+	clear: both;
+	padding-top: 9px
+}
+#rc-widget #rc-matches .rc-match-item {
+	clear: both;
+	padding: 0 0 9px 0;
+*margin-bottom:9px
+}
+#rc-widget #rc-matches .rc-match-item:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden
+}
+#rc-widget #rc-matches .buffer {
+	display: none
+}
+#rc-widget #rc-matches .hide {
+	background: transparent url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_global_v5.png') no-repeat scroll 100% -1496px;
+	cursor: pointer;
+	float: right;
+	height: 100%;
+	padding: 0 0 9px 9px;
+	text-indent: -12345px;
+	width: 12px
+}
+#rc-widget #rc-matches .photo {
+	float: left;
+	overflow: hidden
+}
+#rc-widget #rc-matches .match-info {
+	float: left;
+	padding-left: 8px;
+	width: 80%
+}
+#rc-widget #rc-matches .headline, #rc-widget #rc-matches .suggestion-count {
+	font-size: 11px
+}
+#rc-widget #rc-matches .full-name {
+	font-size: 13px;
+	font-weight: bold
+}
+#rc-widget #rc-matches .full-name a {
+	color: #333
+}
+#rc-widget #rc-matches .headline {
+	font-weight: normal
+}
+#rc-widget #rc-matches .suggestion-count {
+	font-weight: bold
+}
+#rc-widget #rc-matches .drop {
+*width:auto
+}
+#rc-widget .empty-message {
+	clear: both;
+	display: none;
+	margin-bottom: 15px
+}
+#rc-widget #rc-matches.empty .empty-message {
+	display: block
+}
+#rc-widget .add-connections {
+	margin: 20px 0 15px
+}
+#rc-widget .see-more, #rc-widget .learn-more {
+	font-size: 11px;
+	text-align: right
+}
+#rc-widget .see-more {
+	clear: both
+}
+/* scss/modules/zeppelin.css */
+
+#resolve-btn {
+	font-size: 13px
+}
+.guided-setup .reimport {
+	margin: 12px 0
+}
+.reimport label {
+	font-size: 12px;
+	font-weight: bold
+}
+#reimport-disclaimer {
+	background: url('http://static02.linkedin.com/scds/common/u/img/bg/bg_grey_dotted_h-line_3x1.png') repeat-x;
+	margin-top: 12px;
+	padding-top: 12px
+}
+#reimport-disclaimer p {
+	font-size: 11px
+}
+#reimport-check {
+	margin-top: 12px
+}
+#reimport-check label {
+	float: left;
+	font-size: 12px;
+	font-weight: bold;
+	margin-right: 4px;
+	padding-left: 4px;
+*margin-top:4px
+}
+#reimport-check .whatsthis {
+	margin-top: 2px;
+*margin-top:4px
+}
+#disclaimer_msg, #disclaimer-msg {
+	display: none
+}
+.webmail-upload .email-address input, #email-nWMIForm {
+	float: left
+}
+#email-nWMIForm {
+	margin-right: 4px
+}
+.ghostLabelVis {
+	display: block !important
+}
+.callout-trigger {
+	background: url('http://static02.linkedin.com/scds/common/u/img/sprite/sprite_owa_import_v1.png') right top no-repeat;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	text-indent: -12345px;
+	vertical-align: text-bottom;
+	margin: 0 0 0 2px
+}
+a.callout-trigger:hover, a.callout-trigger.hover {
+	border: 0
+}
+#address-book-import-form li.email-address, #address-book-import-form #pswd-div {
+	zoom: 1
+}
+#reimport .loading, #address-book-import-form .loading, #zeppelin-loading.loading {
+	background: url('http://static01.linkedin.com/scds/common/u/img/anim/anim_loading_16x16.gif') no-repeat center center;
+	display: block;
+	float: left;
+	height: 16px;
+	text-indent: -12345px;
+	width: 16px
+}
+/* scss/modules/invite_dialog.css */
+
+.vcard.biz-card {
+	padding: 10px 15px;
+	background: #fff;
+	border: 1px solid #ccc;
+	font-size: 13px;
+	box-shadow: 2px 2px 7px #ccc;
+	-webkit-box-shadow: 2px 2px 7px #ccc;
+	-moz-box-shadow: 2px 2px 7px #ccc
+}
+.vcard.biz-card .image {
+	float: left;
+	margin-right: 10px;
+	border: 3px solid #e5e5e5
+}
+.vcard.biz-card .details {
+	width: 210px;
+	float: left;
+	margin-bottom: 10px
+}
+.vcard.biz-card h2 {
+	margin: 7px 0;
+	font-size: 21px;
+	font-weight: bold;
+	color: #069;
+	overflow: hidden
+}
+.vcard.biz-card .headline {
+	margin: 3px 0;
+	font-weight: bold
+}
+.vcard.biz-card .locality {
+	color: #666
+}
+.vcard.biz-card .message-toggle {
+	clear: both;
+	padding: 5px 0;
+	border-top: 1px dotted #666
+}
+.vcard.biz-card .message-toggle a {
+	padding-left: 18px;
+	background: url('http://static02.linkedin.com/scds/common/u/img/icon/icon_edit_pencil_blue_14x15.png') no-repeat left center
+}
+.vcard.biz-card .message {
+	display: none;
+	clear: both;
+	padding: 10px 0
+}
+.vcard.biz-card .message textarea {
+	width: 100%;
+	font-size: 13px
+}
+.vcard.biz-card.show-message .message-toggle {
+	display: none
+}
+.vcard.biz-card.show-message .message {
+	display: block
+}
+.vcard.biz-card.has-error .message-toggle {
+	display: none
+}
+.vcard.biz-card.has-error .message {
+	display: block
+}
+.vcard.biz-card.has-image .message-toggle {
+	margin-left: 100px
+}
+.invite-content .actions {
+	clear: both;
+	padding: 10px 30px;
+	margin-top: 17px
+}
+.invite-content .actions .btn-secondary, .invite-content .actions .btn-primary {
+	font-size: 13px
+}
+.invite-dialog .dialog-body {
+	padding: 0;
+	overflow: hidden;
+	background-color: #EFEFEF
+}
+.invite-dialog .vcard {
+	margin: 15px 30px
+}
+.invite-dialog .invite-dialog-loading .actions {
+	background: url('http://static01.linkedin.com/scds/common/u/img/anim/anim_loading_16x16.gif') no-repeat 2px center
+}

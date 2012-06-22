@@ -1,0 +1,21 @@
+My Projects
+New Project Button
+Projects list - larger font
+
+New Project
+Switch to being project home, editable view, such that the page just toggles to view state on save.
+
+Project Feed
+Feed entry text legibility
+Inline images
+
+
+Design view
+- NEED TO FIGURE OUT HOW THIS AND THE DISCUSSION VIEW WILL INTER-RELATE
+
+
+Global
+Align footer margin with content block
+Remove back to top.
+White header background
+Rugbee font

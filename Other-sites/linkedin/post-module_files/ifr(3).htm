@@ -1,0 +1,179 @@
+
+<!-- saved from url=(1215)http://cdn.lmodules.com/opensocial/ifr?url=http%3A%2F%2Fwordpress%2Ecom%2Fgadgets%2Fwp-os%2Exml&mid=17613070&appId=2200&view=home&lang=en&ownerinapp=1289809&country=US&viewerAccess=true&baseLeoNonSecureURL=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2F&ownerProfileUrl=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fprofile%2Fview%3Fid%3D1&st=linkedin%3A1tlEmZ1jfafchcEKVraoRPaJ8x7zSR8MSdG7yAM2daKN4nvZRRV7_BmNU4pO9otn98CYVWvBFbZ4BJPeq7cpjM4QzKsCU2eSGmy2-2_n6aT5wA4NqXTvmncLPQJ1CHeSYYHr9Nh_Mtksl9QdW5E__VFZe7zAxZVNp7_9r-n8SQIl0cKathAsEUc1_InydZ6GtdfsEi0kKqrCrfCLmoAZcrHMYW1kFHn-IZMONIGJNXETcRQ14Mq7TPgyj7YI2IRwNgmlG247QGE0vP7eosjzLY8g7nhWlacx7zmJqb3Xj5dDLfkIdlnSnZ8Srtn6ijX7KDEubZ&container=default&libs=dynamic-height%3Asettitle%3Aviews%3Aopensocial-0%2E9&parent=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2F&urlToCanvasView=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fosview%2Fcanvas%3F_ch_page_id%3D1%26_ch_panel_id%3D1%26_ch_app_id%3D17613070%26_applicationId%3D2200&signedUrlToCanvasView=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fosview%2Fcanvas%3F_ch_page_id%3D1%26_ch_panel_id%3D1%26_ch_app_id%3D17613070%26_applicationId%3D2200%26_ownerId%3D1289809%26osUrlHash%3DbI7R&v=build-2000_1_19859-prod#rpctoken=1095556388&rpcname=panel-01-slot-17613070-remote -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">body,td,div,span,p{font-family:arial,sans-serif;}a {color:#0000cc;}a:visited {color:#551a8b;}a:active {color:#ff0000;}body{margin: 0px;padding: 0px;background-color:white;}</style><script src="dynamic-height-opensocial-0.9-settitle-views.js"></script><script>opensocial.DataRequest.prototype.newUpdatePersonAppDataRequest_09=opensocial.DataRequest.prototype.newUpdatePersonAppDataRequest;
+opensocial.DataRequest.prototype.newUpdatePersonAppDataRequest=function(C,A,B){if(C!==opensocial.IdSpec.PersonId.VIEWER){throw Error("Cannot update app data for person "+C)
+}return this.newUpdatePersonAppDataRequest_09(A,B)
+};
+opensocial.DataRequest.prototype.newRemovePersonAppDataRequest_09=opensocial.DataRequest.prototype.newRemovePersonAppDataRequest;
+opensocial.DataRequest.prototype.newRemovePersonAppDataRequest=function(B,A){if(B!==opensocial.IdSpec.PersonId.VIEWER){throw Error("Cannot remove app data for person "+B)
+}return this.newRemovePersonAppDataRequest_09(A)
+};;
+var shindig=shindig||{};
+shindig.Auth=function(){var authToken=null;
+var trusted=null;
+function addParamsToToken(urlParams){var args=authToken.split("&");
+for(var i=0;
+i<args.length;
+i++){var nameAndValue=args[i].split("=");
+if(nameAndValue.length===2){var name=nameAndValue[0];
+var value=nameAndValue[1];
+if(value==="$"){value=encodeURIComponent(urlParams[name]);
+args[i]=name+"="+value
+}}}authToken=args.join("&")
+}function init(configuration){var urlParams=gadgets.util.getUrlParameters();
+var config=configuration["shindig.auth"]||{};
+if(config.authToken){authToken=config.authToken
+}else{if(urlParams.st){authToken=urlParams.st
+}}if(authToken!==null){addParamsToToken(urlParams)
+}if(config.trustedJson){trusted=eval("("+config.trustedJson+")")
+}}gadgets.config.register("shindig.auth",null,init);
+return{getSecurityToken:function(){return authToken
+},updateSecurityToken:function(newToken){authToken=newToken
+},getTrustedData:function(){return trusted
+}}
+};;
+var shindig=shindig||{};
+shindig.auth=new shindig.Auth();;
+var JSON=window.JSON||gadgets.json;
+var _IG_Prefs=(function(){var A=null;
+var B=function(){if(!A){A=new gadgets.Prefs();
+A.setDontEscape_()
+}return A
+};
+B._parseURL=gadgets.Prefs.parseUrl;
+return B
+})();
+function _IG_Fetch_wrapper(B,A){B(A.data?A.data:"")
+}function _IG_FetchContent(B,G,C){var F=C||{};
+if(F.refreshInterval){F.REFRESH_INTERVAL=F.refreshInterval
+}else{F.REFRESH_INTERVAL=3600
+}for(var E in F){var D=F[E];
+delete F[E];
+F[E.toUpperCase()]=D
+}var A=gadgets.util.makeClosure(null,_IG_Fetch_wrapper,G);
+gadgets.io.makeRequest(B,A,F)
+}function _IG_FetchXmlContent(B,E,C){var D=C||{};
+if(D.refreshInterval){D.REFRESH_INTERVAL=D.refreshInterval
+}else{D.REFRESH_INTERVAL=3600
+}D.CONTENT_TYPE="DOM";
+var A=gadgets.util.makeClosure(null,_IG_Fetch_wrapper,E);
+gadgets.io.makeRequest(B,A,D)
+}function _IG_FetchFeedAsJSON(B,F,C,A,D){var E=D||{};
+E.CONTENT_TYPE="FEED";
+E.NUM_ENTRIES=C;
+E.GET_SUMMARIES=A;
+gadgets.io.makeRequest(B,function(J){J.data=J.data||{};
+if(J.errors&&J.errors.length>0){J.data.ErrorMsg=J.errors[0]
+}if(J.data.link){J.data.URL=B
+}if(J.data.title){J.data.Title=J.data.title
+}if(J.data.description){J.data.Description=J.data.description
+}if(J.data.link){J.data.Link=J.data.link
+}if(J.data.items&&J.data.items.length>0){J.data.Entry=J.data.items;
+for(var H=0;
+H<J.data.Entry.length;
+++H){var I=J.data.Entry[H];
+I.Title=I.title;
+I.Link=I.link;
+I.Summary=I.summary||I.description;
+I.Date=I.pubDate
+}}for(var G=0;
+G<J.data.Entry.length;
+++G){var I=J.data.Entry[G];
+I.Date=(I.Date/1000)
+}F(J.data)
+},E)
+}function _IG_GetCachedUrl(A,B){var C=B||{};
+C.REFRESH_INTERVAL=3600;
+if(C.refreshInterval){C.REFRESH_INTERVAL=C.refreshInterval
+}return gadgets.io.getProxyUrl(A,C)
+}function _IG_GetImageUrl(A,B){return _IG_GetCachedUrl(A,B)
+}function _IG_GetImage(B){var A=document.createElement("img");
+A.src=_IG_GetCachedUrl(B);
+return A
+}function _IG_RegisterOnloadHandler(A){gadgets.util.registerOnLoadHandler(A)
+}function _IG_Callback(B,C){var A=arguments;
+return function(){var D=Array.prototype.slice.call(arguments);
+B.apply(null,D.concat(Array.prototype.slice.call(A,1)))
+}
+}var _args=gadgets.util.getUrlParameters;
+function _gel(A){return document.getElementById?document.getElementById(A):null
+}function _gelstn(A){if(A==="*"&&document.all){return document.all
+}return document.getElementsByTagName?document.getElementsByTagName(A):[]
+}function _gelsbyregex(D,F){var C=_gelstn(D);
+var E=[];
+for(var B=0,A=C.length;
+B<A;
+++B){if(F.test(C[B].id)){E.push(C[B])
+}}return E
+}function _esc(A){return window.encodeURIComponent?encodeURIComponent(A):escape(A)
+}function _unesc(A){return window.decodeURIComponent?decodeURIComponent(A):unescape(A)
+}function _hesc(A){return gadgets.util.escapeString(A)
+}function _striptags(A){return A.replace(/<\/?[^>]+>/g,"")
+}function _trim(A){return A.replace(/^\s+|\s+$/g,"")
+}function _toggle(A){A=(typeof A==="string")?_gel(A):A;
+if(A!==null){if(A.style.display.length===0||A.style.display==="block"){A.style.display="none"
+}else{if(A.style.display==="none"){A.style.display="block"
+}}}}var _global_legacy_uidCounter=0;
+function _uid(){return _global_legacy_uidCounter++
+}function _min(B,A){return(B<A?B:A)
+}function _max(B,A){return(B>A?B:A)
+}function _exportSymbols(A,C){var I=window;
+var F=A.split(".");
+for(var H=0,G=F.length;
+H<G;
+H++){var B=F[H];
+I[B]=I[B]||{};
+I=I[B]
+}for(var E=0,D=C.length;
+E<D;
+E+=2){I[C[E]]=C[E+1]
+}};;
+gadgets.config.init({"shindig.auth":{},"osapi.services":{"gadgets.rpc":["container.listMethods"],"http://%host%/opensocial/social/rpc":["activities.delete","activities.update","activities.supportedFields","activities.get","messages.delete","appdata.update","messages.modify","appdata.get","messages.get","activities.create","system.listMethods","people.supportedFields","appdata.delete","messages.create","appdata.create","people.get"],"http://%host%/opensocial/gadgets/api/rpc":["http.head","http.delete","http.put","http.post","system.listMethods","cache.invalidate","http.get"]},"opensocial-0.9":{"path":"http://%host%/opensocial/social/rpc","domain":"linkedin","invalidatePath":"http://%host%/opensocial/gadgets/api/rpc","supportedFields":{"message":["title","body"],"person":["id","name","thumbnailUrl","profileUrl","personNetworkDistance","personNumConnections","currentLocation","aboutMe","jobs","schools","urls","status","emails","accounts"],"organization":["type","title","description","name","field","startDate","endDate"],"address":["country","postalCode"],"sortOrder":["name"],"name":["familyName","givenName","formatted"],"account":["userId","domain","username","bindingStatus","isPrimary"],"filterType":["all","hasApp"],"url":["value","linkedText","type"],"activity":["id","title"]},"enableCaja":false},"rpc":{"parentRelayUrl":"/js/opensocial/rpc_relay.html","useLegacyProtocol":false},"views":{"canvas":{"aliases":["FULL_PAGE"],"isOnlyVisible":true},"home":{"aliases":["HOME"],"isOnlyVisible":false},"profile":{"aliases":["DASHBOARD","default"],"isOnlyVisible":false}},"core.util":{"dynamic-height":{},"core":{},"settitle":{},"opensocial-0.8":{}},"core.io":{"proxyUrl":"http://%host%/opensocial/proxy?refresh=%refresh%&url=%url%","jsonProxyUrl":"http://%host%/opensocial/makeRequest"}});
+</script><script>gadgets.Prefs.setMessages_({});gadgets.Prefs.setDefaultPrefs_({"blogurl":""});gadgets.io.preloaded_=[];</script><style type="text/css">
+	@import url(http://s.wordpress.com/gadgets/wp-os.css);
+	#wp_body { width: 100% !important; }
+</style>
+	</head><body dir="ltr"><div id="wp_top"><div class="wp_head"><div class="wp_head_wrap"><h1 class="wp_blog_title"><a href="http://www.andersramsay.com/" target="_blank">Anders Ramsay.com</a></h1><a href="javascript:void(0);" id="wp_config_show_link" style="display: inline; ">[edit]</a><a href="http://wordpress.com/signup/?ref=linkedin" class="wp_logo" target="_blank"><img src="icon-1.png" title="Get a free blog at WordPress.com"></a></div></div></div>
+     <div id="wp_config" style="display: none; ">
+          <form id="wp_blog_form">
+				<label for="wp_blog_url">Your <a href="http://wordpress.com/" target="_top">WordPress</a> blog URL:</label><br>
+				<input id="wp_blog_url" name="wp_blog_url" onkeypress="return handleKeyPress(event);" size="40" type="text" value="">
+				<label for="wp_tag_filter_all">
+				<input checked="checked" id="wp_tag_filter_all" name="wp_tag_filter" type="radio" value="">
+				Show <em>all</em> recent posts from your blog.</label>
+				<label for="wp_tag_filter_linkedin">
+				<input id="wp_tag_filter_linkedin" name="wp_tag_filter" type="radio" value="linkedin">
+				Show only recent posts tagged <em id="tagname">linkedin</em>.</label>
+				<input onclick="return saveURL();" type="button" value="Save">
+				<p class="wp_error" id="wp_error_message"></p>
+				<p>If you don't already have a WordPress blog, <a href="http://wordpress.com/signup/?ref=linkedin" target="_top">get a free blog at WordPress.com</a>.</p>
+          </form>
+     </div>
+    <div id="wp-os-content"><div id="wp_body" style="width: 278px; "><div class="wp_post"><h3 class="wp_post_title"><a href="http://www.andersramsay.com/2012/04/24/agile-ux-vs-lean-ux" class="wp_post_title" target="_blank">Agile UX vs Lean UX – How they’re different and why it matters for UX designers</a></h3> <span class="wp_post_date">58 days ago</span><p class="wp_post_excerpt">I’ve seen a lot of discussion recently on what the difference is between Agile UX and Lean UX. I am happy to plead guilty to having used these terms interchangeably, as it would seem that they are both talking about a more light-weight and iterative UX practice. But when I was recently asked to participate [...]</p></div><div class="wp_post"><h3 class="wp_post_title"><a href="http://www.andersramsay.com/2012/02/27/learning-to-play-ux-rugby" class="wp_post_title" target="_blank">Learning to Play UX Rugby</a></h3> <span class="wp_post_date">115 days ago</span><p class="wp_post_excerpt">These are my slides from this last weekend’s excellent Agile UX NYC conference. &nbsp;One clarification I need to make. &nbsp;Early in the talk, I describe “designing ahead” as an anti-pattern. &nbsp;From conversations that followed, I think a lot of people took that to mean that designing ahead is bad outright and something you should not [...]</p></div><div class="wp_post"><h3 class="wp_post_title"><a href="http://www.andersramsay.com/2012/01/18/uie-podcast-with-jared-spool-applying-agile-values-to-ux-practice" class="wp_post_title" target="_blank">UIE Podcast with Jared Spool: Applying Agile Values to UX Practice</a></h3> <span class="wp_post_date">155 days ago</span><p class="wp_post_excerpt">UIE just published this podcast, where I have a great discussion with Jared Spool about how I’ve applied Agile thinking and values to UX practice. Here’s a sample from the beginning of the podcast, where I talk about how this thing we call Agile is really historically upside down… Jared:&nbsp;…it feels to me sort of [...]</p></div><div class="wp_post"><h3 class="wp_post_title"><a href="http://www.andersramsay.com/2011/10/06/designing-with-agile-workshop" class="wp_post_title" target="_blank">Designing with Agile Workshop</a></h3> <span class="wp_post_date">259 days ago</span><p class="wp_post_excerpt">These are my slides from the full-day workshop I recently conducted at the etre get together 2011 in London. Enjoy! View more presentations from Anders Ramsay</p></div><div class="wp_post"><h3 class="wp_post_title"><a href="http://www.andersramsay.com/2011/09/26/cross-functional-pairing" class="wp_post_title" target="_blank">Cross-Functional Pairing</a></h3> <span class="wp_post_date">269 days ago</span><p class="wp_post_excerpt">Just gave this talk on cross-functional pairing at the 2011 Balanced Team Conference. Really good reception, and lots of great discussion afterwards. &nbsp;Check it out! Also, be sure to sign up to get notified re. the launch of the pairingproject, an educational experiment I am conducting with Ideo and Pivotal Labs.</p></div><img src="b.gif"></div></div>
+    <script src="wp-os.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    WPApp.prototype.showBlog = function() {
+  		wp_log('WPApp.showBlog');
+
+        var params = {};
+        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+  		// params[gadgets.io.RequestParameters.AUTHORIZATION] = gadgets.io.AuthorizationType.NONE;
+        // This URL returns a JSON-encoded string that represents a JavaScript object
+        var url = this.wpcom_api;
+  		url += '?wp_os_owner_id=' + this.owner_id;
+  		url += '&app=' + escape(this.domain);
+  		if ( this.isOwner() ) {
+  			// bust the cache.  the request URL doesn't change when the owner changes their blog URL,
+  			// so the posts from the previous blog are still displayed if we don't do this.
+  			var ts = new Date().getTime();
+  			url += '&ts=' + ts;
+  		}
+      	gadgets.io.makeRequest(url, bind(this.showBlogResponse, this), params);
+      };
+      </script>
+	<script type="text/javascript">
+		var wpapp;
+		gadgets.util.registerOnLoadHandler(wp_init);
+	</script>
+     
+  <script>gadgets.util.runOnLoadHandlers();</script></body></html>

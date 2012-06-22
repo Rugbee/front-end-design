@@ -1,0 +1,2059 @@
+
+
+/* js/apps/Share.js */
+
+LI.define("Share");
+LI.Share=function(c,b){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: /js/apps/Share.js")
+}b={url:(b.url)?b.url:null,title:(b.title)?b.title:LI.i18n.get("share-dialog-title"),lazyEvent:(b.lazyEvent)?b.lazyEvent:null,showOnlyWhenReady:b.showOnlyWhenReady||false},jsFiles=LI.SharingDialog.Scripts,cssFiles=LI.SharingDialog.Styles;
+if(b.lazyEvent){a(b.lazyEvent)
+}function a(d){YEvent.preventDefault(d);
+LI.Dialog().open({name:"sharingDialog",type:"task-modeless",width:500,content:{title:b.title,url:b.url},dependencies:{jsFiles:jsFiles,cssFiles:cssFiles},showOnlyWhenReady:b.showOnlyWhenReady})
+}YEvent.on(c,"click",a)
+};
+
+/* js/apps/SharePostModule.js */
+
+LI.define("SharePostModule");
+LI.ShareUrlRegEx=/((?:[A-Z0-9][A-Z0-9_\-]*\.)+(?:aero|ar|asia|at|au|be|biz|br|ca|cat|ch|cn|co|com|coop|cz|de|dk|edu|es|fi|fr|gd|gl|gov|hk|ie|im|in|info|int|it|jobs|jp|ly|me|mil|mobi|mp|museum|mx|name|net|nl|no|nu|nz|org|pl|pro|sa|se|tel|travel|tv|tv|tw|uk|us|za)(?::(?:\d+))?)(\/[^\s]*)?/i;
+LI.SharePostModule=function(el,config){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: /js/apps/SharePostModule.js")
+}config={getObjectURL:config.getObjectURL.substr(0,config.getObjectURL.indexOf("url=")+4),postModuleURL:config.postModuleURL||null,injectionMode:(config.injectionMode)?config.injectionMode:"reload",focusOnPageLoad:config.focusOnPageLoad||false,urlRegEx:config.urlRegEx||false,itemFeedURL:config.itemFeedURL||null,incompany:config.incompany||false,i18n:config.i18n||false,trackPostTextFocus:config.trackPostTextFocus||"sharePostModule-postTextFocus",trackShowAttach:config.trackShowAttach||"sharePostModule-showAttach",trackHideAttach:config.trackHideAttach||"sharePostModule-hideAttach",trackAttachURL:config.trackAttachURL||"sharePostModule-attachURL",trackRemoveObject:config.trackRemoveObject||"sharePostModule-removeObject",trackGetLinkStart:config.trackGetLinkStart||"sharePostModule-getLinkStart",trackGetLinkSuccess:config.trackGetLinkSuccess||"sharePostModule-getLinkSuccess",trackGetLinkFail:config.trackGetLinkFail||"sharePostModule-getLinkFail"};
+var timeout,ajaxRequest,pollTimeout,shareMode=YDom.get("share-mode"),shareView=YDom.get("share-view"),shareAjax=YDom.get("share-ajax"),gallery,editMeta=YDom.get("share-edit-meta"),editSummary=YDom.get("share-edit-summary"),editTitle=YDom.get("share-edit-title"),entityID=YDom.get("share-entity-id"),entityURL=YDom.get("share-entity-url"),imageID=YDom.get("share-img-selected-url"),submit=YDom.get("share-submit"),settings=YDom.get("share-settings"),urlRegEx=(config.urlRegEx)?config.urlRegEx:LI.ShareUrlRegEx,viewMeta,viewSummary,viewTitle,attach=YDom.get("attach"),attachLinks=Y$("a","attach"),attachInput=YDom.get("share-attach-input"),attachSubmit=YDom.get("share-attach-link"),form=YDom.get("share-form"),isSlickShareBox=(!YAHOO.lang.isNull(YDom.get("slick-sharing-cont"))),isGroupInstance=(config.injectionMode=="group"),shareBoxAnimAttr={},shareBoxAnim=null,ANIMATION_DURATION=0.2;
+if(isSlickShareBox){shareBoxAnimAttr={marginTop:{to:0},height:{to:40}};
+shareBoxAnim=new YAHOO.util.Anim(el,shareBoxAnimAttr,ANIMATION_DURATION,YAHOO.util.Easing.easeOut)
+}if(isGroupInstance){var detailsFieldset=Y$("fieldset.user-share-details",form,true),detailsTextarea=Y$("textarea",detailsFieldset,true),detailsLink=Y$("a.add-details",form,true),subjectLine=Y$("textarea.post-message",form,true),subjectLabel=Y$("label.ghost.subject",form,true),detailsLabel=Y$("label.ghost.details",form,true),originalUrl="",linkornews=Y$("#attach a",detailsFieldset,true),submitTop=Y$("#share-submit.top",form,true),submitBottom=Y$("#share-submit.bottom",form,true),urlFromSubjectLine=false
+}var getLinkObjectRequest;
+if(config.focusOnPageLoad){el.focus();
+LI.show(settings)
+}YEvent.on(el,"keypress",setTimer);
+YEvent.on(el,"paste",function(evt){if(isGroupInstance){if(YDom.hasClass(el,"post-message")){urlFromSubjectLine=true
+}}window.setTimeout(grepUrl,0)
+});
+YEvent.on(el,"keypress",setTimer);
+YEvent.on(el,"focus",function(){if(isSlickShareBox&&!YAHOO.lang.isNull(shareBoxAnim)){shareBoxAnim.animate()
+}LI.show(settings);
+WebTracking.trackUserAction(config.trackPostTextFocus);
+if(isGroupInstance&&!YDom.hasClass(detailsFieldset,"open")){YDom.addClass(detailsFieldset,"open");
+setSubmitButtonRef(submitBottom);
+LI.toggleClass(form,"details")
+}});
+YEvent.on(attachSubmit,"click",function(){getLinkObject(attachInput.value);
+WebTracking.trackUserAction(config.trackAttachURL)
+});
+YEvent.on(attachLinks,"click",showAttach);
+YEvent.on(attachInput,"keypress",function(evt){if(evt.keyCode==13){YEvent.preventDefault(evt);
+getLinkObject(attachInput.value);
+WebTracking.trackUserAction(config.trackAttachURL)
+}});
+YEvent.on("share-form","click",function(evt){var target=YEvent.getTarget(evt);
+if(YDom.hasClass(target,"share-close")){YEvent.preventDefault(evt);
+removeObject();
+if(isGroupInstance){YDom.removeClass(form,"attach");
+submit=submitTop
+}var trk=(YDom.hasClass(target,"share-close-attach"))?config.trackHideAttach:config.trackRemoveObject;
+WebTracking.trackUserAction(trk)
+}});
+if(isGroupInstance){YEvent.on(detailsLink,"click",function(evt){YEvent.preventDefault(evt);
+if(YDom.hasClass(detailsFieldset,"open")){setSubmitButtonRef(submitTop);
+YDom.removeClass(detailsFieldset,"open")
+}else{setSubmitButtonRef(submitBottom);
+YDom.addClass(detailsFieldset,"open")
+}LI.toggleClass(form,"details")
+});
+YEvent.on(linkornews,"click",function(evt){YEvent.preventDefault(evt);
+YDom.addClass(form,"attach")
+});
+var url=window.location.toString();
+if((url.indexOf("trk=anet_ug_newp")!=-1)||(url.indexOf("trk=anet_cg_newp")!=-1)){subjectLine.focus()
+}}enableSubmit();
+YEvent.on(form,"submit",postStatus);
+function setTimer(){if(timeout){window.clearTimeout(timeout)
+}timeout=window.setTimeout(grepUrl,1200)
+}function grepUrl(){var shareText=el.value.replace(/\n/g," ").split(" "),match;
+for(var i=0;
+shareText.length>i;
+i++){match=shareText[i].match(urlRegEx);
+if(match&&(!match.index||match.input.charAt(match.index-1)!=="@")){getLinkObject(shareText[i]);
+window.clearTimeout(timeout);
+break
+}}}function getLinkObject(url){if(!url){return
+}if(YDom.hasClass(shareMode,"is-view-mode")||YDom.hasClass(shareMode,"is-edit-mode")){return
+}if(isGroupInstance){originalUrl=url
+}url=config.getObjectURL+encodeURIComponent(url);
+shareMode.className="share-mode is-loading-mode";
+ajaxRequest=YAHOO.util.Connect.asyncRequest("GET",url,{success:success,failure:getLinkObjectError,timeout:12000});
+WebTracking.trackUserAction(config.trackGetLinkStart);
+function success(o){if(isGroupInstance&&urlFromSubjectLine){if(YAHOO.lang.trim(subjectLine.value)==originalUrl){subjectLine.value=""
+}urlFromSubjectLine=false
+}if(!typeIsXML(o)){getLinkObjectSuccess(o)
+}else{if(o.responseXML.getElementsByTagName("ticketStatusUrl")[0]){var url=o.responseXML.getElementsByTagName("ticketStatusUrl")[0].firstChild.nodeValue;
+poll(url,{success:getLinkObjectSuccess,failure:getLinkObjectError})
+}else{getLinkObjectError()
+}}}}function getLinkObjectSuccess(o){if(!o.responseText||(typeIsXML(o)&&o.responseXML.getElementsByTagName("responseInfo")[0]&&o.responseXML.getElementsByTagName("responseInfo")[0].firstChild.nodeValue=="FAILURE")||LI.isFullPage(o.responseText)){LI.show(attach);
+getLinkObjectError();
+return
+}var target=YDom.get("share-view");
+target.innerHTML=o.responseText;
+LI.Controls.parseFragment(target);
+shareMode.className="share-mode is-view-mode";
+YEvent.on("share-edit-link","click",showEdit);
+YEvent.on("share-edit-submit","click",saveEdit);
+YEvent.on("share-edit-cancel","click",showView);
+viewMeta=YDom.get("share-view-meta");
+viewSummary=YDom.get("share-view-summary");
+viewTitle=YDom.get("share-view-title");
+var shareContent=YDom.get("share-content");
+entityID.value=YDom.getAttribute(shareContent,"data-entity-id");
+entityURL.value=YDom.getAttribute(shareContent,"data-entity-url");
+var hasGallery=YDom.getAttribute(shareContent,"data-has-photo");
+if(hasGallery=="no"){LI.hide("share-include-photo-wrapper")
+}else{LI.show("share-include-photo-wrapper")
+}editSummary.value=LI.htmlUnencode(viewSummary.innerHTML);
+editTitle.value=LI.htmlUnencode(viewTitle.innerHTML);
+attachInput.value="";
+WebTracking.trackUserAction(config.trackGetLinkSuccess)
+}function getLinkObjectError(){shareMode.className="share-mode";
+WebTracking.trackUserAction(config.trackGetLinkFail)
+}function postStatus(evt){YEvent.preventDefault(evt);
+shareAjax.value="true";
+LI.clearFormErrors(form);
+LI.GhostLabel.Manager.hide(form.id);
+window.clearTimeout(pollTimeout);
+YAHOO.util.Connect.abort(ajaxRequest,{},false);
+if(YAHOO.lang.trim(el.value)==""&&entityID.value==""){if(attachInput&&attachInput.value){el.value=attachInput.value
+}else{window.setTimeout(function(){LI.GhostLabel.Manager.show(form.id)
+},0);
+return
+}}if(isGroupInstance&&urlFromSubjectLine){if(YAHOO.lang.trim(subjectLine.value)==originalUrl){subjectLine.value=""
+}urlFromSubjectLine=false
+}disableSubmit();
+YAHOO.util.Connect.setForm(form);
+YAHOO.util.Connect.asyncRequest("POST",form.action,{success:success,failure:failure,timeout:12000});
+function success(o){if(typeIsXML(o)){if(o.responseXML.getElementsByTagName("formErrors")[0]){var errorObj=eval("("+o.responseXML.getElementsByTagName("formErrors")[0].firstChild.nodeValue+")");
+LI.showFormErrors(o);
+enableSubmit();
+hideCheckTextareaMessage()
+}else{if(o.responseXML.getElementsByTagName("responseInfo")[0]&&o.responseXML.getElementsByTagName("responseInfo")[0].firstChild.nodeValue=="DUPLICATE"){enableSubmit();
+var msg=o.responseXML.getElementsByTagName("responseMsg")[0].firstChild.nodeValue;
+LI.injectAlert(msg,"error");
+el.value="";
+resetHeight();
+el.blur()
+}else{if(o.responseXML.getElementsByTagName("responseInfo")[0]&&o.responseXML.getElementsByTagName("responseInfo")[0].firstChild.nodeValue=="FAILURE"){failure(o)
+}else{if(o.responseXML.getElementsByTagName("jsonPayLoad")[0]){var payload=o.responseXML.getElementsByTagName("jsonPayLoad")[0].firstChild.nodeValue;
+var obj=eval("("+payload+")");
+if(obj.sharingUpdateUrl){poll(obj.sharingUpdateUrl)
+}if(isGroupInstance&&!config.incompany){postStatusSucces(o,obj)
+}}}}}}else{failure(o)
+}}function failure(o){var msgNode,msg;
+enableSubmit();
+if(typeIsXML(o)){msgNode=o.responseXML.getElementsByTagName("responseMsg")[0];
+if(msgNode){msg=msgNode.firstChild.nodeValue;
+if(msg){LI.injectAlert(msg,"error")
+}}}else{shareAjax.value="false";
+LI.injectAlert(LI.i18n.get("error"),"error")
+}}}function postStatusSucces(o,jsonPayloadObj){var postModuleURL,itemFeedURL;
+function injectFeedItem(){if(config.injectionMode=="company"){itemFeedURL=config.itemFeedURL;
+if(itemFeedURL){LI.asyncRequest("GET",itemFeedURL,{success:function(o){var activityEl=YDom.getElementsByClassName("activity","div")[0];
+activityEl.innerHTML=o.responseText;
+LI.Controls.parseFragment(activityEl)
+}},null)
+}}else{if(LI.NusInjection&&LI.NusInjection.injectFeedItem){LI.NusInjection.injectFeedItem(o.responseText)
+}}}function replacePostModule(html){var postHome=YDom.getElementsByClassName("post-home","div")[0],newPostModule=LI.domify(html),cloneEl=newPostModule.cloneNode(false);
+injectFeedItem();
+postHome.parentNode.replaceChild(cloneEl,postHome);
+cloneEl.innerHTML=newPostModule.innerHTML;
+LI.Controls.parseFragment(cloneEl)
+}function resetPostModule(){injectFeedItem();
+removeObject();
+resetHeight();
+LI.hide(Y$(".post-home .my-current","body",true));
+enableSubmit();
+attachInput.value="";
+LI.show(settings);
+el.value="";
+el.blur()
+}if(config.injectionMode=="inject"||config.injectionMode=="company"){postModuleURL=config.postModuleURL;
+if(postModuleURL){YAHOO.util.Connect.asyncRequest("GET",postModuleURL,{success:function(o){replacePostModule(o.responseText)
+},failure:function(){resetPostModule()
+}})
+}else{resetPostModule()
+}}else{if(isGroupInstance&&LI.AnetCarousel){LI.AnetCarousel.handlePost(jsonPayloadObj);
+resetSharingForm()
+}else{if(config.incompany){resetSharingForm();
+injectFeedItem();
+if(YDom.inDocument("feed-content")){var noResults=YDom.getElementsByClassName("no-results","div","feed-content");
+if(noResults){LI.hide(noResults[0])
+}}}else{if(isGroupInstance){if(jsonPayloadObj&&jsonPayloadObj.isPremoderated){LI.injectAlert(config.i18n.postSubmitted,"success");
+resetSharingForm()
+}else{location.reload(true)
+}}else{if(config.injectionMode=="reload"){location.reload(true)
+}else{if(config.injectionMode=="inject-only"){injectFeedItem();
+enableSubmit();
+LI.show(settings);
+el.value="";
+el.blur()
+}}}}}}hideCheckTextareaMessage()
+}function poll(url,cb){var callCount=1;
+var callback={success:success,failure:failure,timeout:12000};
+function makeRequest(){ajaxRequest=YAHOO.util.Connect.asyncRequest("GET",url,callback)
+}makeRequest();
+function success(o){if(!typeIsXML(o)){postStatusSucces(o)
+}else{if(o.responseXML.getElementsByTagName("responseInfo")[0]){var status=o.responseXML.getElementsByTagName("responseInfo")[0].firstChild.nodeValue;
+if(status=="TICKET_CLOSED"){url=o.responseXML.getElementsByTagName("forwardUrl")[0].firstChild.nodeValue;
+callback=cb;
+makeRequest()
+}else{if(callCount<12){pollTimeout=window.setTimeout(makeRequest,1300);
+callCount++
+}else{failure(o)
+}}}}}function failure(o){if(config.incompany){resetSharingForm()
+}else{LI.grow(el,"15");
+removeObject();
+hideCheckTextareaMessage()
+}}}function resetSharingForm(){removeObject();
+attachInput.value="";
+switch(config.injectionMode){case"group":enableSubmit();
+detailsTextarea.value="";
+YDom.removeClass(detailsFieldset,"open");
+subjectLine.value="";
+YDom.removeClass(form,"details");
+YDom.removeClass(form,"attach");
+break;
+default:break
+}}function setSubmitButtonRef(button){submit=(button)?button:submit
+}function showEdit(){shareMode.className="share-mode is-edit-mode";
+gallery=YDom.get("share-image");
+YDom.insertBefore(gallery,"share-edit-list");
+editMeta.innerHTML=LI.htmlUnencode(viewMeta.innerHTML);
+editSummary.value=LI.htmlUnencode(viewSummary.innerHTML);
+editTitle.value=LI.htmlUnencode(viewTitle.innerHTML)
+}function saveEdit(evt){if(evt){YEvent.preventDefault(evt)
+}if(editTitle.value){var titleLong=editTitle.value;
+var titleShort=editTitle.value.substring(0,70);
+YDom.get(viewTitle).innerHTML=(titleLong.length>70)?titleShort+"... ":titleLong
+}else{editTitle.value=viewTitle.innerHTML
+}var descLong=editSummary.value;
+var descShort=editSummary.value.substring(0,250);
+YDom.get(viewSummary).innerHTML=(descLong.length>250)?descShort+"... ":descLong;
+showView()
+}function showView(evt){if(evt){YEvent.preventDefault(evt)
+}gallery=YDom.get("share-image");
+YDom.insertBefore(gallery,"share-content");
+shareMode.className="share-mode is-view-mode"
+}function showAttach(evt){YEvent.preventDefault(evt);
+shareMode.className="share-mode is-attach-mode";
+LI.hide("attach");
+if(attachInput){attachInput.focus()
+}if(isGroupInstance){setSubmitButtonRef(submitBottom)
+}LI.show(settings);
+WebTracking.trackUserAction(config.trackShowAttach)
+}function removeObject(){shareMode.className="share-mode";
+shareView.innerHTML="";
+LI.show("attach");
+editSummary.value="";
+editTitle.value="";
+entityID.value="";
+imageID.value=""
+}function enableSubmit(){YDom.removeClass(submit,"disabled");
+submit.disabled=false
+}function disableSubmit(){YDom.addClass(submit,"disabled");
+submit.disabled=true
+}function hideCheckTextareaMessage(){var checkTextAreaCountDown=Y$("p.check-textarea-message",form,true);
+if(checkTextAreaCountDown){checkTextAreaCountDown.parentNode.removeChild(checkTextAreaCountDown)
+}}function typeIsXML(o){var document=(YAHOO.env.ua.ie)?o.responseXML.documentElement:o.responseXML;
+return document
+}function resetHeight(){var baseHeight=el.getAttribute("data-base-height")||"15";
+if(baseHeight){LI.grow(el,baseHeight)
+}}};
+YAHOO.register("LI.SharePostModule",LI.SharePostModule,{});
+
+/* js/apps/ShareImageChooser.js */
+
+LI.define("ShareImageChooser");
+LI.ShareImageChooser=function(d,e){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: /js/apps/ShareImageChooser.js")
+}var e={images:e.images,current:0,total:e.images.length,imgInputID:(e.imgInputID)?e.imgInputID:null,imgSelectedIdxID:(e.imgSelectedIdxID)?e.imgSelectedIdxID:null,imgIdxLengthID:(e.imgIdxLengthID)?e.imgIdxLengthID:null,showGalleryID:(e.showGalleryID)?e.showGalleryID:null};
+var f=Y$("img",d,true);
+var g=Y$(".previous",d,true);
+var a=Y$(".next",d,true);
+var h=Y$(".current",d,true);
+var k=Y$(".controls",d,true);
+YEvent.on([g,a],"click",YEvent.preventDefault);
+var i=Y$(".total",d,true);
+if(YDom.get(e.imgInputID)&&e.images[0]!=""){YDom.get(e.imgInputID).value=e.images[0]
+}f.src=e.images[0];
+h.innerHTML=1;
+if(e.images.length>1){c()
+}if(YDom.get(e.imgIdxLengthID)){YDom.get(e.imgIdxLengthID).value=e.images.length
+}if(e.showGalleryID){YEvent.on(e.showGalleryID,"click",b);
+YDom.get(e.showGalleryID).checked=true
+}function l(m){var n=YEvent.getTarget(m);
+if(YDom.hasClass(n,"next")){e.current++;
+if(e.current>=e.images.length){j(0)
+}else{j(e.current)
+}}if(YDom.hasClass(n,"previous")){e.current--;
+if(e.current<0){j(e.images.length-1)
+}else{j(e.current)
+}}}function j(m){e.current=m;
+var n=e.images[m];
+f.src=n;
+h.innerHTML=m+1;
+if(YDom.get(e.imgInputID)){YDom.get(e.imgInputID).value=n
+}if(YDom.get(e.imgSelectedIdxID)){YDom.get(e.imgSelectedIdxID).value=e.current
+}}function c(){var p=[];
+var o=1;
+var m;
+var r=document.createElement("div");
+document.body.appendChild(r);
+YDom.setStyle(r,"position","absolute");
+YDom.setStyle(r,"left","70000px");
+for(var n=0;
+e.images.length>n;
+n++){m=null;
+if(n==0){p.push(e.images[0])
+}else{m=document.createElement("img");
+r.appendChild(m);
+YEvent.on(m,"load",function(s){if(parseInt(YDom.getRegion(this).width)>60&&parseInt(YDom.getRegion(this).height)>60){p.push(this.src)
+}o++;
+q()
+});
+YEvent.on(m,"error",function(s){o++;
+q()
+});
+m.src=e.images[n]
+}}function q(){if(o==e.images.length){document.body.removeChild(r);
+e.images=p;
+if(p.length>1){LI.show(k)
+}i.innerHTML=p.length;
+YEvent.on([g,a],"click",l)
+}}}function b(m){var n=YEvent.getTarget(m);
+if(n.checked){YDom.get(e.imgInputID).value=f.src;
+YDom.setStyle(d,"visibility","visible")
+}else{YDom.setStyle(d,"visibility","hidden");
+YDom.get(e.imgInputID).value=""
+}}j(0)
+};
+
+/* js/home.js */
+
+var sortModules=function(){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: js/home.js")
+}var a=YAHOO.util.DDM;
+DDList=function(e,b,c){DDList.superclass.constructor.call(this,e,b,c);
+var d=this.getDragEl();
+YDom.setStyle(d,"opacity",0.67);
+this.goingUp=false;
+this.lastY=0;
+this.setXConstraint(0,0)
+};
+YAHOO.extend(DDList,YAHOO.util.DDProxy,{startDrag:function(c,e){var b=this.getDragEl();
+var d=this.getEl();
+YDom.setStyle(d,"visibility","hidden");
+b.innerHTML=d.innerHTML;
+YDom.setStyle(b,"color",YDom.getStyle(d,"color"));
+YDom.setStyle(b,"backgroundColor",YDom.getStyle(d,"backgroundColor"))
+},endDrag:function(i){var f;
+var h=YDom.getNextSibling(this.id);
+if(h==null){f=0
+}else{f=ChameleonService.getAppInstanceID(h.id)
+}ChameleonService.moveApplication(1,1,ChameleonService.getAppInstanceID(this.id),f);
+var d=this.getEl();
+var g=this.getDragEl();
+YDom.setStyle(g,"visibility","");
+var b=new YAHOO.util.Motion(g,{points:{to:YDom.getXY(d)}},0.2,YAHOO.util.Easing.easeOut);
+var c=g.id;
+var j=this.id;
+b.onComplete.subscribe(function(){YDom.setStyle(c,"visibility","hidden");
+YDom.setStyle(j,"visibility","")
+});
+b.animate()
+},onDragDrop:function(g,h){if(a.interactionInfo.drop.length===1){var f=a.interactionInfo.point;
+var d=a.interactionInfo.sourceRegion;
+if(!d.intersect(f)){var b=YDom.get(h);
+var c=a.getDDById(h);
+b.appendChild(this.getEl());
+c.isEmpty=false;
+a.refreshCache()
+}}},onDrag:function(b){var c=YEvent.getPageY(b);
+if(c<this.lastY){this.goingUp=true
+}else{if(c>this.lastY){this.goingUp=false
+}}this.lastY=c
+},onDragOver:function(g,h){var d=this.getEl();
+var c=YDom.get(h);
+if(c.nodeName.toLowerCase()=="div"){var b=d.parentNode;
+var f=c.parentNode;
+if(this.goingUp){f.insertBefore(d,c)
+}else{f.insertBefore(d,c.nextSibling)
+}a.refreshCache()
+}}})
+}();
+YAHOO.widget.Effect=function(a){this.oEl=YDom.get(a);
+this.height=parseInt(YDom.getStyle(this.oEl,"height"));
+this.width=parseInt(YDom.getStyle(this.oEl,"width"))
+};
+YAHOO.widget.Effect.prototype.BlindUp=function(a,c){var d=a||1;
+this.oEl.style.overflow="hidden";
+var b=new YAnim(this.oEl,{height:{to:0}},d,YAHOO.util.Easing.easeOut);
+if(c){b.onComplete.subscribe(c)
+}b.animate()
+};
+YAHOO.widget.Effect.prototype.BlindDown=function(b,d){this.oEl.style.visibility="hidden";
+this.oEl.style.overflow="hidden";
+this.oEl.style.height="";
+var a=parseInt(YDom.getStyle(this.oEl,"height"));
+this.oEl.style.height="0";
+this.oEl.style.visibility="visible";
+var e=b||1;
+var c=new YAnim(this.oEl,{height:{to:a,from:0}},e,YAHOO.util.Easing.easeOut);
+if(d){c.onComplete.subscribe(d)
+}c.animate()
+};
+YDom.getElementsByAttribute=function(c,d,a,b){var e=function(g){var f=new RegExp("(?:^|\\s+)"+d+"(?:\\s+|$)");
+if(g.getAttribute(c)&&f.test(g.getAttribute(c))){return true
+}return false
+};
+return this.getElementsBy(e,a,b)
+};
+var loadAdSlots=function(){var a=function(){var d=YDom.getElementsByClassName("ad-load","div");
+for(var c=0;
+c<d.length;
+c++){var e=d[c].id.split("ad-load-")[1];
+YDom.get("ad-slot-"+e).innerHTML=d[c].innerHTML;
+var b=YDom.get("ad-loader");
+b.removeChild(d[c])
+}};
+return{init:function(){a()
+}}
+}();
+
+/* js/apps/JobsForYou.js */
+
+LI.define("JobsForYou");
+LI.JobsForYou=function(d,c){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: /js/apps/JobsForYou.js")
+}var c=c||{},a=document.getElementById("recJobs");
+var f=function(){YEvent.on(YDom.getElementsByClassName("remove","a",a),"click",e);
+if(c.tracking){YEvent.on(YDom.getElementsByClassName("track-job","a",a),"click",b)
+}var g=YDom.getElementsByClassName("droplist","div",a);
+YEvent.on(g,"mouseover",function(h){YDom.addClass(this,"open");
+YDom.setStyle(this,"position","relative")
+});
+YEvent.on(g,"mouseout",function(h){LI.DropListMgr.closeAll();
+YDom.removeClass(this,"open");
+YDom.setStyle(this,"position","static")
+})
+};
+var b=function(j){var i=YEvent.getTarget(j);
+if(i.nodeName.toLowerCase()!="a"){i=YDom.getAncestorByTagName(i,"a")
+}var h=i.getAttribute("data-li-trk-url"),g=i.href;
+if(h==""||h==null){return
+}YEvent.stopEvent(j);
+YAHOO.util.Connect.asyncRequest("GET",h,{success:function(k){window.location.href=g
+},failure:function(k){window.location.href=g
+},timeout:1000})
+};
+var e=function(i){YEvent.stopEvent(i);
+var h=YEvent.getTarget(i),g=YDom.getElementsByClassName("extra","li",a),j=YDom.getAncestorByClassName(h,"job"),k=new YAHOO.util.Anim(j,{opacity:{to:0}},0.3);
+YAHOO.util.Connect.asyncRequest("GET",h.href,{timeout:10000});
+k.onComplete.subscribe(function(){j.parentNode.removeChild(j);
+var m=null,n=YDom.getChildrenBy(a,function(q){return(!YDom.hasClass(q,"extra")&&!YDom.hasClass(q,"empty-message"))
+}),p=document.getElementById("recJobs-empty-message"),o=document.getElementById("recjobs-see-more");
+if(g.length){m=g[0];
+YDom.removeClass(m,"extra");
+g=g.slice(1)
+}else{if(!n.length&&p){YDom.addClass(d,"empty");
+m=p
+}}if(!g.length){if(o&&!c.hasMoreRecJobs){LI.hide(o)
+}}if(m){YDom.setStyle(m,"opacity",0);
+var l=new YAnim(m,{opacity:{to:1}},0.8);
+l.animate()
+}});
+k.animate()
+};
+f()
+};
+
+/* js/apps/GroupsForYou.js */
+
+LI.define("GroupsForYou");
+LI.GroupsForYou=function(c,b){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: /js/apps/GroupsForYou.js")
+}var b=b||{},d=document.getElementById("recGroups");
+var e=function(){if(b.tracking){YEvent.on(YDom.getElementsByClassName("track-group","a",d),"click",a)
+}};
+var a=function(i){var h=YEvent.getTarget(i);
+if(h.nodeName.toLowerCase()!="a"){h=YDom.getAncestorByTagName(h,"a")
+}var g=h.getAttribute("data-li-trk-url"),f=h.href;
+if(!g){return
+}YEvent.stopEvent(i);
+YAHOO.util.Connect.asyncRequest("GET",g,{success:function(j){window.location.href=f
+},failure:function(j){window.location.href=f
+},timeout:1000})
+};
+e()
+};
+
+/* js/apps/CompaniesForYou.js */
+
+LI.define("CompaniesForYou");
+LI.CompaniesForYou=function(d,c){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: /js/apps/CompaniesForYou.js")
+}var c=c||{},b=document.getElementById("recCompanies");
+var e=function(){if(c.tracking){YEvent.on(YDom.getElementsByClassName("track-company","a",b),"click",a)
+}};
+var a=function(i){var h=YEvent.getTarget(i);
+if(h.nodeName.toLowerCase()!="a"){h=YDom.getAncestorByTagName(h,"a")
+}var g=h.getAttribute("data-li-trk-url"),f=h.href;
+if(!g){return
+}YEvent.stopEvent(i);
+YAHOO.util.Connect.asyncRequest("GET",g,{success:function(j){window.location.href=f
+},failure:function(j){window.location.href=f
+},timeout:1000})
+};
+e()
+};
+
+/* js/apps/ReferralCenterModule.js */
+
+LI.define("ReferralCenterModule");
+LI.ReferralCenterModule=function(c,a){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: /js/apps/ReferralCenterModule.js")
+}var d=document.getElementById("rc-matches");
+a=a||{};
+var b=function(e){YEvent.stopEvent(e);
+var g=YEvent.getTarget(e),f=YDom.getElementsByClassName("buffer","li",d),h=YDom.getAncestorByClassName(g,"rc-match-item"),i=new YAHOO.util.Anim(h,{opacity:{to:0}},0.3);
+YConn.asyncRequest("GET",g.href,{timeout:10000});
+i.onComplete.subscribe(function(){h.parentNode.removeChild(h);
+var k=null,l=YDom.getChildrenBy(d,function(o){return(!YDom.hasClass(o,"buffer")&&!YDom.hasClass(o,"empty-message"))
+}),n=document.getElementById("rc-no-matches"),m=document.getElementById("rc-see-more");
+if(f.length){k=f[0];
+YDom.removeClass(k,"buffer");
+f=f.slice(1)
+}else{if(!l.length&&n){YDom.addClass(c,"empty");
+k=n;
+if(m){LI.hide(m)
+}}}if(k){YDom.setStyle(k,"opacity",0);
+var j=new YAnim(k,{opacity:{to:1}},0.8);
+j.animate()
+}});
+i.animate()
+};
+YEvent.on(YDom.getElementsByClassName("remove","a",d),"click",b)
+};
+
+/* js/apps/SitePromotion.js */
+
+function SitePromotion(b,c){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: /js/apps/SitePromotion.js")
+}c.promoID=c.promoID||"";
+c.pageKey=c.pageKey||"";
+c.actionTriggerID=c.actionTriggerID||null;
+c.actionLinkID=c.actionLinkID||null;
+c.interactLinkID=c.interactLinkID||null;
+c.closeTriggerID=c.closeTriggerID||null;
+c.suspendTriggerID=c.suspendTriggerID||null;
+c.cancelLinkID=c.cancelLinkID||null;
+c.actionTriggerClass=c.actionTriggerClass||null;
+c.actionLinkClass=c.actionLinkClass||null;
+c.closeTriggerClass=c.closeTriggerClass||null;
+c.suspendTriggerClass=c.suspendTriggerClass||null;
+c.cancelLinkClass=c.cancelLinkClass||null;
+c.url=c.url||null;
+function e(){var j="&sPromoId="+c.promoID+"&sAction=3&"+"sPageKey="+c.pageKey;
+a(j)
+}function g(){var j="&sPromoId="+c.promoID+"&sAction=5&"+"sPageKey="+c.pageKey;
+a(j)
+}function i(){var j="&sPromoId="+c.promoID+"&sAction=2&"+"sPageKey="+c.pageKey;
+a(j);
+LI.fade(b)
+}function f(){var j="&sPromoId="+c.promoID+"&sAction=4&"+"sPageKey="+c.pageKey;
+a(j);
+LI.fade(b)
+}function h(){var j="&sPromoId="+c.promoID+"&sAction=1&"+"sPageKey="+c.pageKey;
+a(j)
+}function a(j){LI.asyncRequest("POST",c.url,{custom:{exception:function(){return false
+}}},j)
+}function d(){YEvent.on(b,"click",function(j){var k=YEvent.getTarget(j);
+if(k.id&&(k.id===c.actionTriggerID||k.id===c.actionLinkID)){e()
+}else{if(k.id&&(k.id===c.closeTriggerID||k.id===c.cancelLinkID)){i()
+}else{if(k.id&&(k.id===c.suspendTriggerID)){f()
+}else{if(k.id&&(k.id===c.interactLinkID)){g()
+}else{if(YDom.hasClass(k,c.actionTriggerClass)||YDom.hasClass(k,c.actionLinkClass)){e()
+}else{if(YDom.hasClass(k,c.closeTriggerClass)||YDom.hasClass(k,c.cancelLinkClass)){i()
+}else{if(YDom.hasClass(k,c.suspendTriggerClass)){f()
+}else{if(YDom.hasClass(k,c.interactLinkID)){g()
+}}}}}}}}})
+}YEvent.onDOMReady(h);
+YEvent.onDOMReady(d)
+};
+
+/* js/util/BalloonCallout.js */
+
+(function(){LI.define("BalloonCalloutManager");
+LI.BalloonCalloutManager=(function(){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: /js/util/BalloonCallout.js")
+}var c=500,n="callout-overlay",r="callout-",k='<span class="callout-arrow"></span>',d={},g={zIndex:10,constraintoviewport:true},o=null,t=false,f=null,e=null,i=null,j=null,b=false;
+o=new YAHOO.widget.Overlay(n,g);
+var a=function(v,u){d[v]=u
+};
+var q=function(u){delete d[u]
+};
+var l=function(){t=true
+};
+var m=function(){t=false;
+h()
+};
+var p=function(v){var w=v.config;
+if(j){window.clearTimeout(j);
+j=null;
+f=null;
+YDom.removeClass(i,"shown")
+}f=v;
+if(w.relativeToTrigger===true){o.cfg.setProperty("constraintoviewport",false)
+}if(w.zIndex!==null&&w.zIndex!==undefined){o.cfg.setProperty("zIndex",w.zIndex)
+}YDom.setStyle(i,"width",w.width);
+i.className=w.type+" "+r+w.orientation+" "+w.id;
+o.setBody(w.content+k);
+o.render(document.body);
+o.cfg.setProperty("context",[v.el,w.overlayCorner,w.contextCorner]);
+var z=YDom.getXY(i);
+YDom.setXY(i,[z[0]+w.offsetX,z[1]+w.offsetY]);
+if(YAHOO.env.ua.ie==6){o.moveTo([z[0]+w.offsetX,z[1]+w.offsetY])
+}YDom.addClass(i,"shown");
+if(w.eventsOnInternalElements){var A=w.eventsOnInternalElements;
+if(A.elementClass&&A.elementClass!==""){var x=YDom.getElementsByClassName(A.elementClass);
+for(var y=0,u;
+u=x[y];
+y++){YEvent.purgeElement(u,false,A.elementEvent);
+YEvent.on(u,A.elementEvent,v[A.elementAction],v,true)
+}}b=true
+}};
+var s=function(){if((!t&&(f&&!f.isActive()))||(b&&(f&&!f.isActive()))){o.setBody("");
+f=null;
+YDom.removeClass(i,"shown")
+}};
+var h=function(){if(!j){j=window.setTimeout(function(){window.clearTimeout(j);
+j=null;
+s()
+},c)
+}};
+YEvent.onDOMReady(function(){o.render(document.body);
+i=YDom.get(n);
+YEvent.on(i,"mouseover",l);
+YEvent.on(i,"mouseout",m)
+});
+return{register:a,destroy:q,overlay:o,show:p,hide:h}
+})()
+})();
+LI.define("BalloonCallout");
+LI.BalloonCallout=function(c,d){var g=LI.BalloonCalloutManager,b="hover",h={"top-left":["tl","bl",0,5],"top-right":["tr","br",0,0],"right-top":["tr","tl",-5,-10],"right-bottom":["br","bl",-5,10],"bottom-right":["br","tr",0,0],"bottom-left":["bl","tl",0,0],"left-bottom":["bl","br",5,10],"left-top":["tl","tr",5,-10]},e="balloon-callout, error-callout, instructional-callout";
+d=d||{};
+if(c.tagName&&c.tagName.toLowerCase()=="a"&&c.href.indexOf("#")>-1){d.anchor=true;
+d.id=c.href.substring(c.href.indexOf("#")+1)
+}else{d.anchor=false
+}d={anchor:d.anchor,width:d.width||300,id:d.id||"",overlayCorner:d.overlayCorner||null,contextCorner:d.contextCorner||null,orientation:d.orientation||"left-top",content:d.content||null,events:d.events||["mouseover","mouseout"],eventsOnInternalElements:d.eventsOnInternalElements||null,type:d.type||"balloon-callout",offsetX:d.offsetX||0,offsetY:d.offsetY||0,relativeToTrigger:d.relativeToTrigger||false,zIndex:d.zIndex||10};
+if(!d.content){d.content=document.getElementById(d.id);
+if(!d.content){throw"Could not find info element"
+}else{d.content=d.content.innerHTML
+}}if(d.width!=="auto"){d.width+="px"
+}var a=function(j){YEvent.preventDefault(j)
+};
+if(d.anchor){YEvent.on(c,"click",a)
+}if(!d.overlayCorner){d.overlayCorner=h[d.orientation][0]
+}if(!d.contextCorner){d.contextCorner=h[d.orientation][1]
+}d.offsetX+=h[d.orientation][2];
+d.offsetY+=h[d.orientation][3];
+this.openEvent=new YAHOO.util.CustomEvent("open");
+var f=function(j){this.active=true;
+YDom.addClass(c,b);
+g.show(this);
+this.openEvent.fire()
+};
+var i=function(j){this.active=false;
+YDom.removeClass(c,b);
+g.hide()
+};
+this.isActive=function(){return this.active
+};
+this.destroy=function(){if(d.anchor){YEvent.removeListener(c,"click",a)
+}YEvent.removeListener(c,d.events[0],f);
+YEvent.removeListener(c,d.events[1],i);
+if(d.eventsOnInternalElements){var m=d.eventsOnInternalElements;
+if(m.elementClass&&m.elementClass!==""){var k=YDom.getElementsByClassName(m.elementClass);
+for(var l=0,j;
+j=k[l];
+l++){YEvent.removeListener(j,m.elementEvent,m.elementAction)
+}}}i();
+g.destroy(c.id)
+};
+this.setContent=function(j){if(!j){j=document.getElementById(d.id).innerHTML
+}d.content=j
+};
+YDom.generateId(c,"callout-trigger-");
+this.config=d;
+this.el=c;
+this.active=false;
+this.close=i;
+this.open=f;
+g.register(c.id,this);
+YEvent.on(c,d.events[0],f,this,true);
+YEvent.on(c,d.events[1],i,this,true)
+};
+LI.Controls.register("LI.BalloonCallout");
+
+/* lib/swfobject/swfobject-li.js */
+
+/*! SWFObject v2.1 <http://code.google.com/p/swfobject/>
+	Copyright (c) 2007-2008 Geoff Stearns, Michael Williams, and Bobby van der Sluis
+	This software is released under the MIT License <http://www.opensource.org/licenses/mit-license.php>
+	
+	(This is a LI modified version to support lazy loading)
+*/
+
+var swfobject = function() {
+	if( LI.__HPA === true ) {
+    console.info( 'HOMPAGE_PERFORMANCE_ANALYSIS :: /lib/swfobject/swfobject-li.js' );
+  }
+	var UNDEF = "undefined",
+		OBJECT = "object",
+		SHOCKWAVE_FLASH = "Shockwave Flash",
+		SHOCKWAVE_FLASH_AX = "ShockwaveFlash.ShockwaveFlash",
+		FLASH_MIME_TYPE = "application/x-shockwave-flash",
+		EXPRESS_INSTALL_ID = "SWFObjectExprInst",
+		
+		win = window,
+		doc = document,
+		nav = navigator,
+		
+		domLoadFnArr = [],
+		regObjArr = [],
+		objIdArr = [],
+		listenersArr = [],
+		script,
+		timer = null,
+		storedAltContent = null,
+		storedAltContentId = null,
+		isDomLoaded = false,
+		isExpressInstallActive = false;
+	
+	/* Centralized function for browser feature detection
+		- Proprietary feature detection (conditional compiling) is used to detect Internet Explorer's features
+		- User agent string detection is only used when no alternative is possible
+		- Is executed directly for optimal performance
+	*/	
+	var ua = function() {
+		var w3cdom = typeof doc.getElementById != UNDEF && typeof doc.getElementsByTagName != UNDEF && typeof doc.createElement != UNDEF,
+			playerVersion = [0,0,0],
+			d = null;
+		if (typeof nav.plugins != UNDEF && typeof nav.plugins[SHOCKWAVE_FLASH] == OBJECT) {
+			d = nav.plugins[SHOCKWAVE_FLASH].description;
+			if (d && !(typeof nav.mimeTypes != UNDEF && nav.mimeTypes[FLASH_MIME_TYPE] && !nav.mimeTypes[FLASH_MIME_TYPE].enabledPlugin)) { // navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin indicates whether plug-ins are enabled or disabled in Safari 3+
+				d = d.replace(/^.*\s+(\S+\s+\S+$)/, "$1");
+				playerVersion[0] = parseInt(d.replace(/^(.*)\..*$/, "$1"), 10);
+				playerVersion[1] = parseInt(d.replace(/^.*\.(.*)\s.*$/, "$1"), 10);
+				playerVersion[2] = /r/.test(d) ? parseInt(d.replace(/^.*r(.*)$/, "$1"), 10) : 0;
+			}
+		}
+		else if (typeof win.ActiveXObject != UNDEF) {
+			var a = null, fp6Crash = false;
+			try {
+				a = new ActiveXObject(SHOCKWAVE_FLASH_AX + ".7");
+			}
+			catch(e) {
+				try { 
+					a = new ActiveXObject(SHOCKWAVE_FLASH_AX + ".6");
+					playerVersion = [6,0,21];
+					a.AllowScriptAccess = "always";	 // Introduced in fp6.0.47
+				}
+				catch(e) {
+					if (playerVersion[0] == 6) {
+						fp6Crash = true;
+					}
+				}
+				if (!fp6Crash) {
+					try {
+						a = new ActiveXObject(SHOCKWAVE_FLASH_AX);
+					}
+					catch(e) {}
+				}
+			}
+			if (!fp6Crash && a) { // a will return null when ActiveX is disabled
+				try {
+					d = a.GetVariable("$version");	// Will crash fp6.0.21/23/29
+					if (d) {
+						d = d.split(" ")[1].split(",");
+						playerVersion = [parseInt(d[0], 10), parseInt(d[1], 10), parseInt(d[2], 10)];
+					}
+				}
+				catch(e) {}
+			}
+		}
+		var u = nav.userAgent.toLowerCase(),
+			p = nav.platform.toLowerCase(),
+			webkit = /webkit/.test(u) ? parseFloat(u.replace(/^.*webkit\/(\d+(\.\d+)?).*$/, "$1")) : false, // returns either the webkit version or false if not webkit
+			ie = false,
+			windows = p ? /win/.test(p) : /win/.test(u),
+			mac = p ? /mac/.test(p) : /mac/.test(u);
+		/*@cc_on
+			ie = true;
+			@if (@_win32)
+				windows = true;
+			@elif (@_mac)
+				mac = true;
+			@end
+		@*/
+		return { w3cdom:w3cdom, pv:playerVersion, webkit:webkit, ie:ie, win:windows, mac:mac };
+	}();
+
+	/* Cross-browser onDomLoad
+		- Based on Dean Edwards' solution: http://dean.edwards.name/weblog/2006/06/again/
+		- Will fire an event as soon as the DOM of a page is loaded (supported by Gecko based browsers - like Firefox -, IE, Opera9+, Safari)
+	*/ 
+	var onDomLoad = function() {
+		if (!ua.w3cdom) {
+			return;
+		}
+		addDomLoadEvent(main);
+		if (ua.ie && ua.win) {
+			try {	 // Avoid a possible Operation Aborted error
+				doc.write("<scr" + "ipt id=__ie_ondomload defer=true src=//:></scr" + "ipt>"); // String is split into pieces to avoid Norton AV to add code that can cause errors 
+				script = getElementById("__ie_ondomload");
+				if (script) {
+					addListener(script, "onreadystatechange", checkReadyState);
+				}
+			}
+			catch(e) {}
+		}
+		if (ua.webkit && typeof doc.readyState != UNDEF) {
+			timer = setInterval(function() { if (/loaded|complete/.test(doc.readyState)) { callDomLoadFunctions(); }}, 10);
+		}
+		if (typeof doc.addEventListener != UNDEF) {
+			doc.addEventListener("DOMContentLoaded", callDomLoadFunctions, null);
+		}
+		addLoadEvent(callDomLoadFunctions);
+	}();
+	
+	function checkReadyState() {
+		if (script.readyState == "complete") {
+			script.parentNode.removeChild(script);
+			callDomLoadFunctions();
+		}
+	}
+	
+	function callDomLoadFunctions() {
+		if (isDomLoaded) {
+			return;
+		}
+		if (ua.ie && ua.win) { // Test if we can really add elements to the DOM; we don't want to fire it too early
+			var s = createElement("span");
+			try { // Avoid a possible Operation Aborted error
+				var t = doc.getElementsByTagName("body")[0].appendChild(s);
+				t.parentNode.removeChild(t);
+			}
+			catch (e) {
+				return;
+			}
+		}
+		isDomLoaded = true;
+		if (timer) {
+			clearInterval(timer);
+			timer = null;
+		}
+		var dl = domLoadFnArr.length;
+		for (var i = 0; i < dl; i++) {
+			domLoadFnArr[i]();
+		}
+	}
+	
+	function addDomLoadEvent(fn) {
+		if (isDomLoaded) {
+			fn();
+		}
+		else { 
+			domLoadFnArr[domLoadFnArr.length] = fn; // Array.push() is only available in IE5.5+
+		}
+	}
+	
+	/* Cross-browser onload
+		- Based on James Edwards' solution: http://brothercake.com/site/resources/scripts/onload/
+		- Will fire an event as soon as a web page including all of its assets are loaded 
+	 */
+	function addLoadEvent(fn) {
+		if (typeof win.addEventListener != UNDEF) {
+			win.addEventListener("load", fn, false);
+		}
+		else if (typeof doc.addEventListener != UNDEF) {
+			doc.addEventListener("load", fn, false);
+		}
+		else if (typeof win.attachEvent != UNDEF) {
+			addListener(win, "onload", fn);
+		}
+		else if (typeof win.onload == "function") {
+			var fnOld = win.onload;
+			win.onload = function() {
+				fnOld();
+				fn();
+			};
+		}
+		else {
+			win.onload = fn;
+		}
+	}
+	
+	/* Main function
+		- Will preferably execute onDomLoad, otherwise onload (as a fallback)
+	*/
+	function main() { // Static publishing only
+		var rl = regObjArr.length;
+		for (var i = 0; i < rl; i++) { // For each registered object element
+			var id = regObjArr[i].id;
+			if (ua.pv[0] > 0) {
+				var obj = getElementById(id);
+				if (obj) {
+					regObjArr[i].width = obj.getAttribute("width") ? obj.getAttribute("width") : "0";
+					regObjArr[i].height = obj.getAttribute("height") ? obj.getAttribute("height") : "0";
+					if (hasPlayerVersion(regObjArr[i].swfVersion)) { // Flash plug-in version >= Flash content version: Houston, we have a match!
+						if (ua.webkit && ua.webkit < 312) { // Older webkit engines ignore the object element's nested param elements
+							fixParams(obj);
+						}
+						setVisibility(id, true);
+					}
+					else if (regObjArr[i].expressInstall && !isExpressInstallActive && hasPlayerVersion("6.0.65") && (ua.win || ua.mac)) { // Show the Adobe Express Install dialog if set by the web page author and if supported (fp6.0.65+ on Win/Mac OS only)
+						showExpressInstall(regObjArr[i]);
+					}
+					else { // Flash plug-in and Flash content version mismatch: display alternative content instead of Flash content
+						displayAltContent(obj);
+					}
+				}
+			}
+			else {	// If no fp is installed, we let the object element do its job (show alternative content)
+				setVisibility(id, true);
+			}
+		}
+	}
+	
+	/* Fix nested param elements, which are ignored by older webkit engines
+		- This includes Safari up to and including version 1.2.2 on Mac OS 10.3
+		- Fall back to the proprietary embed element
+	*/
+	function fixParams(obj) {
+		var nestedObj = obj.getElementsByTagName(OBJECT)[0];
+		if (nestedObj) {
+			var e = createElement("embed"), a = nestedObj.attributes;
+			if (a) {
+				var al = a.length;
+				for (var i = 0; i < al; i++) {
+					if (a[i].nodeName == "DATA") {
+						e.setAttribute("src", a[i].nodeValue);
+					}
+					else {
+						e.setAttribute(a[i].nodeName, a[i].nodeValue);
+					}
+				}
+			}
+			var c = nestedObj.childNodes;
+			if (c) {
+				var cl = c.length;
+				for (var j = 0; j < cl; j++) {
+					if (c[j].nodeType == 1 && c[j].nodeName == "PARAM") {
+						e.setAttribute(c[j].getAttribute("name"), c[j].getAttribute("value"));
+					}
+				}
+			}
+			obj.parentNode.replaceChild(e, obj);
+		}
+	}
+	
+	/* Show the Adobe Express Install dialog
+		- Reference: http://www.adobe.com/cfusion/knowledgebase/index.cfm?id=6a253b75
+	*/
+	function showExpressInstall(regObj) {
+		isExpressInstallActive = true;
+		var obj = getElementById(regObj.id);
+		if (obj) {
+			if (regObj.altContentId) {
+				var ac = getElementById(regObj.altContentId);
+				if (ac) {
+					storedAltContent = ac;
+					storedAltContentId = regObj.altContentId;
+				}
+			}
+			else {
+				storedAltContent = abstractAltContent(obj);
+			}
+			if (!(/%$/.test(regObj.width)) && parseInt(regObj.width, 10) < 310) {
+				regObj.width = "310";
+			}
+			if (!(/%$/.test(regObj.height)) && parseInt(regObj.height, 10) < 137) {
+				regObj.height = "137";
+			}
+			doc.title = doc.title.slice(0, 47) + " - Flash Player Installation";
+			var pt = ua.ie && ua.win ? "ActiveX" : "PlugIn",
+				dt = doc.title,
+				fv = "MMredirectURL=" + win.location + "&MMplayerType=" + pt + "&MMdoctitle=" + dt,
+				replaceId = regObj.id;
+			// For IE when a SWF is loading (AND: not available in cache) wait for the onload event to fire to remove the original object element
+			// In IE you cannot properly cancel a loading SWF file without breaking browser load references, also obj.onreadystatechange doesn't work
+			if (ua.ie && ua.win && obj.readyState != 4) {
+				var newObj = createElement("div");
+				replaceId += "SWFObjectNew";
+				newObj.setAttribute("id", replaceId);
+				obj.parentNode.insertBefore(newObj, obj); // Insert placeholder div that will be replaced by the object element that loads expressinstall.swf
+				obj.style.display = "none";
+				var fn = function() {
+					obj.parentNode.removeChild(obj);
+				};
+				addListener(win, "onload", fn);
+			}
+			createSWF({ data:regObj.expressInstall, id:EXPRESS_INSTALL_ID, width:regObj.width, height:regObj.height }, { flashvars:fv }, replaceId);
+		}
+	}
+	
+	/* Functions to abstract and display alternative content
+	*/
+	function displayAltContent(obj) {
+		if (ua.ie && ua.win && obj.readyState != 4) {
+			// For IE when a SWF is loading (AND: not available in cache) wait for the onload event to fire to remove the original object element
+			// In IE you cannot properly cancel a loading SWF file without breaking browser load references, also obj.onreadystatechange doesn't work
+			var el = createElement("div");
+			obj.parentNode.insertBefore(el, obj); // Insert placeholder div that will be replaced by the alternative content
+			el.parentNode.replaceChild(abstractAltContent(obj), el);
+			obj.style.display = "none";
+			var fn = function() {
+				obj.parentNode.removeChild(obj);
+			};
+			addListener(win, "onload", fn);
+		}
+		else {
+			obj.parentNode.replaceChild(abstractAltContent(obj), obj);
+		}
+	} 
+
+	function abstractAltContent(obj) {
+		var ac = createElement("div");
+		if (ua.win && ua.ie) {
+			ac.innerHTML = obj.innerHTML;
+		}
+		else {
+			var nestedObj = obj.getElementsByTagName(OBJECT)[0];
+			if (nestedObj) {
+				var c = nestedObj.childNodes;
+				if (c) {
+					var cl = c.length;
+					for (var i = 0; i < cl; i++) {
+						if (!(c[i].nodeType == 1 && c[i].nodeName == "PARAM") && !(c[i].nodeType == 8)) {
+							ac.appendChild(c[i].cloneNode(true));
+						}
+					}
+				}
+			}
+		}
+		return ac;
+	}
+	
+	/* Cross-browser dynamic SWF creation
+	*/
+	function createSWF(attObj, parObj, id) {
+		var r, el = getElementById(id);
+		if (el) {
+			if (typeof attObj.id == UNDEF) { // if no 'id' is defined for the object element, it will inherit the 'id' from the alternative content
+				attObj.id = id;
+			}
+			if (ua.ie && ua.win) { // IE, the object element and W3C DOM methods do not combine: fall back to outerHTML
+				var att = "";
+				for (var i in attObj) {
+					if (attObj[i] != Object.prototype[i]) { // Filter out prototype additions from other potential libraries, like Object.prototype.toJSONString = function() {}
+						if (i.toLowerCase() == "data") {
+							parObj.movie = attObj[i];
+						}
+						else if (i.toLowerCase() == "styleclass") { // 'class' is an ECMA4 reserved keyword
+							att += ' class="' + attObj[i] + '"';
+						}
+						else if (i.toLowerCase() != "classid") {
+							att += ' ' + i + '="' + attObj[i] + '"';
+						}
+					}
+				}
+				var par = "";
+				for (var j in parObj) {
+					if (parObj[j] != Object.prototype[j]) { // Filter out prototype additions from other potential libraries
+						par += '<param name="' + j + '" value="' + parObj[j] + '" />';
+					}
+				}
+				el.outerHTML = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"' + att + '>' + par + '</object>';
+				objIdArr[objIdArr.length] = attObj.id; // Stored to fix object 'leaks' on unload (dynamic publishing only)
+				r = getElementById(attObj.id);	
+			}
+			else if (ua.webkit && ua.webkit < 312) { // Older webkit engines ignore the object element's nested param elements: fall back to the proprietary embed element
+				var e = createElement("embed");
+				e.setAttribute("type", FLASH_MIME_TYPE);
+				for (var k in attObj) {
+					if (attObj[k] != Object.prototype[k]) { // Filter out prototype additions from other potential libraries
+						if (k.toLowerCase() == "data") {
+							e.setAttribute("src", attObj[k]);
+						}
+						else if (k.toLowerCase() == "styleclass") { // 'class' is an ECMA4 reserved keyword
+							e.setAttribute("class", attObj[k]);
+						}
+						else if (k.toLowerCase() != "classid") { // Filter out IE specific attribute
+							e.setAttribute(k, attObj[k]);
+						}
+					}
+				}
+				for (var l in parObj) {
+					if (parObj[l] != Object.prototype[l]) { // Filter out prototype additions from other potential libraries
+						if (l.toLowerCase() != "movie") { // Filter out IE specific param element
+							e.setAttribute(l, parObj[l]);
+						}
+					}
+				}
+				el.parentNode.replaceChild(e, el);
+				r = e;
+			}
+			else { // Well-behaving browsers
+				var o = createElement(OBJECT);
+				o.setAttribute("type", FLASH_MIME_TYPE);
+				for (var m in attObj) {
+					if (attObj[m] != Object.prototype[m]) { // Filter out prototype additions from other potential libraries
+						if (m.toLowerCase() == "styleclass") { // 'class' is an ECMA4 reserved keyword
+							o.setAttribute("class", attObj[m]);
+						}
+						else if (m.toLowerCase() != "classid") { // Filter out IE specific attribute
+							o.setAttribute(m, attObj[m]);
+						}
+					}
+				}
+				for (var n in parObj) {
+					if (parObj[n] != Object.prototype[n] && n.toLowerCase() != "movie") { // Filter out prototype additions from other potential libraries and IE specific param element
+						createObjParam(o, n, parObj[n]);
+					}
+				}
+				el.parentNode.replaceChild(o, el);
+				r = o;
+			}
+		}
+		return r;
+	}
+	
+	function createObjParam(el, pName, pValue) {
+		var p = createElement("param");
+		p.setAttribute("name", pName);	
+		p.setAttribute("value", pValue);
+		el.appendChild(p);
+	}
+	
+	/* Cross-browser SWF removal
+		- Especially needed to safely and completely remove a SWF in Internet Explorer
+	*/
+	function removeSWF(id) {
+		var obj = getElementById(id);
+		if (obj && (obj.nodeName == "OBJECT" || obj.nodeName == "EMBED")) {
+			if (ua.ie && ua.win) {
+				if (obj.readyState == 4) {
+					removeObjectInIE(id);
+				}
+				else {
+					win.attachEvent("onload", function() {
+						removeObjectInIE(id);
+					});
+				}
+			}
+			else {
+				obj.parentNode.removeChild(obj);
+			}
+		}
+	}
+	
+	function removeObjectInIE(id) {
+		var obj = getElementById(id);
+		if (obj) {
+			for (var i in obj) {
+				if (typeof obj[i] == "function") {
+					obj[i] = null;
+				}
+			}
+			obj.parentNode.removeChild(obj);
+		}
+	}
+	
+	/* Functions to optimize JavaScript compression
+	*/
+	function getElementById(id) {
+		var el = null;
+		try {
+			el = doc.getElementById(id);
+		}
+		catch (e) {}
+		return el;
+	}
+	
+	function createElement(el) {
+		return doc.createElement(el);
+	}
+	
+	/* Updated attachEvent function for Internet Explorer
+		- Stores attachEvent information in an Array, so on unload the detachEvent functions can be called to avoid memory leaks
+	*/	
+	function addListener(target, eventType, fn) {
+		target.attachEvent(eventType, fn);
+		listenersArr[listenersArr.length] = [target, eventType, fn];
+	}
+	
+	/* Flash Player and SWF content version matching
+	*/
+	function hasPlayerVersion(rv) {
+		var pv = ua.pv, v = rv.split(".");
+		v[0] = parseInt(v[0], 10);
+		v[1] = parseInt(v[1], 10) || 0; // supports short notation, e.g. "9" instead of "9.0.0"
+		v[2] = parseInt(v[2], 10) || 0;
+		return (pv[0] > v[0] || (pv[0] == v[0] && pv[1] > v[1]) || (pv[0] == v[0] && pv[1] == v[1] && pv[2] >= v[2])) ? true : false;
+	}
+	
+	/* Cross-browser dynamic CSS creation
+		- Based on Bobby van der Sluis' solution: http://www.bobbyvandersluis.com/articles/dynamicCSS.php
+	*/	
+	function createCSS(sel, decl) {
+		if (ua.ie && ua.mac) {
+			return;
+		}
+		var h = doc.getElementsByTagName("head")[0], s = createElement("style");
+		s.setAttribute("type", "text/css");
+		s.setAttribute("media", "screen");
+		if (!(ua.ie && ua.win) && typeof doc.createTextNode != UNDEF) {
+			s.appendChild(doc.createTextNode(sel + " {" + decl + "}"));
+		}
+		h.appendChild(s);
+		if (ua.ie && ua.win && typeof doc.styleSheets != UNDEF && doc.styleSheets.length > 0) {
+			var ls = doc.styleSheets[doc.styleSheets.length - 1];
+			if (typeof ls.addRule == OBJECT) {
+				ls.addRule(sel, decl);
+			}
+		}
+	}
+	
+	function setVisibility(id, isVisible) {
+		var v = isVisible ? "visible" : "hidden";
+		if (isDomLoaded && getElementById(id)) {
+			getElementById(id).style.visibility = v;
+		}
+		else {
+			createCSS("#" + id, "visibility:" + v);
+		}
+	}
+
+	/* Filter to avoid XSS attacks 
+	*/
+	function urlEncodeIfNecessary(s) {
+		var regex = /[\\\"<>\.;]/;
+		var hasBadChars = regex.exec(s) != null;
+		return hasBadChars ? encodeURIComponent(s) : s;
+	}
+	
+	/* Release memory to avoid memory leaks caused by closures, fix hanging audio/video threads and force open sockets/NetConnections to disconnect (Internet Explorer only)
+	*/
+	var cleanup = function() {
+		if (ua.ie && ua.win) {
+			window.attachEvent("onunload", function() {
+				// remove listeners to avoid memory leaks
+				var ll = listenersArr.length;
+				for (var i = 0; i < ll; i++) {
+					listenersArr[i][0].detachEvent(listenersArr[i][1], listenersArr[i][2]);
+				}
+				// cleanup dynamically embedded objects to fix audio/video threads and force open sockets and NetConnections to disconnect
+				var il = objIdArr.length;
+				for (var j = 0; j < il; j++) {
+					removeSWF(objIdArr[j]);
+				}
+				// cleanup library's main closures to avoid memory leaks
+				for (var k in ua) {
+					ua[k] = null;
+				}
+				ua = null;
+				for (var l in swfobject) {
+					swfobject[l] = null;
+				}
+				swfobject = null;
+			});
+		}
+	}();
+	
+	
+	return {
+		/* Public API
+			- Reference: http://code.google.com/p/swfobject/wiki/SWFObject_2_0_documentation
+		*/ 
+		registerObject: function(objectIdStr, swfVersionStr, xiSwfUrlStr) {
+			if (!ua.w3cdom || !objectIdStr || !swfVersionStr) {
+				return;
+			}
+			var regObj = {};
+			regObj.id = objectIdStr;
+			regObj.swfVersion = swfVersionStr;
+			regObj.expressInstall = xiSwfUrlStr ? xiSwfUrlStr : false;
+			regObjArr[regObjArr.length] = regObj;
+			setVisibility(objectIdStr, false);
+		},
+		
+		getObjectById: function(objectIdStr) {
+			var r = null;
+			if (ua.w3cdom) {
+				var o = getElementById(objectIdStr);
+				if (o) {
+					var n = o.getElementsByTagName(OBJECT)[0];
+					if (!n || (n && typeof o.SetVariable != UNDEF)) {
+							r = o;
+					}
+					else if (typeof n.SetVariable != UNDEF) {
+						r = n;
+					}
+				}
+			}
+			return r;
+		},
+		
+		embedSWF: function(swfUrlStr, replaceElemIdStr, widthStr, heightStr, swfVersionStr, xiSwfUrlStr, flashvarsObj, parObj, attObj) {
+			if (!ua.w3cdom || !swfUrlStr || !replaceElemIdStr || !widthStr || !heightStr || !swfVersionStr) {
+				return;
+			}
+			widthStr += ""; // Auto-convert to string
+			heightStr += "";
+			if (hasPlayerVersion(swfVersionStr)) {
+				setVisibility(replaceElemIdStr, false);
+				var att = {};
+				if (attObj && typeof attObj === OBJECT) {
+					for (var i in attObj) {
+						if (attObj[i] != Object.prototype[i]) { // Filter out prototype additions from other potential libraries
+							att[i] = attObj[i];
+						}
+					}
+				}
+				att.data = swfUrlStr;
+				att.width = widthStr;
+				att.height = heightStr;
+				var par = {}; 
+				if (parObj && typeof parObj === OBJECT) {
+					for (var j in parObj) {
+						if (parObj[j] != Object.prototype[j]) { // Filter out prototype additions from other potential libraries
+							par[j] = parObj[j];
+						}
+					}
+				}
+				if (flashvarsObj && typeof flashvarsObj === OBJECT) {
+					for (var k in flashvarsObj) {
+						if (flashvarsObj[k] != Object.prototype[k]) { // Filter out prototype additions from other potential libraries
+							if (typeof par.flashvars != UNDEF) {
+								par.flashvars += "&" + k + "=" + flashvarsObj[k];
+							}
+							else {
+								par.flashvars = k + "=" + flashvarsObj[k];
+							}
+						}
+					}
+				}
+				addDomLoadEvent(function() {
+					createSWF(att, par, replaceElemIdStr);
+					if (att.id == replaceElemIdStr) {
+						setVisibility(replaceElemIdStr, true);
+					}
+				});
+			}
+			else if (xiSwfUrlStr && !isExpressInstallActive && hasPlayerVersion("6.0.65") && (ua.win || ua.mac)) {
+				isExpressInstallActive = true; // deferred execution
+				setVisibility(replaceElemIdStr, false);
+				addDomLoadEvent(function() {
+					var regObj = {};
+					regObj.id = regObj.altContentId = replaceElemIdStr;
+					regObj.width = widthStr;
+					regObj.height = heightStr;
+					regObj.expressInstall = xiSwfUrlStr;
+					showExpressInstall(regObj);
+				});
+			}
+		},
+		
+		getFlashPlayerVersion: function() {
+			return { major:ua.pv[0], minor:ua.pv[1], release:ua.pv[2] };
+		},
+		
+		hasFlashPlayerVersion: hasPlayerVersion,
+		
+		createSWF: function(attObj, parObj, replaceElemIdStr) {
+			if (ua.w3cdom) {
+				return createSWF(attObj, parObj, replaceElemIdStr);
+			}
+			else {
+				return undefined;
+			}
+		},
+		
+		removeSWF: function(objElemIdStr) {
+			if (ua.w3cdom) {
+				removeSWF(objElemIdStr);
+			}
+		},
+		
+		createCSS: function(sel, decl) {
+			if (ua.w3cdom) {
+				createCSS(sel, decl);
+			}
+		},
+		
+		addDomLoadEvent: addDomLoadEvent,
+		
+		addLoadEvent: addLoadEvent,
+		
+		getQueryParamValue: function(param) {
+			var q = doc.location.search || doc.location.hash;
+			if (param == null) {
+				return urlEncodeIfNecessary(q);
+			}
+			if (q) {
+				var pairs = q.substring(1).split("&");
+				for (var i = 0; i < pairs.length; i++) {
+					if (pairs[i].substring(0, pairs[i].indexOf("=")) == param) {
+						return urlEncodeIfNecessary(pairs[i].substring((pairs[i].indexOf("=") + 1)));
+					}
+				}
+			}
+			return "";
+		},
+		
+		// For internal usage only
+		expressInstallCallback: function() {
+			if (isExpressInstallActive && storedAltContent) {
+				var obj = getElementById(EXPRESS_INSTALL_ID);
+				if (obj) {
+					obj.parentNode.replaceChild(storedAltContent, obj);
+					if (storedAltContentId) {
+						setVisibility(storedAltContentId, true);
+						if (ua.ie && ua.win) {
+							storedAltContent.style.display = "block";
+						}
+					}
+					storedAltContent = null;
+					storedAltContentId = null;
+					isExpressInstallActive = false;
+				}
+			} 
+		},
+		
+		triggerOnDomLoad: callDomLoadFunctions
+	};
+}();
+
+LI.Controls.register("LI.swfobject");
+
+/* js/apps/SignalPromo.js */
+
+var signalTrigger=YDom.get("signal-callout-trigger"),signalCallout;
+if(signalTrigger){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: js/apps/SignalPromo.js")
+}signalCallout=new LI.BalloonCallout(signalTrigger,{id:"signal-callout",width:686,offsetX:224,offsetY:3,orientation:"top-right",type:"instructional-callout",anchor:true,events:["click"],eventsOnInternalElements:{elementClass:"callout-close",elementEvent:"click",elementAction:"close"},relativeToTrigger:true});
+signalCallout.openEvent.subscribe(function(){var g=YDom.getElementsByClassName("instructional-callout-video-wrapper","div","callout-overlay")[0],e="https://www.youtube.com/v/BDhj72OPCZk?rel=1&fs=1",d="instructional-callout-video",c="425",a="264",f={allowScriptAccess:"never",wmode:"opaque"},b;
+if(g){g.innerHTML='<div id="'+d+'"></div>';
+swfobject.embedSWF(e,d,c,a,"9.0.0",false,{},f);
+b=YDom.getFirstChild(g);
+if(!b.firstChild){b.innerHTML='<a rel="nofollow" href="https://www.youtube.com/watch?v=BDhj72OPCZk"><img src="https://img.youtube.com/vi/BDhj72OPCZk/hqdefault.jpg" width="'+c+'" height="'+a+'"></a>'
+}}})
+};
+
+/* js/apps/NusInlineDocView.js */
+
+(function(){var a="data-embedLink",d="iframe",g="inline-view",f="share-object";
+function c(h){var i,j=YEvent.getTarget(h);
+if(YDom.hasClass(j,"inline-share")&&j.hasAttribute(a)){YEvent.preventDefault(h);
+i=j.getAttribute(a);
+b(j,i)
+}else{if(YDom.hasClass(j,"close-document")){YEvent.preventDefault(h);
+e(j)
+}}}function e(j){var h=YDom.getAncestorByClassName(j,f),i=Y$(d,h)[0];
+i.parentNode.removeChild(i);
+YDom.removeClass(h,g)
+}function b(k,j){var i=document.createElement(d),h=YDom.getAncestorByClassName(k,f);
+h.appendChild(i);
+i.src=j;
+YDom.addClass(h,g)
+}YEvent.onDOMReady(function(){YEvent.on("body","click",c)
+})
+})();
+
+/* js/apps/NusInlineVideo.js */
+
+(function(){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: js/apps/NusInlineVideo.js")
+}var i=300,b="DDDDDD",j="E8E8E8",c=/^http\:\/\/www\.youtube\.com\/watch\?/,d=undefined,f=8;
+function g(l){return c.test(l)
+}function k(n){var m=null,l;
+if(c.test(n)){l=/[\?&]v=([^&#]*)/.exec(n);
+if(l){m={url:"https://www.youtube.com/v/"+l[1]+"?autoplay=1&fs=1&rel=0&color1="+b+"&color2="+j,width:"100%",height:i+"px",params:{allowfullscreen:"true",wmode:"transparent",allowScriptAccess:"never"}}
+}}return m
+}function e(p){var m=p.url,n=p.id||"player-"+(new Date().getTime()),o=p.width||"100%",x=p.height||"100%",r=p.params||{},q=p.flashvars||{},w=r["quality"]||"high",u="",t="",l=[],v,s,y=null;
+for(v in r){u+='<param name="'+v+'" value="'+r[v]+'" />';
+t+=" "+v+'="'+r[v]+'" '
+}for(v in q){l[l.length]=v+"="+q[v]
+}if(l.length){s=l.join("&");
+u+='<param name="flashvars" value="'+s+'" />';
+t+=' flashvars="'+s+'" '
+}y='<object id="'+n+'" width="'+o+'" height="'+x+'" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">'+'<param name="movie" value="'+m+'" />'+'<param name="quality" value="'+w+'" />'+u+'<embed name="'+n+'" width="'+o+'" height="'+x+'" src="'+m+'" quality="'+w+'" '+t+' type="application/x-shockwave-flash"></embed>'+"</object>";
+return y
+}function a(){var m=0,l,o,n;
+if(navigator.plugins&&navigator.plugins.length){l=navigator.plugins["Shockwave Flash"];
+if(l&&l.description&&l.description.length){o=/[0-9]+./;
+m=parseInt(l.description.match(o)[0],10)
+}}else{if(YAHOO.env.ua.ie){for(n=(f+10);
+n>=f;
+n--){try{l=new ActiveXObject("ShockwaveFlash.ShockwaveFlash."+n);
+m=n;
+break
+}catch(p){}}}}return(m>=f)
+}function h(s){var q=YEvent.getTarget(s),o=q.getAttribute("data-contentpermalink")||(q.parentNode&&q.parentNode.getAttribute("data-contentpermalink")),l,t,n,p,r,m;
+if(o&&g(o)){if(d===undefined){d=(!YAHOO.env.ua.mobile&&a())
+}if(d){t=YDom.getAncestorByClassName(q,"feed-item");
+p=YDom.getElementsByClassName("video-container","div",t)[0];
+if(!p){return
+}YEvent.preventDefault(s);
+n=YDom.getElementsByClassName("share-object","div",t)[0];
+r=YDom.getElementsByClassName("video-body","div",p)[0];
+r.innerHTML=e(k(o));
+YDom.setStyle(r,"opacity",0);
+r.style.height=(n.offsetHeight-20)+"px";
+n.style.display="none";
+p.style.display="block";
+m=new YAHOO.util.Anim(r,{height:{to:i}},0.2);
+m.onComplete.subscribe(function(){new YAHOO.util.Anim(r,{opacity:{to:1}},0.2).animate()
+});
+m.animate();
+if(WebTracking){WebTracking.trackUserAction("NusInlineVideo-play")
+}}}else{if(YDom.hasClass(q,"video-close")){YEvent.stopEvent(s);
+t=YDom.getAncestorByClassName(q,"feed-item");
+n=YDom.getElementsByClassName("share-object","div",t)[0];
+p=YDom.getElementsByClassName("video-container","div",t)[0];
+r=YDom.getElementsByClassName("video-body","div",p)[0];
+p.style.display="none";
+n.style.display="block";
+r.innerHTML=""
+}}}YEvent.onDOMReady(function(){YEvent.on("body","click",h)
+})
+})();
+
+/* js/util/JSONPRequest.js */
+
+LI.define("JSONPRequest");
+LI.JSONPRequest=function(){this._init.apply(this,arguments)
+};
+LI.JSONPRequest.prototype={_requests:0,_init:function(a,c){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: js/util/JSONPRequest.js")
+}this.url=a;
+c=(YAHOO.lang.isFunction(c))?{on:{success:c}}:c||{};
+var b=c.on||{};
+if(!b.success){b.success=this._defaultCallback(a,c)
+}this._config=YAHOO.lang.merge({context:this,args:[],format:this._format,allowCache:false},c,{on:b})
+},_defaultCallback:function(){},send:function(){var a=this,d=Array.prototype.slice.call(arguments),c=a._config,e=a._proxy||a._uniqid(),b;
+if(c.allowCache){a._proxy=e;
+a._requests++
+}d.unshift(a.url,"LI.JSONP."+e);
+b=c.format.apply(a,d);
+if(!c.on.success){return a
+}function f(g){return(YAHOO.lang.isFunction(g))?function(h){if(!c.allowCache||!--a._requests){delete LI.JSONP[e]
+}g.apply(c.context,[h].concat(c.args))
+}:null
+}LI.JSONP[e]=f(c.on.success);
+YAHOO.util.Get.script(b,{onFailure:f(c.on.failure),onTimeout:f(c.on.timeout),timeout:c.timeout});
+return a
+},_format:function(a,b){return a.replace(/\{callback\}/,b)
+},_uniqid:function(){return("LI"+this._S4()+this._S4()+"_"+this._S4()+"_"+this._S4()+"_"+this._S4()+"_"+this._S4()+this._S4()+this._S4())
+},_S4:function(){return(((1+Math.random())*65536)|0).toString(16).substring(1)
+}};
+if(!LI.JSONP){LI.JSONP={}
+};
+
+/* js/apps/TodayNMP.js */
+
+LI.define("TodayNMP");
+if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: js/apps/TodayNMP.js")
+}(function(){var a={};
+del=function(){LI.fade(Y$("#linkedin-today"));
+LI.Dialog().close();
+LI.injectAlert(LI.i18n.get("TodayDeleteSuccessMsg"),"success");
+window.setTimeout(function(){LI.removeAlert(null,true)
+},2000);
+if(WebTracking){WebTracking.trackUserAction("tod-home-del")
+}};
+LI.Dialog().openEvent.subscribe(function(){YEvent.on(Y$(".dialog-content #linkedin-today-dismiss-dialog .confirm-delete"),"click",function(b){del()
+})
+});
+LI.TodayNMP=a
+}());
+YEvent.on(window,"load",function(){(function(){}())
+});
+
+/* js/apps/Nus.js */
+
+(function(){var y=LI.HistoryManager,w="typeFilter",b="nusSort",O="data-li-filter",J="data-li-nus-sort",V="data-li-update-date",f="data-li-update-id",v="data-li-update-request-id",s="data-li-update-position",ai="data-li-update-sb",U="chron",ac="disabled",i="feed-no-more",u="feed-show-more",c="feed-unfilter",W="hide",Y="selected",I="trigger",d="feed-item",F="filter-",aj="twitter",ao="inside-li",m="feed-content",C="feed-wrapper",aq="today-news-wrapper",E="post-txt-label",al="slick-sharing-cont",B="tabbed-filters-wrapper",j="share-form",p="GhostLabel",T="ALL",q="filterBy",g="lastUpdateDate",A="lastUpdateId",aa="nusRequestId",h="realTimeTest",k="showHidden",N="typeFilter",M="updatePositionOffset",z="updateType",ap="sb",ag="entityIds",an="nusFilterBy-relevanceClick",ae="nusFilterBy-timeClick",af="nusTypeFilter-btnClick",ak="nusTypeFilter-menuClick-",D="nusInfPag-noMore",o="nusRealTime-click",r="nusInfPag-showMoreClick",G="nusTypeFilter-unfilter",ah="COWORKERS",Z="COWORKERS_V2",H="NEWS",X="USCP",l="Relevance",ad="Time",ab=null;
+function e(at){return at===ah||at===Z
+}function L(ax){var av,at=0,ay=ax.parentNode,au=YDom.getChildren(ay),aw=au.length;
+for(av=0;
+av<aw;
+av++){if(au[av]===ax){at=av;
+break
+}}return at
+}function Q(at){return at===T||at===Z
+}function am(au,at){return at.indexOf(au)>=0
+}function t(au){var at=au.split("?")[1],ax={},aw,av;
+at=at.split("&");
+for(av=at.length-1;
+av>=0;
+--av){aw=at[av].split("=");
+ax[aw[0]]=aw[1]
+}return ax
+}function n(){var at=this.infinitePagination,ax=at.getLastResult(),av=this.selectedFilter,ay={},aw,au=false;
+if(av&&av!==T){if(this.coworkersV2Enabled&&av===Z&&this.isVerified&&parseInt(this.anetId)>0){ay[ag]=this.anetId
+}ay[N]=av
+}else{ay[N]=""
+}ay[k]=this.showHidden;
+ay[aa]=ax.getAttribute(v);
+ay[M]=ax.getAttribute(s);
+if(this.relevanceEnabled){if(this.sort==l){ay[q]=this.sort;
+if(av&&av!==T){ay[z]=av
+}}else{aw=t(at.getUrl());
+if(aw[q]){au=true;
+delete aw[q]
+}if(aw[z]){au=true;
+delete aw[z]
+}if(au){at.setUrl(this.feedItemsUrl);
+at.addParams(aw)
+}}}at.addParams(ay)
+}function a(){if(!this.refreshAdsEnabled){return
+}var at={success:function(az){var aw,aA,ay,ax,au,av;
+ay=LI.domify(az.responseText);
+aw=YDom.getChildren(ay);
+au=aw.length;
+if(au==3){for(av=0;
+av<au;
+++av){ax=YDom.get("ad-slot-"+(av+1));
+aA=aw[av];
+if(ax&&aA){}}}},failure:function(au){},scope:this};
+YAHOO.util.Connect.asyncRequest("GET",this.adsUrl,at)
+}function x(){WebTracking.trackUserAction(D)
+}function ar(){WebTracking.trackUserAction(o);
+if(this.relevanceEnabled&&this.sort===l){if(!this.historyOn||y.failed){this.toggleSort(ad)
+}else{y.navigate(b,ad)
+}}}function S(aw,ax){var ay=ax[0],av=ay.length,at=(av<10),au,az;
+for(au=0;
+au<av;
+++au){az=ay[au];
+LI.showAllDeferredImg(az);
+if(at){LI.highlight(az)
+}}a.call(this)
+}function P(ax,ay){var aA,av,au,az,at,aw=ay[0];
+if(this.relevanceEnabled&&this.sort=="Relevance"&&aw){at=YDom.get("feed-sort-time-arrow");
+YDom.addClass(at,"show")
+}}function K(){WebTracking.trackUserAction(r)
+}function R(ax,av){if(LI.__HPA===true){console.info("HOMEPAGE_PERFORMANCE_ANALYSIS :: js/apps/Nus.js")
+}var at,au,aw,ay;
+this.el=ax;
+aw=av.selectedFilter||T;
+this.selectedFilter=aw;
+this.showHidden=false;
+this.historyOn=true;
+this.todayInStream=false;
+this.sort=ad;
+this.swapMenu=false;
+this.fetchSignalMenu=true;
+this.signalFilterMenu=[];
+this.adsUrl=av.adsUrl||"";
+this.defaultSinceDate=av.defaultSinceDate||null;
+this.defaultToRelevance=av.defaultToRelevance||false;
+this.refreshAdsEnabled=av.refreshAdsEnabled||false;
+this.todayFeedEnabled=av.todayFeedEnabled||false;
+this.todayInsideFeedEnabled=av.todayInsideFeedEnabled||false;
+this.relevanceEnabled=av.relevanceEnabled||false;
+this.signalMenuUrl=av.signalMenuUrl||"";
+this.feedItemsUrl=av.feedItemsUrl||"";
+this.realTimeResultsUrl=av.realTimeResultsUrl||"";
+this.realTimePollUrl=av.realTimePollUrl||"";
+this.realTimeResultsOn=av.realTimeResultsOn||false;
+this.progressiveRealTimePoll=av.progressiveRealTimePoll||false;
+this.realTimeTest=av.realTimeTest||null;
+this.coworkersV2Enabled=av.coworkersV2Enabled||false;
+this.isVerified=av.isVerified||false;
+this.anetId=av.anetId||0;
+this.visibilityValue="EVERYONE";
+this.isCoworkerFilterSelected=false;
+this.feedWrapperEl=YDom.get(C);
+this.feedListEl=YDom.getElementsByClassName(U,"ul",this.feedWrapperEl)[0];
+this.showMoreBtn=YDom.getElementsByClassName(u,"a",this.feedWrapperEl)[0];
+this.req=null;
+this.todayNewsContainer=null;
+this.newsAsFeedTest=av.newsAsFeedTest||null;
+this.USCPFeedTest=av.USCPFeedTest||null;
+this.defaultGhostLabel="";
+this.ghostLabelForCoworkers="";
+this.isShareBoxHidden=false,this.tabbedFiltersWrapper=null,this.activeIndex=0;
+if(!this.feedListEl){return
+}if(this.todayInsideFeedEnabled){this.todayNewsContainer=YDom.get(aq);
+this.manageTodayModule()
+}if(this.historyOn){y.register({name:w,scope:this,onHistoryStateChange:this._onTypeFilterHistoryStateChange,onHistoryManagerReady:this._onTypeFilterHistoryManagerReady,defaultState:aw});
+y.register({name:b,scope:this,onHistoryStateChange:this._onTypeSortHistoryStateChange,onHistoryManagerReady:this._onTypeSortHistoryManagerReady,defaultState:this.defaultToRelevance?l:ad})
+}au=[{urlParam:ap,attribute:ai},{urlParam:g,attribute:V},{urlParam:A,attribute:f,notRequired:true}];
+at=new LI.InfinitePagination(this.feedListEl,{url:this.feedItemsUrl,attributes:au,i18n:{noMoreResults:LI.i18n.get("Nus-no-more-updates")}});
+at.beforeFetchEvent.subscribe(n,null,this);
+at.fetchEvent.subscribe(a,null,this);
+at.triggerClickEvent.subscribe(K,null,this);
+at.noMoreResultsEvent.subscribe(x,null,this);
+this.infinitePagination=at;
+if(this.realTimeResultsOn){switch(this.realTimeTest){case"B":case"C":ay=20000;
+break;
+case"D":ay=60000;
+break;
+case"E":ay=120000;
+break;
+case"F":default:ay=300000;
+break
+}this.realTimeInterval=function(az){return 1000*Math.pow(1.3,az)+ay*(az+1)
+}
+}this.initRealTimeResults();
+YEvent.on(ax,"click",this._onClick,this,true);
+if(this.relevanceEnabled&&this.defaultToRelevance){this.toggleSort("Relevance")
+}if(this.coworkersV2Enabled&&this.isVerified&&parseInt(this.anetId)>0){LI.StyledDropdown.itemSelectEvent.subscribe(this._setVisibilityToCoworkers,this,true)
+}}R.prototype={_setVisibilityToCoworkers:function(aw,av,az){var au=av[0],ay=av[1],at=this,ax=Z;
+if(au==="share-visibility-selector"&&(at.selectedFilter===Z)&&(ay.value!==at.anetId)){setTimeout(function(){at.manageShareVisibilityDropdown(ax)
+},10)
+}},_onClick:function(aw){var av=YEvent.getTarget(aw),au=av.getAttribute(O);
+if(au!==null){YEvent.preventDefault(aw);
+if(YDom.hasClass(av,"btn")){WebTracking.trackUserAction(af)
+}else{WebTracking.trackUserAction(ak+au)
+}if(!this.historyOn||y.failed){this.setTypeFilter(au)
+}else{y.navigate(w,au)
+}}else{if(YDom.hasClass(av,c)){YEvent.preventDefault(aw);
+WebTracking.trackUserAction(G);
+if(!this.historyOn||y.failed){this.setTypeFilter(T)
+}else{y.navigate(w,T)
+}}else{if(YDom.hasClass(av,I)||YDom.hasClass(av.parentNode,I)){YEvent.preventDefault(aw)
+}}}if(this.relevanceEnabled){var at=av.getAttribute(J);
+if(at!==null){YEvent.preventDefault(aw);
+if(at==l){WebTracking.trackUserAction(an)
+}else{WebTracking.trackUserAction(ae)
+}if(!this.historyOn||y.failed){this.toggleSort(at)
+}else{y.navigate(b,at)
+}}}},_onTypeFilterHistoryManagerReady:function(au,at,aw){var ax=aw.name,av=y.getCurrentState(ax);
+if(ax===w){this.setTypeFilter(av)
+}},_onTypeFilterHistoryStateChange:function(at){this.setTypeFilter(at)
+},_onTypeSortHistoryStateChange:function(at){this.toggleSort(at)
+},_onTypeSortHistoryManagerReady:function(av,au,ax){var ay=ax.name,aw=y.getCurrentState(ay),at;
+if(ay===b){at=YAHOO.util.History.getBookmarkedState(b);
+if(at!==null){this.toggleSort(aw)
+}}},_onTypeSortHistoryStateChange:function(at){this.toggleSort(at)
+},_onTypeSortHistoryManagerReady:function(av,au,ax){var ay=ax.name,aw=y.getCurrentState(ay),at;
+if(ay===b){at=YAHOO.util.History.getBookmarkedState(b);
+if(at!==null){this.toggleSort(aw)
+}}},isRealTimeDisabled:function(){return(this.selectedFilter&&this.selectedFilter===ah)||(this.selectedFilter&&this.selectedFilter===Z)||(this.sort=="Relevance"&&this.selectedFilter!==T)
+},getTypeFilter:function(){return this.selectedFilter
+},hideProcessingOverlay:function(){var at=this.mask;
+if(at){at.hide()
+}},initRealTimeResults:function(){var ax=this.selectedFilter,av=this.feedItemsUrl,au=this.feedListEl,at=this.coworkersV2Enabled,aA=this.isVerified,ay=this.anetId,aw,az;
+if(this.realTimeResults){this.realTimeResults.destroy()
+}if(LI.NusInjection&&ax===Z){LI.NusInjection.injectFeedItem=function(aF){var aD=au,aC=YDom.getFirstChild(aD),aE,aB;
+aE=LI.domify(aF);
+aB=aE.cloneNode(false);
+if(aC){aD.insertBefore(aB,aC)
+}else{aD.appendChild(aB)
+}aB.innerHTML=aE.innerHTML;
+LI.Controls.parseFragment(aB);
+LI.highlight(aB);
+LI.showAllDeferredImg(aB)
+}
+}if(this.isRealTimeDisabled()){return
+}if(this.realTimeResultsOn||ax===Z){aw=new LI.RealTimeResults(this.feedListEl,{method:"GET",interval:this.realTimeInterval,url:this.realTimePollUrl,fetchUrl:this.realTimeResultsUrl,dateAttribute:V,dateUrlParam:"sinceDate",defaultDate:this.defaultSinceDate,disableFetch:this.sort==l,progressivePoll:this.progressiveRealTimePoll,i18n:{newResult:LI.i18n.get("Nus-new-result"),newResults:LI.i18n.get("Nus-new-results")}});
+az={};
+if(ax&&ax!==T){az[N]=ax
+}if(this.coworkersV2Enabled&&ax===Z&&this.isVerified&&parseInt(this.anetId)>0){az[ag]=this.anetId
+}az[k]=this.showHidden;
+if(this.realTimeTest){az[h]=this.realTimeTest
+}if(aw){aw.addParams(az)
+}aw.resultsInsertedEvent.subscribe(S,null,this);
+aw.notificationClickEvent.subscribe(ar,null,this);
+aw.pollSuccessEvent.subscribe(P,null,this);
+if(LI.NusInjection){LI.NusInjection.injectFeedItem=function(aG){var aF=aw.pollSuccessEvent,aE=aw.getUrl(),aC=aw.getFetchUrl(),aB,aH={};
+if(ax&&ax!==T){aH[N]=ax;
+if(at&&ax===Z&&aA&&parseInt(ay)>0){aH[ag]=ay
+}aB=LI.addParams(aC,aH)
+}function aD(){aF.unsubscribe(aD);
+aw.insertPendingResults();
+aw.setFetchUrl(aC);
+aw.setUrl(aE)
+}aF.subscribe(aD);
+aw.setFetchUrl("");
+aw.setUrl(aC);
+if(aB){aw.setUrl(aB)
+}aw.requestNow()
+}
+}this.realTimeResults=aw
+}},replaceList:function(){if(this.req){YAHOO.util.Connect.abort(this.req);
+this.req=null
+}if(this.todayFeedEnabled){return
+}function aC(aH){aH.innerHTML='<li class="'+i+'">'+LI.i18n.get("Nus-no-updates")+' <button class="btn-link '+c+'">'+LI.i18n.get("Nus-click-to-see-all")+"</button></li>"
+}var aA=this.feedListEl,aG=this.selectedFilter,ay=this.sort,aE={success:function(aI){var aH=aI.responseText;
+this.req=null;
+if(aH){if(LI.isFullPage(aH)){aC(aA)
+}else{aA.innerHTML=aH;
+LI.Controls.parseFragment(aA);
+LI.showAllDeferredImg(aA);
+if(this.showMoreBtn){YDom.removeClass(this.showMoreBtn,ac)
+}}}else{if(aG&&aG!==T){aC(aA);
+if(this.showMoreBtn){YDom.addClass(this.showMoreBtn,ac)
+}}}if(this.selectedFilter===T&&this.todayInsideFeedEnabled){this.manageTodayModule()
+}if(this.coworkersV2Enabled){this.toggleShareBoxVisibility(this.selectedFilter)
+}this.hideProcessingOverlay();
+this.infinitePagination.hideNoMoreResultsEl();
+if(LI.NusInjection){LI.NusInjection.removeInjectionContainer()
+}if(this.realTimeResults){this.realTimeResults.start()
+}if(this.realTimeResults&&this.isRealTimeDisabled()){this.realTimeResults.destroy()
+}a.call(this);
+if(this.relevanceEnabled){this.swapFilterMenu()
+}},failure:function(aH){aC(aA)
+},scope:this},aw={},au,az,ax,aD=null,aB=null,at,av,aF;
+if(aG&&aG!==T){if(this.coworkersV2Enabled&&aG===Z&&this.isVerified&&parseInt(this.anetId)>0){aw[ag]=this.anetId
+}aw[N]=aG
+}aw[k]=this.showHidden;
+if(this.relevanceEnabled&&ay==l){at=YDom.get("nus-filters").getElementsByTagName("a");
+ax=at.length-1;
+for(az=0;
+az<ax;
+az++){av=at[az];
+aF=av.getAttribute(O);
+if(aF==ah){aB=av.getAttribute("title");
+aD=av.innerHTML
+}}if(aB!==null){aw["companyTitle"]=aB
+}if(aD!==null){aw["companyText"]=aD
+}if(aD!==null){aw["companyText"]=aD
+}if(aw[N]&&!e(aG)){delete aw[N]
+}aw[q]=ay;
+if(aG&&aG!==T&&!e(aG)){aw[z]=aG
+}}au=LI.addParams(this.feedItemsUrl,aw);
+this.initRealTimeResults();
+if(this.newsAsFeedTest&&aG.indexOf(H)>-1){this.toggleShareBoxVisibility(aG)
+}else{if(this.USCPFeedTest&&aG.indexOf(X)>-1){this.toggleShareBoxVisibility(aG)
+}else{this.showProcessingOverlay();
+this.req=YAHOO.util.Connect.asyncRequest("GET",au,aE)
+}}},swapFilterMenu:function(){if(this.swapMenu){var au=YDom.get("nus-filters"),at,ax=YDom.get("nus-relevance-filters"),aw,av;
+if(ax&&au){if(YDom.hasClass(ax,W)){aw=ax.parentNode;
+aw.parentNode.removeChild(aw);
+av=(this.coworkersV2Enabled)?"tabbed-filters":"feed-showing-B";
+at=YDom.getElementsByClassName(av,"div","feed-nhome");
+if(at.length>0){at[0].appendChild(ax)
+}}if(this.sort==l){YDom.addClass(au,W);
+YDom.removeClass(ax,W)
+}else{YDom.removeClass(au,W);
+ax.parentNode.removeChild(ax)
+}}this.swapMenu=false;
+this.setTypeFilter(this.selectedFilter,false)
+}},extractFilters:function(ay){var au,aw,ax=[],av,at;
+at=ay.length-1;
+for(av=at;
+av>=0;
+--av){au=ay[av];
+aw=au.getAttribute(O);
+if(aw!=T){ax.push(aw)
+}}this.signalFilterMenu=ax
+},getSignalMenu:function(au){var at=this.signalMenuUrl;
+callback={success:function(ax){var aw=LI.domify(ax.responseText),av;
+av=aw.getElementsByTagName("a");
+this.extractFilters(av);
+this.toggleSort(au)
+},failure:function(av){showNoUpdatesMsg(feedListEl)
+},scope:this},params=[];
+params[k]=this.showHidden;
+at=LI.addParams(at,params);
+YAHOO.util.Connect.asyncRequest("GET",at,callback)
+},toggleSort:function(aw){var av=YDom.get("feed-sort-relevance"),at,au=YDom.get("feed-sort-time");
+if(this.sort===aw){return
+}this.swapMenu=true;
+if(aw==ad){YDom.removeClass(av,Y);
+YDom.addClass(au,Y);
+at=YDom.get("feed-sort-time-arrow");
+YDom.removeClass(at,"show")
+}else{YDom.removeClass(au,Y);
+YDom.addClass(av,Y)
+}if(!e(this.selectedFilter)){if(this.selectedFilter.toLowerCase()=="share"||this.selectedFilter.toLowerCase()=="group"||this.selectedFilter.toLowerCase()=="profile"||this.selectedFilter.toLowerCase()=="answer"||this.selectedFilter.toLowerCase()=="qa"){if(this.selectedFilter===this.selectedFilter.toUpperCase()){if(this.fetchSignalMenu){this.getSignalMenu(aw);
+this.fetchSignalMenu=false;
+return
+}if(this.selectedFilter=="QA"){this.selectedFilter="Answer"
+}else{this.selectedFilter=this.selectedFilter.charAt(0).toUpperCase()+this.selectedFilter.substr(1).toLowerCase()
+}if(!am(this.selectedFilter,this.signalFilterMenu)){this.selectedFilter=T
+}}else{if(this.selectedFilter=="Answer"){this.selectedFilter="QA"
+}else{this.selectedFilter=this.selectedFilter.toUpperCase()
+}}}else{this.selectedFilter=T
+}}this.sort=aw;
+this.replaceList()
+},setTypeFilter:function(av,au){var ax=null,aF,aw,at,aB,aG,aC,aE,aD,az,aA,ay;
+if(typeof(au)==="undefined"){au=true
+}if(this.selectedFilter===av&&au){return
+}this.selectedFilter=av;
+if(this.coworkersV2Enabled&&!this.isVerified){return
+}aw=YDom.getElementsByClassName("feed-filters","ul",this.el)[0];
+if(this.relevanceEnabled&&this.sort==l&&!this.swapMenu){aw=YDom.getElementsByClassName("feed-filters","ul",this.el)[1];
+if(typeof(aw)==="undefined"){this.swapMenu=true
+}}if(aw){at=aw.getElementsByTagName("a");
+for(aA=at.length-1;
+aA>=0;
+--aA){aB=at[aA];
+aG=aB.getAttribute(O);
+if(aG){aC=aB.parentNode;
+if(aG===av){YDom.addClass(aC,Y);
+aE=aC;
+aD=aC.parentNode;
+if(aD!==aw){az=YDom.getChildren(aw);
+ax=az[az.length-2]
+}}else{YDom.removeClass(aC,Y)
+}}}}if(ax){aw.replaceChild(aE,ax);
+aD.insertBefore(ax,YDom.getFirstChild(aD))
+}aF=YDom.getElementsByClassName("droplist","div",aw)[0];
+if(aF){YDom.removeClass(aF,"open")
+}if(au){this.replaceList()
+}if(this.coworkersV2Enabled&&this.isVerified&&parseInt(this.anetId)>0){if(!YAHOO.lang.isObject(this.tabbedFiltersWrapper)){this.tabbedFiltersWrapper=YDom.get(B)
+}ay=L(aE);
+YDom.replaceClass(this.tabbedFiltersWrapper,F+this.activeIndex,F+ay);
+this.activeIndex=ay;
+this.manageShareVisibilityDropdown(av)
+}},showProcessingOverlay:function(){var at=this.mask;
+if(!at){at=new LI.ProcessingOverlay(this.el);
+this.mask=at
+}at.show()
+},manageShareVisibilityDropdown:function(ax){var av,aw,at,au;
+if(this.isCoworkerFilterSelected||ax===Z){if(!ab){ab=YDom.get(m)
+}aw=YDom.getElementsByClassName("menu-basic","div","share-settings")[0];
+av=LI.Controls.getControl(aw,"StyledDropdown");
+at=LI.Controls.getControl(E,p);
+au=YDom.getElementsByClassName(aj,"div",j)[0];
+if(YAHOO.lang.isObject(av)&&YAHOO.lang.isObject(at)){if(this.defaultGhostLabel===""||this.ghostLabelForCoworkers===""){this.defaultGhostLabel=at.getLabel();
+this.ghostLabelForCoworkers=LI.i18n.get("GhostLabelForCoworkersPost")
+}if(ax===Z){YDom.addClass(ab,ao);
+av.setSelectedValue(this.anetId);
+av.disableDropdown();
+at.setLabel(this.ghostLabelForCoworkers);
+at.updateLabel();
+if(YAHOO.lang.isObject(au)){LI.hide(au)
+}this.isCoworkerFilterSelected=true
+}else{YDom.removeClass(ab,ao);
+av.setSelectedValue(this.visibilityValue);
+av.enableDropdown();
+at.setLabel(this.defaultGhostLabel);
+at.updateLabel();
+if(YAHOO.lang.isObject(au)){LI.show(au)
+}this.isCoworkerFilterSelected=false
+}}}},manageTodayModule:function(){var aw,av,au=this.todayNewsContainer,at=!YDom.inDocument(au);
+if(YAHOO.lang.isNull(au)){return
+}aw=YDom.getElementsByClassName(d,"li",this.feedListEl)[0];
+if(aw.id===aq){aw=YDom.getNextSibling(aw)
+}if(YAHOO.lang.isNull(aw)&&at){this.feedListEl.appendChild(au)
+}else{av=parseInt(aw.getAttribute(V),10);
+au.setAttribute(V,av);
+if(at){YDom.insertBefore(au,aw)
+}}},toggleShareBoxVisibility:function(aw){var av=YDom.get(al),au=Q(aw),at=this.isShareBoxHidden;
+if(!YAHOO.lang.isObject(av)){return
+}if(at&&au){LI.show(av);
+this.isShareBoxHidden=false
+}else{if(!at&&!au){LI.hide(av);
+this.isShareBoxHidden=true
+}}}};
+LI.Nus=R
+})();
+
+/* js/apps/NusSignalHits.js */
+
+(function(){function a(c,b){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: js/apps/NusSignalHits.js")
+}YEvent.on(c,"mouseover",function(f){var i=YEvent.getTarget(f),d,h,g,e;
+if(!YDom.hasClass(i,"signal-hit")){i=YDom.getAncestorByClassName(i,"signal-hit")
+}if(i){d=Y$(".signal-hit-content",i,true);
+if(d){h=d.innerHTML
+}g=YDom.getElementsByClassName("signal-share-comment","div",c)[0];
+if(g){g.innerHTML=h;
+e=YDom.getElementsByClassName("signal-share-comment-container","div",c)[0];
+if(e){arrowBorderEl=YDom.getChildrenBy(e,function(j){return YDom.hasClass(j,"arrow-border")
+})[0];
+YDom.setX(arrowBorderEl,YDom.getX(i)+15)
+}}}})
+}LI.NusSignalHits=a
+})();
+
+/* js/apps/NusTodayTracking.js */
+
+(function(){function a(c,b){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: js/apps/NusTodayTracking.js")
+}if(!WebTracking){return
+}var d="data-li-trk-code";
+YEvent.on(c,"click",function(f){var g=YEvent.getTarget(f),e;
+if(g&&(g.tagName.toLowerCase()==="a"||g.tagName.toLowerCase()==="img"||g.tagName.toLowerCase()==="cite"||g.tagName.toLowerCase()==="span")){if(LI.hasDataAttribute(g,d)){e=LI.getDataAttribute(g,d);
+WebTracking.trackUserAction(e)
+}}})
+}LI.NusTodayTracking=a
+})();
+
+/* js/apps/InviteDialog.js */
+
+LI.define("InviteDialog");
+LI.InviteDialog=function(b,c){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: js/apps/InviteDialog.js")
+}var j=this;
+var d=(b.nodeName!="A");
+var f,h,i;
+c=c||{};
+c={successRedirectURL:(c.successRedirectURL)?c.successRedirectURL:null,showGlobalSuccess:!(c.showGlobalSuccess===false)};
+this.onInviteSuccess=new YAHOO.util.CustomEvent("inviteSuccess");
+function g(k){j.onInviteSuccess.fire(k);
+if(c.successRedirectURL){document.location.href=c.successRedirectURL
+}if(c.showGlobalSuccess){var l=LI.i18n.get("search-consumer-vcard-connect-success");
+l=l.replace(/__(.*?)__/g,"{$1}");
+l=YAHOO.lang.substitute(l,k);
+LI.injectAlert(l,"success")
+}f.close()
+}function a(k){YDom.removeClass(h,"dialog-body-loading");
+if(i){YDom.removeClass(i,"invite-dialog-loading")
+}f.swap({content:{node:k}});
+i=k;
+LI.Controls.parseFragment(i);
+e()
+}function e(){if(!h){return
+}var l=h.getElementsByTagName("form");
+for(var m=0,k=l.length;
+m<k;
+m++){YEvent.on(l[m],"submit",function(p){var n=this;
+YEvent.stopEvent(p);
+function o(){n.submit()
+}YDom.addClass(i,"invite-dialog-loading");
+YAHOO.util.Connect.setForm(n,false);
+LI.asyncRequest("POST",n.action,{success:function(r){var q=r.responseText;
+if(typeof q=="object"&&q.status&&q.status=="success"&&q.user){g(q.user)
+}else{}},custom:{exception:function(s){var r=document.createElement("div");
+r.innerHTML=s.responseText;
+var q=Y$(".invite-content",r,true);
+if(q){a(q)
+}else{return true
+}return false
+}},failure:function(q){o()
+}})
+})
+}}YEvent.on(b,"click",function(m){var l=YEvent.getTarget(m);
+if(m.metaKey){return true
+}if(l.nodeName!="A"){l=YDom.getAncestorByTagName(l,"a")
+}if(l&&(!d||YDom.hasClass(l,"invite-dialog"))){YEvent.stopEvent(m);
+var n=l.getAttribute("title");
+if(!n||n==""){n=LI.i18n.get("InviteDialog-default-title")
+}f=new LI.Dialog();
+f.open({content:{title:n,html:""},name:"one-click-invite-dialog",type:"task-modeless",className:"invite-dialog",width:"410"});
+h=Y$("#dialog-wrapper .dialog-body",document,true);
+if(h){YDom.addClass(h,"dialog-body-loading")
+}LI.removeAlert(null,true);
+function k(){document.location.href=l.href
+}YAHOO.util.Connect.initHeader("X-IsDialog","1");
+YAHOO.util.Connect.asyncRequest("GET",l.href,{success:function(r){var q=document.createElement("div");
+q.innerHTML=r.responseText;
+var p=Y$(".invite-content",q,true);
+if(p){a(p)
+}else{k()
+}},failure:function(){k()
+}})
+}})
+};
+
+/* js/apps/SignalInviteDialog.js */
+
+(function(){function a(b){if(LI.__HPA===true){console.info("HOMPAGE_PERFORMANCE_ANALYSIS :: js/apps/SignalInviteDialog.js")
+}if(LI.InviteDialog){var c=new LI.InviteDialog(b,{showGlobalSuccess:true});
+c.onInviteSuccess.subscribe(function(j,g,l){var f=g[0],e,k,h,d;
+e=YDom.getElementsByClassName("connect-link-"+f.id,"li",b);
+d=e.length;
+for(h=0;
+h<d;
+h++){k=e[h];
+k.parentNode.removeChild(k)
+}})
+}}LI.SignalInviteDialog=a
+})();

@@ -1,0 +1,490 @@
+
+<!-- saved from url=(1217)http://cdn.lmodules.com/opensocial/ifr?url=http%3A%2F%2Fliss%2Eslideshare%2Ecom%2Fslideshare%2Exml&mid=16585750&appId=1200&view=home&lang=en&ownerinapp=1289809&country=US&viewerAccess=true&baseLeoNonSecureURL=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2F&ownerProfileUrl=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fprofile%2Fview%3Fid%3D1&st=linkedin%3A19Y2pxqhUeGCZDrJWKkxyA9Md4OmhZumwcqKDKqKtnmPN9V_hiMxCjFjuQW9K0Ek5IkWBptQswGYbR3ScWfa7ICcBcadaHbC1soqzVSXbIW-WxWpxo3V1qX9drAqzaZ8JfrpzCQTy1tfpFN_arPOQYGy-CpDEb5lU1B4XWionjgyau9Mk5hZ4Br5bhiEhInqx11LUfKZnm7ExGCgEoKoXWxl4wojUkoyxmWyGm677Xp8_EBjbfYvqaCK14IPhw_ucr7Wzsy_6zvWWHAXOnLNfGgCLA1Hfz4rXOoXWUYaEYx5XIyBmLoOcZx44Q_WmhehIr_5Vd&container=default&libs=dynamic-height%3Asettitle%3Aviews%3Aopensocial-0%2E9&parent=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2F&urlToCanvasView=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fosview%2Fcanvas%3F_ch_page_id%3D1%26_ch_panel_id%3D1%26_ch_app_id%3D16585750%26_applicationId%3D1200&signedUrlToCanvasView=http%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fosview%2Fcanvas%3F_ch_page_id%3D1%26_ch_panel_id%3D1%26_ch_app_id%3D16585750%26_applicationId%3D1200%26_ownerId%3D1289809%26osUrlHash%3DJPCX&v=build-2000_1_19859-prod#rpctoken=792963609&rpcname=panel-01-slot-16585750-remote -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">body,td,div,span,p{font-family:arial,sans-serif;}a {color:#0000cc;}a:visited {color:#551a8b;}a:active {color:#ff0000;}body{margin: 0px;padding: 0px;background-color:white;}</style><script src="dynamic-height-opensocial-0.9-settitle-views.js"></script><script>var opensocial=opensocial||{};
+opensocial.data=opensocial.data||{};
+opensocial.data.DataContext=function(){var E=[];
+var B={};
+var A=function(I,K,J){if(typeof K==="undefined"||K===null){return 
+}B[I]=K;
+if(!(J===false)){C(I)
+}};
+var G=function(K,O,M,N){var I=!!M;
+var L={keys:{},callback:O,oneTime:I};
+if(typeof K==="string"){L.keys[K]=true;
+if(K!="*"){K=[K]
+}}else{for(var J=0;
+J<K.length;
+J++){L.keys[K[J]]=true
+}}E.push(L);
+if(N&&K!=="*"&&H(L.keys)){window.setTimeout(function(){F(L,K)
+},1)
+}};
+var H=function(J){if(J["*"]){return true
+}for(var I in J){if(typeof B[I]==="undefined"){return false
+}}return true
+};
+var F=function(J,I){if(H(J.keys)){J.callback(I);
+if(J.oneTime){D(J)
+}}};
+var D=function(J){for(var I=0;
+I<E.length;
+++I){if(E[I]==J){E.splice(I,1);
+return 
+}}};
+var C=function(L){if(typeof (L)=="string"){L=[L]
+}for(var K=0;
+K<E.length;
+++K){var M=E[K];
+for(var I=0;
+I<L.length;
+I++){var J=L[I];
+if(M.keys[J]||M.keys["*"]){F(M,L);
+break
+}}}};
+return{getData:function(){var J={};
+for(var I in B){if(B.hasOwnProperty(I)){J[I]=B[I]
+}}return J
+},registerListener:function(I,J){G(I,J,false,true)
+},registerOneTimeListener_:function(I,J){G(I,J,true,true)
+},registerDeferredListener_:function(I,J){G(I,J,false,false)
+},getDataSet:function(I){return B[I]
+},putDataSet:function(I,J){A(I,J,true)
+},putDataSets:function(I){var K=[];
+for(var J in I){K.push(J);
+A(J,I[J],false)
+}C(K)
+}}
+}();
+opensocial.data.getDataContext=function(){return opensocial.data.DataContext
+};;
+opensocial.DataRequest.prototype.newUpdatePersonAppDataRequest_09=opensocial.DataRequest.prototype.newUpdatePersonAppDataRequest;
+opensocial.DataRequest.prototype.newUpdatePersonAppDataRequest=function(C,A,B){if(C!==opensocial.IdSpec.PersonId.VIEWER){throw Error("Cannot update app data for person "+C)
+}return this.newUpdatePersonAppDataRequest_09(A,B)
+};
+opensocial.DataRequest.prototype.newRemovePersonAppDataRequest_09=opensocial.DataRequest.prototype.newRemovePersonAppDataRequest;
+opensocial.DataRequest.prototype.newRemovePersonAppDataRequest=function(B,A){if(B!==opensocial.IdSpec.PersonId.VIEWER){throw Error("Cannot remove app data for person "+B)
+}return this.newRemovePersonAppDataRequest_09(A)
+};;
+var opensocial=opensocial||{};
+opensocial.xmlutil=opensocial.xmlutil||{};
+opensocial.xmlutil.parser_=null;
+opensocial.xmlutil.parseXML=function(B){if(typeof (DOMParser)!="undefined"){opensocial.xmlutil.parser_=opensocial.xmlutil.parser_||new DOMParser();
+var A=opensocial.xmlutil.parser_.parseFromString(B,"text/xml");
+if(A.firstChild&&A.firstChild.tagName=="parsererror"){throw Error(A.firstChild.firstChild.nodeValue)
+}return A
+}else{if(typeof (ActiveXObject)!="undefined"){var A=new ActiveXObject("MSXML2.DomDocument");
+A.validateOnParse=false;
+A.loadXML(B);
+if(A.parseError&&A.parseError.errorCode){throw Error(A.parseError.reason)
+}return A
+}}throw Error("No XML parser found in this browser.")
+};
+opensocial.xmlutil.NSMAP={os:"http://opensocial.org/"};
+opensocial.xmlutil.getRequiredNamespaces=function(B,A){var D=A?opensocial.xmlutil.getNamespaceDeclarations_(A):{};
+for(var C in opensocial.xmlutil.NSMAP){if(opensocial.xmlutil.NSMAP.hasOwnProperty(C)&&!D.hasOwnProperty(C)&&B.indexOf("<"+C+":")>=0&&B.indexOf("xmlns:"+C+":")<0){D[C]=opensocial.xmlutil.NSMAP[C]
+}}return opensocial.xmlutil.serializeNamespaces_(D)
+};
+opensocial.xmlutil.serializeNamespaces_=function(C){var A=[];
+for(var B in C){if(C.hasOwnProperty(B)){A.push(" xmlns:",B,'="',C[B],'"')
+}}return A.join("")
+};
+opensocial.xmlutil.getNamespaceDeclarations_=function(C){var D={};
+for(var B=0;
+B<C.attributes.length;
+B++){var A=C.attributes[B].nodeName;
+if(A.substring(0,6)!="xmlns:"){continue
+}D[A.substring(6,A.length)]=C.getAttribute(A)
+}return D
+};
+opensocial.xmlutil.ENTITIES='<!ENTITY nbsp "&#160;">';
+opensocial.xmlutil.prepareXML=function(B,A){var C=opensocial.xmlutil.getRequiredNamespaces(B,A);
+return"<!DOCTYPE root ["+opensocial.xmlutil.ENTITIES+']><root xml:space="preserve"'+C+">"+B+"</root>"
+};;
+opensocial.data.ATTR_KEY="key";
+opensocial.data.SCRIPT_TYPE="text/os-data";
+opensocial.data.NSMAP={};
+opensocial.data.VAR_REGEX=/^([\w\W]*?)(\$\{[^\}]*\})([\w\W]*)$/;
+opensocial.data.RequestDescriptor=function(C){this.tagName=C.tagName;
+this.tagParts=this.tagName.split(":");
+this.attributes={};
+this.dependencies=false;
+for(var B=0;
+B<C.attributes.length;
+++B){var A=C.attributes[B].nodeName;
+if(A){var D=C.getAttribute(A);
+if(A&&D){this.attributes[A]=D;
+this.computeNeededKeys_(D)
+}}}this.key=this.attributes[opensocial.data.ATTR_KEY];
+this.register_()
+};
+opensocial.data.RequestDescriptor.prototype.hasAttribute=function(A){return !!this.attributes[A]
+};
+opensocial.data.RequestDescriptor.prototype.getAttribute=function(B){var A=this.attributes[B];
+if(!A){return A
+}var C=opensocial.data.parseExpression_(A);
+if(!C){return A
+}return opensocial.data.DataContext.evalExpression(C)
+};
+opensocial.data.parseExpression_=function(C){if(!C.length){return null
+}var A=opensocial.data.VAR_REGEX;
+var F=C;
+var E=[];
+var B=F.match(A);
+if(!B){return null
+}while(B){if(B[1].length>0){E.push(opensocial.data.transformLiteral_(B[1]))
+}var D=B[2].substring(2,B[2].length-1);
+E.push("("+D+")");
+F=B[3];
+B=F.match(A)
+}if(F.length>0){E.push(opensocial.data.transformLiteral_(F))
+}return E.join("+")
+};
+opensocial.data.transformLiteral_=function(A){return"'"+A.replace(/'/g,"\\'").replace(/\n/g," ")+"'"
+};
+opensocial.data.RequestDescriptor.prototype.sendRequest=function(){var B=opensocial.data.NSMAP[this.tagParts[0]];
+var A=null;
+if(B){A=B[this.tagParts[1]]
+}if(!A){throw Error("Data handler undefined for "+this.tagName)
+}A(this)
+};
+opensocial.data.RequestDescriptor.prototype.getSendRequestClosure=function(){var A=this;
+return function(){A.sendRequest()
+}
+};
+opensocial.data.RequestDescriptor.prototype.computeNeededKeys_=function(E){var A=opensocial.data.VAR_REGEX;
+var B=E.match(A);
+while(B){var D=B[2].substring(2,B[2].length-1);
+var C=D.split(".")[0];
+if(!this.neededKeys){this.neededKeys={}
+}this.neededKeys[C]=true;
+B=B[3].match(A)
+}};
+opensocial.data.RequestDescriptor.prototype.register_=function(){opensocial.data.registerRequestDescriptor(this)
+};
+opensocial.data.DataContext.evalExpression=function(A){return(new Function("context","with (context) return "+A))(opensocial.data.DataContext.getData())
+};
+opensocial.data.requests_={};
+opensocial.data.registerRequestDescriptor=function(A){if(opensocial.data.requests_[A.key]){throw Error("Request already registered for "+A.key)
+}opensocial.data.requests_[A.key]=A
+};
+opensocial.data.currentAPIRequest_=null;
+opensocial.data.currentAPIRequestKeys_=null;
+opensocial.data.currentAPIRequestCallbacks_=null;
+opensocial.data.getCurrentAPIRequest=function(){if(!opensocial.data.currentAPIRequest_){opensocial.data.currentAPIRequest_=opensocial.newDataRequest();
+opensocial.data.currentAPIRequestKeys_=[];
+opensocial.data.currentAPIRequestCallbacks_={}
+}return opensocial.data.currentAPIRequest_
+};
+opensocial.data.addToCurrentAPIRequest=function(C,B,A){opensocial.data.getCurrentAPIRequest().add(C,B);
+opensocial.data.currentAPIRequestKeys_.push(B);
+if(A){opensocial.data.currentAPIRequestCallbacks_[B]=A
+}window.setTimeout(opensocial.data.sendCurrentAPIRequest_,0)
+};
+opensocial.data.sendCurrentAPIRequest_=function(){if(opensocial.data.currentAPIRequest_){opensocial.data.currentAPIRequest_.send(opensocial.data.createSharedRequestCallback_());
+opensocial.data.currentAPIRequest_=null
+}};
+opensocial.data.createSharedRequestCallback_=function(){var B=opensocial.data.currentAPIRequestKeys_;
+var A=opensocial.data.currentAPIRequestCallbacks_;
+return function(C){opensocial.data.onAPIResponse(C,B,A)
+}
+};
+opensocial.data.onAPIResponse=function(C,F,E){for(var B=0;
+B<F.length;
+B++){var A=F[B];
+var D=C.get(A);
+if(!D.hadError()){var G=opensocial.data.extractJson_(D,A);
+if(E[A]){E[A](A,G)
+}else{opensocial.data.DataContext.putDataSet(A,G)
+}}}};
+opensocial.data.extractJson_=function(E,D){var G=E.getData();
+if(G.array_){var A=[];
+for(var C=0;
+C<G.array_.length;
+C++){A.push(G.array_[C].fields_)
+}G=A;
+var F=opensocial.data.requests_[D];
+if(F.tagName=="os:PeopleRequest"){var B=F.getAttribute("groupId");
+if((!B||B=="@self")&&G.length==1){G=G[0]
+}}}else{G=G.fields_||G
+}return G
+};
+opensocial.data.registerRequestHandler=function(B,D){var A=B.split(":");
+var C=opensocial.data.NSMAP[A[0]];
+if(!C){if(!opensocial.xmlutil.NSMAP[A[0]]){opensocial.xmlutil.NSMAP[A[0]]=null
+}C=opensocial.data.NSMAP[A[0]]={}
+}else{if(C[A[1]]){throw Error("Request handler "+A[1]+" is already defined.")
+}}C[A[1]]=D
+};
+opensocial.data.processDocumentMarkup=function(D){var E=D||document;
+var A=E.getElementsByTagName("script");
+for(var B=0;
+B<A.length;
+++B){var C=A[B];
+if(C.type==opensocial.data.SCRIPT_TYPE){opensocial.data.loadRequests(C)
+}}opensocial.data.registerRequestDependencies();
+opensocial.data.executeRequests()
+};
+if(window.gadgets&&window.gadgets["util"]){gadgets.util.registerOnLoadHandler(opensocial.data.processDocumentMarkup)
+}opensocial.data.loadRequests=function(A){if(typeof (A)=="string"){opensocial.data.loadRequestsFromMarkup_(A);
+return 
+}var B=A;
+A=B.value||B.innerHTML;
+opensocial.data.loadRequestsFromMarkup_(A)
+};
+opensocial.data.loadRequestsFromMarkup_=function(A){A=opensocial.xmlutil.prepareXML(A);
+var C=opensocial.xmlutil.parseXML(A);
+var B=C.firstChild;
+while(B.nodeType!=1){B=B.nextSibling
+}opensocial.data.processDataNode_(B)
+};
+opensocial.data.processDataNode_=function(A){for(var C=A.firstChild;
+C;
+C=C.nextSibling){if(C.nodeType==1){var B=new opensocial.data.RequestDescriptor(C)
+}}};
+opensocial.data.registerRequestDependencies=function(){for(var A in opensocial.data.requests_){var C=opensocial.data.requests_[A];
+var E=C.neededKeys;
+var D=[];
+for(var B in E){if(opensocial.data.DataContext.getDataSet(B)==null&&opensocial.data.requests_[B]){D.push(B)
+}}if(D.length>0){opensocial.data.DataContext.registerListener(D,C.getSendRequestClosure());
+C.dependencies=true
+}}};
+opensocial.data.executeRequests=function(){for(var A in opensocial.data.requests_){var B=opensocial.data.requests_[A];
+if(!B.dependencies){B.sendRequest()
+}}};
+opensocial.data.transformSpecialValue=function(A){if(A.substring(0,1)=="@"){return A.substring(1).toUpperCase()
+}return A
+};
+opensocial.data.addFieldsToParams_=function(C,B){if(!B){return 
+}var A=B.replace(/(^\s*|\s*$)/g,"").split(/\s*,\s*/);
+C[opensocial.DataRequest.PeopleRequestFields.PROFILE_DETAILS]=A
+};
+(function(){opensocial.data.registerRequestHandler("os:ViewerRequest",function(B){var C={};
+opensocial.data.addFieldsToParams_(C,B.getAttribute("fields"));
+var A=opensocial.data.getCurrentAPIRequest().newFetchPersonRequest("VIEWER",C);
+opensocial.data.addToCurrentAPIRequest(A,B.key)
+});
+opensocial.data.registerRequestHandler("os:OwnerRequest",function(B){var C={};
+opensocial.data.addFieldsToParams_(C,B.getAttribute("fields"));
+var A=opensocial.data.getCurrentAPIRequest().newFetchPersonRequest("OWNER",C);
+opensocial.data.addToCurrentAPIRequest(A,B.key)
+});
+opensocial.data.registerRequestHandler("os:PeopleRequest",function(E){var C=E.getAttribute("userId");
+var B=E.getAttribute("groupId")||"@self";
+var A={};
+A.userId=opensocial.data.transformSpecialValue(C);
+if(B!="@self"){A.groupId=opensocial.data.transformSpecialValue(B)
+}var F={};
+opensocial.data.addFieldsToParams_(F,E.getAttribute("fields"));
+var D=opensocial.data.getCurrentAPIRequest().newFetchPeopleRequest(opensocial.newIdSpec(A),F);
+opensocial.data.addToCurrentAPIRequest(D,E.key)
+});
+opensocial.data.registerRequestHandler("os:ActivitiesRequest",function(E){var C=E.getAttribute("userId");
+var B=E.getAttribute("groupId")||"@self";
+var A={};
+A.userId=opensocial.data.transformSpecialValue(C);
+if(B!="@self"){A.groupId=opensocial.data.transformSpecialValue(B)
+}var D=opensocial.data.getCurrentAPIRequest().newFetchActivitiesRequest(opensocial.newIdSpec(A));
+opensocial.data.addToCurrentAPIRequest(D,E.key)
+});
+opensocial.data.registerRequestHandler("os:HttpRequest",function(C){var A=C.getAttribute("href");
+var B=C.getAttribute("format")||"json";
+var D={};
+D[gadgets.io.RequestParameters.CONTENT_TYPE]=B.toLowerCase()=="text"?gadgets.io.ContentType.TEXT:gadgets.io.ContentType.JSON;
+D[gadgets.io.RequestParameters.METHOD]=gadgets.io.MethodType.GET;
+gadgets.io.makeRequest(A,function(E){opensocial.data.DataContext.putDataSet(C.key,E.data)
+},D)
+})
+})();
+(opensocial.data.populateParams_=function(){if(window.gadgets&&gadgets.util.hasFeature("views")){opensocial.data.DataContext.putDataSet("ViewParams",gadgets.views.getParams())
+}})();;
+var shindig=shindig||{};
+shindig.Auth=function(){var authToken=null;
+var trusted=null;
+function addParamsToToken(urlParams){var args=authToken.split("&");
+for(var i=0;
+i<args.length;
+i++){var nameAndValue=args[i].split("=");
+if(nameAndValue.length===2){var name=nameAndValue[0];
+var value=nameAndValue[1];
+if(value==="$"){value=encodeURIComponent(urlParams[name]);
+args[i]=name+"="+value
+}}}authToken=args.join("&")
+}function init(configuration){var urlParams=gadgets.util.getUrlParameters();
+var config=configuration["shindig.auth"]||{};
+if(config.authToken){authToken=config.authToken
+}else{if(urlParams.st){authToken=urlParams.st
+}}if(authToken!==null){addParamsToToken(urlParams)
+}if(config.trustedJson){trusted=eval("("+config.trustedJson+")")
+}}gadgets.config.register("shindig.auth",null,init);
+return{getSecurityToken:function(){return authToken
+},updateSecurityToken:function(newToken){authToken=newToken
+},getTrustedData:function(){return trusted
+}}
+};;
+var shindig=shindig||{};
+shindig.auth=new shindig.Auth();;
+var JSON=window.JSON||gadgets.json;
+var _IG_Prefs=(function(){var A=null;
+var B=function(){if(!A){A=new gadgets.Prefs();
+A.setDontEscape_()
+}return A
+};
+B._parseURL=gadgets.Prefs.parseUrl;
+return B
+})();
+function _IG_Fetch_wrapper(B,A){B(A.data?A.data:"")
+}function _IG_FetchContent(B,G,C){var F=C||{};
+if(F.refreshInterval){F.REFRESH_INTERVAL=F.refreshInterval
+}else{F.REFRESH_INTERVAL=3600
+}for(var E in F){var D=F[E];
+delete F[E];
+F[E.toUpperCase()]=D
+}var A=gadgets.util.makeClosure(null,_IG_Fetch_wrapper,G);
+gadgets.io.makeRequest(B,A,F)
+}function _IG_FetchXmlContent(B,E,C){var D=C||{};
+if(D.refreshInterval){D.REFRESH_INTERVAL=D.refreshInterval
+}else{D.REFRESH_INTERVAL=3600
+}D.CONTENT_TYPE="DOM";
+var A=gadgets.util.makeClosure(null,_IG_Fetch_wrapper,E);
+gadgets.io.makeRequest(B,A,D)
+}function _IG_FetchFeedAsJSON(B,F,C,A,D){var E=D||{};
+E.CONTENT_TYPE="FEED";
+E.NUM_ENTRIES=C;
+E.GET_SUMMARIES=A;
+gadgets.io.makeRequest(B,function(J){J.data=J.data||{};
+if(J.errors&&J.errors.length>0){J.data.ErrorMsg=J.errors[0]
+}if(J.data.link){J.data.URL=B
+}if(J.data.title){J.data.Title=J.data.title
+}if(J.data.description){J.data.Description=J.data.description
+}if(J.data.link){J.data.Link=J.data.link
+}if(J.data.items&&J.data.items.length>0){J.data.Entry=J.data.items;
+for(var H=0;
+H<J.data.Entry.length;
+++H){var I=J.data.Entry[H];
+I.Title=I.title;
+I.Link=I.link;
+I.Summary=I.summary||I.description;
+I.Date=I.pubDate
+}}for(var G=0;
+G<J.data.Entry.length;
+++G){var I=J.data.Entry[G];
+I.Date=(I.Date/1000)
+}F(J.data)
+},E)
+}function _IG_GetCachedUrl(A,B){var C=B||{};
+C.REFRESH_INTERVAL=3600;
+if(C.refreshInterval){C.REFRESH_INTERVAL=C.refreshInterval
+}return gadgets.io.getProxyUrl(A,C)
+}function _IG_GetImageUrl(A,B){return _IG_GetCachedUrl(A,B)
+}function _IG_GetImage(B){var A=document.createElement("img");
+A.src=_IG_GetCachedUrl(B);
+return A
+}function _IG_RegisterOnloadHandler(A){gadgets.util.registerOnLoadHandler(A)
+}function _IG_Callback(B,C){var A=arguments;
+return function(){var D=Array.prototype.slice.call(arguments);
+B.apply(null,D.concat(Array.prototype.slice.call(A,1)))
+}
+}var _args=gadgets.util.getUrlParameters;
+function _gel(A){return document.getElementById?document.getElementById(A):null
+}function _gelstn(A){if(A==="*"&&document.all){return document.all
+}return document.getElementsByTagName?document.getElementsByTagName(A):[]
+}function _gelsbyregex(D,F){var C=_gelstn(D);
+var E=[];
+for(var B=0,A=C.length;
+B<A;
+++B){if(F.test(C[B].id)){E.push(C[B])
+}}return E
+}function _esc(A){return window.encodeURIComponent?encodeURIComponent(A):escape(A)
+}function _unesc(A){return window.decodeURIComponent?decodeURIComponent(A):unescape(A)
+}function _hesc(A){return gadgets.util.escapeString(A)
+}function _striptags(A){return A.replace(/<\/?[^>]+>/g,"")
+}function _trim(A){return A.replace(/^\s+|\s+$/g,"")
+}function _toggle(A){A=(typeof A==="string")?_gel(A):A;
+if(A!==null){if(A.style.display.length===0||A.style.display==="block"){A.style.display="none"
+}else{if(A.style.display==="none"){A.style.display="block"
+}}}}var _global_legacy_uidCounter=0;
+function _uid(){return _global_legacy_uidCounter++
+}function _min(B,A){return(B<A?B:A)
+}function _max(B,A){return(B>A?B:A)
+}function _exportSymbols(A,C){var I=window;
+var F=A.split(".");
+for(var H=0,G=F.length;
+H<G;
+H++){var B=F[H];
+I[B]=I[B]||{};
+I=I[B]
+}for(var E=0,D=C.length;
+E<D;
+E+=2){I[C[E]]=C[E+1]
+}};;
+var linkedin={};
+linkedin.Person={};
+linkedin.IdSpec={};
+linkedin.IdSpec.PersonId={IMPLICIT:"0"};
+linkedin.Person.Field={NETWORK_DISTANCE:"personNetworkDistance",NUM_CONNECTIONS:"personNumConnections",TETHERED_ACCOUNTS:"accounts"};;
+gadgets.config.init({"shindig.auth":{},"osapi.services":{"gadgets.rpc":["container.listMethods"],"http://%host%/opensocial/social/rpc":["activities.delete","activities.update","activities.supportedFields","activities.get","messages.delete","appdata.update","messages.modify","appdata.get","messages.get","activities.create","system.listMethods","people.supportedFields","appdata.delete","messages.create","appdata.create","people.get"],"http://%host%/opensocial/gadgets/api/rpc":["http.head","http.delete","http.put","http.post","system.listMethods","cache.invalidate","http.get"]},"opensocial-0.9":{"path":"http://%host%/opensocial/social/rpc","domain":"linkedin","invalidatePath":"http://%host%/opensocial/gadgets/api/rpc","supportedFields":{"message":["title","body"],"person":["id","name","thumbnailUrl","profileUrl","personNetworkDistance","personNumConnections","currentLocation","aboutMe","jobs","schools","urls","status","emails","accounts"],"organization":["type","title","description","name","field","startDate","endDate"],"address":["country","postalCode"],"sortOrder":["name"],"name":["familyName","givenName","formatted"],"account":["userId","domain","username","bindingStatus","isPrimary"],"filterType":["all","hasApp"],"url":["value","linkedText","type"],"activity":["id","title"]},"enableCaja":false},"rpc":{"parentRelayUrl":"/js/opensocial/rpc_relay.html","useLegacyProtocol":false},"views":{"canvas":{"aliases":["FULL_PAGE"],"isOnlyVisible":true},"home":{"aliases":["HOME"],"isOnlyVisible":false},"profile":{"aliases":["DASHBOARD","default"],"isOnlyVisible":false}},"core.util":{"linkedin-ext":{},"views":{},"dynamic-height":{},"core":{},"settitle":{},"opensocial-data":{},"opensocial-0.8":{}},"core.io":{"proxyUrl":"http://%host%/opensocial/proxy?refresh=%refresh%&url=%url%","jsonProxyUrl":"http://%host%/opensocial/makeRequest"}});
+</script><script>gadgets.Prefs.setMessages_({});gadgets.Prefs.setDefaultPrefs_({});gadgets.io.preloaded_=[];</script></head><body dir="ltr"><div id="ss-main"><div class="homeView">
+<a href="javascript:void(0);" onclick="javascript:bind_to({&quot;from&quot;:&quot;home_view&quot;,&quot;view&quot;:&quot;canvas&quot;,&quot;page&quot;:&quot;home_tab&quot;})"><h1>SlideShare Presentations</h1></a>
+
+
+<!-- SLIDESHOWS FROM CONNECTIONS -->
+  	<h2><a href="javascript:void(0);" onclick="javascript:bind_to({&quot;from&quot;:&quot;home_view&quot;,&quot;view&quot;:&quot;canvas&quot;,&quot;page&quot;:&quot;owner_network_slideshows&quot;})">Latest from your connections</a></h2>
+ 
+  	
+<div class="listItemHome clearfix">
+        <span class="docThumbOverlay"><a href="javascript:void(0);" onclick="javascript:navigate_to({&quot;from&quot;:&quot;home_view&quot;,&quot;view&quot;:&quot;canvas&quot;,&quot;page&quot;:&quot;slideview&quot;,&quot;slideshow_id&quot;:&quot;13383740&quot;})"><img src="pinterest-business-120619142415-phpapp02-thumbnail-2" width="120" height="90"></a></span>        <div>
+                <strong><span><a href="javascript:void(0);" onclick="javascript:navigate_to({&quot;from&quot;:&quot;home_view&quot;,&quot;view&quot;:&quot;canvas&quot;,&quot;page&quot;:&quot;slideview&quot;,&quot;slideshow_id&quot;:&quot;13383740&quot;})">Exploring Pinterest for Business</a></span></strong>
+                <span class="small quiet block">1 day ago</span>
+        </div>
+</div>          
+
+<div class="listItemHome clearfix">
+        <span class="docThumbOverlay"><a href="javascript:void(0);" onclick="javascript:navigate_to({&quot;from&quot;:&quot;home_view&quot;,&quot;view&quot;:&quot;canvas&quot;,&quot;page&quot;:&quot;slideview&quot;,&quot;slideshow_id&quot;:&quot;13381433&quot;})"><img src="mobileapps-120619105457-phpapp02-thumbnail-2" width="120" height="90"></a></span>        <div>
+                <strong><span><a href="javascript:void(0);" onclick="javascript:navigate_to({&quot;from&quot;:&quot;home_view&quot;,&quot;view&quot;:&quot;canvas&quot;,&quot;page&quot;:&quot;slideview&quot;,&quot;slideshow_id&quot;:&quot;13381433&quot;})">Mobileapps in Government</a></span></strong>
+                <span class="small quiet block">1 day ago</span>
+        </div>
+</div>          
+
+<div class="listItemHome clearfix">
+        <span class="docThumbOverlay"><a href="javascript:void(0);" onclick="javascript:navigate_to({&quot;from&quot;:&quot;home_view&quot;,&quot;view&quot;:&quot;canvas&quot;,&quot;page&quot;:&quot;slideview&quot;,&quot;slideshow_id&quot;:&quot;13401178&quot;})"><img src="directors-forumretail02a-120621002049-phpapp01-thumbnail-2" width="120" height="90"></a></span>        <div>
+                <strong><span><a href="javascript:void(0);" onclick="javascript:navigate_to({&quot;from&quot;:&quot;home_view&quot;,&quot;view&quot;:&quot;canvas&quot;,&quot;page&quot;:&quot;slideview&quot;,&quot;slideshow_id&quot;:&quot;13401178&quot;})">Customer Centric Retail: Nine Lessons from the Digital Frontline</a></span></strong>
+                <span class="small quiet block">2 days ago</span>
+        </div>
+</div>          
+<!-- end of SLIDESHOWS FROM CONNECTIONS -->
+  
+  
+
+<ul>
+<li><a class="icons homeIcon" href="javascript:void(0);" onclick="javascript:bind_to({&quot;from&quot;:&quot;home_view&quot;,&quot;view&quot;:&quot;canvas&quot;,&quot;page&quot;:&quot;home_tab&quot;})">View latest network activity</a>
+	</li><li>
+	<a class="icons uploadIconHV" href="javascript:void(0);" onclick="javascript:bind_to({&quot;from&quot;:&quot;home_view&quot;,&quot;view&quot;:&quot;canvas&quot;,&quot;page&quot;:&quot;upload_slideshow&quot;})">Upload a presentation</a>	</li>
+	
+<li>
+<a class="icons syncSS" href="javascript:void(0);" onclick="javascript:bind_to({&quot;from&quot;:&quot;home_view&quot;,&quot;view&quot;:&quot;canvas&quot;,&quot;page&quot;:&quot;most_viewed_slideshows&quot;,&quot;media_type&quot;:&quot;all&quot;})">View most popular presentations</a></li>
+                <li class="proCTA">
+                        <a id="automatic_signup_click" href="http://slideshare.net/app_login?auth_token=933b46f9300fd4d871e9d3c77ac264caa46a82d6&ts=1340294912&user_id=O63HG7_RkR&target=http%3A%2F%2Fwww.slideshare.net%2Fbusiness%2Fpremium%2Fplans%3Fsource%3D1%26cmp_src%3Dlinkedin" target="_blank"><img width="27" height="8" alt="Pro Account" class="proNavBadge" src="pro_account_mini_badge.png">Display videos on LinkedIn. Go Pro »</a>                        
+                </li>
+</ul>
+<img src="p"><a href="http://www.quantcast.com/p-abU44ONrAuwk2" target="_blank"><img src="p-abU44ONrAuwk2.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"></a><!-- Start Quantcast tag --><noscript>&lt;img src="http://pixel.quantserve.com/pixel/p-abU44ONrAuwk2.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/&gt;</noscript><!-- End Quantcast tag --><!-- Start Quantcast tag -->
+
+
+<noscript>
+&lt;img src="http://pixel.quantserve.com/pixel/p-abU44ONrAuwk2.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/&gt;
+</noscript>
+<!-- End Quantcast tag -->
+</div>
+</div>
+		
+		<link href="main.css" media="screen" rel="Stylesheet" type="text/css">
+		<!--[if gte IE 6]><link href="http://public.liss.slidesharecdn.com/css/main-ie.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
+		<script src="ga.js" type="text/javascript"></script>
+		<script src="prototype-1.5_min.js" type="text/javascript"></script>
+                <script src="home_live_combined.js" type="text/javascript"></script>
+
+		<script type="text/javascript">
+			gadgets.util.registerOnLoadHandler(initialize_app_home);
+		</script>
+			 
+		
+	<script>gadgets.util.runOnLoadHandlers();</script></body></html>
